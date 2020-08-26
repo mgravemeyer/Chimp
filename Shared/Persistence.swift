@@ -7,6 +7,8 @@
 
 import CoreData
 
+// TODO: replace example container with real data
+
 struct PersistenceController {
     static let shared = PersistenceController()
 

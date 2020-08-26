@@ -1,14 +1,13 @@
 //
-//  ContentView.swift
+//  LoginView_macOS.swift
 //  Shared
 //
 //  Created by Maximilian Gravemeyer on 25.08.20.
 //
 
 import SwiftUI
-import CoreData
 
-struct LoginView: View {
+struct LoginView_macOS: View {
     @State var username = String()
     @State var password = String()
     @State var response = String()
@@ -17,7 +16,7 @@ struct LoginView: View {
             Image("Chimp_Logo").resizable().frame(width: 100, height: 100)
             VStack {
                 TextField("Username", text: self.$username)
-                TextField("Password", text: self.$password)
+                SecureField("Password", text: self.$password)
                 Text(self.response)
                 HStack {
                     Button("Sign In") {
@@ -28,12 +27,12 @@ struct LoginView: View {
                     }
                 }
             }.frame(width: 200)
-        }.frame(minWidth: 400, idealWidth: 900, maxWidth: .infinity, minHeight: 200, idealHeight: 500, maxHeight: .infinity)
+        }.frame(width: 400, height: 200)
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        LoginView_macOS().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

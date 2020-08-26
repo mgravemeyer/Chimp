@@ -13,8 +13,8 @@
 		E3D7A5F624F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */; };
 		E3D7A5F724F4FFC200D3EB62 /* ChimpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */; };
 		E3D7A5F824F4FFC200D3EB62 /* ChimpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */; };
-		E3D7A5F924F4FFC200D3EB62 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */; };
-		E3D7A5FA24F4FFC200D3EB62 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */; };
+		E3D7A5F924F4FFC200D3EB62 /* LoginView_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CC24F4FFC000D3EB62 /* LoginView_macOS.swift */; };
+		E3D7A5FA24F4FFC200D3EB62 /* LoginView_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CC24F4FFC000D3EB62 /* LoginView_macOS.swift */; };
 		E3D7A5FB24F4FFC200D3EB62 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */; };
 		E3D7A5FC24F4FFC200D3EB62 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */; };
 		E3D7A5FD24F4FFC200D3EB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */; };
@@ -39,9 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E30ADB8A24F6D7C300924870 /* Navigation_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation_macOS.swift; sourceTree = "<group>"; };
 		E3D7A5CA24F4FFC000D3EB62 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpApp.swift; sourceTree = "<group>"; };
-		E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E3D7A5CC24F4FFC000D3EB62 /* LoginView_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView_macOS.swift; sourceTree = "<group>"; };
 		E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3D7A5D324F4FFC200D3EB62 /* Chimp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chimp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +56,7 @@
 		E3D7A5EE24F4FFC200D3EB62 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D7A5F224F4FFC200D3EB62 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		E3D7A5F424F4FFC200D3EB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3DC357224F6F5F8007DA6C9 /* LoginView_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView_iOS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */,
-				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
 				E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */,
 				E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */,
 				E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */,
@@ -128,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				E3D7A5D624F4FFC200D3EB62 /* Info.plist */,
+				E3DC357224F6F5F8007DA6C9 /* LoginView_iOS.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -135,6 +137,8 @@
 		E3D7A5DC24F4FFC200D3EB62 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				E3D7A5CC24F4FFC000D3EB62 /* LoginView_macOS.swift */,
+				E30ADB8A24F6D7C300924870 /* Navigation_macOS.swift */,
 				E3D7A5DD24F4FFC200D3EB62 /* Info.plist */,
 				E3D7A5DE24F4FFC200D3EB62 /* macOS.entitlements */,
 			);
@@ -319,7 +323,7 @@
 				E3D7A5F524F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
 				E3D7A5FB24F4FFC200D3EB62 /* Persistence.swift in Sources */,
 				E3D7A5F724F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
-				E3D7A5F924F4FFC200D3EB62 /* LoginView.swift in Sources */,
+				E3D7A5F924F4FFC200D3EB62 /* LoginView_macOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +334,7 @@
 				E3D7A5F624F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
 				E3D7A5FC24F4FFC200D3EB62 /* Persistence.swift in Sources */,
 				E3D7A5F824F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
-				E3D7A5FA24F4FFC200D3EB62 /* LoginView.swift in Sources */,
+				E3D7A5FA24F4FFC200D3EB62 /* LoginView_macOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

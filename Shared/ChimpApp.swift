@@ -13,8 +13,13 @@ struct ChimpApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            #if os(iOS)
+            LoginView_iOS()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            #elseif os(macOS)
+            LoginView_macOS()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            #endif
         }
     }
 }
