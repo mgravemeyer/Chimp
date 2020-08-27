@@ -11,9 +11,6 @@ struct TodayView: View {
     var body: some View {
         VStack {
             Text("Today")
-            Button("hide/show") {
-                toggleSidebar()
-            }
         }
     }
 }

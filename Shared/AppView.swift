@@ -33,6 +33,11 @@ struct AppView: View {
             }
             TodayView()
             .listStyle(SidebarListStyle())
+        }.toolbar {
+            // FIXME: Adding toolbaritem {} to specifiy alignemtn. Doesnt work in Xcode-beta 5 and 6.
+            Button(action: toggleSidebar) {
+                Label("Collapse Sidebar", systemImage: "sidebar.left")
+            }
         }
         // TODO: implement toolbar (not working with xcode beta 5)
         .frame(minWidth: 600, minHeight: 300)

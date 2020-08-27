@@ -39,6 +39,7 @@ struct LoginView: View {
                             Text("Sign In")
                                 .fontWeight(.semibold)
                                 .frame(minWidth: 230)
+                                .foregroundColor(Color.black)
                         }
                         Button(action: signIn) {
                             Text("Sign Up")
