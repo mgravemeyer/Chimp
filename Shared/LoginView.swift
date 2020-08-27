@@ -8,24 +8,47 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    func signIn() {
+        self.loggedIn = true
+    }
+
     @State var username = String()
     @State var password = String()
     @Binding var loggedIn: Bool
     var body: some View {
         HStack {
-            Image("Chimp_Logo").resizable().frame(width: 100, height: 100)
-            VStack {
-                TextField("Username", text: self.$username)
-                SecureField("Password", text: self.$password)
-                HStack {
-                    Button("Sign In") {
-                        self.loggedIn = true
-                    }
-                    Button("Sign Up") {
-                        self.loggedIn = true
-                    }
-                }
-            }.frame(width: 200)
-        }.frame(width: 400, height: 200)
+            Group {
+                Image("Login_Background").resizable().frame(width: 500, height: 600)
+            }.frame(width: 500, height: 600)
+            Group {
+                VStack {
+                    Text("Chimp")
+                        .fontWeight(.bold)
+                        .font(.largeTitle)
+                        .padding(10)
+                    Text("The Tool That Doesnt Let You Look Like A Monkey")
+                        .font(.subheadline)
+                        .padding(.bottom, 10)
+                    Group {
+                        TextField("Username", text: self.$username).textFieldStyle(PlainTextFieldStyle()).padding(.bottom, 5)
+                        SecureField("Password", text: self.$password).textFieldStyle(PlainTextFieldStyle()).padding(.bottom, 5)
+                    }.frame(width: 260)
+                    VStack {
+                        Button(action: signIn) {
+                            Text("Sign In")
+                                .fontWeight(.semibold)
+                                .frame(minWidth: 230)
+                        }
+                        Button(action: signIn) {
+                            Text("Sign Up")
+                                .fontWeight(.semibold)
+                                .frame(minWidth: 230)
+                                .foregroundColor(Color.blue)
+                        }
+                    }.frame(width: 260)
+                }.frame(width: 350)
+            }.frame(width: 500, height: 600).padding(.bottom, 70)
+        }.frame(width: 1000, height: 600).background(Color.white)
     }
 }
