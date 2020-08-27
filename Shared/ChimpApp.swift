@@ -10,16 +10,14 @@ import SwiftUI
 @main
 struct ChimpApp: App {
     let persistenceController = PersistenceController.shared
-
+    @State var loggedIn = false
     var body: some Scene {
-        WindowGroup {
-            #if os(iOS)
-            LoginView_iOS()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            #elseif os(macOS)
-            LoginView_macOS()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            #endif
-        }
+            WindowGroup {
+                if !loggedIn {
+                    LoginView(loggedIn: self.$loggedIn).environment(\.managedObjectContext, persistenceController.container.viewContext)
+                } else {
+                    AppView().environment(\.managedObjectContext, persistenceController.container.viewContext)
+                }
+            }
     }
 }
