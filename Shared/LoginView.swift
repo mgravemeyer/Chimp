@@ -7,13 +7,43 @@
 
 import SwiftUI
 
+struct User: Identifiable {
+    let id = UUID()
+    var email: String
+    var password: String
+}
+
+
 struct LoginView: View {
     
     func signIn() {
-        self.loggedIn = true
+        
+        // TODO: async, side thread
+        
+        let url = URL(string: "http://127.0.0.1:5000/api/auth/sign-up")
+        guard let requestUrl = url else { fatalError() }
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = "POST"
+        let json : [String:Any] = ["email":"\(self.email)", "password":"\(self.password)"]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        request.httpBody = jsonData
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error: \(error)")
+                return
+            }
+            if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                print("Data: \(dataString)")
+            }
+        }
+        task.resume()
     }
 
-    @State var username = String()
+    @State var email = String()
     @State var password = String()
     @Binding var loggedIn: Bool
     var body: some View {
@@ -31,7 +61,7 @@ struct LoginView: View {
                         .font(.subheadline)
                         .padding(.bottom, 10)
                     Group {
-                        TextField("Username", text: self.$username).textFieldStyle(PlainTextFieldStyle()).padding(.bottom, 5)
+                        TextField("Username", text: self.$email).textFieldStyle(PlainTextFieldStyle()).padding(.bottom, 5)
                         SecureField("Password", text: self.$password).textFieldStyle(PlainTextFieldStyle()).padding(.bottom, 5)
                     }.frame(width: 260)
                     VStack {

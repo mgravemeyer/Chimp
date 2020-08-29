@@ -23,6 +23,7 @@
 		E3D7A5FC24F4FFC200D3EB62 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */; };
 		E3D7A5FD24F4FFC200D3EB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */; };
 		E3D7A5FE24F4FFC200D3EB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */; };
+		E3EFD99724FA5CF8002E336F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFD99624FA5CF8002E336F /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		E3D7A5EE24F4FFC200D3EB62 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D7A5F224F4FFC200D3EB62 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		E3D7A5F424F4FFC200D3EB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3EFD99624FA5CF8002E336F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +112,9 @@
 		E3D7A5C824F4FFC000D3EB62 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E3EFD99524FA5CEB002E336F /* Model */,
 				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */,
+				E3EFD99624FA5CF8002E336F /* User.swift */,
 				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
 				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
 				E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */,
@@ -165,6 +169,13 @@
 				E3D7A5F424F4FFC200D3EB62 /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		E3EFD99524FA5CEB002E336F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +341,7 @@
 				E3D6EF3F24F7D6C600F7A95A /* TodayView.swift in Sources */,
 				E3D7A5F724F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
 				E3D7A5F924F4FFC200D3EB62 /* LoginView.swift in Sources */,
+				E3EFD99724FA5CF8002E336F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
