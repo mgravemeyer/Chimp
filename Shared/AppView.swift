@@ -39,7 +39,6 @@ struct AppView: View {
                 Label("Collapse Sidebar", systemImage: "sidebar.left")
             }
         }
-        // TODO: implement toolbar (not working with xcode beta 5)
         .frame(minWidth: 600, minHeight: 300)
     }
 }

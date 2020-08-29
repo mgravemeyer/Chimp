@@ -7,18 +7,12 @@
 
 import SwiftUI
 
-struct User: Identifiable {
-    let id = UUID()
-    var email: String
-    var password: String
-}
-
-
 struct LoginView: View {
     
-    func signIn() {
+    func signUp() {
         
         // TODO: async, side thread
+        // TODO: error handling
         
         let url = URL(string: "http://127.0.0.1:5000/api/auth/sign-up")
         guard let requestUrl = url else { fatalError() }
@@ -32,10 +26,61 @@ struct LoginView: View {
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            do {
+                let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
+                let token = jsonResponse!["token"]!
+                print(token)
+                self.loggedIn = true
+            } catch {
+                print(error)
+            }
+            
             if let error = error {
+                self.error = "\(error)"
                 print("Error: \(error)")
                 return
             }
+            
+            if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                print("Data: \(dataString)")
+            }
+        }
+        task.resume()
+    }
+    
+    func signIn() {
+        // TODO: async, side thread
+        // TODO: error handling
+        
+        let url = URL(string: "http://127.0.0.1:5000/api/auth/sign-in")
+        guard let requestUrl = url else { fatalError() }
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = "POST"
+        let json : [String:Any] = ["email":"\(self.email)", "password":"\(self.password)"]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        request.httpBody = jsonData
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            do {
+                let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
+                let token = jsonResponse!["token"]!
+                print(token)
+                self.loggedIn = true
+            } catch {
+                print(error)
+            }
+            
+            if let error = error {
+                self.error = "\(error)"
+                print("Error: \(error)")
+                return
+            }
+            
             if let data = data, let dataString = String(data: data, encoding: .utf8) {
                 print("Data: \(dataString)")
             }
@@ -45,6 +90,7 @@ struct LoginView: View {
 
     @State var email = String()
     @State var password = String()
+    @State var error = String()
     @Binding var loggedIn: Bool
     var body: some View {
         HStack {
@@ -71,11 +117,17 @@ struct LoginView: View {
                                 .frame(minWidth: 230)
                                 .foregroundColor(Color.black)
                         }
-                        Button(action: signIn) {
+                        Button(action: signUp) {
                             Text("Sign Up")
                                 .fontWeight(.semibold)
                                 .frame(minWidth: 230)
                                 .foregroundColor(Color.blue)
+                        }
+                        if error != "" {
+                            Text(self.error)
+                                .fontWeight(.semibold)
+                            frame(minWidth: 230)
+                                .foregroundColor(Color.red)
                         }
                     }.frame(width: 260)
                 }.frame(width: 350)
