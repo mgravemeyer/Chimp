@@ -97,6 +97,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E31033B724FFB5070012924D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */,
+				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
+				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
+				E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E3D7A5C324F4FFC000D3EB62 = {
 			isa = PBXGroup;
 			children = (
@@ -112,12 +123,8 @@
 		E3D7A5C824F4FFC000D3EB62 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E31033B724FFB5070012924D /* View */,
 				E3EFD99524FA5CEB002E336F /* Model */,
-				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */,
-				E3EFD99624FA5CF8002E336F /* User.swift */,
-				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
-				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
-				E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */,
 				E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */,
 				E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */,
 				E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */,
@@ -174,6 +181,7 @@
 		E3EFD99524FA5CEB002E336F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E3EFD99624FA5CF8002E336F /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

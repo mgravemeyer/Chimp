@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AppView: View {
+    @Binding var contactAddViewShown: Bool
     var body: some View {
         NavigationView {
             List {
@@ -38,11 +39,21 @@ struct AppView: View {
             Button(action: toggleSidebar) {
                 Label("Collapse Sidebar", systemImage: "sidebar.left")
             }
+            Button(action: addContact) {
+                Label("Add Contact", systemImage: "plus")
+            }
         }
         .frame(minWidth: 600, minHeight: 300)
     }
+    
+    func toggleSidebar() {
+            NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
+    }
+
+    func addContact() {
+        contactAddViewShown.toggle()
+        print("Added Contact")
+    }
+    
 }
 
-func toggleSidebar() {
-        NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
-}
