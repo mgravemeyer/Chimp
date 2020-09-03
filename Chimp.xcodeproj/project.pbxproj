@@ -23,6 +23,13 @@
 		E3D7A5FC24F4FFC200D3EB62 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */; };
 		E3D7A5FD24F4FFC200D3EB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */; };
 		E3D7A5FE24F4FFC200D3EB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */; };
+		E3E60A9524FFD8E80065B141 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9424FFD8E80065B141 /* AppState.swift */; };
+		E3E60A9624FFD8E80065B141 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9424FFD8E80065B141 /* AppState.swift */; };
+		E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9724FFD8FF0065B141 /* ContactsState.swift */; };
+		E3E60A9924FFD8FF0065B141 /* ContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9724FFD8FF0065B141 /* ContactsState.swift */; };
+		E3E60A9B24FFD9780065B141 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9A24FFD9780065B141 /* Contact.swift */; };
+		E3E60AA224FFF4430065B141 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFD99624FA5CF8002E336F /* User.swift */; };
+		E3E60AA324FFF4430065B141 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9A24FFD9780065B141 /* Contact.swift */; };
 		E3EFD99724FA5CF8002E336F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFD99624FA5CF8002E336F /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +69,9 @@
 		E3D7A5EE24F4FFC200D3EB62 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D7A5F224F4FFC200D3EB62 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		E3D7A5F424F4FFC200D3EB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3E60A9424FFD8E80065B141 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		E3E60A9724FFD8FF0065B141 /* ContactsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsState.swift; sourceTree = "<group>"; };
+		E3E60A9A24FFD9780065B141 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		E3EFD99624FA5CF8002E336F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,17 +107,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E31033B724FFB5070012924D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */,
-				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
-				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
-				E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		E3D7A5C324F4FFC000D3EB62 = {
 			isa = PBXGroup;
 			children = (
@@ -123,9 +122,11 @@
 		E3D7A5C824F4FFC000D3EB62 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				E31033B724FFB5070012924D /* View */,
-				E3EFD99524FA5CEB002E336F /* Model */,
+				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */,
 				E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */,
+				E3E60AA024FFF42C0065B141 /* State */,
+				E3E60AA124FFF43A0065B141 /* View */,
+				E3E60AA424FFF4510065B141 /* Model */,
 				E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */,
 				E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */,
 			);
@@ -178,12 +179,40 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
-		E3EFD99524FA5CEB002E336F /* Model */ = {
+		E3E60A9E24FFF3F80065B141 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		E3E60AA024FFF42C0065B141 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				E3E60A9424FFD8E80065B141 /* AppState.swift */,
+				E3E60A9724FFD8FF0065B141 /* ContactsState.swift */,
+			);
+			name = State;
+			sourceTree = "<group>";
+		};
+		E3E60AA124FFF43A0065B141 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E3E60A9E24FFF3F80065B141 /* Components */,
+				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
+				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
+				E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E3E60AA424FFF4510065B141 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				E3EFD99624FA5CF8002E336F /* User.swift */,
+				E3E60A9A24FFD9780065B141 /* Contact.swift */,
 			);
-			path = Model;
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,7 +373,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D7A5F524F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
+				E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */,
+				E3E60A9B24FFD9780065B141 /* Contact.swift in Sources */,
 				E3D7A5FB24F4FFC200D3EB62 /* Persistence.swift in Sources */,
+				E3E60A9524FFD8E80065B141 /* AppState.swift in Sources */,
 				E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */,
 				E3D6EF3F24F7D6C600F7A95A /* TodayView.swift in Sources */,
 				E3D7A5F724F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
@@ -359,9 +391,13 @@
 			files = (
 				E3D7A5F624F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
 				E3D7A5FC24F4FFC200D3EB62 /* Persistence.swift in Sources */,
+				E3E60AA324FFF4430065B141 /* Contact.swift in Sources */,
 				E3D6EF3C24F7D5A700F7A95A /* AppView.swift in Sources */,
 				E3D6EF4024F7D6C600F7A95A /* TodayView.swift in Sources */,
+				E3E60A9624FFD8E80065B141 /* AppState.swift in Sources */,
+				E3E60AA224FFF4430065B141 /* User.swift in Sources */,
 				E3D7A5F824F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
+				E3E60A9924FFD8FF0065B141 /* ContactsState.swift in Sources */,
 				E3D7A5FA24F4FFC200D3EB62 /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

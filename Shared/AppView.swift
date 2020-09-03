@@ -31,9 +31,8 @@ struct AppView: View {
                         Label("Placeholder", systemImage: "scribble")
                     }
                 }
-            }
+            }.listStyle(SidebarListStyle())
             TodayView()
-            .listStyle(SidebarListStyle())
         }.toolbar {
             // FIXME: Adding toolbaritem {} to specifiy alignemtn. Doesnt work in Xcode-beta 5 and 6.
             Button(action: toggleSidebar) {
