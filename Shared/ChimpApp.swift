@@ -8,21 +8,31 @@
 import SwiftUI
 
 @main
-struct ChimpApp: App {
-    @StateObject var appState = AppState()
+struct ChimpApp: App {    
+    @StateObject var contactsState = ContactsState()
+    @StateObject var userState = UserState()
     let persistenceController = PersistenceController.shared
-    @State var loggedIn = false
     @State var contactAddViewShown = false
     var body: some Scene {
             WindowGroup {
-                if loggedIn {
-                    LoginView(loggedIn: self.$loggedIn).environment(\.managedObjectContext, persistenceController.container.viewContext).environmentObject(appState)
+                if userState.loggedIn {
+                    LoginView()
+                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                        .environmentObject(userState)
+                        .environmentObject(contactsState)
                 } else {
                     ZStack {
                         if contactAddViewShown {
-                            ContactAddView(contactAddViewShown: self.$contactAddViewShown).zIndex(1).environmentObject(appState)
+                            ContactAddView(contactAddViewShown: self.$contactAddViewShown).zIndex(1)
+                                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                                .environmentObject(userState)
+                                .environmentObject(contactsState)
                         }
-                        AppView(contactAddViewShown: self.$contactAddViewShown).zIndex(0).environment(\.managedObjectContext, persistenceController.container.viewContext).environmentObject(appState)
+                        AppView(contactAddViewShown: self.$contactAddViewShown)
+                            .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                            .environmentObject(userState)
+                            .environmentObject(contactsState)
+                            .zIndex(0)
                     }
                 }
             }
@@ -30,7 +40,7 @@ struct ChimpApp: App {
 }
 
 struct ContactAddView: View {
-    @EnvironmentObject var appState: AppState
+    @EnvironmentObject var contactsState: ContactsState
     @State var name = String()
     @Binding var contactAddViewShown: Bool
     var body: some View {
@@ -50,7 +60,7 @@ struct ContactAddView: View {
                         TextField("Name", text: self.$name)
                         Button {
                             // TODO: save new contact function
-                            appState.contactsState.addContact(name: self.name)
+                            self.contactsState.addContact(firstname: self.name, lastname: self.name)
                             contactAddViewShown.toggle()
                         } label: {
                             HStack {

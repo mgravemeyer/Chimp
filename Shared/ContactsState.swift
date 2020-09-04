@@ -7,12 +7,14 @@
 
 import Foundation
 
+import Foundation
+
 class ContactsState: ObservableObject {
     
     @Published private(set) var contacts = [Contact]()
     
-    func addContact(name: String) {
-        contacts.append(Contact(name: name))
+    func addContact(firstname: String, lastname: String) {
+        contacts.append(Contact(firstname: firstname, lastname: lastname))
     }
     
 }

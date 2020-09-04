@@ -8,90 +8,10 @@
 import SwiftUI
 
 struct LoginView: View {
-    
-    func signUp() {
-        
-        // TODO: async, side thread
-        // TODO: error handling
-        
-        let url = URL(string: "http://127.0.0.1:5000/api/auth/sign-up")
-        guard let requestUrl = url else { fatalError() }
-        var request = URLRequest(url: requestUrl)
-        request.httpMethod = "POST"
-        let json : [String:Any] = ["email":"\(self.email)", "password":"\(self.password)"]
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
-        
-        request.httpBody = jsonData
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
-            do {
-                let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
-                let token = jsonResponse!["token"]!
-                print(token)
-                self.loggedIn = true
-            } catch {
-                print(error)
-            }
-            
-            if let error = error {
-                self.error = "\(error)"
-                print("Error: \(error)")
-                return
-            }
-            
-            if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                print("Data: \(dataString)")
-            }
-        }
-        task.resume()
-    }
-    
-    func signIn() {
-        // TODO: async, side thread
-        // TODO: error handling
-        
-        let url = URL(string: "http://127.0.0.1:5000/api/auth/sign-in")
-        guard let requestUrl = url else { fatalError() }
-        var request = URLRequest(url: requestUrl)
-        request.httpMethod = "POST"
-        let json : [String:Any] = ["email":"\(self.email)", "password":"\(self.password)"]
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
-        
-        request.httpBody = jsonData
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
-            do {
-                let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
-                let token = jsonResponse!["token"]!
-                print(token)
-                self.loggedIn = true
-            } catch {
-                print(error)
-            }
-            
-            if let error = error {
-                self.error = "\(error)"
-                print("Error: \(error)")
-                return
-            }
-            
-            if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                print("Data: \(dataString)")
-            }
-        }
-        task.resume()
-    }
-
+    @EnvironmentObject var userState: UserState
     @State var email = String()
     @State var password = String()
     @State var error = String()
-    @Binding var loggedIn: Bool
     var body: some View {
         HStack {
             Group {
@@ -111,13 +31,17 @@ struct LoginView: View {
                         SecureField("Password", text: self.$password).textFieldStyle(PlainTextFieldStyle()).padding(.bottom, 5)
                     }.frame(width: 260)
                     VStack {
-                        Button(action: signIn) {
+                        Button {
+                            self.userState.signIn(email: self.email, password: self.password)
+                        } label: {
                             Text("Sign In")
                                 .fontWeight(.semibold)
                                 .frame(minWidth: 230)
                                 .foregroundColor(Color.black)
                         }
-                        Button(action: signUp) {
+                        Button {
+                            self.userState.signUp(email: self.email, password: self.password)
+                        } label: {
                             Text("Sign Up")
                                 .fontWeight(.semibold)
                                 .frame(minWidth: 230)
