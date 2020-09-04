@@ -8,11 +8,10 @@
 import SwiftUI
 
 @main
-struct ChimpApp: App {    
+struct ChimpApp: App {
     @StateObject var contactsState = ContactsState()
     @StateObject var userState = UserState()
     let persistenceController = PersistenceController.shared
-    @State var contactAddViewShown = false
     var body: some Scene {
             WindowGroup {
                 if userState.loggedIn {
@@ -22,13 +21,13 @@ struct ChimpApp: App {
                         .environmentObject(contactsState)
                 } else {
                     ZStack {
-                        if contactAddViewShown {
-                            ContactAddView(contactAddViewShown: self.$contactAddViewShown).zIndex(1)
+                        if contactsState.addMenuePressed {
+                            ContactAddView().zIndex(1)
                                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                                 .environmentObject(userState)
                                 .environmentObject(contactsState)
                         }
-                        AppView(contactAddViewShown: self.$contactAddViewShown)
+                        AppView()
                             .environment(\.managedObjectContext, persistenceController.container.viewContext)
                             .environmentObject(userState)
                             .environmentObject(contactsState)
@@ -41,8 +40,10 @@ struct ChimpApp: App {
 
 struct ContactAddView: View {
     @EnvironmentObject var contactsState: ContactsState
-    @State var name = String()
-    @Binding var contactAddViewShown: Bool
+    let gray = Color(red: 207/255, green: 207/255, blue: 212/255)
+    let lightGray = Color(red: 240/255, green: 240/255, blue: 240/255)
+    @State var firstname = String()
+    @State var lastname = String()
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -51,17 +52,20 @@ struct ContactAddView: View {
                         Spacer()
                         // TODO: make view over window toolbar items, close but should overlay the toolbar items
                         Button("Close") {
-                            contactAddViewShown.toggle()
+                            contactsState.addMenuePressed.toggle()
                         }.padding(.trailing, 20).padding(.top, 20)
                     }
                     Spacer()
                     VStack {
                         Text("Add a new Contact").font(.title)
-                        TextField("Name", text: self.$name)
+                        HStack {
+                            TextField("First Name", text: self.$firstname)
+                            TextField("Last Name", text: self.$lastname)
+                        }
                         Button {
                             // TODO: save new contact function
-                            self.contactsState.addContact(firstname: self.name, lastname: self.name)
-                            contactAddViewShown.toggle()
+                            self.contactsState.addContact(firstname: self.firstname, lastname: self.lastname)
+                            contactsState.addMenuePressed.toggle()
                         } label: {
                             HStack {
                                 Image(systemName: "square.and.arrow.down")
@@ -70,7 +74,7 @@ struct ContactAddView: View {
                         }.padding(.top, 10)
                     }.frame(maxWidth: 320, maxHeight: 320)
                     Spacer()
-                }.zIndex(1).frame(width: geometry.size.width, height: geometry.size.height).background(Color(red: 50/255, green: 51/255, blue: 51/255)).opacity(0.96)
+                }.zIndex(1).frame(width: geometry.size.width, height: geometry.size.height).background(Color.white).opacity(0.94)
             }
         }
     }

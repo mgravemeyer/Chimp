@@ -11,4 +11,8 @@ struct Contact: Identifiable, Hashable {
     internal let id = UUID()
     private(set) var firstname: String
     private(set) var lastname: String
+    
+    func getGroup() -> Character {
+        return lastname.first!
+    }
 }

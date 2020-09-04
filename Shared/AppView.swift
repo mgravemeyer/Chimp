@@ -16,8 +16,7 @@ struct Category: Identifiable {
 }
 
 struct AppView: View {
-    
-    @Binding var contactAddViewShown: Bool
+    @EnvironmentObject var contactsState: ContactsState
     var body: some View {
         ZStack {
             Color.white
@@ -35,7 +34,7 @@ struct AppView: View {
     }
 
     func addContact() {
-        contactAddViewShown.toggle()
+        contactsState.addMenuePressed.toggle()
         print("Added Contact")
     }
     
@@ -44,7 +43,7 @@ struct AppView: View {
 struct MenueSidebarList: View {
     
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
                 HStack {
                     Image("Profile_Picture").resizable().frame(width: 45, height: 45).cornerRadius(15)
@@ -62,6 +61,7 @@ struct MenueSidebarList: View {
                     CategoryRow(category: Category(selected: false, symbol: "📝", name: "Tasks", notification: 0))
                     CategoryRow(category: Category(selected: false, symbol: "📄", name: "Files", notification: 0))
                     CategoryRow(category: Category(selected: false, symbol: "✉️", name: "E-Mails", notification: 0))
+                    CategoryRow(category: Category(selected: false, symbol: "⚙️", name: "Settings", notification: 0))
                 }.padding(.top, 20)
                 
             }
@@ -109,6 +109,9 @@ class WindowController: NSWindowController {
 }
 
 struct ContactsView: View {
+    
+    @EnvironmentObject var contactsState: ContactsState
+    
     var body: some View {
         HStack {
             ZStack {
@@ -118,11 +121,18 @@ struct ContactsView: View {
                         Text("Contacts").font(.system(size: 30)).fontWeight(.light).zIndex(1)
                         Spacer()
                     }
-                    ContactsListLetterSection()
+                    ForEach(contactsState.getContactCategories(), id: \.self) { categorie in
+                        ContactsListSection(categorie: categorie)
+                    }
                 }.zIndex(1)
                 Rectangle().foregroundColor(Color.white)
             }.frame(width: 230).padding(.bottom, 20).padding(.top, 5).padding(.trailing, 20).padding(.top, 20)
             ZStack() {
+                Button {
+                    contactsState.addMenuePressed.toggle()
+                } label: {
+                    Text("Add Contact")
+                }.zIndex(2)
                 Image("Contacts_Detail").resizable().frame(width: 300, height: 300).zIndex(1)
                 Rectangle().foregroundColor(Color.white)
             }.padding(.bottom, 20).padding(.trailing, 20).padding(.top, 20)
@@ -130,12 +140,20 @@ struct ContactsView: View {
     }
 }
 
-struct ContactsListLetterSection: View {
+struct ContactsListSection: View {
+    
+    @EnvironmentObject var contactsState: ContactsState
+    @State var categorie: String
+    
     var body: some View {
         HStack(alignment: .top) {
-            Text("M").font(.system(size: 30)).fontWeight(.bold).padding(.trailing, 10)
-            VStack {
-                ContactListItem(contact: Contact(firstname: "Max", lastname: "Muster")).padding(.bottom, 8)
+            Text(self.categorie).font(.system(size: 30)).fontWeight(.bold).padding(.trailing, 10)
+            VStack(alignment: .leading) {
+                ForEach(contactsState.contacts, id: \.self) { contact in
+                    if String(contact.lastname.first!) == categorie {
+                    ContactListItem(contact: Contact(firstname: contact.firstname, lastname: contact.lastname)).padding(.bottom, 8)
+                    }
+                }
             }
             Spacer()
         }.padding(.top, 20)
