@@ -44,6 +44,10 @@ struct ContactAddView: View {
     let lightGray = Color(red: 240/255, green: 240/255, blue: 240/255)
     @State var firstname = String()
     @State var lastname = String()
+    @State var email = String()
+    @State var telephone = String()
+    @State var birthday = String()
+    @State var company = String()
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -62,9 +66,12 @@ struct ContactAddView: View {
                             TextField("First Name", text: self.$firstname)
                             TextField("Last Name", text: self.$lastname)
                         }
+                        TextField("E-Mail", text: self.$email)
+                        TextField("Telephone", text: self.$telephone)
+                        TextField("Birthday", text: self.$birthday)
                         Button {
                             // TODO: save new contact function
-                            self.contactsState.addContact(firstname: self.firstname, lastname: self.lastname)
+                            self.contactsState.addContact(firstname: self.firstname, lastname: self.lastname, email: self.email, telephone: self.telephone, birthday: self.birthday, company: self.company)
                             contactsState.addMenuePressed.toggle()
                         } label: {
                             HStack {
@@ -74,7 +81,7 @@ struct ContactAddView: View {
                         }.padding(.top, 10)
                     }.frame(maxWidth: 320, maxHeight: 320)
                     Spacer()
-                }.zIndex(1).frame(width: geometry.size.width, height: geometry.size.height).background(Color.white).opacity(0.94)
+                }.padding(.bottom, 50).zIndex(1).frame(width: geometry.size.width, height: geometry.size.height).background(Color.white).opacity(0.94)
             }
         }
     }

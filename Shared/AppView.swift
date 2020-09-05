@@ -59,6 +59,7 @@ struct MenueSidebarList: View {
                     CategoryRow(category: Category(selected: false, symbol: "🛠", name: "Projects", notification: 0))
                     CategoryRow(category: Category(selected: true, symbol: "🙋‍♂️", name: "Contacts", notification: 0))
                     CategoryRow(category: Category(selected: false, symbol: "📝", name: "Tasks", notification: 0))
+                    CategoryRow(category: Category(selected: false, symbol: "🏷", name: "Tags", notification: 0))
                     CategoryRow(category: Category(selected: false, symbol: "📄", name: "Files", notification: 0))
                     CategoryRow(category: Category(selected: false, symbol: "✉️", name: "E-Mails", notification: 0))
                     CategoryRow(category: Category(selected: false, symbol: "⚙️", name: "Settings", notification: 0))
@@ -114,18 +115,20 @@ struct ContactsView: View {
     var body: some View {
         HStack {
             ZStack {
-                ScrollView(.vertical, showsIndicators: false) {
+                VStack {
                     HStack {
                         Text("Your").font(.system(size: 30)).fontWeight(.bold).zIndex(1)
                         Text("Contacts").font(.system(size: 30)).fontWeight(.light).zIndex(1)
                         Spacer()
                     }
-                    ForEach(contactsState.getContactCategories(), id: \.self) { categorie in
-                        ContactsListSection(categorie: categorie)
+                    ScrollView(.vertical, showsIndicators: false) {
+                        ForEach(contactsState.getContactCategories(), id: \.self) { categorie in
+                            ContactsListSection(categorie: categorie)
+                        }
                     }
                 }.zIndex(1)
                 Rectangle().foregroundColor(Color.white)
-            }.frame(width: 230).padding(.bottom, 20).padding(.top, 5).padding(.trailing, 20).padding(.top, 20)
+            }.frame(width: 230).padding(.top, 5).padding(.trailing, 20).padding(.top, 20)
             if contactsState.selectedContact == "" {
                 EmptyContactsDetail()
             } else {
@@ -165,9 +168,9 @@ struct ContactsDetails: View {
                     Text(contact.lastname).font(.system(size: 30)).fontWeight(.bold)
                     Spacer()
                 }.padding(.bottom, 20)
-                    ContactsDetailContactRow().padding(.bottom, 5)
-                    ContactsDetailInformation().padding(.bottom, 5)
-                    ContactsDetailTagRow().padding(.bottom, 5)
+                    ContactsDetailContactRow(selectedContact: contact).padding(.bottom, 12)
+                    ContactsDetailInformation(selectedContact: contact).padding(.bottom, 12)
+                    ContactsDetailTagRow(selectedContact: contact).padding(.bottom, 12)
                 Spacer()
             }.zIndex(1)
             Rectangle().foregroundColor(Color.white).zIndex(0)
@@ -176,24 +179,27 @@ struct ContactsDetails: View {
 }
 
 struct ContactsDetailContactRow: View {
+    var selectedContact: Contact
     var body: some View {
         HStack {
-            Text("✉️ m.gravemeyer@icloud.com")
-            Text("📞📝 0162/4375779")
+            Text("✉️ \(selectedContact.email)")
+            Text("📞📝 \(selectedContact.telephone)")
         }
     }
 }
 
 struct ContactsDetailInformation: View {
+    var selectedContact: Contact
     var body: some View {
         HStack {
-            Text("🎂 17.01.1998")
-            Text("🏢 Chimp UG")
+            Text("🎂 \(selectedContact.birthday)")
+            Text("🏢 \(selectedContact.company)")
         }
     }
 }
 
 struct ContactsDetailTagRow: View {
+    var selectedContact: Contact
     var body: some View {
         HStack {
             TagView(tagText: "Tag One")
@@ -224,7 +230,11 @@ struct ContactsListSection: View {
             VStack(alignment: .leading) {
                 ForEach(contactsState.contacts, id: \.self) { contact in
                     if String(contact.lastname.first!) == categorie {
-                        ContactListItem(contact: contact).padding(.bottom, 8)
+                        if contact.id.uuidString == contactsState.selectedContact {
+                            ContactListItem(contact: contact, selected: true).padding(.bottom, 8)
+                        } else {
+                            ContactListItem(contact: contact, selected: false).padding(.bottom, 8)
+                        }
                     }
                 }
             }
@@ -233,16 +243,25 @@ struct ContactsListSection: View {
     }
 }
 
+//hoverRow ? lightGray : Color.white
 struct ContactListItem: View {
     @EnvironmentObject var contactsState: ContactsState
     @State var contact: Contact
+    @State var selected: Bool
+    @State var hoverRow = false
+    let gray = Color(red: 207/255, green: 207/255, blue: 212/255)
+    let lightGray = Color(red: 240/255, green: 240/255, blue: 240/255)
     var body: some View {
-        VStack {
+        ZStack(alignment: .leading) {
             HStack {
-                Text("\(contact.firstname)").padding(.trailing, -5)
-                Text("\(contact.lastname)").fontWeight(.bold)
+                    Text("\(contact.firstname)").padding(.trailing, -5).padding(.leading, 10)
+                    Text("\(contact.lastname)").fontWeight(.bold)
+                Spacer()
+            }.zIndex(1)
+            RoundedRectangle(cornerRadius: 10).foregroundColor(selected || hoverRow ? lightGray : Color.white).onHover { (hover) in
+                self.hoverRow = hover
             }
-        }.onTapGesture {
+        }.frame(width: 180, height: 37).padding(.bottom, -15).onTapGesture {
             contactsState.selectedContact  = contact.id.uuidString
         }
     }
