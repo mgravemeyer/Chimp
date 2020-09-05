@@ -111,6 +111,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E393AD032503FF6A0071D4E3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E3FDF8C825024912002B7C5F /* SidebarNavigationButton.swift */,
+				E3FDF8CA25024977002B7C5F /* ContactListItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E393AD052503FF920071D4E3 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				E3E60A9724FFD8FF0065B141 /* ContactsState.swift */,
+				E39AC44E2501003200980BF6 /* UserState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		E393AD062503FFA00071D4E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E393AD032503FF6A0071D4E3 /* Components */,
+				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */,
+				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
+				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
+				E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E393AD072503FFB50071D4E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E3EFD99624FA5CF8002E336F /* User.swift */,
+				E3E60A9A24FFD9780065B141 /* Contact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E3D7A5C324F4FFC000D3EB62 = {
 			isa = PBXGroup;
 			children = (
@@ -126,10 +165,10 @@
 		E3D7A5C824F4FFC000D3EB62 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E393AD072503FFB50071D4E3 /* Model */,
+				E393AD062503FFA00071D4E3 /* View */,
+				E393AD052503FF920071D4E3 /* State */,
 				E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */,
-				E3E60AA024FFF42C0065B141 /* State */,
-				E3E60AA124FFF43A0065B141 /* View */,
-				E3E60AA424FFF4510065B141 /* Model */,
 				E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */,
 				E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */,
 			);
@@ -180,45 +219,6 @@
 				E3D7A5F424F4FFC200D3EB62 /* Info.plist */,
 			);
 			path = "Tests macOS";
-			sourceTree = "<group>";
-		};
-		E3E60A9E24FFF3F80065B141 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				E3FDF8C825024912002B7C5F /* SidebarNavigationButton.swift */,
-				E3FDF8CA25024977002B7C5F /* ContactListItem.swift */,
-			);
-			name = Components;
-			sourceTree = "<group>";
-		};
-		E3E60AA024FFF42C0065B141 /* State */ = {
-			isa = PBXGroup;
-			children = (
-				E3E60A9724FFD8FF0065B141 /* ContactsState.swift */,
-				E39AC44E2501003200980BF6 /* UserState.swift */,
-			);
-			name = State;
-			sourceTree = "<group>";
-		};
-		E3E60AA124FFF43A0065B141 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E3E60A9E24FFF3F80065B141 /* Components */,
-				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */,
-				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
-				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
-				E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		E3E60AA424FFF4510065B141 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E3EFD99624FA5CF8002E336F /* User.swift */,
-				E3E60A9A24FFD9780065B141 /* Contact.swift */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

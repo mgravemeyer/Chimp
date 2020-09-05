@@ -25,6 +25,7 @@ class ContactsState: ObservableObject {
     
     @Published private(set) var contacts = [Contact]()
     @Published var addMenuePressed = false
+    @Published var advancedMenuePressed = false
     @Published var selectedContact = ""
     
     func addContact(firstname: String, lastname: String, email: String, telephone: String, birthday: String, company: String) {

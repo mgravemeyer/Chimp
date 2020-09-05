@@ -21,8 +21,19 @@ struct ChimpApp: App {
                         .environmentObject(contactsState)
                 } else {
                     ZStack {
+                        
+                        Button("") {
+                            contactsState.advancedMenuePressed.toggle()
+                        }.keyboardShortcut("j", modifiers: .command).zIndex(-10000)
+                        
                         if contactsState.addMenuePressed {
                             ContactAddView().zIndex(1)
+                                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                                .environmentObject(userState)
+                                .environmentObject(contactsState)
+                        }
+                        if contactsState.advancedMenuePressed {
+                            AdvancedMenue().zIndex(1)
                                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                                 .environmentObject(userState)
                                 .environmentObject(contactsState)
@@ -35,6 +46,31 @@ struct ChimpApp: App {
                     }
                 }
             }
+    }
+}
+    
+    
+struct AdvancedMenue: View {
+    @EnvironmentObject var contactsState: ContactsState
+    @State var advancedCommand = String()
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack {
+                VStack {
+                    HStack {
+                        Spacer()
+                        // TODO: make view over window toolbar items, close but should overlay the toolbar items
+                        Button("Close") {
+                            contactsState.advancedMenuePressed.toggle()
+                        }.padding(.trailing, 20).padding(.top, 30)
+                    }
+                    Spacer()
+                    TextField("Search", text: self.$advancedCommand).font(.title)
+                        .frame(maxWidth: 320, maxHeight: 320).cornerRadius(20)
+                    Spacer()
+                }.padding(.bottom, 50).zIndex(1).frame(width: geometry.size.width, height: geometry.size.height).background(Color.white).opacity(0.97)
+            }
+        }
     }
 }
 
@@ -57,7 +93,7 @@ struct ContactAddView: View {
                         // TODO: make view over window toolbar items, close but should overlay the toolbar items
                         Button("Close") {
                             contactsState.addMenuePressed.toggle()
-                        }.padding(.trailing, 20).padding(.top, 20)
+                        }.padding(.trailing, 20).padding(.top, 30)
                     }
                     Spacer()
                     VStack {
@@ -81,7 +117,7 @@ struct ContactAddView: View {
                         }.padding(.top, 10)
                     }.frame(maxWidth: 320, maxHeight: 320)
                     Spacer()
-                }.padding(.bottom, 50).zIndex(1).frame(width: geometry.size.width, height: geometry.size.height).background(Color.white).opacity(0.94)
+                }.padding(.bottom, 50).zIndex(1).frame(width: geometry.size.width, height: geometry.size.height).background(Color.white).opacity(0.97)
             }
         }
     }
