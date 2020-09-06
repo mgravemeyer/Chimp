@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-struct Category: Identifiable {
+struct Category: Identifiable, Hashable {
     let id = UUID()
-    var selected: Bool
     let symbol: String
     let name: String
     var notification: Int
@@ -42,6 +41,20 @@ struct AppView: View {
 
 struct MenueSidebarList: View {
     
+    @State var selectedMenue = ""
+    
+    let categories = [
+        Category(symbol: "☀️", name: "Today", notification: 32),
+        Category(symbol: "🗓", name: "This Week", notification: 78),
+        Category(symbol: "🛠", name: "Projects", notification: 0),
+        Category(symbol: "🙋‍♂️", name: "Contacts", notification: 0),
+        Category(symbol: "📝", name: "Tasks", notification: 0),
+        Category(symbol: "🏷", name: "Tags", notification: 0),
+        Category(symbol: "📄", name: "Files", notification: 0),
+        Category(symbol: "✉️", name: "E-Mails", notification: 0),
+        Category(symbol: "⚙️", name: "Settings", notification: 0)
+    ]
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
@@ -54,24 +67,22 @@ struct MenueSidebarList: View {
                 }
 //                Text("Overview").font(.headline).foregroundColor(Color(red: 177/255, green: 177/255, blue: 182/255)).fontWeight(.semibold).padding(.top, 10)
                 VStack {
-                    CategoryRow(category: Category(selected: false, symbol: "☀️", name: "Today", notification: 32))
-                    CategoryRow(category: Category(selected: false, symbol: "🗓", name: "This Week", notification: 78))
-                    CategoryRow(category: Category(selected: false, symbol: "🛠", name: "Projects", notification: 0))
-                    CategoryRow(category: Category(selected: true, symbol: "🙋‍♂️", name: "Contacts", notification: 0))
-                    CategoryRow(category: Category(selected: false, symbol: "📝", name: "Tasks", notification: 0))
-                    CategoryRow(category: Category(selected: false, symbol: "🏷", name: "Tags", notification: 0))
-                    CategoryRow(category: Category(selected: false, symbol: "📄", name: "Files", notification: 0))
-                    CategoryRow(category: Category(selected: false, symbol: "✉️", name: "E-Mails", notification: 0))
-                    CategoryRow(category: Category(selected: false, symbol: "⚙️", name: "Settings", notification: 0))
+                    ForEach(categories, id: \.self) { categorie in
+                        if categorie.id.uuidString == selectedMenue {
+                            CategoryRow(selected: self.$selectedMenue, selectedBool: true, category: categorie)
+                        } else {
+                            CategoryRow(selected: self.$selectedMenue, selectedBool: false, category: categorie)
+                        }
+                    }
                 }.padding(.top, 20)
-            }.padding(30)
+            }.padding(20).padding(.top, 20)
         }
-        
     }
 }
 
 struct CategoryRow: View {
-    
+    @Binding var selected: String
+    @State var selectedBool: Bool
     @State var category: Category
     @State private var hoverRow = false
     let gray = Color(red: 207/255, green: 207/255, blue: 212/255)
@@ -90,23 +101,15 @@ struct CategoryRow: View {
                     }
                 }
             }.zIndex(1)
-            RoundedRectangle(cornerRadius: 10).foregroundColor(category.selected || hoverRow ? lightGray : Color.white).onHover { (hover) in
+            RoundedRectangle(cornerRadius: 10).foregroundColor(selectedBool || hoverRow ? lightGray : Color.white).onHover { (hover) in
                 self.hoverRow = hover
-            }.onTapGesture {
-                self.category.selected.toggle()
             }
+        }.onTapGesture {
+            self.selected = category.id.uuidString
         }.frame(width: 180, height: 37)
     }
 }
 
-class WindowController: NSWindowController {
-  
-  override func windowDidLoad() {
-    super.windowDidLoad()
-    window?.titlebarAppearsTransparent = true
-  }
-    
-}
 
 struct ContactsView: View {
     
@@ -128,7 +131,7 @@ struct ContactsView: View {
                     }
                 }.zIndex(1)
                 Rectangle().foregroundColor(Color.white)
-            }.frame(width: 230).padding(.top, 5).padding(.trailing, 20).padding(.top, 20)
+            }.frame(width: 230).padding(.top, 20).padding(.trailing, 20).padding(.top, 20)
             if contactsState.selectedContact == "" {
                 EmptyContactsDetail()
             } else {
@@ -177,7 +180,7 @@ struct ContactsDetails: View {
                 Spacer()
             }.zIndex(1)
             Rectangle().foregroundColor(Color.white).zIndex(0)
-        }.padding(.bottom, 20).padding(.trailing, 20).padding(.top, 25)
+        }.padding(.bottom, 20).padding(.trailing, 20).padding(.top, 40)
     }
 }
 

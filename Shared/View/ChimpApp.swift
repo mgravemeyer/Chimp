@@ -21,7 +21,6 @@ struct ChimpApp: App {
                         .environmentObject(contactsState)
                 } else {
                     ZStack {
-                        
                         Button("") {
                             contactsState.advancedMenuePressed.toggle()
                         }.keyboardShortcut("j", modifiers: .command).zIndex(-10000)
@@ -43,9 +42,9 @@ struct ChimpApp: App {
                             .environmentObject(userState)
                             .environmentObject(contactsState)
                             .zIndex(0)
-                    }
+                    }.edgesIgnoringSafeArea(.all)
                 }
-            }
+            }.windowStyle(HiddenTitleBarWindowStyle())
     }
 }
     

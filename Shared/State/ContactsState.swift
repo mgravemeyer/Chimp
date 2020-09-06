@@ -12,15 +12,17 @@ import Foundation
 class ContactsState: ObservableObject {
     
     init() {
-        contacts.append(Contact(firstname: "Felix", lastname: "Something", email: "felix@test.de", telephone: "123", birthday: "01.02.2000", company: "Chimp"))
-        contacts.append(Contact(firstname: "Paul", lastname: "Something", email: "paul@test.de", telephone: "123", birthday: "01.02.2000", company: "Chimp"))
-        contacts.append(Contact(firstname: "Richard", lastname: "Macbook", email: "richard@test.de", telephone: "123", birthday: "01.02.2000", company: "Chimp"))
-        contacts.append(Contact(firstname: "Ricardo", lastname: "Macbook", email: "ricardo@test.de", telephone: "123", birthday: "01.02.2000", company: "Chimp"))
-        contacts.append(Contact(firstname: "Ruculalo", lastname: "Macbook", email: "ruculalo@test.de", telephone: "123", birthday: "01.02.2000", company: "Chimp"))
-        contacts.append(Contact(firstname: "Noah", lastname: "Magel", email: "noah@test.de", telephone: "123", birthday: "01.02.2000", company: "Chimp"))
-        contacts.append(Contact(firstname: "Sean", lastname: "Magel", email: "sean@test.de", telephone: "123", birthday: "01.02.2000", company: "Chimp"))
-        contacts.append(Contact(firstname: "Max", lastname: "Magel", email: "max@test.de", telephone: "123", birthday: "01.02.2000", company: "Chimp"))
-        contacts.append(Contact(firstname: "Frederic", lastname: "Magel", email: "frederic@test.de", telephone: "123", birthday: "01.02.2000", company: "Chimp"))
+        contacts.append(Contact(firstname: "Felix", lastname: "Something", email: "felix@test.de", telephone: "123", birthday: "13.02.1998", company: "Chimp"))
+        contacts.append(Contact(firstname: "Paul", lastname: "Something", email: "paul@test.de", telephone: "456", birthday: "20.08.1992", company: "Chimp"))
+        contacts.append(Contact(firstname: "Felix", lastname: "Something", email: "felix@test.de", telephone: "789", birthday: "15.05.1984", company: "Chimp"))
+        contacts.append(Contact(firstname: "Paul", lastname: "Something", email: "paul@test.de", telephone: "111112", birthday: "13.04.1983", company: "Chimp"))
+        contacts.append(Contact(firstname: "Richard", lastname: "Kabaroni", email: "richard@test.de", telephone: "131415", birthday: "04.03.1984", company: "Chimp"))
+        contacts.append(Contact(firstname: "Ricardo", lastname: "Kubarosa", email: "ricardo@test.de", telephone: "161718", birthday: "06.09.1995", company: "Chimp"))
+        contacts.append(Contact(firstname: "Ruculalo", lastname: "Kalu", email: "ruculalo@test.de", telephone: "192021", birthday: "18.10.1992", company: "Chimp"))
+        contacts.append(Contact(firstname: "Noah", lastname: "Magel", email: "noah@test.de", telephone: "222324", birthday: "09.11.1992", company: "Chimp"))
+        contacts.append(Contact(firstname: "Sean", lastname: "Magel", email: "sean@test.de", telephone: "252627", birthday: "24.03.1992", company: "Chimp"))
+        contacts.append(Contact(firstname: "Max", lastname: "Magel", email: "max@test.de", telephone: "282930", birthday: "28.12.1991", company: "Chimp"))
+        contacts.append(Contact(firstname: "Frederic", lastname: "Magel", email: "frederic@test.de", telephone: "313233", birthday: "23.04.1996", company: "Chimp"))
     }
     
     @Published private(set) var contacts = [Contact]()
