@@ -110,11 +110,52 @@ struct CategoryRow: View {
     }
 }
 
+func showWindow(contact: Contact) {
+    let mousePos = NSEvent.mouseLocation
+    var windowRef:NSWindow
+    windowRef = NSWindow(
+        contentRect: NSRect(x: mousePos.x, y: mousePos.y, width: 300, height: 400),
+        styleMask: [.titled, .closable, .miniaturizable, .fullSizeContentView, .resizable],
+        backing: .buffered, defer: false)
+    windowRef.contentView = NSHostingView(rootView: MyView(contact: contact, myWindow: windowRef))
+    windowRef.makeKeyAndOrderFront(nil)
+}
+
+struct MyView: View {
+    let contact: Contact
+    let myWindow:NSWindow?
+    var body: some View {
+        ContactsDetailsExtraWindow(contact: contact).edgesIgnoringSafeArea(.all).padding(.leading, 10)
+    }
+}
+
+struct ContactsDetailsExtraWindow: View {
+    
+    @EnvironmentObject var contactsState: ContactsState
+    var contact: Contact
+    
+    var body: some View {
+        ZStack() {
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(contact.firstname).font(.system(size: 30)).fontWeight(.light)
+                    Text(contact.lastname).font(.system(size: 30)).fontWeight(.bold)
+                    Spacer()
+                }.padding(.bottom, 20)
+                    ContactsDetailContactRow(selectedContact: contact).padding(.bottom, 12)
+                    ContactsDetailInformation(selectedContact: contact).padding(.bottom, 12)
+                    ContactsDetailTagRow(selectedContact: contact).padding(.bottom, 12)
+                Spacer()
+            }.zIndex(1)
+            Rectangle().foregroundColor(Color.white).zIndex(0)
+        }.padding(.bottom, 20).padding(.trailing, 20).padding(.top, 40)
+    }
+}
 
 struct ContactsView: View {
     
     @EnvironmentObject var contactsState: ContactsState
-    
+    let url = Bundle.main.url(forResource: "Images/grapes", withExtension: "png")
     var body: some View {
         HStack {
             ZStack {
@@ -242,8 +283,42 @@ struct ContactsListSection: View {
                     if String(contact.lastname.first!) == categorie {
                         if contact.id.uuidString == contactsState.selectedContact {
                             ContactListItem(contact: contact, selected: true).padding(.bottom, 8)
+                                .contextMenu {
+                                    Button(action: {
+                                        showWindow(contact: contact)
+                                    }) {
+                                        Text("Create New Window")
+                                    }
+                                    Button(action: {
+                                        showWindow(contact: contact)
+                                    }) {
+                                        Text("Edit Contact")
+                                    }
+                                    Button(action: {
+                                        showWindow(contact: contact)
+                                    }) {
+                                        Text("Delete Contact")
+                                    }
+                                }
                         } else {
                             ContactListItem(contact: contact, selected: false).padding(.bottom, 8)
+                            .contextMenu {
+                                Button(action: {
+                                    showWindow(contact: contact)
+                                }) {
+                                    Text("Create New Window")
+                                }
+                                Button(action: {
+                                    showWindow(contact: contact)
+                                }) {
+                                    Text("Edit Contact")
+                                }
+                                Button(action: {
+                                    showWindow(contact: contact)
+                                }) {
+                                    Text("Delete Contact")
+                                }
+                            }
                         }
                     }
                 }
@@ -252,7 +327,6 @@ struct ContactsListSection: View {
         }.padding(.top, 20)
     }
 }
-
 //hoverRow ? lightGray : Color.white
 struct ContactListItem: View {
     @EnvironmentObject var contactsState: ContactsState

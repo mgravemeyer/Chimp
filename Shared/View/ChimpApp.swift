@@ -27,12 +27,14 @@ struct ChimpApp: App {
                         
                         if contactsState.addMenuePressed {
                             ContactAddView().zIndex(1)
+                                .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
                                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                                 .environmentObject(userState)
                                 .environmentObject(contactsState)
                         }
                         if contactsState.advancedMenuePressed {
                             AdvancedMenue().zIndex(1)
+                                .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
                                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                                 .environmentObject(userState)
                                 .environmentObject(contactsState)
@@ -52,6 +54,7 @@ struct ChimpApp: App {
 struct AdvancedMenue: View {
     @EnvironmentObject var contactsState: ContactsState
     @State var advancedCommand = String()
+    @State var foundContacts = [Contact]()
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -64,12 +67,25 @@ struct AdvancedMenue: View {
                         }.padding(.trailing, 20).padding(.top, 30)
                     }
                     Spacer()
-                    TextField("Search", text: self.$advancedCommand).font(.title)
-                        .frame(maxWidth: 320, maxHeight: 320).cornerRadius(20)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10).frame(width: 400, height: 50).foregroundColor(Color(red: 200/255, green: 200/255, blue: 200/255))
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                            TextField("Enter for search or use / for a command", text: self.$advancedCommand).font(.headline).frame(width: 350, height: 50).font(.title).textFieldStyle(PlainTextFieldStyle())
+                            
+                        }
+                    }
                     Spacer()
                 }.padding(.bottom, 50).zIndex(1).frame(width: geometry.size.width, height: geometry.size.height).background(Color.white).opacity(0.97)
             }
         }
+    }
+}
+
+extension NSTextField {
+    open override var focusRingType: NSFocusRingType {
+        get { .none }
+        set { }
     }
 }
 
