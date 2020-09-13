@@ -53,4 +53,14 @@ class ContactsState: ObservableObject {
         }
     }
     
+    func getContactsBySearch(search: String) -> [Contact] {
+        var result = [Contact]()
+        for contact in self.contacts {
+            if (contact.firstname.lowercased().hasPrefix(search) && search != "" || contact.firstname.uppercased().hasPrefix(search) && search != "") {
+                result.append(contact)
+            }
+        }
+        return result
+    }
+    
 }
