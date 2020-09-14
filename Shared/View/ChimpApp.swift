@@ -147,6 +147,8 @@ struct ContactAddView: View {
     @State var telephone = String()
     @State var birthday = String()
     @State var company = String()
+    @State var selected = false
+    @State var hoverRow = false
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -160,28 +162,74 @@ struct ContactAddView: View {
                     }
                     Spacer()
                     VStack {
-                        Text("Add a new Contact").font(.title)
                         HStack {
-                            TextField("First Name", text: self.$firstname)
-                            TextField("Last Name", text: self.$lastname)
+                            Text("Add").font(.system(size: 30)).fontWeight(.bold).zIndex(1)
+                            Text("Contact").font(.system(size: 30)).fontWeight(.light).zIndex(1)
                         }
-                        TextField("E-Mail", text: self.$email)
-                        TextField("Telephone", text: self.$telephone)
-                        TextField("Birthday", text: self.$birthday)
-                        Button {
+                        HStack {
+                            ChimpTextField(placeholder: "First Name", value: self.$firstname)
+                            ChimpTextField(placeholder: "Last Name", value: self.$lastname)
+                        }
+                        ChimpTextField(placeholder: "E-Mail", value: self.$email)
+                        ChimpTextField(placeholder: "Telephone", value: self.$telephone)
+                        ChimpTextField(placeholder: "Birthday", value: self.$birthday)
+                        ZStack(alignment: .center) {
+                            HStack {
+                                    Image(systemName: "square.and.arrow.down")
+                                    Text("Save").fontWeight(.bold)
+                            }.zIndex(1)
+                            RoundedRectangle(cornerRadius: 20).foregroundColor(selected || hoverRow ? gray : lightGray).onHover { (hover) in
+                                self.hoverRow = hover
+                            }
+                        }.onTapGesture {
                             // TODO: save new contact function
                             self.contactsState.addContact(firstname: self.firstname, lastname: self.lastname, email: self.email, telephone: self.telephone, birthday: self.birthday, company: self.company)
                             contactsState.addMenuePressed.toggle()
-                        } label: {
-                            HStack {
-                                Image(systemName: "square.and.arrow.down")
-                                Text("Save")
-                            }.frame(width: 290)
-                        }.padding(.top, 10)
+                        }
                     }.frame(maxWidth: 320, maxHeight: 320)
                     Spacer()
                 }.padding(.bottom, 50).zIndex(1).frame(width: geometry.size.width, height: geometry.size.height).background(Color.white).opacity(0.97)
             }
+        }
+    }
+}
+
+struct ChimpTextField: View {
+    @Namespace var chimpTextField
+    let placeholder: String
+    @Binding var value: String
+    @State var animateTextField = false
+    var body: some View {
+        GeometryReader { geometryTextfield in
+            VStack(alignment: .leading) {
+                if animateTextField {
+                    Text(self.placeholder).font(.system(size: 10)).padding(.bottom, -8).foregroundColor(Color.gray).matchedGeometryEffect(id: "GeoHeadline", in: self.chimpTextField).onTapGesture {
+                        }
+                } else {
+                    Text("")
+                }
+                ZStack(alignment: .leading) {
+                    if !animateTextField {
+                        withAnimation(.spring()) {
+                            Text(self.placeholder).padding(.bottom, -8).foregroundColor(Color.gray).matchedGeometryEffect(id: "GeoHeadline", in: self.chimpTextField)
+                        }
+                    }
+                    TextField("", text: self.$value)
+                        .onChange(of: value) { _ in
+                            withAnimation(.spring()) {
+                                if value == "" {
+                                    animateTextField = false
+                                } else {
+                                    animateTextField = true
+                                }
+                            }
+                        }
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .padding(.bottom, -5)
+                        .matchedGeometryEffect(id: "geoHeadline", in: chimpTextField)
+                }
+                Rectangle().foregroundColor(Color.gray).frame(width: geometryTextfield.size.width, height: 0.5)
+            }.padding(.bottom, -8)
         }
     }
 }
