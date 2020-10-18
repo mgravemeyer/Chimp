@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5090A52A253CB8F500A211EE /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A529253CB8F500A211EE /* SignInResponse.swift */; };
 		5090A52B253CB8F500A211EE /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A529253CB8F500A211EE /* SignInResponse.swift */; };
+		5090A53E253CBCFC00A211EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A53D253CBCFC00A211EE /* AuthService.swift */; };
+		5090A53F253CBCFC00A211EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A53D253CBCFC00A211EE /* AuthService.swift */; };
 		E357335425061AE100DAD3CC /* ChimpContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E357335325061AE100DAD3CC /* ChimpContactList.swift */; };
 		E39AC44F2501003200980BF6 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* UserState.swift */; };
 		E39AC4502501003200980BF6 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* UserState.swift */; };
@@ -57,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		5090A529253CB8F500A211EE /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
+		5090A53D253CBCFC00A211EE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E357335325061AE100DAD3CC /* ChimpContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpContactList.swift; sourceTree = "<group>"; };
 		E39AC44E2501003200980BF6 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
 		E3D6EF3A24F7D5A700F7A95A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -116,6 +119,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5090A53C253CBCE400A211EE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5090A53D253CBCFC00A211EE /* AuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		E393AD032503FF6A0071D4E3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +183,7 @@
 		E3D7A5C824F4FFC000D3EB62 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5090A53C253CBCE400A211EE /* Service */,
 				E393AD072503FFB50071D4E3 /* Model */,
 				E393AD062503FFA00071D4E3 /* View */,
 				E393AD052503FF920071D4E3 /* State */,
@@ -397,6 +409,7 @@
 				E3D7A5F924F4FFC200D3EB62 /* LoginView.swift in Sources */,
 				5090A52A253CB8F500A211EE /* SignInResponse.swift in Sources */,
 				E3EFD99724FA5CF8002E336F /* User.swift in Sources */,
+				5090A53E253CBCFC00A211EE /* AuthService.swift in Sources */,
 				E3FDF8CB25024977002B7C5F /* ContactListItem.swift in Sources */,
 				E357335425061AE100DAD3CC /* ChimpContactList.swift in Sources */,
 			);
@@ -409,6 +422,7 @@
 				E3D7A5F624F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
 				E3D7A5FC24F4FFC200D3EB62 /* Persistence.swift in Sources */,
 				5090A52B253CB8F500A211EE /* SignInResponse.swift in Sources */,
+				5090A53F253CBCFC00A211EE /* AuthService.swift in Sources */,
 				E3E60AA324FFF4430065B141 /* Contact.swift in Sources */,
 				E3D6EF3C24F7D5A700F7A95A /* AppView.swift in Sources */,
 				E39AC4502501003200980BF6 /* UserState.swift in Sources */,

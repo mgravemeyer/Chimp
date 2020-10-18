@@ -45,68 +45,32 @@ class UserState: ObservableObject {
         task.resume()
     }
     
+    
+    
     func signIn(email: String, password: String) {
-        // TODO: async, side thread
-        // TODO: error handling
-        let url = URL(string: "http://127.0.0.1:5000/api/auth/sign-in")
-        guard let requestUrl = url else { fatalError() }
-        var request = URLRequest(url: requestUrl)
-        request.httpMethod = "POST"
-        
-        let json : [String:Any] = ["email":"\(email)", "password":"\(password)"]
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
-        request.httpBody = jsonData
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                guard let status = try? JSONDecoder().decode(AuthResponse.self,from: data!) else{
+        AuthService.instance.signInUser(email: email, password: password) { (success, response) in
+            if success {
+                print("success")
+                guard let token = response["token"], let user_uid = response["user_uid"] else {
                     return
                 }
-                guard let dataRes = response as? HTTPURLResponse else{
-                    return
-                }
-                if(dataRes.statusCode == 200){
-                    print("success")
-                    if let token = status.token, let user_uid = status.user_uid{
-                        print("token: \(token)")
-                        print("user_uid: \(user_uid)")
-                        
-                        //TODO: persist token & user_uid
-                        
-                        DispatchQueue.main.async {
-                            self.loggedIn = true
+                print("token: \(token)")
+                print("user_uid: \(user_uid)")
+                //TODO: Persist token & user_uid
 
-                        }
-                        
-                    }
-                    
-                }else{
-                    if let msg = status.msg{
-                        if(msg == "invalid_credentials"){
-                            //Invalid credentials - no matching username & password in DB
-                            //Possible: wrong email, wrong password, or both
-                            print("Login error. Please enter your credentials again")
-                        }
-                    }else{
-                        //if below is unclear, please read API docs :)
-                        //or even try the API via postman first!
-                        if let errors = status.errors{
-                            for err in errors{
-                                guard let msg = err.msg, let param = err.param else{
-                                    return
-                                }
-                                print("\(msg) --- Please re-enter: \(param)")
-                            }
-                        }
-                    }
+                DispatchQueue.main.async {
+                    self.loggedIn = true
                 }
-            if let error = error {
-                //this will only happen if there's a bug in this (Swift) code (?)
-                print("Error: \(error)")
-                return
+            }else{
+                print("failed")
+                guard let msg = response["msg"] else{
+                    return
+                }
+                print("Error message: \(msg)")
             }
         }
-        task.resume()
-    }
+      
     
+}
+
 }
