@@ -14,7 +14,7 @@ struct ChimpApp: App {
     let persistenceController = PersistenceController.shared
     var body: some Scene {
             WindowGroup {
-                if userState.loggedIn {
+                if !userState.loggedIn {
                     LoginView()
                         .environment(\.managedObjectContext, persistenceController.container.viewContext)
                         .environmentObject(userState)
