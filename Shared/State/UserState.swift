@@ -59,8 +59,6 @@ class UserState: ObservableObject {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
-            do{
                 guard let status = try? JSONDecoder().decode(AuthResponse.self,from: data!) else{
                     return
                 }
@@ -103,10 +101,6 @@ class UserState: ObservableObject {
                 print("Error: \(error)")
                 return
             }
-            }catch{
-                
-            }
-            
         }
         task.resume()
     }
