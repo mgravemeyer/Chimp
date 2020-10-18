@@ -7,15 +7,15 @@
 
 import Foundation
 class RequestMakerService{
-    static let instance = RequestBuilderService()
+    static let instance = RequestMakerService()
 
-    private var restAPIHost = "http://127.0.0.1:5000/api"
+    private var _REST_API_HOST_ = "http://127.0.0.1:5000/api"
     private var _AUTH_ = "auth"
 
     
     
     var SIGN_IN_ENDPOINT: String {
-            return "\(restAPIHost)/\(_AUTH_)/sign-in"
+            return "\(_REST_API_HOST_)/\(_AUTH_)/sign-in"
     }
     
     func signInUserRequest(email: String, password: String, requestBuilt: @escaping(_ status: Bool, _ result: URLRequest)->()){
