@@ -73,7 +73,11 @@ class UserState: ObservableObject {
                         
                         //TODO: persist token & user_uid
                         
-                        self.loggedIn = true
+                        DispatchQueue.main.async {
+                            self.loggedIn = true
+
+                        }
+                        
                     }
                     
                 }else{
