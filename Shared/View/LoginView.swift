@@ -32,7 +32,7 @@ struct LoginView: View {
                     }.frame(width: 260)
                     VStack {
                         Button {
-                            self.userState.signIn(email: self.email, password: self.password)
+                            self.userState.authUserService(email: self.email, password: self.password, option: .signIn)
                         } label: {
                             Text("Sign In")
                                 .fontWeight(.semibold)
@@ -40,7 +40,7 @@ struct LoginView: View {
                                 .foregroundColor(Color.black)
                         }
                         Button {
-                            self.userState.signUp(email: self.email, password: self.password)
+                            self.userState.authUserService(email: self.email, password: self.password, option: .signUp)
                         } label: {
                             Text("Sign Up")
                                 .fontWeight(.semibold)

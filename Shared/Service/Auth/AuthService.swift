@@ -10,9 +10,8 @@ import Foundation
 class AuthService{
     static let instance = AuthService()
     
-    func signInUser(email: String, password: String, loginComplete: @escaping(Result<[String:String], AuthErrors>) -> Void){
-        
-        AuthRequestMaker.instance.signInUserRequest(email: email, password: password) { (requestBuilt, request) in
+    func authUserService(email: String, password: String, option: AuthOptions,  loginComplete: @escaping(Result<[String:String], AuthErrors>) -> Void){
+        AuthRequestMaker.instance.createAuthRequest(email: email, password: password, option: option) { (requestBuilt, request) in
             if requestBuilt{
                 let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                     guard let result = try? JSONDecoder().decode(AuthResponse.self,from: data!) else{
@@ -30,15 +29,15 @@ class AuthService{
                         if let _ = result.msg{
                             //will fire if user entered data with correct format and validation, but can't be found in db...
                             loginComplete(.failure(.userNotFound))
-                            print("Login error. Please enter your credentials again")
                         }else{
-                            //not structured as a single error, thus result.msg isn't available
-                            //this error is structured as many errors in an array
-                            //will fire if request from frontend/this app is INCOMPLETE
-                            // or user entered BADLY/ILLEGALY formatted data (e.g email address without domain)
-                            // If it is still unclear, please read API's docs :)
-                            // Or even try the API via postman first!
-                            loginComplete(.failure(.incorrectInput))
+                            //* (read on the bottom of the file for a brief explanation)
+                            switch option {
+                            case .signIn:
+                                loginComplete(.failure(.incorrectInputSignIn))
+                            case .signUp:
+                                loginComplete(.failure(.incorrectInputSignUp))
+                                
+                            }
                         }
                     }
                     if let error = error {
@@ -49,10 +48,19 @@ class AuthService{
                 }
                 task.resume()
             }
-            
         }
-        
     }
     
+    
+    
+    
+    
+    //*
+    //This will fire if request from frontend/this app is INCOMPLETE.
+    //from the backend, the result is not structured as a single error. Thus, result.msg isn't available.
+    //This error is structured as many errors in an array,
+    //or user entered BADLY/ILLEGALY formatted data (e.g email address without domain).
+    //If it is still unclear, please read API's docs :)
+    //Or even try the API via postman first!
 }
 

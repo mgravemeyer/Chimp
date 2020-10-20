@@ -6,14 +6,12 @@
 //
 
 import Foundation
+
 class AuthRequestMaker{
     static let instance = AuthRequestMaker()
-
+    
     private var _REST_API_HOST_ = "http://127.0.0.1:5000/api"
     private var _AUTH_ = "auth"
-    
-
-    
     
     var SIGN_IN_ENDPOINT: String {
             return "\(_REST_API_HOST_)/\(_AUTH_)/sign-in"
@@ -22,12 +20,16 @@ class AuthRequestMaker{
         return "\(_REST_API_HOST_)/\(_AUTH_)/sign-up"
     }
     
-    func signInUserRequest(email: String, password: String, requestBuilt: @escaping(_ status: Bool, _ result: URLRequest)->()){
-        let url = URL(string: SIGN_IN_ENDPOINT)
+    func createAuthRequest(email: String, password: String, option: AuthOptions, requestBuilt: @escaping(_ status: Bool, _ result: URLRequest)->()){
+        var url = URL(string: "")
+        switch option {
+        case .signIn:
+            url = URL(string: SIGN_IN_ENDPOINT)
+        case .signUp:
+            url = URL(string: SIGN_UP_ENDPOINT)
+        }
         guard let requestUrl = url else { return }
         let jsonData = try? JSONEncoder().encode(SignInRequest(email: email, password: password))
-        
-        
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "POST"
         request.httpBody = jsonData
@@ -35,6 +37,6 @@ class AuthRequestMaker{
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         requestBuilt(true, request)
     }
-    
+  
 }
 

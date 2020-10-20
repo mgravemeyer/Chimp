@@ -9,7 +9,8 @@ import Foundation
 
 enum AuthErrors: String, Error {
     case userNotFound = "No user in db!"
-    case incorrectInput = "Make sure to fill in all necessary field(s) correctly!"
+    case incorrectInputSignIn = "Sign in error - data isn't valid! Make sure to fill in all necessary field(s) correctly!"
+    case incorrectInputSignUp = "Sign up error - data isn't valid! Make sure to fill in all necessary field(s) correctly!"
 }
 
 extension AuthErrors: LocalizedError {
