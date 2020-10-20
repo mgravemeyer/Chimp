@@ -48,29 +48,23 @@ class UserState: ObservableObject {
     
     
     func signIn(email: String, password: String) {
-        AuthService.instance.signInUser(email: email, password: password) { (success, response) in
-            if success {
-                print("success")
+        AuthService.instance.signInUser(email: email, password: password) { (result) in
+            switch result {
+            case .success(let response):
                 guard let token = response["token"], let user_uid = response["user_uid"] else {
                     return
                 }
-                print("token: \(token)")
-                print("user_uid: \(user_uid)")
+                print("Token \(token)")
+                print("User UID \(user_uid)")
                 //TODO: Persist token & user_uid
-
+                
                 DispatchQueue.main.async {
                     self.loggedIn = true
                 }
-            }else{
-                print("failed")
-                guard let msg = response["msg"] else{
-                    return
-                }
-                print("Error message: \(msg)")
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
-      
+    }
     
-}
-
 }
