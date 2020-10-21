@@ -23,14 +23,15 @@ class ContactRequestMaker{
         guard let requestUrl = url else { return }
         let jsonData = try? JSONEncoder().encode(Contact_S_RequestModel(first_name: first_name, last_name: last_name, phone: phone, email: email, dob: dob, note: note, company_uids: company_uids, tags: tags))
         var request = URLRequest(url: requestUrl)
+        request.httpMethod = "POST"
         switch option{
             case .addContact:
                 request.httpMethod = "POST"
         }
         request.httpBody = jsonData
+        request.addValue("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiNTcyNmZhMDQtOGM2Yi00Y2E4LWE0MGMtMTBiNzU0MmEzYjM5IiwiaWF0IjoxNjAzMzExNDkzLCJleHAiOjE2MDMzMTY4OTN9.jN0SBqH4WiPCAXFnYxa8MFBzXUsjrHwh1BRiJ7GriWo", forHTTPHeaderField: "x-auth-token")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         requestBuilt(true, request)
-        
     }
 }

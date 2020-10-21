@@ -25,6 +25,8 @@
 		509B6F642540B6C4002D165F /* ContactOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F622540B6C4002D165F /* ContactOptions.swift */; };
 		509B6F6E2540BEDC002D165F /* ContactErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F6D2540BEDC002D165F /* ContactErrors.swift */; };
 		509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F6D2540BEDC002D165F /* ContactErrors.swift */; };
+		509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
+		509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
 		E357335425061AE100DAD3CC /* ChimpContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E357335325061AE100DAD3CC /* ChimpContactList.swift */; };
 		E39AC44F2501003200980BF6 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* UserState.swift */; };
 		E39AC4502501003200980BF6 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* UserState.swift */; };
@@ -81,6 +83,7 @@
 		509B6F572540B6A4002D165F /* ContactRequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRequestMaker.swift; sourceTree = "<group>"; };
 		509B6F622540B6C4002D165F /* ContactOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptions.swift; sourceTree = "<group>"; };
 		509B6F6D2540BEDC002D165F /* ContactErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactErrors.swift; sourceTree = "<group>"; };
+		509B6F762540C0A9002D165F /* AccessTokenErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenErrors.swift; sourceTree = "<group>"; };
 		E357335325061AE100DAD3CC /* ChimpContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpContactList.swift; sourceTree = "<group>"; };
 		E39AC44E2501003200980BF6 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
 		E3D6EF3A24F7D5A700F7A95A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -154,6 +157,7 @@
 		5090A53C253CBCE400A211EE /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				509B6F752540C09A002D165F /* Access Token */,
 				509B6F2C2540AE90002D165F /* Contact */,
 				500E2FEA253F72E4005B347D /* Auth */,
 			);
@@ -169,6 +173,14 @@
 				509B6F6D2540BEDC002D165F /* ContactErrors.swift */,
 			);
 			path = Contact;
+			sourceTree = "<group>";
+		};
+		509B6F752540C09A002D165F /* Access Token */ = {
+			isa = PBXGroup;
+			children = (
+				509B6F762540C0A9002D165F /* AccessTokenErrors.swift */,
+			);
+			path = "Access Token";
 			sourceTree = "<group>";
 		};
 		E393AD032503FF6A0071D4E3 /* Components */ = {
@@ -462,6 +474,7 @@
 				5090A53E253CBCFC00A211EE /* AuthService.swift in Sources */,
 				E3FDF8CB25024977002B7C5F /* ContactListItem.swift in Sources */,
 				E357335425061AE100DAD3CC /* ChimpContactList.swift in Sources */,
+				509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */,
 				500E2FDC253F6A7A005B347D /* AuthErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +485,7 @@
 			files = (
 				E3D7A5F624F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
 				E3D7A5FC24F4FFC200D3EB62 /* Persistence.swift in Sources */,
+				509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */,
 				509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */,
 				5090A54A253CD0E900A211EE /* AuthRequestMaker.swift in Sources */,
 				5090A52B253CB8F500A211EE /* Auth.swift in Sources */,

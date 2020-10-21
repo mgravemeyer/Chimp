@@ -10,7 +10,7 @@ import Foundation
 class AuthService{
     static let instance = AuthService()
     
-    func authUserService(email: String, password: String, option: AuthOptions,  loginComplete: @escaping(Result<[String:String], AuthErrors>) -> Void){
+    func authUser(email: String, password: String, option: AuthOptions,  loginCompleted: @escaping(Result<[String:String], AuthErrors>) -> Void){
         AuthRequestMaker.instance.createAuthRequest(email: email, password: password, option: option) { (requestBuilt, request) in
             if requestBuilt{
                 let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -22,20 +22,20 @@ class AuthService{
                     }
                     if(httpResponse.statusCode == 200){
                         if let token = result.token, let user_uid = result.user_uid{
-                            loginComplete(.success(["token": token, "user_uid": user_uid]))
+                            loginCompleted(.success(["token": token, "user_uid": user_uid]))
                         }
                         
                     }else{
                         if let _ = result.msg{
                             //will fire if user entered data with correct format and validation, but can't be found in db...
-                            loginComplete(.failure(.userNotFound))
+                            loginCompleted(.failure(.userNotFound))
                         }else{
                             //* (read on the bottom of the file for a brief explanation)
                             switch option {
                             case .signIn:
-                                loginComplete(.failure(.incorrectInputSignIn))
+                                loginCompleted(.failure(.incorrectInputSignIn))
                             case .signUp:
-                                loginComplete(.failure(.incorrectInputSignUp))
+                                loginCompleted(.failure(.incorrectInputSignUp))
                                 
                             }
                         }
@@ -51,16 +51,13 @@ class AuthService{
         }
     }
     
-    
-    
-    
-    
-    //*
-    //This will fire if request from frontend/this app is INCOMPLETE.
-    //from the backend, the result is not structured as a single error. Thus, result.msg isn't available.
-    //This error is structured as many errors in an array,
-    //or user entered BADLY/ILLEGALY formatted data (e.g email address without domain).
-    //If it is still unclear, please read API's docs :)
-    //Or even try the API via postman first!
+
 }
 
+//*
+//This will fire if request from frontend/this app is INCOMPLETE.
+//from the backend, the result is not structured as a single error. Thus, result.msg isn't available.
+//This error is structured as many errors in an array,
+//This is may also be caused by BADLY/ILLEGALY formatted data for the user (e.g email address without domain).
+//If it is still unclear, please read API's docs :)
+//Or even try the API via postman first!

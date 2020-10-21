@@ -185,6 +185,17 @@ struct ContactAddView: View {
                             // TODO: save new contact function
                             //HERE
                             self.contactsState.addContact(firstname: self.firstname, lastname: self.lastname, email: self.email, telephone: self.telephone, birthday: self.birthday, company: self.company)
+                            ContactService.instance.addOrUpdatecontact(first_name: firstname, last_name: lastname, phone: telephone, email: email, dob: "1972-12-28T17:00:00.000Z", note: "", company_uids: [], tags: [], option: .addContact) { (result) in
+                                switch result{
+                                case .success(let response):
+                                    guard let contact_uid = response["contact_uid"] else {
+                                       return
+                                    }
+                                    print("Created and saved to db! \n contact_uid is: \(contact_uid)") //for debugging/checking purposes
+                                case .failure(let error):
+                                    print(error.localizedDescription)
+                                }
+                            }
                             contactsState.addMenuePressed.toggle()
                         }
                     }.frame(maxWidth: 320, maxHeight: 320)

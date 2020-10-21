@@ -12,7 +12,7 @@ class UserState: ObservableObject {
     // TODO: get variable from userdefaults
     @Published var loggedIn = false
     func authUserService(email: String, password: String, option: AuthOptions) {
-        AuthService.instance.authUserService(email: email, password: password, option: option) { (result) in
+        AuthService.instance.authUser(email: email, password: password, option: option) { (result) in
             switch result {
             case .success(let response):
                 guard let token = response["token"], let user_uid = response["user_uid"] else {
