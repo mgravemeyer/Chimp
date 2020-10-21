@@ -20,3 +20,19 @@ struct Contact: Identifiable, Hashable {
         return lastname.first!
     }
 }
+
+struct Contact_S_RequestModel:Codable{
+    let first_name: String?
+    let last_name: String?
+    let phone: String?
+    let email: String?
+    let dob: String?
+    let note: String?
+    let company_uids: [String]?
+    let tags: [String]?
+}
+
+struct Contact_S_ResponseModel:Codable{
+    let msg: String?
+    let contact_uid: String?
+}

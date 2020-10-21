@@ -29,7 +29,7 @@ class AuthRequestMaker{
             url = URL(string: SIGN_UP_ENDPOINT)
         }
         guard let requestUrl = url else { return }
-        let jsonData = try? JSONEncoder().encode(SignInRequest(email: email, password: password))
+        let jsonData = try? JSONEncoder().encode(AuthRequestModel(email: email, password: password))
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "POST"
         request.httpBody = jsonData

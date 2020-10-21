@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct SignInRequest: Codable{
+struct AuthRequestModel: Codable{
     let email: String
     let password: String
 }
-struct AuthResponse: Codable{
+struct AuthResponseModel: Codable{
     let msg: String?
     let token: String?
     let user_uid: String?

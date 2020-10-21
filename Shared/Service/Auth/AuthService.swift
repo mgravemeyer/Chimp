@@ -14,7 +14,7 @@ class AuthService{
         AuthRequestMaker.instance.createAuthRequest(email: email, password: password, option: option) { (requestBuilt, request) in
             if requestBuilt{
                 let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                    guard let result = try? JSONDecoder().decode(AuthResponse.self,from: data!) else{
+                    guard let result = try? JSONDecoder().decode(AuthResponseModel.self,from: data!) else{
                         return
                     }
                     guard let httpResponse = response as? HTTPURLResponse else{

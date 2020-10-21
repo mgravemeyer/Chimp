@@ -14,7 +14,7 @@ struct ChimpApp: App {
     let persistenceController = PersistenceController.shared
     var body: some Scene {
             WindowGroup {
-                if !userState.loggedIn {
+                if userState.loggedIn {
                     LoginView()
                         .environment(\.managedObjectContext, persistenceController.container.viewContext)
                         .environmentObject(userState)
@@ -183,6 +183,7 @@ struct ContactAddView: View {
                             }
                         }.onTapGesture {
                             // TODO: save new contact function
+                            //HERE
                             self.contactsState.addContact(firstname: self.firstname, lastname: self.lastname, email: self.email, telephone: self.telephone, birthday: self.birthday, company: self.company)
                             contactsState.addMenuePressed.toggle()
                         }

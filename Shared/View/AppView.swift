@@ -167,6 +167,7 @@ struct ContactsView: View {
                     }
                     ScrollView(.vertical, showsIndicators: false) {
                         ForEach(contactsState.getContactCategories(), id: \.self) { categorie in
+                            Print(categorie)
                             ContactsListSection(categorie: categorie)
                         }
                     }
@@ -351,3 +352,9 @@ struct ContactListItem: View {
     }
 }
 
+extension View {
+    func Print(_ vars: Any...) -> some View {
+        for v in vars { print(v) }
+        return EmptyView()
+    }
+}
