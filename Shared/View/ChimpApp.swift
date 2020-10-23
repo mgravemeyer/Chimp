@@ -146,7 +146,7 @@ struct ContactAddView: View {
     @State var email = String()
     @State var telephone = String()
     @State var birthday = String()
-    @State private var birthDate = Date()
+    @State var birthDate = Date()
     @State var company = String()
     @State var selected = false
     @State var hoverRow = false
@@ -189,8 +189,8 @@ struct ContactAddView: View {
                         }.onTapGesture {
                             // TODO: save new contact function
                             //HERE
-                            self.contactsState.addContact(firstname: self.firstname, lastname: self.lastname, email: self.email, telephone: self.telephone, birthday: self.birthday, company: self.company)
-                            ContactService.instance.addOrUpdatecontact(first_name: firstname, last_name: lastname, phone: telephone, email: email, dob: self.birthDate.toString(dateFormat: "dd.MM.yyyy") , note: "", company_uids: [], tags: [], option: .addContact) { (result) in
+                            self.contactsState.addContact(firstname: self.firstname, lastname: self.lastname, email: self.email, telephone: self.telephone, birthday: self.birthDate.toString(dateFormat: "dd.MM.yyyy"), company: self.company)
+                            ContactService.instance.addOrUpdatecontact(first_name: firstname, last_name: lastname, phone: telephone, email: email, dob: Int(self.birthDate.timeIntervalSince1970) , note: "", company_uids: [], tags: [], option: .addContact) { (result) in
                                 switch result{
                                 case .success(let response):
                                     guard let contact_uid = response["contact_uid"] else {

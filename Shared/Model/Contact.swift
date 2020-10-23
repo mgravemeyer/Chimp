@@ -13,7 +13,7 @@ struct Contact: Identifiable, Hashable {
     private(set) var lastname: String
     private(set) var email: String
     private(set) var telephone: String
-    private(set) var birthday: String
+    private(set) var birthday: String // Display as string
     private(set) var company: String
     
     func getGroup() -> Character {
@@ -26,7 +26,7 @@ struct Contact_S_RequestModel:Codable{
     let last_name: String?
     let phone: String?
     let email: String?
-    let dob: String?
+    let dob: Int? // will be saved on DB as Int (epoch).
     let note: String?
     let company_uids: [String]?
     let tags: [String]?

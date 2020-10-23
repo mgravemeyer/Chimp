@@ -9,7 +9,7 @@ import Foundation
 
 class ContactService{
     static let instance = ContactService()
-    func addOrUpdatecontact(first_name: String, last_name: String, phone: String, email: String, dob: String, note: String, company_uids: [String], tags: [String], option: ContactOptions,completed: @escaping(Result<[String:String], ContactErrors>)->Void){
+    func addOrUpdatecontact(first_name: String, last_name: String, phone: String, email: String, dob: Int, note: String, company_uids: [String], tags: [String], option: ContactOptions,completed: @escaping(Result<[String:String], ContactErrors>)->Void){
         ContactRequestMaker.instance.addOrUpdate(first_name: first_name, last_name: last_name, phone: phone, email: email, dob: dob, note: note, company_uids: company_uids, tags: tags, option: .addContact) { (requestBuilt, request) in
             if requestBuilt{
                 let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

@@ -15,7 +15,7 @@ class ContactRequestMaker{
         return "\(_REST_API_HOST_)/\(_CONTACT_)/"
     }
     
-    func addOrUpdate(first_name: String, last_name: String, phone: String, email: String, dob: String, note: String, company_uids: [String],tags: [String], option: ContactOptions, requestBuilt:  @escaping(_ status: Bool, _ request: URLRequest)-> ()){
+    func addOrUpdate(first_name: String, last_name: String, phone: String, email: String, dob: Int, note: String, company_uids: [String],tags: [String], option: ContactOptions, requestBuilt:  @escaping(_ status: Bool, _ request: URLRequest)-> ()){
         var url = URL(string: "")
        
             url = URL(string: ADD_OR_UPDATE_CONTACT_ENDPOINT)
@@ -29,7 +29,7 @@ class ContactRequestMaker{
                 request.httpMethod = "POST"
         }
         request.httpBody = jsonData
-        request.addValue("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiMTk0MWQ1MzItYzBiYy00Y2Y5LWJhYzYtZGQxZDI5YjhhMGVkIiwiaWF0IjoxNjAzNDY0NzIxLCJleHAiOjE2MDM0NjY1MjF9.JmDVHntEEzzs6gwFEVQWhDbZskpsVXMZZ4K0NY53VXQ", forHTTPHeaderField: "x-auth-token")
+        request.addValue("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiMTk0MWQ1MzItYzBiYy00Y2Y5LWJhYzYtZGQxZDI5YjhhMGVkIiwiaWF0IjoxNjAzNDY3ODM2LCJleHAiOjE2MDM0Njk2MzZ9.nAtBDYoDIDgscU6q0M4HgnLDXuD1P9aFgFCn2LRhq_g", forHTTPHeaderField: "x-auth-token")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         requestBuilt(true, request)
