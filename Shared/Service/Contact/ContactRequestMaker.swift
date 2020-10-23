@@ -29,7 +29,7 @@ class ContactRequestMaker{
                 request.httpMethod = "POST"
         }
         request.httpBody = jsonData
-        request.addValue("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiNTcyNmZhMDQtOGM2Yi00Y2E4LWE0MGMtMTBiNzU0MmEzYjM5IiwiaWF0IjoxNjAzMzExNDkzLCJleHAiOjE2MDMzMTY4OTN9.jN0SBqH4WiPCAXFnYxa8MFBzXUsjrHwh1BRiJ7GriWo", forHTTPHeaderField: "x-auth-token")
+        request.addValue("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiMTk0MWQ1MzItYzBiYy00Y2Y5LWJhYzYtZGQxZDI5YjhhMGVkIiwiaWF0IjoxNjAzNDY0NzIxLCJleHAiOjE2MDM0NjY1MjF9.JmDVHntEEzzs6gwFEVQWhDbZskpsVXMZZ4K0NY53VXQ", forHTTPHeaderField: "x-auth-token")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         requestBuilt(true, request)

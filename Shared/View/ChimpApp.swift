@@ -146,6 +146,7 @@ struct ContactAddView: View {
     @State var email = String()
     @State var telephone = String()
     @State var birthday = String()
+    @State private var birthDate = Date()
     @State var company = String()
     @State var selected = false
     @State var hoverRow = false
@@ -170,9 +171,13 @@ struct ContactAddView: View {
                             ChimpTextField(placeholder: "First Name", value: self.$firstname)
                             ChimpTextField(placeholder: "Last Name", value: self.$lastname)
                         }
+                        
                         ChimpTextField(placeholder: "E-Mail", value: self.$email)
                         ChimpTextField(placeholder: "Telephone", value: self.$telephone)
                         ChimpTextField(placeholder: "Birthday", value: self.$birthday)
+                        
+                        ChimpDatePicker(birthDate: self.$birthDate)
+                       
                         ZStack(alignment: .center) {
                             HStack {
                                     Image(systemName: "square.and.arrow.down")
@@ -185,7 +190,7 @@ struct ContactAddView: View {
                             // TODO: save new contact function
                             //HERE
                             self.contactsState.addContact(firstname: self.firstname, lastname: self.lastname, email: self.email, telephone: self.telephone, birthday: self.birthday, company: self.company)
-                            ContactService.instance.addOrUpdatecontact(first_name: firstname, last_name: lastname, phone: telephone, email: email, dob: "1972-12-28T17:00:00.000Z", note: "", company_uids: [], tags: [], option: .addContact) { (result) in
+                            ContactService.instance.addOrUpdatecontact(first_name: firstname, last_name: lastname, phone: telephone, email: email, dob: self.birthDate.toString(dateFormat: "dd.MM.yyyy") , note: "", company_uids: [], tags: [], option: .addContact) { (result) in
                                 switch result{
                                 case .success(let response):
                                     guard let contact_uid = response["contact_uid"] else {
@@ -196,7 +201,7 @@ struct ContactAddView: View {
                                     print(error.localizedDescription)
                                 }
                             }
-                            contactsState.addMenuePressed.toggle()
+                            contactsState.addMenuePressed.toggle()//please read docs to fully understand all errors
                         }
                     }.frame(maxWidth: 320, maxHeight: 320)
                     Spacer()

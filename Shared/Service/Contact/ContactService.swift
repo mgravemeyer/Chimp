@@ -9,7 +9,7 @@ import Foundation
 
 class ContactService{
     static let instance = ContactService()
-    func addOrUpdatecontact(first_name: String, last_name: String, phone: String, email: String, dob: String, note: String, company_uids: [String],tags: [String], option: ContactOptions,completed: @escaping(Result<[String:String], ContactErrors>)->Void){
+    func addOrUpdatecontact(first_name: String, last_name: String, phone: String, email: String, dob: String, note: String, company_uids: [String], tags: [String], option: ContactOptions,completed: @escaping(Result<[String:String], ContactErrors>)->Void){
         ContactRequestMaker.instance.addOrUpdate(first_name: first_name, last_name: last_name, phone: phone, email: email, dob: dob, note: note, company_uids: company_uids, tags: tags, option: .addContact) { (requestBuilt, request) in
             if requestBuilt{
                 let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -24,8 +24,9 @@ class ContactService{
                             completed(.success(["contact_uid" : contact_uid])) //just in case if needed
                         }
                     }else{
+                        //please read docs to fully understand all errors
                         if let errMsg  = result.msg{
-                            //will fire if user entered data with correct format and validation, but can't be found in db...
+                            //will fire if error contains only one property, that is msg
                             completed(.failure(.generalErrorContact))
                             print("error msg: \(errMsg)") // for debugging purposes
                         }else{
@@ -51,7 +52,7 @@ class ContactService{
 //*
 //This will fire if request from frontend/this app is INCOMPLETE.
 //from the backend, the result is not structured as a single error. Thus, result.msg isn't available.
-//This error is structured as many errors in an array,
+//This error is usually structured as many errors in an array,
 //This is may also be caused by BADLY/ILLEGALY formatted data for the user (e.g email address without domain).
 //If it is still unclear, please read API's docs :)
 //Or even try the API via postman first!

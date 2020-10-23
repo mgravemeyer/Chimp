@@ -167,7 +167,6 @@ struct ContactsView: View {
                     }
                     ScrollView(.vertical, showsIndicators: false) {
                         ForEach(contactsState.getContactCategories(), id: \.self) { categorie in
-                            Print(categorie)
                             ContactsListSection(categorie: categorie)
                         }
                     }

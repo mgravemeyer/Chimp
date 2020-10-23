@@ -26,6 +26,7 @@ class AuthService{
                         }
                         
                     }else{
+                        //please read docs to fully understand all errors
                         if let _ = result.msg{
                             //will fire if user entered data with correct format and validation, but can't be found in db...
                             loginCompleted(.failure(.userNotFound))
@@ -57,7 +58,7 @@ class AuthService{
 //*
 //This will fire if request from frontend/this app is INCOMPLETE.
 //from the backend, the result is not structured as a single error. Thus, result.msg isn't available.
-//This error is structured as many errors in an array,
+//This error is usually  structured as many errors in an array,
 //This is may also be caused by BADLY/ILLEGALY formatted data for the user (e.g email address without domain).
 //If it is still unclear, please read API's docs :)
 //Or even try the API via postman first!
