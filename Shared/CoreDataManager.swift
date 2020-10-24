@@ -8,9 +8,8 @@
 import Foundation
 import CoreData
 import SwiftUI
-struct SaveContext {
-    static let instance = SaveContext()
-    @Environment(\.managedObjectContext) private var viewContext
+struct CoreDataManager {
+    static let instance = CoreDataManager()
     func save(viewCont: NSManagedObjectContext){
         do{
             try viewCont.save()
@@ -19,4 +18,5 @@ struct SaveContext {
             fatalError("cData save err: \(err)")
         }
     }
+    
 }

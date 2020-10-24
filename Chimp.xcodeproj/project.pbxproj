@@ -11,8 +11,8 @@
 		500E2FE1253F7161005B347D /* AuthErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E2FDB253F6A7A005B347D /* AuthErrors.swift */; };
 		5044E96725431EC50041E01B /* ChimpDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044E96625431EC50041E01B /* ChimpDatePicker.swift */; };
 		5044E96825431EC50041E01B /* ChimpDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044E96625431EC50041E01B /* ChimpDatePicker.swift */; };
-		504AD45725442C0A001BCEEB /* SaveContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504AD45625442C0A001BCEEB /* SaveContext.swift */; };
-		504AD45825442C0A001BCEEB /* SaveContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504AD45625442C0A001BCEEB /* SaveContext.swift */; };
+		504AD45725442C0A001BCEEB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504AD45625442C0A001BCEEB /* CoreDataManager.swift */; };
+		504AD45825442C0A001BCEEB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504AD45625442C0A001BCEEB /* CoreDataManager.swift */; };
 		5090A52A253CB8F500A211EE /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A529253CB8F500A211EE /* Auth.swift */; };
 		5090A52B253CB8F500A211EE /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A529253CB8F500A211EE /* Auth.swift */; };
 		5090A53E253CBCFC00A211EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A53D253CBCFC00A211EE /* AuthService.swift */; };
@@ -80,7 +80,7 @@
 /* Begin PBXFileReference section */
 		500E2FDB253F6A7A005B347D /* AuthErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrors.swift; sourceTree = "<group>"; };
 		5044E96625431EC50041E01B /* ChimpDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpDatePicker.swift; sourceTree = "<group>"; };
-		504AD45625442C0A001BCEEB /* SaveContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveContext.swift; sourceTree = "<group>"; };
+		504AD45625442C0A001BCEEB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		5090A529253CB8F500A211EE /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		5090A53D253CBCFC00A211EE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5090A548253CD0E900A211EE /* AuthRequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestMaker.swift; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 				E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */,
 				E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */,
 				E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */,
-				504AD45625442C0A001BCEEB /* SaveContext.swift */,
+				504AD45625442C0A001BCEEB /* CoreDataManager.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -462,7 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D7A5F524F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
-				504AD45725442C0A001BCEEB /* SaveContext.swift in Sources */,
+				504AD45725442C0A001BCEEB /* CoreDataManager.swift in Sources */,
 				509B6F582540B6A4002D165F /* ContactRequestMaker.swift in Sources */,
 				E3FDF8C925024912002B7C5F /* SidebarNavigationButton.swift in Sources */,
 				E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */,
@@ -511,7 +511,7 @@
 				E3D6EF4024F7D6C600F7A95A /* TodayView.swift in Sources */,
 				E3E60AA224FFF4430065B141 /* Profile.swift in Sources */,
 				E3D7A5F824F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
-				504AD45825442C0A001BCEEB /* SaveContext.swift in Sources */,
+				504AD45825442C0A001BCEEB /* CoreDataManager.swift in Sources */,
 				E3E60A9924FFD8FF0065B141 /* ContactsState.swift in Sources */,
 				E3D7A5FA24F4FFC200D3EB62 /* LoginView.swift in Sources */,
 				509B6F592540B6A4002D165F /* ContactRequestMaker.swift in Sources */,

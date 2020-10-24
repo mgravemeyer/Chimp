@@ -42,7 +42,7 @@ struct LoginView: View {
                                     guard let token = result["token"], let user_uid = result["user_uid"] else {
                                         return
                                     }
-                                    saveAuthDetail(token: token, user_uid: user_uid)
+                                    self.authState.saveAuthDetail(token: token, user_uid: user_uid, AuthDet: authDetail, viewContext: viewContext)
                                     
                                 }
                             }
@@ -62,11 +62,12 @@ struct LoginView: View {
                                 .foregroundColor(Color.blue)
                         }
                         Button {
-                            for userD in authDetail{
+                            for (userD) in authDetail{
                                 viewContext.delete(userD)
-                            }
-                            SaveContext.instance.save(viewCont: viewContext)
+                                CoreDataManager.instance.save(viewCont: viewContext)
 
+                            }
+                            
                         } label: {
                             Text("delete cdata ")
                                 .fontWeight(.semibold)
@@ -86,12 +87,13 @@ struct LoginView: View {
         }.frame(width: 1000, height: 600).background(Color.white)
     }
     
-    private func saveAuthDetail(token: String, user_uid: String){
-        let newUdtail = AuthDetail(context: viewContext)
-        newUdtail.token = token
-        newUdtail.user_uid = user_uid
-        SaveContext.instance.save(viewCont: viewContext)
-    }
+//    func saveAuthDetail(token: String, user_uid: String, AuthDet: FetchedResults<AuthDetail>){
+//        let newAuthDetail = AuthDetail(context: viewContext)
+//        newAuthDetail.token = token
+//        newAuthDetail.user_uid = user_uid
+//        CoreDataManager.instance.save(viewCont: viewContext)
+//
+//    }
     
     private func printCdata(){
         for (ix,userD) in authDetail.enumerated(){
