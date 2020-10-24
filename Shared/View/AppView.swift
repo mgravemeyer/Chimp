@@ -16,11 +16,12 @@ struct Category: Identifiable, Hashable {
 
 struct AppView: View {
     @EnvironmentObject var contactsState: ContactsState
+    @EnvironmentObject var authState: AuthState
     var body: some View {
         ZStack {
             Color.white
             HStack {
-                MenueSidebarList()
+                MenueSidebarList().environmentObject(authState)
                 VStack {
                     ContactsView()
                 }
@@ -41,8 +42,17 @@ struct AppView: View {
 
 struct MenueSidebarList: View {
     
-    @State var selectedMenue = ""
+    //Core data result for AuthDetail
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [])
+    private var authDetail: FetchedResults<AuthDetail>
     
+    @State var selectedMenue = ""
+    @EnvironmentObject var authState: AuthState
+    
+   
+
+
     let categories = [
         Category(symbol: "☀️", name: "Today", notification: 32),
         Category(symbol: "🗓", name: "This Week", notification: 78),
@@ -75,6 +85,15 @@ struct MenueSidebarList: View {
                         }
                     }
                 }.padding(.top, 20)
+                Button {
+                    self.authState.deauthUser(authDetail: authDetail, viewContext: viewContext)
+                    
+                } label: {
+                    Text("Log out")
+                        .fontWeight(.semibold)
+                        .frame(minWidth: 230)
+                        .foregroundColor(Color.black)
+                }
             }.padding(20).padding(.top, 20)
         }
     }

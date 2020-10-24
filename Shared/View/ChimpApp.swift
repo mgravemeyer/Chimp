@@ -11,11 +11,14 @@ import SwiftUI
 struct ChimpApp: App {
    
     let persistenceController = PersistenceController.shared
+    @StateObject var authState = AuthState()
 
+    
+   
+    
     var body: some Scene {
             WindowGroup {
-              AppWrapper()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                AppWrapper().environment(\.managedObjectContext, persistenceController.container.viewContext).environmentObject(authState)
                 // this allows the whole app to access the persistent store (CoreData)
 
             }.windowStyle(HiddenTitleBarWindowStyle())
@@ -23,41 +26,49 @@ struct ChimpApp: App {
 }
 
 struct AppWrapper: View {
+    //Core data result for AuthDetail
+    @FetchRequest(sortDescriptors: [])
+    private var authDetail: FetchedResults<AuthDetail>
+    
+    
     @StateObject var contactsState = ContactsState()
-    @StateObject var authState = AuthState()
+    @EnvironmentObject var authState: AuthState
+    
     var body: some View{
-        if !authState.loggedIn {
-            LoginView()
-                .environmentObject(authState)
-                .environmentObject(contactsState)
-        } else {
-            ZStack {
-                Button("") {
-                    contactsState.advancedMenuePressed.toggle()
-                }.keyboardShortcut("j", modifiers: .command).zIndex(-10000)
-                
-                if contactsState.addMenuePressed {
-                    ContactAddView().zIndex(1)
-                        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
-//                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                        .environmentObject(authState)
+        if authState.authLoading{
+            // on initial launch this will always get fired
+            LoadingView().onAppear{
+                self.authState.checkAuth(authDetail: authDetail)
+            }
+        }else{
+            if !authState.loggedIn {
+                LoginView()
+            } else {
+                ZStack {
+                    Button("") {
+                        contactsState.advancedMenuePressed.toggle()
+                    }.keyboardShortcut("j", modifiers: .command).zIndex(-10000)
+                    
+                    if contactsState.addMenuePressed {
+                        ContactAddView().zIndex(1)
+                            .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
+    //                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                            .environmentObject(contactsState)
+                    }
+                    if contactsState.advancedMenuePressed {
+                        AdvancedMenue().zIndex(1)
+                            .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
+    //                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                            .environmentObject(contactsState)
+                    }
+                    AppView()
+    //                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
                         .environmentObject(contactsState)
-                }
-                if contactsState.advancedMenuePressed {
-                    AdvancedMenue().zIndex(1)
-                        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
-//                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                        .environmentObject(authState)
-                        .environmentObject(contactsState)
-                }
-                AppView()
-//                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                    .environmentObject(authState)
-                    .environmentObject(contactsState)
-                    .zIndex(0)
-            }.edgesIgnoringSafeArea(.all)
+                        .zIndex(0)
+                }.edgesIgnoringSafeArea(.all)
+            }
         }
-    }
+        }
 }
     
     

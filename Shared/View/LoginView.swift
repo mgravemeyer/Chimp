@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    //Core data result for AuthDetail
     @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [])
+    private var authDetail: FetchedResults<AuthDetail>
+    
     @EnvironmentObject var authState: AuthState
     @State var email = String()
     @State var password = String()
     @State var error = String()
     
-    @FetchRequest(sortDescriptors: [])
-    private var authDetail: FetchedResults<AuthDetail>
     
     var body: some View {
         HStack {
@@ -79,14 +82,6 @@ struct LoginView: View {
             }.frame(width: 500, height: 600).padding(.bottom, 70)
         }.frame(width: 1000, height: 600).background(Color.white)
     }
-    
-//    func saveAuthDetail(token: String, user_uid: String, AuthDet: FetchedResults<AuthDetail>){
-//        let newAuthDetail = AuthDetail(context: viewContext)
-//        newAuthDetail.token = token
-//        newAuthDetail.user_uid = user_uid
-//        CoreDataManager.instance.save(viewCont: viewContext)
-//
-//    }
     
     private func printCdata(){
         for (ix,userD) in authDetail.enumerated(){
