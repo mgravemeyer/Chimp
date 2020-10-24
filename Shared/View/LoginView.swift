@@ -15,7 +15,7 @@ struct LoginView: View {
     @State var error = String()
     
     @FetchRequest(sortDescriptors: [])
-    private var userDetail: FetchedResults<UserDetail>
+    private var authDetail: FetchedResults<AuthDetail>
     
     var body: some View {
         HStack {
@@ -37,29 +37,22 @@ struct LoginView: View {
                     }.frame(width: 260)
                     VStack {
                         Button {
-                            self.authState.authUser(email: self.email, password: self.password, option: .signIn)
+                            self.authState.authUser(email: self.email, password: self.password, option: .signIn){(status, result) in
+                                if status {
+                                    guard let token = result["token"], let user_uid = result["user_uid"] else {
+                                        return
+                                    }
+                                    saveAuthDetail(token: token, user_uid: user_uid)
+                                    
+                                }
+                            }
                         } label: {
                             Text("Sign In")
                                 .fontWeight(.semibold)
                                 .frame(minWidth: 230)
                                 .foregroundColor(Color.black)
                         }
-                        Button {
-                            self.authState.authUser(email: self.email, password: self.password, option: .signUp)
-                        } label: {
-                            Text("Sign Up")
-                                .fontWeight(.semibold)
-                                .frame(minWidth: 230)
-                                .foregroundColor(Color.blue)
-                        }
-//                        Button {
-//                            saveCdata()
-//                        } label: {
-//                            Text("Test save  CDATA ")
-//                                .fontWeight(.semibold)
-//                                .frame(minWidth: 230)
-//                                .foregroundColor(Color.blue)
-//                        }
+
                         Button {
                             printCdata()
                         } label: {
@@ -69,22 +62,18 @@ struct LoginView: View {
                                 .foregroundColor(Color.blue)
                         }
                         Button {
-                            for userD in userDetail{
+                            for userD in authDetail{
                                 viewContext.delete(userD)
                             }
-                            do{
-                                try viewContext.save()
-                            }catch{
-                                let err = error as NSError
-                                fatalError("cData save err: \(err)")
-                            }
+                            SaveContext.instance.save(viewCont: viewContext)
+
                         } label: {
-                            Text("delete cdata  CDATA ")
+                            Text("delete cdata ")
                                 .fontWeight(.semibold)
                                 .frame(minWidth: 230)
                                 .foregroundColor(Color.blue)
                         }
-
+                        
                         if error != "" {
                             Text(self.error)
                                 .fontWeight(.semibold)
@@ -97,20 +86,15 @@ struct LoginView: View {
         }.frame(width: 1000, height: 600).background(Color.white)
     }
     
-    private func saveCdata(token: String, user_uid: String){
-        let newUdtail = UserDetail(context: viewContext)
+    private func saveAuthDetail(token: String, user_uid: String){
+        let newUdtail = AuthDetail(context: viewContext)
         newUdtail.token = token
         newUdtail.user_uid = user_uid
-        do{
-            try viewContext.save()
-        }catch{
-            let err = error as NSError
-            fatalError("cData save err: \(err)")
-        }
+        SaveContext.instance.save(viewCont: viewContext)
     }
     
     private func printCdata(){
-        for (ix,userD) in userDetail.enumerated(){
+        for (ix,userD) in authDetail.enumerated(){
             print(ix)
             guard let user_uid = userD.user_uid, let token = userD.token else  {
                 return
