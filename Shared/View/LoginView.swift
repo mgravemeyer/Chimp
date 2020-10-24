@@ -53,7 +53,7 @@ struct LoginView: View {
                             self.authState.authUser(email: email, password: password, option: .signUp, authDetail: authDetail, viewContext: viewContext)
 
                         } label: {
-                            Text("Sign In")
+                            Text("Sign Up")
                                 .fontWeight(.semibold)
                                 .frame(minWidth: 230)
                                 .foregroundColor(Color.blue)
