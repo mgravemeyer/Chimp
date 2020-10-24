@@ -10,10 +10,12 @@ import CoreData
 import SwiftUI
 struct CoreDataManager {
     static let instance = CoreDataManager()
-    func save(viewCont: NSManagedObjectContext){
+    func save(viewContext: NSManagedObjectContext, saved: @escaping (_ status: Bool)->()){
         do{
-            try viewCont.save()
+            try viewContext.save()
+            saved(true)
         }catch{
+            saved(false)
             let err = error as NSError
             fatalError("cData save err: \(err)")
         }

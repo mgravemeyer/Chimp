@@ -37,15 +37,8 @@ struct LoginView: View {
                     }.frame(width: 260)
                     VStack {
                         Button {
-                            self.authState.authUser(email: self.email, password: self.password, option: .signIn){(status, result) in
-                                if status {
-                                    guard let token = result["token"], let user_uid = result["user_uid"] else {
-                                        return
-                                    }
-                                    self.authState.saveAuthDetail(token: token, user_uid: user_uid, AuthDet: authDetail, viewContext: viewContext)
-                                    
-                                }
-                            }
+                            self.authState.authUser(email: email, password: password, option: .signIn, authDetail: authDetail, viewContext: viewContext)
+
                         } label: {
                             Text("Sign In")
                                 .fontWeight(.semibold)
@@ -64,7 +57,7 @@ struct LoginView: View {
                         Button {
                             for (userD) in authDetail{
                                 viewContext.delete(userD)
-                                CoreDataManager.instance.save(viewCont: viewContext)
+                                CoreDataManager.instance.save(viewContext: viewContext){(_)in}
 
                             }
                             
