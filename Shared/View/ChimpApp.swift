@@ -9,44 +9,54 @@ import SwiftUI
 
 @main
 struct ChimpApp: App {
-    @StateObject var contactsState = ContactsState()
-    @StateObject var userState = UserState()
+   
     let persistenceController = PersistenceController.shared
+
     var body: some Scene {
             WindowGroup {
-                if userState.loggedIn {
-                    LoginView()
-                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                        .environmentObject(userState)
-                        .environmentObject(contactsState)
-                } else {
-                    ZStack {
-                        Button("") {
-                            contactsState.advancedMenuePressed.toggle()
-                        }.keyboardShortcut("j", modifiers: .command).zIndex(-10000)
-                        
-                        if contactsState.addMenuePressed {
-                            ContactAddView().zIndex(1)
-                                .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
-                                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                                .environmentObject(userState)
-                                .environmentObject(contactsState)
-                        }
-                        if contactsState.advancedMenuePressed {
-                            AdvancedMenue().zIndex(1)
-                                .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
-                                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                                .environmentObject(userState)
-                                .environmentObject(contactsState)
-                        }
-                        AppView()
-                            .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                            .environmentObject(userState)
-                            .environmentObject(contactsState)
-                            .zIndex(0)
-                    }.edgesIgnoringSafeArea(.all)
-                }
+              AppWrapper()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                // this allows the whole app to access the persistent store (CoreData)
+
             }.windowStyle(HiddenTitleBarWindowStyle())
+    }
+}
+
+struct AppWrapper: View {
+    @StateObject var contactsState = ContactsState()
+    @StateObject var authState = AuthState()
+    var body: some View{
+        if !authState.loggedIn {
+            LoginView()
+                .environmentObject(authState)
+                .environmentObject(contactsState)
+        } else {
+            ZStack {
+                Button("") {
+                    contactsState.advancedMenuePressed.toggle()
+                }.keyboardShortcut("j", modifiers: .command).zIndex(-10000)
+                
+                if contactsState.addMenuePressed {
+                    ContactAddView().zIndex(1)
+                        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
+//                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                        .environmentObject(authState)
+                        .environmentObject(contactsState)
+                }
+                if contactsState.advancedMenuePressed {
+                    AdvancedMenue().zIndex(1)
+                        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
+//                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                        .environmentObject(authState)
+                        .environmentObject(contactsState)
+                }
+                AppView()
+//                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .environmentObject(authState)
+                    .environmentObject(contactsState)
+                    .zIndex(0)
+            }.edgesIgnoringSafeArea(.all)
+        }
     }
 }
     

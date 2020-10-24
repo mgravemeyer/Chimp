@@ -8,11 +8,11 @@
 import Foundation
 import CoreData
 
-class UserState: ObservableObject {
-    
+class AuthState: ObservableObject {
+
     // TODO: get variable from userdefaults
     @Published var loggedIn = false
-    func authUserService(email: String, password: String, option: AuthOptions) {
+    func authUser(email: String, password: String, option: AuthOptions) {
         AuthService.instance.authUser(email: email, password: password, option: option) { (result) in
             switch result {
             case .success(let response):

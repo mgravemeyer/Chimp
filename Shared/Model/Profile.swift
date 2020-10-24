@@ -7,9 +7,3 @@
 
 import Foundation
 import Combine
-
-struct User: Identifiable {
-    let id = UUID()
-    var email: String
-    var password: String
-}

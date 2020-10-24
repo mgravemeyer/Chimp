@@ -30,8 +30,8 @@
 		509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
 		509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
 		E357335425061AE100DAD3CC /* ChimpContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E357335325061AE100DAD3CC /* ChimpContactList.swift */; };
-		E39AC44F2501003200980BF6 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* UserState.swift */; };
-		E39AC4502501003200980BF6 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* UserState.swift */; };
+		E39AC44F2501003200980BF6 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* AuthState.swift */; };
+		E39AC4502501003200980BF6 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* AuthState.swift */; };
 		E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3A24F7D5A700F7A95A /* AppView.swift */; };
 		E3D6EF3C24F7D5A700F7A95A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3A24F7D5A700F7A95A /* AppView.swift */; };
 		E3D6EF3F24F7D6C600F7A95A /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */; };
@@ -51,9 +51,9 @@
 		E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9724FFD8FF0065B141 /* ContactsState.swift */; };
 		E3E60A9924FFD8FF0065B141 /* ContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9724FFD8FF0065B141 /* ContactsState.swift */; };
 		E3E60A9B24FFD9780065B141 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9A24FFD9780065B141 /* Contact.swift */; };
-		E3E60AA224FFF4430065B141 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFD99624FA5CF8002E336F /* User.swift */; };
+		E3E60AA224FFF4430065B141 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFD99624FA5CF8002E336F /* Profile.swift */; };
 		E3E60AA324FFF4430065B141 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9A24FFD9780065B141 /* Contact.swift */; };
-		E3EFD99724FA5CF8002E336F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFD99624FA5CF8002E336F /* User.swift */; };
+		E3EFD99724FA5CF8002E336F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFD99624FA5CF8002E336F /* Profile.swift */; };
 		E3FDF8C925024912002B7C5F /* SidebarNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDF8C825024912002B7C5F /* SidebarNavigationButton.swift */; };
 		E3FDF8CB25024977002B7C5F /* ContactListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDF8CA25024977002B7C5F /* ContactListItem.swift */; };
 /* End PBXBuildFile section */
@@ -88,7 +88,7 @@
 		509B6F6D2540BEDC002D165F /* ContactErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactErrors.swift; sourceTree = "<group>"; };
 		509B6F762540C0A9002D165F /* AccessTokenErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenErrors.swift; sourceTree = "<group>"; };
 		E357335325061AE100DAD3CC /* ChimpContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpContactList.swift; sourceTree = "<group>"; };
-		E39AC44E2501003200980BF6 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
+		E39AC44E2501003200980BF6 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
 		E3D6EF3A24F7D5A700F7A95A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		E3D7A5CA24F4FFC000D3EB62 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		E3D7A5F424F4FFC200D3EB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3E60A9724FFD8FF0065B141 /* ContactsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsState.swift; sourceTree = "<group>"; };
 		E3E60A9A24FFD9780065B141 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		E3EFD99624FA5CF8002E336F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E3EFD99624FA5CF8002E336F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		E3FDF8C825024912002B7C5F /* SidebarNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigationButton.swift; sourceTree = "<group>"; };
 		E3FDF8CA25024977002B7C5F /* ContactListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,7 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				E3E60A9724FFD8FF0065B141 /* ContactsState.swift */,
-				E39AC44E2501003200980BF6 /* UserState.swift */,
+				E39AC44E2501003200980BF6 /* AuthState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -221,9 +221,9 @@
 		E393AD072503FFB50071D4E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E3EFD99624FA5CF8002E336F /* User.swift */,
-				E3E60A9A24FFD9780065B141 /* Contact.swift */,
 				5090A529253CB8F500A211EE /* Auth.swift */,
+				E3EFD99624FA5CF8002E336F /* Profile.swift */,
+				E3E60A9A24FFD9780065B141 /* Contact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,14 +467,14 @@
 				509B6EEB253F8253002D165F /* AuthOptions.swift in Sources */,
 				509B6F4D2540B68E002D165F /* ContactService.swift in Sources */,
 				509B6F6E2540BEDC002D165F /* ContactErrors.swift in Sources */,
-				E39AC44F2501003200980BF6 /* UserState.swift in Sources */,
+				E39AC44F2501003200980BF6 /* AuthState.swift in Sources */,
 				E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */,
 				E3D6EF3F24F7D6C600F7A95A /* TodayView.swift in Sources */,
 				E3D7A5F724F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
 				E3D7A5F924F4FFC200D3EB62 /* LoginView.swift in Sources */,
 				509B6F632540B6C4002D165F /* ContactOptions.swift in Sources */,
 				5090A52A253CB8F500A211EE /* Auth.swift in Sources */,
-				E3EFD99724FA5CF8002E336F /* User.swift in Sources */,
+				E3EFD99724FA5CF8002E336F /* Profile.swift in Sources */,
 				5090A53E253CBCFC00A211EE /* AuthService.swift in Sources */,
 				E3FDF8CB25024977002B7C5F /* ContactListItem.swift in Sources */,
 				E357335425061AE100DAD3CC /* ChimpContactList.swift in Sources */,
@@ -502,9 +502,9 @@
 				509B6F4E2540B68E002D165F /* ContactService.swift in Sources */,
 				E3D6EF3C24F7D5A700F7A95A /* AppView.swift in Sources */,
 				509B6F642540B6C4002D165F /* ContactOptions.swift in Sources */,
-				E39AC4502501003200980BF6 /* UserState.swift in Sources */,
+				E39AC4502501003200980BF6 /* AuthState.swift in Sources */,
 				E3D6EF4024F7D6C600F7A95A /* TodayView.swift in Sources */,
-				E3E60AA224FFF4430065B141 /* User.swift in Sources */,
+				E3E60AA224FFF4430065B141 /* Profile.swift in Sources */,
 				E3D7A5F824F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
 				E3E60A9924FFD8FF0065B141 /* ContactsState.swift in Sources */,
 				E3D7A5FA24F4FFC200D3EB62 /* LoginView.swift in Sources */,
