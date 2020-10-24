@@ -52,6 +52,40 @@ class AuthService{
         }
     }
     
+    func deauthUser(user_uid: String, token: String, loggedOutCompleted: @escaping(Result<[String:String], DeauthErrors>)->()){
+        AuthRequestMaker.instance.createDeauthRequest(user_uid: user_uid, token: token) { (requestBuilt,request)  in
+            if requestBuilt{
+                let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    guard let result = try? JSONDecoder().decode(DeauthResponseModel.self,from: data!) else{
+                        return
+                    }
+                    guard let httpResponse = response as? HTTPURLResponse else{
+                        return
+                    }
+                    if(httpResponse.statusCode == 200){
+                        guard let msg = result.msg else {return}
+                        loggedOutCompleted(.success(["msg" : msg]))
+                    }else{
+                        //please read docs to fully understand all errors
+                        if let _ = result.msg{
+                            //will fire if user_uid is sent, but user_uid can't be  found in db...
+                            loggedOutCompleted(.failure(.incorrectInputSignUp))
+                        }else{
+                            //* (read on the bottom of the file for a brief explanation)
+                            loggedOutCompleted(.failure(.userUidNotFound))
+                        }
+                    }
+                    if let error = error {
+                        //unsure, but this may happen only if there's a bug in this (Swift) code (?)
+                        print("Error: \(error)")
+                        return
+                    }
+                }
+                task.resume()
+            }
+        }
+    }
+    
 
 }
 

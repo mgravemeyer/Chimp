@@ -48,6 +48,17 @@ struct LoginView: View {
                                 .frame(minWidth: 230)
                                 .foregroundColor(Color.black)
                         }
+                        
+                        Button {
+                            self.authState.authUser(email: email, password: password, option: .signUp, authDetail: authDetail, viewContext: viewContext)
+
+                        } label: {
+                            Text("Sign In")
+                                .fontWeight(.semibold)
+                                .frame(minWidth: 230)
+                                .foregroundColor(Color.blue)
+                        }
+
 
                         Button {
                             printCdata()

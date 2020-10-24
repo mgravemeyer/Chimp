@@ -33,7 +33,7 @@ struct AppWrapper: View {
     
     @StateObject var contactsState = ContactsState()
     @EnvironmentObject var authState: AuthState
-    
+  
     var body: some View{
         if authState.authLoading{
             // on initial launch this will always get fired

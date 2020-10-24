@@ -87,6 +87,7 @@ struct MenueSidebarList: View {
                 }.padding(.top, 20)
                 Button {
                     self.authState.deauthUser(authDetail: authDetail, viewContext: viewContext)
+//                    self.authState.deleteAuthDetail(authDetail: authDetail, viewContext: viewContext)
                     
                 } label: {
                     Text("Log out")

@@ -41,40 +41,22 @@ class AuthState: ObservableObject {
             self.authLoading = false
         }
     }
-    func deauthUser(authDetail: FetchedResults<AuthDetail>, viewContext: NSManagedObjectContext){
-
-        for (userD) in authDetail{
-            viewContext.delete(userD)
-        }
-        
-        CoreDataManager.instance.save(viewContext: viewContext){(saved) in
-            if saved{
-                DispatchQueue.main.async{
-                    self.loggedIn = false
-                }
-            }
-
-        }
-        
-       
-        
-       
-       
-    }
     
     
-    //saving to DB
+    
+    //creating a new user in DB on sign up
+    // and or returning response (token and user_uid a.k.a AuthDetail) from DB
     func authUser(email: String, password: String, option: AuthOptions, authDetail:FetchedResults<AuthDetail>, viewContext: NSManagedObjectContext) {
         AuthService.instance.authUser(email: email, password: password, option: option) { (result) in
             switch result {
             case .success(let response):
                 self.saveAuthDetail(result: response, authDetail: authDetail, viewContext: viewContext)
-            case .failure(let error):
-                print(error.localizedDescription) // maybe assign it to a state and display to user?
+            case .failure(let err):
+                print(err.localizedDescription) // maybe assign it to a state and display to user?
             }
         }
     }
-    //saving to CoreData
+    //saving the token and user_uid to CoreData of type AuthDetail
     private func saveAuthDetail(result: [String: String], authDetail: FetchedResults<AuthDetail>, viewContext: NSManagedObjectContext){
         guard let token = result["token"], let user_uid = result["user_uid"] else {
             return
@@ -93,6 +75,39 @@ class AuthState: ObservableObject {
             }
         }
         
+    }
+    
+    func deauthUser(authDetail: FetchedResults<AuthDetail>, viewContext: NSManagedObjectContext){
+        AuthService.instance.deauthUser(user_uid: user_uid, token: token) { (result) in
+            switch result{
+            case .success(_):
+                // _ is msg (from backend)  - assign it as a var if you wanna access it.
+                self.deleteAuthDetail(authDetail: authDetail, viewContext: viewContext)
+            case .failure(let err):
+                print(err.localizedDescription) // maybe assign it to a state and display to user?
+            }
+        }
+        DispatchQueue.main.async {
+            self.loggedIn = false
+        }
+
+    }
+    
+    //deleting the token and user_uid to CoreData of type AuthDetail
+    func deleteAuthDetail(authDetail: FetchedResults<AuthDetail>, viewContext: NSManagedObjectContext){
+        print(authDetail)
+        for (userD) in authDetail{
+            viewContext.delete(userD)
+        }
+        
+        CoreDataManager.instance.save(viewContext: viewContext){(saved) in
+            if saved{
+                DispatchQueue.main.async{
+                    self.loggedIn = false
+                }
+            }
+
+        }
     }
     
 }

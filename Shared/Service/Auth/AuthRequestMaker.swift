@@ -19,6 +19,9 @@ class AuthRequestMaker{
     var SIGN_UP_ENDPOINT: String {
         return "\(_REST_API_HOST_)/\(_AUTH_)/sign-up"
     }
+    var SIGN_OUT_ENDPOINT: String {
+        return "\(_REST_API_HOST_)/\(_AUTH_)/sign-out"
+    }
     
     func createAuthRequest(email: String, password: String, option: AuthOptions, requestBuilt: @escaping(_ status: Bool, _ result: URLRequest)->()){
         var url = URL(string: "")
@@ -36,6 +39,19 @@ class AuthRequestMaker{
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         requestBuilt(true, request)
+    }
+    
+    func createDeauthRequest(user_uid: String, token: String ,completed: @escaping(_ status: Bool,_ result: URLRequest)->()){
+        let url = URL(string: SIGN_OUT_ENDPOINT)
+        guard let requestUrl = url else { return }
+        let jsonData = try? JSONEncoder().encode(DeauthRequestModel(user_uid: user_uid))
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+        request.addValue(token, forHTTPHeaderField: "x-auth-token")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        completed(true, request)
     }
   
 }

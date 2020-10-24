@@ -19,6 +19,15 @@ struct AuthResponseModel: Codable{
 //    let errors: [Errors]?
 }
 
+//Deauth models are  in this file since they're still in fact 'Authentication'
+struct DeauthRequestModel: Codable{
+    let user_uid: String
+}
+struct DeauthResponseModel: Codable{
+    let msg: String?
+
+}
+
 struct PersistenceController{
     static let shared = PersistenceController()
     
