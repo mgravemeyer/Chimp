@@ -63,7 +63,7 @@ class AuthState: ObservableObject {
     //delete corresponding uid and its token from db
     //then, on deleteAuthDetail(), it deletes the uid and token from coreData
     func deauthUser(authDetail: FetchedResults<AuthDetail>, viewContext: NSManagedObjectContext){
-        AuthService.instance.deauthUser(user_uid: user_uid, token: token) { (result) in
+        AuthService.instance.deauthUser(user_uid: user_uid, token: token) {[unowned self] (result) in
             switch result{
             case .success(_):
                 // _ is msg (from backend)  - assign it as a var if you wanna access it.
