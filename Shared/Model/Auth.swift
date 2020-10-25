@@ -19,6 +19,12 @@ struct AuthResponseModel: Codable{
 //    let errors: [Errors]?
 }
 
+
+//struct Errors: Codable{
+//    let msg: String?
+//    let param: String?
+//}
+
 //Deauth models are  in this file since they're still in fact 'Authentication'
 struct DeauthRequestModel: Codable{
     let user_uid: String
@@ -27,29 +33,3 @@ struct DeauthResponseModel: Codable{
     let msg: String?
 
 }
-
-struct PersistenceController{
-    static let shared = PersistenceController()
-    
-    let container: NSPersistentContainer
-    init(){
-        container = NSPersistentContainer(name: "Chimp")
-        
-        container.loadPersistentStores { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error to load persistent store: \(error)")
-            }
-            
-            //core data stack is ready to be used
-            
-            
-        }
-    }
-}
-
-
-
-//struct Errors: Codable{
-//    let msg: String?
-//    let param: String?
-//}

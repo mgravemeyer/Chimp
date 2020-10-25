@@ -4,7 +4,15 @@
         <attribute name="token" optional="YES" attributeType="String"/>
         <attribute name="user_uid" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="ContactDetail" representedClassName="ContactDetail" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="first_name" optional="YES" attributeType="String"/>
+        <attribute name="last_name" optional="YES" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="AuthDetail" positionX="-63" positionY="0" width="128" height="59"/>
+        <element name="ContactDetail" positionX="-63" positionY="18" width="128" height="104"/>
     </elements>
 </model>
