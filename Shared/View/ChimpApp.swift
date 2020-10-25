@@ -177,9 +177,9 @@ struct ContactAddView: View {
     @State var selected = false
     @State var hoverRow = false
     
-    @State var contactData = ["first_name": "", "last_name": "", "phone": "", "email": "", "dob": 0, "note": ""]
+    @State var contactData = ["first_name": "", "last_name": "", "phone": "", "email": "", "dob": "", "note": ""] 
 
-  
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -191,7 +191,7 @@ struct ContactAddView: View {
                             contactsState.addMenuePressed.toggle()
                         }.padding(.trailing, 20).padding(.top, 30)
                         Button("Add cdata contact") {
-                            contactData["dob"] = Int(birthDate.timeIntervalSince1970*1000) // d.o.b in epoch
+                            contactData["dob"] = String(Int(birthDate.timeIntervalSince1970*1000)) // d.o.b in epoch
                             contactsState.createContactCD(contactData: contactData,contactsDetail: contactsDetail ,viewContext: viewContext)
                         }.padding(.trailing, 20).padding(.top, 30)
                         Button("Print cdata contact") {
@@ -223,12 +223,11 @@ struct ContactAddView: View {
                         }
                         HStack {
                             ChimpTextField(placeholder: "First Name", value: self.binding(for: "first_name"))
-                            ChimpTextField(placeholder: "Last Name", value: self.$lastname)
+                            ChimpTextField(placeholder: "Last Name", value: self.binding(for: "last_name"))
                         }
                         
-                        ChimpTextField(placeholder: "E-Mail", value: self.$email)
-                        ChimpTextField(placeholder: "Telephone", value: self.$telephone)
-                        ChimpTextField(placeholder: "Birthday", value: self.binding(for: "dob"))
+                        ChimpTextField(placeholder: "E-Mail", value: self.binding(for: "email"))
+                        ChimpTextField(placeholder: "Telephone", value: self.binding(for: "phone"))
                         
                         ChimpDatePicker(birthDate: self.$birthDate)
                        
@@ -258,7 +257,7 @@ struct ContactAddView: View {
     //(as it's not possible using $)
     private func binding(for key: String) -> Binding<String> {
            return .init(
-            get: { (self.contactData[key, default: ""] as? String ?? "")},
+            get: { (self.contactData[key, default: ""] )},
                set: { self.contactData[key] = $0 })
        }
     

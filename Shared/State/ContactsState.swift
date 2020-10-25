@@ -38,10 +38,14 @@ class ContactsState: ObservableObject {
     
     
     //creating a new Contact in CoreData
-    func createContactCD(contactData: [String:Any],contactsDetail: FetchedResults<ContactDetail> ,viewContext: NSManagedObjectContext) {
+    func createContactCD(contactData: [String:String],contactsDetail: FetchedResults<ContactDetail> ,viewContext: NSManagedObjectContext) {
         let newContactDetail = ContactDetail(context: viewContext)
         for data in contactData{
-            newContactDetail.setValue(data.value, forKey: data.key)
+            if data.key == "dob"{
+                newContactDetail.setValue(Int(data.value), forKey: data.key)
+            }else{
+                newContactDetail.setValue(data.value, forKey: data.key)
+            }
         }
         CoreDataManager.instance.save(viewContext: viewContext) { (done) in
             if(done){
