@@ -19,7 +19,6 @@ class AuthState: ObservableObject {
     @Published var user_uid = ""
     @Published var authLoading = true
     
-   
   
     func checkAuth(authDetail: FetchedResults<AuthDetail>) {
         if(authDetail.count != 0){
@@ -31,15 +30,18 @@ class AuthState: ObservableObject {
             
             if user_uid != "" && token != "" { // just to double check
                 DispatchQueue.main.async{
+                    self.token = token
+                    self.user_uid = user_uid
                     self.loggedIn = true
                 }
             }
         }
-       
-       
+        
         DispatchQueue.main.async{
             self.authLoading = false
         }
+
+        
     }
     
     
@@ -90,12 +92,10 @@ class AuthState: ObservableObject {
         DispatchQueue.main.async {
             self.loggedIn = false
         }
-
     }
     
     //deleting the token and user_uid to CoreData of type AuthDetail
     func deleteAuthDetail(authDetail: FetchedResults<AuthDetail>, viewContext: NSManagedObjectContext){
-        print(authDetail)
         for (userD) in authDetail{
             viewContext.delete(userD)
         }

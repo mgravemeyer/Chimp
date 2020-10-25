@@ -13,8 +13,10 @@ class AuthRequestMaker{
     private var _REST_API_HOST_ = "http://127.0.0.1:5000/api"
     private var _AUTH_ = "auth"
     
+    private let requestMaker = RequestMaker.instance
+    
     var SIGN_IN_ENDPOINT: String {
-            return "\(_REST_API_HOST_)/\(_AUTH_)/sign-in"
+        return "\(_REST_API_HOST_)/\(_AUTH_)/sign-in"
     }
     var SIGN_UP_ENDPOINT: String {
         return "\(_REST_API_HOST_)/\(_AUTH_)/sign-up"
@@ -31,13 +33,11 @@ class AuthRequestMaker{
         case .signUp:
             url = URL(string: SIGN_UP_ENDPOINT)
         }
-        guard let requestUrl = url else { return }
-        let jsonData = try? JSONEncoder().encode(AuthRequestModel(email: email, password: password))
-        var request = URLRequest(url: requestUrl)
-        request.httpMethod = "POST"
-        request.httpBody = jsonData
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        guard  let jsonData = try? JSONEncoder().encode(AuthRequestModel(email: email, password: password)) else {
+            return
+        }
+        
+        let request = requestMaker.makeRequest(method: "POST", url: url, jsonData: jsonData)
         requestBuilt(true, request)
     }
     
@@ -53,6 +53,6 @@ class AuthRequestMaker{
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         completed(true, request)
     }
-  
+    
 }
 
