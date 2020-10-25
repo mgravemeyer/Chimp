@@ -25,7 +25,7 @@ class AuthRequestMaker{
         return "\(_REST_API_HOST_)/\(_AUTH_)/sign-out"
     }
     
-    func createAuthRequest(email: String, password: String, option: AuthOptions, requestBuilt: @escaping(_ status: Bool, _ result: URLRequest)->()){
+    func createAuthRequest(email: String, password: String, option: AuthOptions)->URLRequest{
         var url = URL(string: "")
         switch option {
         case .signIn:
@@ -35,8 +35,7 @@ class AuthRequestMaker{
         }
         guard  let jsonData = try? JSONEncoder().encode(AuthRequestModel(email: email, password: password)) else { fatalError("Error unwrapping JSON data")}
         
-        let request = requestMaker.makeJSONRequest(method: "POST", url: url, jsonData: jsonData, isPrivate: false, token: "")
-        requestBuilt(true, request)
+        return requestMaker.makeJSONRequest(method: "POST", url: url, jsonData: jsonData, isPrivate: false, token: "")
     }
     
     func createDeauthRequest(user_uid: String, token: String ,completed: @escaping(_ status: Bool,_ result: URLRequest)->()){
