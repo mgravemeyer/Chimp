@@ -20,6 +20,8 @@ class AuthState: ObservableObject {
     
     //* via REST API (backend services)
     
+    
+    
     @Published var loggedIn = false
     @Published var token = ""
     @Published var user_uid = ""
@@ -29,7 +31,7 @@ class AuthState: ObservableObject {
     
     //checking if user is Authed (at least fired once on intial app launched)
     func checkAuth(authDetail: FetchedResults<AuthDetail>) {
-        if(authDetail.count != 0){
+        if !authDetail.isEmpty {
             // if there is  data stored in AuthDetail CoreData
             //means it's very very likely that the  user is authenticated (logged in)
             guard let user_uid = authDetail[0].user_uid, let token = authDetail[0].token else {

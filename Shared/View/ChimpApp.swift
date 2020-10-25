@@ -27,10 +27,14 @@ struct AppWrapper: View {
     @FetchRequest(sortDescriptors: [])
     private var authDetail: FetchedResults<AuthDetail>
     
+    //Core data result for ContactsDetail
+    @FetchRequest(sortDescriptors: [])
+    private var contactsDetail: FetchedResults<ContactDetail>
+
     
     @StateObject var contactsState = ContactsState()
     @EnvironmentObject var authState: AuthState
-  
+    
     var body: some View{
         if authState.authLoading{
             // on initial launch this will always get fired
@@ -61,7 +65,9 @@ struct AppWrapper: View {
                     AppView()
     //                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
                         .environmentObject(contactsState)
-                        .zIndex(0)
+                        .zIndex(0).onAppear(){
+                            self.contactsState.getAllContactsFromCD(contactsDetail: contactsDetail)
+                        }
                 }.edgesIgnoringSafeArea(.all)
             }
         }
@@ -189,18 +195,14 @@ struct ContactAddView: View {
                         Button("Close") {
                             contactsState.addMenuePressed.toggle()
                         }.padding(.trailing, 20).padding(.top, 30)
-                        Button("Add cdata contact") {
-                            contactData["dob"] = String(Int(birthDate.timeIntervalSince1970*1000)) // d.o.b in epoch
-                            contactsState.createContactCD(contactData: contactData,contactsDetail: contactsDetail ,viewContext: viewContext)
-                        }.padding(.trailing, 20).padding(.top, 30)
                         Button("Print cdata contact") {
                             for (_,contactDetail) in contactsDetail.enumerated(){
                                 guard let fname = contactDetail.first_name, let lname = contactDetail.last_name, let phone = contactDetail.phone , let email = contactDetail.email, let note = contactDetail.note  else {return}
                                 let dob = contactDetail.dob
                                 print("\(fname) \(lname)'s birthday is on \(dob)")
-                                print("Phone: \(phone)")
-                                print("Email: \(email)")
-                                print("Note: \(note)")
+//                                print("Phone: \(phone)")
+//                                print("Email: \(email)")
+//                                print("Note: \(note)")
                             }
                         }.padding(.trailing, 20).padding(.top, 30)
                         Button {
@@ -244,8 +246,8 @@ struct ContactAddView: View {
                             // TODO: save new contact function
                             //HERE
                             contactData["dob"] = String(Int(birthDate.timeIntervalSince1970*1000)) // d.o.b in epoch
-                            contactsState.createContactCD(contactData: contactData,contactsDetail: contactsDetail ,viewContext: viewContext)
-                            self.contactsState.addContact(firstname: self.contactData["first_name"]!, lastname: self.contactData["last_name"]!, email: self.contactData["email"]!, telephone: self.contactData["phone"]!, birthday: self.birthDate.toString(dateFormat: "dd.MM.yyyy"), company: "")
+                            self.contactsState.createContactCD(contactData: contactData,contactsDetail: contactsDetail ,viewContext: viewContext)
+//                            self.contactsState.addContact(firstname: self.contactData["first_name"]!, lastname: self.contactData["last_name"]!, email: self.contactData["email"]!, telephone: self.contactData["phone"]!, birthday: self.birthDate.toString(dateFormat: "dd.MM.yyyy"), company: "")
                           
                             contactsState.addMenuePressed.toggle()
                         }
