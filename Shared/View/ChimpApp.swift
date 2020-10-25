@@ -173,11 +173,10 @@ struct ContactAddView: View {
     @State var telephone = String()
     @State var birthday = String()
     @State var birthDate = Date()
-    @State var company = String()
     @State var selected = false
     @State var hoverRow = false
     
-    @State var contactData = ["first_name": "", "last_name": "", "phone": "", "email": "", "dob": "", "note": ""] 
+    @State var contactData = ["first_name": "", "last_name": "", "phone": "", "email": "", "dob": "", "note": ""]
 
     
     var body: some View {
@@ -196,16 +195,18 @@ struct ContactAddView: View {
                         }.padding(.trailing, 20).padding(.top, 30)
                         Button("Print cdata contact") {
                             for (_,contactDetail) in contactsDetail.enumerated(){
-                                guard let first_name = contactDetail.first_name else {return}
+                                guard let fname = contactDetail.first_name, let lname = contactDetail.last_name, let phone = contactDetail.phone , let email = contactDetail.email, let note = contactDetail.note  else {return}
                                 let dob = contactDetail.dob
-                                print("\(first_name) bday is \(dob)")
+                                print("\(fname) \(lname)'s birthday is on \(dob)")
+                                print("Phone: \(phone)")
+                                print("Email: \(email)")
+                                print("Note: \(note)")
                             }
                         }.padding(.trailing, 20).padding(.top, 30)
                         Button {
                             for (contactD) in contactsDetail{
                                 viewContext.delete(contactD)
                                 CoreDataManager.instance.save(viewContext: viewContext){(_)in}
-
                             }
                             
                         } label: {
@@ -242,7 +243,9 @@ struct ContactAddView: View {
                         }.onTapGesture {
                             // TODO: save new contact function
                             //HERE
-                            self.contactsState.addContact(firstname: self.firstname, lastname: self.lastname, email: self.email, telephone: self.telephone, birthday: self.birthDate.toString(dateFormat: "dd.MM.yyyy"), company: self.company)
+                            contactData["dob"] = String(Int(birthDate.timeIntervalSince1970*1000)) // d.o.b in epoch
+                            contactsState.createContactCD(contactData: contactData,contactsDetail: contactsDetail ,viewContext: viewContext)
+                            self.contactsState.addContact(firstname: self.contactData["first_name"]!, lastname: self.contactData["last_name"]!, email: self.contactData["email"]!, telephone: self.contactData["phone"]!, birthday: self.birthDate.toString(dateFormat: "dd.MM.yyyy"), company: "")
                           
                             contactsState.addMenuePressed.toggle()
                         }
