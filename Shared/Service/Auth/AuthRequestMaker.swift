@@ -33,9 +33,7 @@ class AuthRequestMaker{
         case .signUp:
             url = URL(string: SIGN_UP_ENDPOINT)
         }
-        guard  let jsonData = try? JSONEncoder().encode(AuthRequestModel(email: email, password: password)) else {
-            return
-        }
+        guard  let jsonData = try? JSONEncoder().encode(AuthRequestModel(email: email, password: password)) else { fatalError("Error unwrapping JSON data")}
         
         let request = requestMaker.makeJSONRequest(method: "POST", url: url, jsonData: jsonData, isPrivate: false, token: "")
         requestBuilt(true, request)
@@ -43,7 +41,7 @@ class AuthRequestMaker{
     
     func createDeauthRequest(user_uid: String, token: String ,completed: @escaping(_ status: Bool,_ result: URLRequest)->()){
         let url = URL(string: SIGN_OUT_ENDPOINT)
-        guard let jsonData = try? JSONEncoder().encode(DeauthRequestModel(user_uid: user_uid)) else {return}
+        guard let jsonData = try? JSONEncoder().encode(DeauthRequestModel(user_uid: user_uid)) else { fatalError("Error unwrapping JSON data")}
         let request = requestMaker.makeJSONRequest(method: "POST", url: url, jsonData: jsonData, isPrivate: true, token: token)
         completed(true, request)
     }
