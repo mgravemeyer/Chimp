@@ -19,7 +19,7 @@ class AuthState: ObservableObject {
     @Published var user_uid = ""
     @Published var authLoading = true
     
-    private var authService = AuthService.instance
+    private let authService = AuthService.instance
     
   
     func checkAuth(authDetail: FetchedResults<AuthDetail>) {

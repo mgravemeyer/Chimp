@@ -7,8 +7,8 @@
 
 import Foundation
 
-class AuthRequestMaker{
-    static let instance = AuthRequestMaker()
+class AuthRequest{
+    static let instance = AuthRequest()
     
     private var _REST_API_HOST_ = "http://127.0.0.1:5000/api"
     private var _AUTH_ = "auth"
@@ -38,11 +38,10 @@ class AuthRequestMaker{
         return requestMaker.makeJSONRequest(method: "POST", url: url, jsonData: jsonData, isPrivate: false, token: "")
     }
     
-    func createDeauthRequest(user_uid: String, token: String ,completed: @escaping(_ status: Bool,_ result: URLRequest)->()){
+    func createDeauthRequest(user_uid: String, token: String)->URLRequest{
         let url = URL(string: SIGN_OUT_ENDPOINT)
         guard let jsonData = try? JSONEncoder().encode(DeauthRequestModel(user_uid: user_uid)) else { fatalError("Error unwrapping JSON data")}
-        let request = requestMaker.makeJSONRequest(method: "POST", url: url, jsonData: jsonData, isPrivate: true, token: token)
-        completed(true, request)
+        return requestMaker.makeJSONRequest(method: "POST", url: url, jsonData: jsonData, isPrivate: true, token: token)
     }
     
 }

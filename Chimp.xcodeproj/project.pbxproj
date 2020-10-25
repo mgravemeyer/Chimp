@@ -21,8 +21,8 @@
 		5090A52B253CB8F500A211EE /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A529253CB8F500A211EE /* Auth.swift */; };
 		5090A53E253CBCFC00A211EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A53D253CBCFC00A211EE /* AuthService.swift */; };
 		5090A53F253CBCFC00A211EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A53D253CBCFC00A211EE /* AuthService.swift */; };
-		5090A549253CD0E900A211EE /* AuthRequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A548253CD0E900A211EE /* AuthRequestMaker.swift */; };
-		5090A54A253CD0E900A211EE /* AuthRequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A548253CD0E900A211EE /* AuthRequestMaker.swift */; };
+		5090A549253CD0E900A211EE /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A548253CD0E900A211EE /* AuthRequest.swift */; };
+		5090A54A253CD0E900A211EE /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A548253CD0E900A211EE /* AuthRequest.swift */; };
 		509B6EEB253F8253002D165F /* AuthOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6EEA253F8253002D165F /* AuthOptions.swift */; };
 		509B6EEC253F8253002D165F /* AuthOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6EEA253F8253002D165F /* AuthOptions.swift */; };
 		509B6F4D2540B68E002D165F /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F4C2540B68E002D165F /* ContactService.swift */; };
@@ -89,7 +89,7 @@
 		504C5D9625459959003BDFA1 /* RequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMaker.swift; sourceTree = "<group>"; };
 		5090A529253CB8F500A211EE /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		5090A53D253CBCFC00A211EE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		5090A548253CD0E900A211EE /* AuthRequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestMaker.swift; sourceTree = "<group>"; };
+		5090A548253CD0E900A211EE /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		509B6EEA253F8253002D165F /* AuthOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOptions.swift; sourceTree = "<group>"; };
 		509B6F4C2540B68E002D165F /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
 		509B6F572540B6A4002D165F /* ContactRequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRequestMaker.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 			children = (
 				500E2FDB253F6A7A005B347D /* AuthErrors.swift */,
 				5090A53D253CBCFC00A211EE /* AuthService.swift */,
-				5090A548253CD0E900A211EE /* AuthRequestMaker.swift */,
+				5090A548253CD0E900A211EE /* AuthRequest.swift */,
 				509B6EEA253F8253002D165F /* AuthOptions.swift */,
 			);
 			path = Auth;
@@ -482,7 +482,7 @@
 				509B6F582540B6A4002D165F /* ContactRequestMaker.swift in Sources */,
 				E3FDF8C925024912002B7C5F /* SidebarNavigationButton.swift in Sources */,
 				E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */,
-				5090A549253CD0E900A211EE /* AuthRequestMaker.swift in Sources */,
+				5090A549253CD0E900A211EE /* AuthRequest.swift in Sources */,
 				E3E60A9B24FFD9780065B141 /* Contact.swift in Sources */,
 				E3D7A5FB24F4FFC200D3EB62 /* Persistence.swift in Sources */,
 				509B6EEB253F8253002D165F /* AuthOptions.swift in Sources */,
@@ -515,7 +515,7 @@
 				E3D7A5FC24F4FFC200D3EB62 /* Persistence.swift in Sources */,
 				509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */,
 				509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */,
-				5090A54A253CD0E900A211EE /* AuthRequestMaker.swift in Sources */,
+				5090A54A253CD0E900A211EE /* AuthRequest.swift in Sources */,
 				5090A52B253CB8F500A211EE /* Auth.swift in Sources */,
 				5044E96825431EC50041E01B /* ChimpDatePicker.swift in Sources */,
 				5090A53F253CBCFC00A211EE /* AuthService.swift in Sources */,

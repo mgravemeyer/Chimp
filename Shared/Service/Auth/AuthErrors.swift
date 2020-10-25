@@ -8,7 +8,8 @@
 import Foundation
 
 enum AuthErrors: String, Error {
-    case userNotFound = "No user in db!"
+    case userNotFound = "We are unable to find any account with this email & password combination."
+    case userAlreadyExists = "This account already exists!"
     case incorrectInputSignIn = "Sign in error - data isn't valid! Make sure to fill in all necessary field(s) correctly!"
     case incorrectInputSignUp = "Sign up error - data isn't valid! Make sure to fill in all necessary field(s) correctly!"
 }
