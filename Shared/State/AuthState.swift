@@ -19,6 +19,8 @@ class AuthState: ObservableObject {
     @Published var user_uid = ""
     @Published var authLoading = true
     
+    private var authService = AuthService.instance
+    
   
     func checkAuth(authDetail: FetchedResults<AuthDetail>) {
         if(authDetail.count != 0){
@@ -50,7 +52,7 @@ class AuthState: ObservableObject {
     // and or returning response (token and user_uid a.k.a AuthDetail) from DB
     //then, on saveAuthDetail() call, it saves the responses to CoreData
     func authUser(email: String, password: String, option: AuthOptions, authDetail:FetchedResults<AuthDetail>, viewContext: NSManagedObjectContext) {
-        AuthService.instance.authUser(email: email, password: password, option: option) {[unowned self] (result) in
+        authService.authUser(email: email, password: password, option: option) {[unowned self] (result) in
             switch result {
             case .success(let response):
                 self.saveAuthDetail(result: response, authDetail: authDetail, viewContext: viewContext)
@@ -63,7 +65,7 @@ class AuthState: ObservableObject {
     //delete corresponding uid and its token from db
     //then, on deleteAuthDetail(), it deletes the uid and token from coreData
     func deauthUser(authDetail: FetchedResults<AuthDetail>, viewContext: NSManagedObjectContext){
-        AuthService.instance.deauthUser(user_uid: user_uid, token: token) {[unowned self] (result) in
+        authService.deauthUser(user_uid: user_uid, token: token) {[unowned self] (result) in
             switch result{
             case .success(_):
                 // _ is msg (from backend)  - assign it as a var if you wanna access it.
