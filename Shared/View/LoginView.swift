@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    //Core data result for AuthDetail
+    //CoreData stack for AuthDetail
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [])
     private var authDetail: FetchedResults<AuthDetail>

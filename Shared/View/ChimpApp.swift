@@ -13,9 +13,6 @@ struct ChimpApp: App {
     let persistenceController = PersistenceController.shared
     @StateObject var authState = AuthState()
 
-    
-   
-    
     var body: some Scene {
             WindowGroup {
                 AppWrapper().environment(\.managedObjectContext, persistenceController.container.viewContext).environmentObject(authState)
@@ -159,7 +156,13 @@ extension NSTextField {
 }
 
 struct ContactAddView: View {
+    //CoreData stack for ContactDetail
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [])
+    private var contactsDetail: FetchedResults<ContactDetail>
+
     @EnvironmentObject var contactsState: ContactsState
+    @EnvironmentObject var authState: AuthState
     let gray = Color(red: 207/255, green: 207/255, blue: 212/255)
     let lightGray = Color(red: 240/255, green: 240/255, blue: 240/255)
     @State var firstname = String()
@@ -171,6 +174,7 @@ struct ContactAddView: View {
     @State var company = String()
     @State var selected = false
     @State var hoverRow = false
+    var contactData = ["first_name": "Liam", "last_name": "Rolando", "email": "liam@mail.com", "note": "This is my note", "phone": "+6281393775125"]
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -180,6 +184,15 @@ struct ContactAddView: View {
                         // TODO: make view over window toolbar items, close but should overlay the toolbar items
                         Button("Close") {
                             contactsState.addMenuePressed.toggle()
+                        }.padding(.trailing, 20).padding(.top, 30)
+                        Button("Add cdata contact") {
+                            contactsState.createContactCD(contactData: contactData,contactsDetail: contactsDetail ,viewContext: viewContext)
+                        }.padding(.trailing, 20).padding(.top, 30)
+                        Button("Print cdata contact") {
+                            for (_,contactDetail) in contactsDetail.enumerated(){
+                                guard let first_name = contactDetail.first_name else {return}
+                                print(first_name)
+                            }
                         }.padding(.trailing, 20).padding(.top, 30)
                     }
                     Spacer()
@@ -211,18 +224,8 @@ struct ContactAddView: View {
                             // TODO: save new contact function
                             //HERE
                             self.contactsState.addContact(firstname: self.firstname, lastname: self.lastname, email: self.email, telephone: self.telephone, birthday: self.birthDate.toString(dateFormat: "dd.MM.yyyy"), company: self.company)
-                            ContactService.instance.addOrUpdatecontact(first_name: firstname, last_name: lastname, phone: telephone, email: email, dob: Int(self.birthDate.timeIntervalSince1970) , note: "", company_uids: [], tags: [], option: .addContact) { (result) in
-                                switch result{
-                                case .success(let response):
-                                    guard let contact_uid = response["contact_uid"] else {
-                                       return
-                                    }
-                                    print("Created and saved to db! \n contact_uid is: \(contact_uid)") //for debugging/checking purposes
-                                case .failure(let error):
-                                    print(error.localizedDescription)
-                                }
-                            }
-                            contactsState.addMenuePressed.toggle()//please read docs to fully understand all errors
+                          
+                            contactsState.addMenuePressed.toggle()
                         }
                     }.frame(maxWidth: 320, maxHeight: 320)
                     Spacer()

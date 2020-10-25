@@ -6,11 +6,17 @@
 //
 
 import Foundation
-
-import Foundation
+import CoreData
+import SwiftUI
 
 class ContactsState: ObservableObject {
     
+    //Default "flow" of data saving:
+    //CoreData first -> then to DB*
+    
+    //* via REST API (backend services)
+    
+
     init() {
         contacts.append(Contact(firstname: "Felix", lastname: "Something", email: "felix@test.de", telephone: "123", birthday: "13.02.1998", company: "Chimp"))
         contacts.append(Contact(firstname: "Paul", lastname: "Something", email: "paul@test.de", telephone: "456", birthday: "20.08.1992", company: "Chimp"))
@@ -30,10 +36,25 @@ class ContactsState: ObservableObject {
     @Published var advancedMenuePressed = false
     @Published var selectedContact = ""
     
+    
+    //creating a new Contact in CoreData
+    func createContactCD(contactData: [String:String],contactsDetail: FetchedResults<ContactDetail> ,viewContext: NSManagedObjectContext) {
+        let newContactDetail = ContactDetail(context: viewContext)
+        for data in contactData{
+            newContactDetail.setValue(data.value, forKey: data.key)
+        }
+        CoreDataManager.instance.save(viewContext: viewContext) { (done) in
+            if(done){
+                print(done)
+            }
+        }
+    }
+    
+    //UI
     func addContact(firstname: String, lastname: String, email: String, telephone: String, birthday: String, company: String) {
         contacts.append(Contact(firstname: firstname, lastname: lastname, email: email, telephone: telephone, birthday: birthday, company: company))
     }
-    
+  
     func getContactCategories() -> [String] {
         var categories = Set<String>()
         for contact in self.contacts {
