@@ -156,6 +156,8 @@ extension NSTextField {
 }
 
 struct ContactAddView: View {
+ 
+    
     //CoreData stack for ContactDetail
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [])
@@ -174,7 +176,10 @@ struct ContactAddView: View {
     @State var company = String()
     @State var selected = false
     @State var hoverRow = false
-    var contactData = ["first_name": "Liam", "last_name": "Rolando", "email": "liam@mail.com", "note": "This is my note", "phone": "+6281393775125"]
+    
+    @State var contactData = ["first_name": "", "last_name": "", "phone": "", "email": "", "dob": 0, "note": ""]
+
+  
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -186,14 +191,29 @@ struct ContactAddView: View {
                             contactsState.addMenuePressed.toggle()
                         }.padding(.trailing, 20).padding(.top, 30)
                         Button("Add cdata contact") {
+                            contactData["dob"] = Int(birthDate.timeIntervalSince1970*1000) // d.o.b in epoch
                             contactsState.createContactCD(contactData: contactData,contactsDetail: contactsDetail ,viewContext: viewContext)
                         }.padding(.trailing, 20).padding(.top, 30)
                         Button("Print cdata contact") {
                             for (_,contactDetail) in contactsDetail.enumerated(){
                                 guard let first_name = contactDetail.first_name else {return}
-                                print(first_name)
+                                let dob = contactDetail.dob
+                                print("\(first_name) bday is \(dob)")
                             }
                         }.padding(.trailing, 20).padding(.top, 30)
+                        Button {
+                            for (contactD) in contactsDetail{
+                                viewContext.delete(contactD)
+                                CoreDataManager.instance.save(viewContext: viewContext){(_)in}
+
+                            }
+                            
+                        } label: {
+                            Text("delete cdata ")
+                                .fontWeight(.semibold)
+                                .frame(minWidth: 230)
+                                .foregroundColor(Color.blue)
+                        }
                     }
                     Spacer()
                     VStack {
@@ -202,13 +222,13 @@ struct ContactAddView: View {
                             Text("Contact").font(.system(size: 30)).fontWeight(.light).zIndex(1)
                         }
                         HStack {
-                            ChimpTextField(placeholder: "First Name", value: self.$firstname)
+                            ChimpTextField(placeholder: "First Name", value: self.binding(for: "first_name"))
                             ChimpTextField(placeholder: "Last Name", value: self.$lastname)
                         }
                         
                         ChimpTextField(placeholder: "E-Mail", value: self.$email)
                         ChimpTextField(placeholder: "Telephone", value: self.$telephone)
-                        ChimpTextField(placeholder: "Birthday", value: self.$birthday)
+                        ChimpTextField(placeholder: "Birthday", value: self.binding(for: "dob"))
                         
                         ChimpDatePicker(birthDate: self.$birthDate)
                        
@@ -233,6 +253,15 @@ struct ContactAddView: View {
             }
         }
     }
+    
+    //this is used to bind [String:String]
+    //(as it's not possible using $)
+    private func binding(for key: String) -> Binding<String> {
+           return .init(
+            get: { (self.contactData[key, default: ""] as? String ?? "")},
+               set: { self.contactData[key] = $0 })
+       }
+    
 }
 
 struct ChimpTextField: View {
