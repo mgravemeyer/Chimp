@@ -48,6 +48,7 @@ class AuthState: ObservableObject {
     
     //creating a new user in DB on sign up
     // and or returning response (token and user_uid a.k.a AuthDetail) from DB
+    //then, on saveAuthDetail() call, it saves the responses to CoreData
     func authUser(email: String, password: String, option: AuthOptions, authDetail:FetchedResults<AuthDetail>, viewContext: NSManagedObjectContext) {
         AuthService.instance.authUser(email: email, password: password, option: option) { (result) in
             switch result {
@@ -58,6 +59,24 @@ class AuthState: ObservableObject {
             }
         }
     }
+    
+    //delete corresponding uid and its token from db
+    //then, on deleteAuthDetail(), it deletes the uid and token from coreData
+    func deauthUser(authDetail: FetchedResults<AuthDetail>, viewContext: NSManagedObjectContext){
+        AuthService.instance.deauthUser(user_uid: user_uid, token: token) { (result) in
+            switch result{
+            case .success(_):
+                // _ is msg (from backend)  - assign it as a var if you wanna access it.
+                self.deleteAuthDetail(authDetail: authDetail, viewContext: viewContext)
+            case .failure(let err):
+                print(err.localizedDescription) // maybe assign it to a state and display to user?
+            }
+        }
+        DispatchQueue.main.async {
+            self.loggedIn = false
+        }
+    }
+    
     //saving the token and user_uid to CoreData of type AuthDetail
     private func saveAuthDetail(result: [String: String], authDetail: FetchedResults<AuthDetail>, viewContext: NSManagedObjectContext){
         guard let token = result["token"], let user_uid = result["user_uid"] else {
@@ -77,21 +96,6 @@ class AuthState: ObservableObject {
             }
         }
         
-    }
-    
-    func deauthUser(authDetail: FetchedResults<AuthDetail>, viewContext: NSManagedObjectContext){
-        AuthService.instance.deauthUser(user_uid: user_uid, token: token) { (result) in
-            switch result{
-            case .success(_):
-                // _ is msg (from backend)  - assign it as a var if you wanna access it.
-                self.deleteAuthDetail(authDetail: authDetail, viewContext: viewContext)
-            case .failure(let err):
-                print(err.localizedDescription) // maybe assign it to a state and display to user?
-            }
-        }
-        DispatchQueue.main.async {
-            self.loggedIn = false
-        }
     }
     
     //deleting the token and user_uid to CoreData of type AuthDetail
