@@ -37,20 +37,14 @@ class AuthRequestMaker{
             return
         }
         
-        let request = requestMaker.makeRequest(method: "POST", url: url, jsonData: jsonData)
+        let request = requestMaker.makeJSONRequest(method: "POST", url: url, jsonData: jsonData, isPrivate: false, token: "")
         requestBuilt(true, request)
     }
     
     func createDeauthRequest(user_uid: String, token: String ,completed: @escaping(_ status: Bool,_ result: URLRequest)->()){
         let url = URL(string: SIGN_OUT_ENDPOINT)
-        guard let requestUrl = url else { return }
-        let jsonData = try? JSONEncoder().encode(DeauthRequestModel(user_uid: user_uid))
-        var request = URLRequest(url: requestUrl)
-        request.httpMethod = "POST"
-        request.httpBody = jsonData
-        request.addValue(token, forHTTPHeaderField: "x-auth-token")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        guard let jsonData = try? JSONEncoder().encode(DeauthRequestModel(user_uid: user_uid)) else {return}
+        let request = requestMaker.makeJSONRequest(method: "POST", url: url, jsonData: jsonData, isPrivate: true, token: token)
         completed(true, request)
     }
     
