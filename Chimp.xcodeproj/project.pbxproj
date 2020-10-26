@@ -1,0 +1,940 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5000EA2A254454750023A545 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5000EA29254454750023A545 /* LoadingView.swift */; };
+		5000EA2B254454750023A545 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5000EA29254454750023A545 /* LoadingView.swift */; };
+		500E2FDC253F6A7A005B347D /* AuthErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E2FDB253F6A7A005B347D /* AuthErrors.swift */; };
+		500E2FE1253F7161005B347D /* AuthErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E2FDB253F6A7A005B347D /* AuthErrors.swift */; };
+		5044E96725431EC50041E01B /* ChimpDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044E96625431EC50041E01B /* ChimpDatePicker.swift */; };
+		5044E96825431EC50041E01B /* ChimpDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044E96625431EC50041E01B /* ChimpDatePicker.swift */; };
+		504AD45725442C0A001BCEEB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504AD45625442C0A001BCEEB /* CoreDataManager.swift */; };
+		504AD45825442C0A001BCEEB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504AD45625442C0A001BCEEB /* CoreDataManager.swift */; };
+		504C5D9725459959003BDFA1 /* RequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C5D9625459959003BDFA1 /* RequestMaker.swift */; };
+		504C5D9825459959003BDFA1 /* RequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C5D9625459959003BDFA1 /* RequestMaker.swift */; };
+		504C5DA22545CBA2003BDFA1 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C5DA12545CBA2003BDFA1 /* PersistenceController.swift */; };
+		504C5DA32545CBA2003BDFA1 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C5DA12545CBA2003BDFA1 /* PersistenceController.swift */; };
+		5090A52A253CB8F500A211EE /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A529253CB8F500A211EE /* Auth.swift */; };
+		5090A52B253CB8F500A211EE /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A529253CB8F500A211EE /* Auth.swift */; };
+		5090A53E253CBCFC00A211EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A53D253CBCFC00A211EE /* AuthService.swift */; };
+		5090A53F253CBCFC00A211EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A53D253CBCFC00A211EE /* AuthService.swift */; };
+		5090A549253CD0E900A211EE /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A548253CD0E900A211EE /* AuthRequest.swift */; };
+		5090A54A253CD0E900A211EE /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A548253CD0E900A211EE /* AuthRequest.swift */; };
+		509B6EEB253F8253002D165F /* AuthOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6EEA253F8253002D165F /* AuthOptions.swift */; };
+		509B6EEC253F8253002D165F /* AuthOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6EEA253F8253002D165F /* AuthOptions.swift */; };
+		509B6F4D2540B68E002D165F /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F4C2540B68E002D165F /* ContactService.swift */; };
+		509B6F4E2540B68E002D165F /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F4C2540B68E002D165F /* ContactService.swift */; };
+		509B6F582540B6A4002D165F /* ContactRequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F572540B6A4002D165F /* ContactRequestMaker.swift */; };
+		509B6F592540B6A4002D165F /* ContactRequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F572540B6A4002D165F /* ContactRequestMaker.swift */; };
+		509B6F632540B6C4002D165F /* ContactOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F622540B6C4002D165F /* ContactOptions.swift */; };
+		509B6F642540B6C4002D165F /* ContactOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F622540B6C4002D165F /* ContactOptions.swift */; };
+		509B6F6E2540BEDC002D165F /* ContactErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F6D2540BEDC002D165F /* ContactErrors.swift */; };
+		509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F6D2540BEDC002D165F /* ContactErrors.swift */; };
+		509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
+		509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
+		E357335425061AE100DAD3CC /* ChimpContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E357335325061AE100DAD3CC /* ChimpContactList.swift */; };
+		E39AC44F2501003200980BF6 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* AuthState.swift */; };
+		E39AC4502501003200980BF6 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* AuthState.swift */; };
+		E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3A24F7D5A700F7A95A /* AppView.swift */; };
+		E3D6EF3C24F7D5A700F7A95A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3A24F7D5A700F7A95A /* AppView.swift */; };
+		E3D6EF3F24F7D6C600F7A95A /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */; };
+		E3D6EF4024F7D6C600F7A95A /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */; };
+		E3D7A5E824F4FFC200D3EB62 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5E724F4FFC200D3EB62 /* Tests_iOS.swift */; };
+		E3D7A5F324F4FFC200D3EB62 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5F224F4FFC200D3EB62 /* Tests_macOS.swift */; };
+		E3D7A5F524F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */; };
+		E3D7A5F624F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */; };
+		E3D7A5F724F4FFC200D3EB62 /* ChimpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */; };
+		E3D7A5F824F4FFC200D3EB62 /* ChimpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */; };
+		E3D7A5F924F4FFC200D3EB62 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */; };
+		E3D7A5FA24F4FFC200D3EB62 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */; };
+		E3D7A5FB24F4FFC200D3EB62 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */; };
+		E3D7A5FC24F4FFC200D3EB62 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */; };
+		E3D7A5FD24F4FFC200D3EB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */; };
+		E3D7A5FE24F4FFC200D3EB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */; };
+		E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9724FFD8FF0065B141 /* ContactsState.swift */; };
+		E3E60A9924FFD8FF0065B141 /* ContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9724FFD8FF0065B141 /* ContactsState.swift */; };
+		E3E60A9B24FFD9780065B141 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9A24FFD9780065B141 /* Contact.swift */; };
+		E3E60AA224FFF4430065B141 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFD99624FA5CF8002E336F /* Profile.swift */; };
+		E3E60AA324FFF4430065B141 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9A24FFD9780065B141 /* Contact.swift */; };
+		E3EFD99724FA5CF8002E336F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFD99624FA5CF8002E336F /* Profile.swift */; };
+		E3FDF8C925024912002B7C5F /* SidebarNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDF8C825024912002B7C5F /* SidebarNavigationButton.swift */; };
+		E3FDF8CB25024977002B7C5F /* ContactListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDF8CA25024977002B7C5F /* ContactListItem.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E3D7A5E424F4FFC200D3EB62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3D7A5C424F4FFC000D3EB62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3D7A5D224F4FFC200D3EB62;
+			remoteInfo = "Chimp (iOS)";
+		};
+		E3D7A5EF24F4FFC200D3EB62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3D7A5C424F4FFC000D3EB62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3D7A5DA24F4FFC200D3EB62;
+			remoteInfo = "Chimp (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5000EA29254454750023A545 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		500E2FDB253F6A7A005B347D /* AuthErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrors.swift; sourceTree = "<group>"; };
+		5044E96625431EC50041E01B /* ChimpDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpDatePicker.swift; sourceTree = "<group>"; };
+		504AD45625442C0A001BCEEB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		504C5D9625459959003BDFA1 /* RequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMaker.swift; sourceTree = "<group>"; };
+		504C5DA12545CBA2003BDFA1 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		5090A529253CB8F500A211EE /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		5090A53D253CBCFC00A211EE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		5090A548253CD0E900A211EE /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
+		509B6EEA253F8253002D165F /* AuthOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOptions.swift; sourceTree = "<group>"; };
+		509B6F4C2540B68E002D165F /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
+		509B6F572540B6A4002D165F /* ContactRequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRequestMaker.swift; sourceTree = "<group>"; };
+		509B6F622540B6C4002D165F /* ContactOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptions.swift; sourceTree = "<group>"; };
+		509B6F6D2540BEDC002D165F /* ContactErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactErrors.swift; sourceTree = "<group>"; };
+		509B6F762540C0A9002D165F /* AccessTokenErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenErrors.swift; sourceTree = "<group>"; };
+		E357335325061AE100DAD3CC /* ChimpContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpContactList.swift; sourceTree = "<group>"; };
+		E39AC44E2501003200980BF6 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
+		E3D6EF3A24F7D5A700F7A95A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		E3D7A5CA24F4FFC000D3EB62 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
+		E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpApp.swift; sourceTree = "<group>"; };
+		E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3D7A5D324F4FFC200D3EB62 /* Chimp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chimp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D7A5D624F4FFC200D3EB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3D7A5DB24F4FFC200D3EB62 /* Chimp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chimp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D7A5DD24F4FFC200D3EB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3D7A5DE24F4FFC200D3EB62 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		E3D7A5E324F4FFC200D3EB62 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D7A5E724F4FFC200D3EB62 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		E3D7A5E924F4FFC200D3EB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3D7A5EE24F4FFC200D3EB62 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D7A5F224F4FFC200D3EB62 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		E3D7A5F424F4FFC200D3EB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3E60A9724FFD8FF0065B141 /* ContactsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsState.swift; sourceTree = "<group>"; };
+		E3E60A9A24FFD9780065B141 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		E3EFD99624FA5CF8002E336F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		E3FDF8C825024912002B7C5F /* SidebarNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigationButton.swift; sourceTree = "<group>"; };
+		E3FDF8CA25024977002B7C5F /* ContactListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListItem.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3D7A5D024F4FFC200D3EB62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D7A5D824F4FFC200D3EB62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D7A5E024F4FFC200D3EB62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D7A5EB24F4FFC200D3EB62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		500E2FEA253F72E4005B347D /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				500E2FDB253F6A7A005B347D /* AuthErrors.swift */,
+				5090A53D253CBCFC00A211EE /* AuthService.swift */,
+				5090A548253CD0E900A211EE /* AuthRequest.swift */,
+				509B6EEA253F8253002D165F /* AuthOptions.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		504C5D952545994C003BDFA1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				504C5DA12545CBA2003BDFA1 /* PersistenceController.swift */,
+				504AD45625442C0A001BCEEB /* CoreDataManager.swift */,
+				504C5D9625459959003BDFA1 /* RequestMaker.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5090A53C253CBCE400A211EE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				509B6F752540C09A002D165F /* Access Token */,
+				509B6F2C2540AE90002D165F /* Contact */,
+				500E2FEA253F72E4005B347D /* Auth */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		509B6F2C2540AE90002D165F /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				509B6F4C2540B68E002D165F /* ContactService.swift */,
+				509B6F572540B6A4002D165F /* ContactRequestMaker.swift */,
+				509B6F622540B6C4002D165F /* ContactOptions.swift */,
+				509B6F6D2540BEDC002D165F /* ContactErrors.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		509B6F752540C09A002D165F /* Access Token */ = {
+			isa = PBXGroup;
+			children = (
+				509B6F762540C0A9002D165F /* AccessTokenErrors.swift */,
+			);
+			path = "Access Token";
+			sourceTree = "<group>";
+		};
+		E393AD032503FF6A0071D4E3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E3FDF8C825024912002B7C5F /* SidebarNavigationButton.swift */,
+				E3FDF8CA25024977002B7C5F /* ContactListItem.swift */,
+				E357335325061AE100DAD3CC /* ChimpContactList.swift */,
+				5044E96625431EC50041E01B /* ChimpDatePicker.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E393AD052503FF920071D4E3 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				E3E60A9724FFD8FF0065B141 /* ContactsState.swift */,
+				E39AC44E2501003200980BF6 /* AuthState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		E393AD062503FFA00071D4E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E393AD032503FF6A0071D4E3 /* Components */,
+				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */,
+				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
+				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
+				E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */,
+				5000EA29254454750023A545 /* LoadingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E393AD072503FFB50071D4E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5090A529253CB8F500A211EE /* Auth.swift */,
+				E3EFD99624FA5CF8002E336F /* Profile.swift */,
+				E3E60A9A24FFD9780065B141 /* Contact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E3D7A5C324F4FFC000D3EB62 = {
+			isa = PBXGroup;
+			children = (
+				E3D7A5C824F4FFC000D3EB62 /* Shared */,
+				E3D7A5D524F4FFC200D3EB62 /* iOS */,
+				E3D7A5DC24F4FFC200D3EB62 /* macOS */,
+				E3D7A5E624F4FFC200D3EB62 /* Tests iOS */,
+				E3D7A5F124F4FFC200D3EB62 /* Tests macOS */,
+				E3D7A5D424F4FFC200D3EB62 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E3D7A5C824F4FFC000D3EB62 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				504C5D952545994C003BDFA1 /* Utils */,
+				5090A53C253CBCE400A211EE /* Service */,
+				E393AD072503FFB50071D4E3 /* Model */,
+				E393AD062503FFA00071D4E3 /* View */,
+				E393AD052503FF920071D4E3 /* State */,
+				E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */,
+				E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */,
+				E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		E3D7A5D424F4FFC200D3EB62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3D7A5D324F4FFC200D3EB62 /* Chimp.app */,
+				E3D7A5DB24F4FFC200D3EB62 /* Chimp.app */,
+				E3D7A5E324F4FFC200D3EB62 /* Tests iOS.xctest */,
+				E3D7A5EE24F4FFC200D3EB62 /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3D7A5D524F4FFC200D3EB62 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E3D7A5D624F4FFC200D3EB62 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		E3D7A5DC24F4FFC200D3EB62 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				E3D7A5DD24F4FFC200D3EB62 /* Info.plist */,
+				E3D7A5DE24F4FFC200D3EB62 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		E3D7A5E624F4FFC200D3EB62 /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E3D7A5E724F4FFC200D3EB62 /* Tests_iOS.swift */,
+				E3D7A5E924F4FFC200D3EB62 /* Info.plist */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		E3D7A5F124F4FFC200D3EB62 /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				E3D7A5F224F4FFC200D3EB62 /* Tests_macOS.swift */,
+				E3D7A5F424F4FFC200D3EB62 /* Info.plist */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E3D7A5D224F4FFC200D3EB62 /* Chimp (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3D7A60124F4FFC200D3EB62 /* Build configuration list for PBXNativeTarget "Chimp (iOS)" */;
+			buildPhases = (
+				E3D7A5CF24F4FFC200D3EB62 /* Sources */,
+				E3D7A5D024F4FFC200D3EB62 /* Frameworks */,
+				E3D7A5D124F4FFC200D3EB62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Chimp (iOS)";
+			productName = "Chimp (iOS)";
+			productReference = E3D7A5D324F4FFC200D3EB62 /* Chimp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E3D7A5DA24F4FFC200D3EB62 /* Chimp (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3D7A60424F4FFC200D3EB62 /* Build configuration list for PBXNativeTarget "Chimp (macOS)" */;
+			buildPhases = (
+				E3D7A5D724F4FFC200D3EB62 /* Sources */,
+				E3D7A5D824F4FFC200D3EB62 /* Frameworks */,
+				E3D7A5D924F4FFC200D3EB62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Chimp (macOS)";
+			productName = "Chimp (macOS)";
+			productReference = E3D7A5DB24F4FFC200D3EB62 /* Chimp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E3D7A5E224F4FFC200D3EB62 /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3D7A60724F4FFC200D3EB62 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				E3D7A5DF24F4FFC200D3EB62 /* Sources */,
+				E3D7A5E024F4FFC200D3EB62 /* Frameworks */,
+				E3D7A5E124F4FFC200D3EB62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3D7A5E524F4FFC200D3EB62 /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = E3D7A5E324F4FFC200D3EB62 /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E3D7A5ED24F4FFC200D3EB62 /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3D7A60A24F4FFC200D3EB62 /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				E3D7A5EA24F4FFC200D3EB62 /* Sources */,
+				E3D7A5EB24F4FFC200D3EB62 /* Frameworks */,
+				E3D7A5EC24F4FFC200D3EB62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3D7A5F024F4FFC200D3EB62 /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = E3D7A5EE24F4FFC200D3EB62 /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3D7A5C424F4FFC000D3EB62 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					E3D7A5D224F4FFC200D3EB62 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					E3D7A5DA24F4FFC200D3EB62 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					E3D7A5E224F4FFC200D3EB62 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = E3D7A5D224F4FFC200D3EB62;
+					};
+					E3D7A5ED24F4FFC200D3EB62 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = E3D7A5DA24F4FFC200D3EB62;
+					};
+				};
+			};
+			buildConfigurationList = E3D7A5C724F4FFC000D3EB62 /* Build configuration list for PBXProject "Chimp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E3D7A5C324F4FFC000D3EB62;
+			productRefGroup = E3D7A5D424F4FFC200D3EB62 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3D7A5D224F4FFC200D3EB62 /* Chimp (iOS) */,
+				E3D7A5DA24F4FFC200D3EB62 /* Chimp (macOS) */,
+				E3D7A5E224F4FFC200D3EB62 /* Tests iOS */,
+				E3D7A5ED24F4FFC200D3EB62 /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3D7A5D124F4FFC200D3EB62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3D7A5FD24F4FFC200D3EB62 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D7A5D924F4FFC200D3EB62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3D7A5FE24F4FFC200D3EB62 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D7A5E124F4FFC200D3EB62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D7A5EC24F4FFC200D3EB62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3D7A5CF24F4FFC200D3EB62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3D7A5F524F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
+				504AD45725442C0A001BCEEB /* CoreDataManager.swift in Sources */,
+				509B6F582540B6A4002D165F /* ContactRequestMaker.swift in Sources */,
+				E3FDF8C925024912002B7C5F /* SidebarNavigationButton.swift in Sources */,
+				E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */,
+				5090A549253CD0E900A211EE /* AuthRequest.swift in Sources */,
+				E3E60A9B24FFD9780065B141 /* Contact.swift in Sources */,
+				E3D7A5FB24F4FFC200D3EB62 /* Persistence.swift in Sources */,
+				509B6EEB253F8253002D165F /* AuthOptions.swift in Sources */,
+				509B6F4D2540B68E002D165F /* ContactService.swift in Sources */,
+				509B6F6E2540BEDC002D165F /* ContactErrors.swift in Sources */,
+				5000EA2A254454750023A545 /* LoadingView.swift in Sources */,
+				E39AC44F2501003200980BF6 /* AuthState.swift in Sources */,
+				E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */,
+				E3D6EF3F24F7D6C600F7A95A /* TodayView.swift in Sources */,
+				504C5DA22545CBA2003BDFA1 /* PersistenceController.swift in Sources */,
+				E3D7A5F724F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
+				E3D7A5F924F4FFC200D3EB62 /* LoginView.swift in Sources */,
+				509B6F632540B6C4002D165F /* ContactOptions.swift in Sources */,
+				5090A52A253CB8F500A211EE /* Auth.swift in Sources */,
+				504C5D9725459959003BDFA1 /* RequestMaker.swift in Sources */,
+				E3EFD99724FA5CF8002E336F /* Profile.swift in Sources */,
+				5090A53E253CBCFC00A211EE /* AuthService.swift in Sources */,
+				E3FDF8CB25024977002B7C5F /* ContactListItem.swift in Sources */,
+				E357335425061AE100DAD3CC /* ChimpContactList.swift in Sources */,
+				5044E96725431EC50041E01B /* ChimpDatePicker.swift in Sources */,
+				509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */,
+				500E2FDC253F6A7A005B347D /* AuthErrors.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D7A5D724F4FFC200D3EB62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3D7A5F624F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
+				E3D7A5FC24F4FFC200D3EB62 /* Persistence.swift in Sources */,
+				509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */,
+				509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */,
+				5090A54A253CD0E900A211EE /* AuthRequest.swift in Sources */,
+				5090A52B253CB8F500A211EE /* Auth.swift in Sources */,
+				5044E96825431EC50041E01B /* ChimpDatePicker.swift in Sources */,
+				5090A53F253CBCFC00A211EE /* AuthService.swift in Sources */,
+				E3E60AA324FFF4430065B141 /* Contact.swift in Sources */,
+				509B6EEC253F8253002D165F /* AuthOptions.swift in Sources */,
+				500E2FE1253F7161005B347D /* AuthErrors.swift in Sources */,
+				509B6F4E2540B68E002D165F /* ContactService.swift in Sources */,
+				E3D6EF3C24F7D5A700F7A95A /* AppView.swift in Sources */,
+				509B6F642540B6C4002D165F /* ContactOptions.swift in Sources */,
+				E39AC4502501003200980BF6 /* AuthState.swift in Sources */,
+				E3D6EF4024F7D6C600F7A95A /* TodayView.swift in Sources */,
+				E3E60AA224FFF4430065B141 /* Profile.swift in Sources */,
+				E3D7A5F824F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
+				504AD45825442C0A001BCEEB /* CoreDataManager.swift in Sources */,
+				E3E60A9924FFD8FF0065B141 /* ContactsState.swift in Sources */,
+				E3D7A5FA24F4FFC200D3EB62 /* LoginView.swift in Sources */,
+				509B6F592540B6A4002D165F /* ContactRequestMaker.swift in Sources */,
+				504C5D9825459959003BDFA1 /* RequestMaker.swift in Sources */,
+				5000EA2B254454750023A545 /* LoadingView.swift in Sources */,
+				504C5DA32545CBA2003BDFA1 /* PersistenceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D7A5DF24F4FFC200D3EB62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3D7A5E824F4FFC200D3EB62 /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D7A5EA24F4FFC200D3EB62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3D7A5F324F4FFC200D3EB62 /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E3D7A5E524F4FFC200D3EB62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3D7A5D224F4FFC200D3EB62 /* Chimp (iOS) */;
+			targetProxy = E3D7A5E424F4FFC200D3EB62 /* PBXContainerItemProxy */;
+		};
+		E3D7A5F024F4FFC200D3EB62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3D7A5DA24F4FFC200D3EB62 /* Chimp (macOS) */;
+			targetProxy = E3D7A5EF24F4FFC200D3EB62 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E3D7A5FF24F4FFC200D3EB62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Q33X652UWU;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E3D7A60024F4FFC200D3EB62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Q33X652UWU;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		E3D7A60224F4FFC200D3EB62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = berlin.chimp.Chimp;
+				PRODUCT_NAME = Chimp;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3D7A60324F4FFC200D3EB62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = berlin.chimp.Chimp;
+				PRODUCT_NAME = Chimp;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E3D7A60524F4FFC200D3EB62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Q33X652UWU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = berlin.chimp.Chimp;
+				PRODUCT_NAME = Chimp;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E3D7A60624F4FFC200D3EB62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Q33X652UWU;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = berlin.chimp.Chimp;
+				PRODUCT_NAME = Chimp;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		E3D7A60824F4FFC200D3EB62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "berlin.chimp.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Chimp (iOS)";
+			};
+			name = Debug;
+		};
+		E3D7A60924F4FFC200D3EB62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "berlin.chimp.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Chimp (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E3D7A60B24F4FFC200D3EB62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "berlin.chimp.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Chimp (macOS)";
+			};
+			name = Debug;
+		};
+		E3D7A60C24F4FFC200D3EB62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "berlin.chimp.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Chimp (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3D7A5C724F4FFC000D3EB62 /* Build configuration list for PBXProject "Chimp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3D7A5FF24F4FFC200D3EB62 /* Debug */,
+				E3D7A60024F4FFC200D3EB62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3D7A60124F4FFC200D3EB62 /* Build configuration list for PBXNativeTarget "Chimp (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3D7A60224F4FFC200D3EB62 /* Debug */,
+				E3D7A60324F4FFC200D3EB62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3D7A60424F4FFC200D3EB62 /* Build configuration list for PBXNativeTarget "Chimp (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3D7A60524F4FFC200D3EB62 /* Debug */,
+				E3D7A60624F4FFC200D3EB62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3D7A60724F4FFC200D3EB62 /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3D7A60824F4FFC200D3EB62 /* Debug */,
+				E3D7A60924F4FFC200D3EB62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3D7A60A24F4FFC200D3EB62 /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3D7A60B24F4FFC200D3EB62 /* Debug */,
+				E3D7A60C24F4FFC200D3EB62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E3D7A5CA24F4FFC000D3EB62 /* Shared.xcdatamodel */,
+			);
+			currentVersion = E3D7A5CA24F4FFC000D3EB62 /* Shared.xcdatamodel */;
+			path = Chimp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E3D7A5C424F4FFC000D3EB62 /* Project object */;
+}
