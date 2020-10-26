@@ -239,11 +239,9 @@ struct ContactAddView: View {
                                 self.hoverRow = hover
                             }
                         }.onTapGesture {
-                            // TODO: save new contact function
-                            //HERE
-                            contactData["dob"] = String(Int(birthDate.timeIntervalSince1970*1000)) // d.o.b in epoch
+                            // TODO: save new contact function to the DB
+                            contactData["dob"] = String(Int(birthDate.timeIntervalSince1970*1000)) // d.o.b in epoch in string format
                             self.contactsState.createContactCD(contactData: contactData,contactsDetail: contactsDetail ,viewContext: viewContext)
-//                            self.contactsState.addContact(firstname: self.contactData["first_name"]!, lastname: self.contactData["last_name"]!, email: self.contactData["email"]!, telephone: self.contactData["phone"]!, birthday: self.birthDate.toString(dateFormat: "dd.MM.yyyy"), company: "")
                           
                             contactsState.addMenuePressed.toggle()
                         }
