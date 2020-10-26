@@ -14,7 +14,11 @@ class AuthService{
     func authUser(email: String, password: String, option: AuthOptions,  loginCompleted: @escaping(Result<[String:String], AuthErrors>) -> Void){
         let request = authRequest.createAuthRequest(email: email, password: password, option: option)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let result = try? JSONDecoder().decode(AuthResponseModel.self,from: data!) else{
+            guard let data = data else {
+                print("No data returned from server")
+                return
+            }
+            guard let result = try? JSONDecoder().decode(AuthResponseModel.self,from: data) else{
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse else{
@@ -59,7 +63,11 @@ class AuthService{
     func deauthUser(user_uid: String, token: String, loggedOutCompleted: @escaping(Result<[String:String], DeauthErrors>)->()){
         let request = authRequest.createDeauthRequest(user_uid: user_uid, token: token)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let result = try? JSONDecoder().decode(DeauthResponseModel.self,from: data!) else{
+            guard let data = data else {
+                print("No data returned from server")
+                return
+            }
+            guard let result = try? JSONDecoder().decode(DeauthResponseModel.self,from: data) else{
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse else{

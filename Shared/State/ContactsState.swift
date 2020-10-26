@@ -42,7 +42,7 @@ class ContactsState: ObservableObject {
     //getting all contacts from CoreData
     func getAllContactsFromCD(contactsDetail: FetchedResults<ContactDetail>){
         for contactDetail in contactsDetail{
-            guard let fname = contactDetail.first_name, let lname = contactDetail.last_name, let phone = contactDetail.phone , let email = contactDetail.email, let note = contactDetail.note  else {return}
+            guard let fname = contactDetail.first_name, let lname = contactDetail.last_name, let phone = contactDetail.phone , let email = contactDetail.email, let _ = contactDetail.note  else {return}
             let dob = Int(contactDetail.dob/1000) // (Integer/Epoch format from CoreData)
             let dob_date = Date(timeIntervalSince1970: TimeInterval(dob)) // date format (to be converted to str)
             let dob_str = dob_date.toString(dateFormat: "dd.MM.YYYY")//Str format, for UI

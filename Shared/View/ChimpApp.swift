@@ -196,9 +196,9 @@ struct ContactAddView: View {
                                 guard let fname = contactDetail.first_name, let lname = contactDetail.last_name, let phone = contactDetail.phone , let email = contactDetail.email, let note = contactDetail.note  else {return}
                                 let dob = contactDetail.dob
                                 print("\(fname) \(lname)'s birthday is on \(dob)")
-//                                print("Phone: \(phone)")
-//                                print("Email: \(email)")
-//                                print("Note: \(note)")
+                                print("Phone: \(phone)")
+                                print("Email: \(email)")
+                                print("Note: \(note)")
                             }
                         }.padding(.trailing, 20).padding(.top, 30)
                         Button {
