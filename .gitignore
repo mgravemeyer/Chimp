@@ -1,0 +1,6 @@
+.DS_Store
+.xcodeproj
+iOS/
+macOS/
+Tests iOS/
+Tests macOS/
