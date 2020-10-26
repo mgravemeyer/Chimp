@@ -173,16 +173,12 @@ struct ContactAddView: View {
     @EnvironmentObject var authState: AuthState
     let gray = Color(red: 207/255, green: 207/255, blue: 212/255)
     let lightGray = Color(red: 240/255, green: 240/255, blue: 240/255)
-    @State var firstname = String()
-    @State var lastname = String()
-    @State var email = String()
-    @State var telephone = String()
-    @State var birthday = String()
+    
+    @State var contactData = ["first_name": "", "last_name": "", "phone": "", "email": "", "dob": "", "note": ""] // dob is date of birth
     @State var birthDate = Date()
     @State var selected = false
     @State var hoverRow = false
     
-    @State var contactData = ["first_name": "", "last_name": "", "phone": "", "email": "", "dob": "", "note": ""]
 
     
     var body: some View {
