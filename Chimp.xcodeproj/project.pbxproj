@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E6A3D31255E91F400E5CE5D /* SideNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3D30255E91F400E5CE5D /* SideNavigationView.swift */; };
+		2E6A3D32255E91F400E5CE5D /* SideNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3D30255E91F400E5CE5D /* SideNavigationView.swift */; };
+		2E6A3D38255EB3AF00E5CE5D /* NavigationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3D37255EB3AF00E5CE5D /* NavigationCategory.swift */; };
+		2E6A3D39255EB3AF00E5CE5D /* NavigationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3D37255EB3AF00E5CE5D /* NavigationCategory.swift */; };
+		2E6A3D3F255EB8D600E5CE5D /* ContactAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3D3E255EB8D600E5CE5D /* ContactAddView.swift */; };
+		2E6A3D40255EB8D600E5CE5D /* ContactAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3D3E255EB8D600E5CE5D /* ContactAddView.swift */; };
+		2E6A3D57255EB9BD00E5CE5D /* ExternalContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3D56255EB9BD00E5CE5D /* ExternalContactDetailView.swift */; };
+		2E6A3D58255EB9BD00E5CE5D /* ExternalContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3D56255EB9BD00E5CE5D /* ExternalContactDetailView.swift */; };
+		2E6A3D84255EBB2900E5CE5D /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3D83255EBB2900E5CE5D /* ContactsView.swift */; };
+		2E6A3D85255EBB2900E5CE5D /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3D83255EBB2900E5CE5D /* ContactsView.swift */; };
+		2E6A3D8F255EBB5000E5CE5D /* EmptyContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3D8E255EBB5000E5CE5D /* EmptyContactDetailView.swift */; };
+		2E6A3D90255EBB5000E5CE5D /* EmptyContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3D8E255EBB5000E5CE5D /* EmptyContactDetailView.swift */; };
+		2E6A3D96255EBB8800E5CE5D /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3D95255EBB8800E5CE5D /* ContactDetailView.swift */; };
+		2E6A3D97255EBB8800E5CE5D /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3D95255EBB8800E5CE5D /* ContactDetailView.swift */; };
+		2E6A3DA1255EC0C800E5CE5D /* ContactVerticalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3DA0255EC0C800E5CE5D /* ContactVerticalListView.swift */; };
+		2E6A3DA2255EC0C800E5CE5D /* ContactVerticalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A3DA0255EC0C800E5CE5D /* ContactVerticalListView.swift */; };
+		2EA83C59255B609C004A9852 /* CommandLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA83C58255B609C004A9852 /* CommandLineView.swift */; };
+		2EA83C5E255B609F004A9852 /* CommandLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA83C58255B609C004A9852 /* CommandLineView.swift */; };
+		2EEA70DF255E7F98000C5E75 /* ChimpTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEA70DE255E7F98000C5E75 /* ChimpTextFieldView.swift */; };
+		2EEA70E0255E7F98000C5E75 /* ChimpTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEA70DE255E7F98000C5E75 /* ChimpTextFieldView.swift */; };
 		5000EA2A254454750023A545 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5000EA29254454750023A545 /* LoadingView.swift */; };
 		5000EA2B254454750023A545 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5000EA29254454750023A545 /* LoadingView.swift */; };
 		500E2FDC253F6A7A005B347D /* AuthErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E2FDB253F6A7A005B347D /* AuthErrors.swift */; };
@@ -37,7 +57,6 @@
 		509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F6D2540BEDC002D165F /* ContactErrors.swift */; };
 		509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
 		509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
-		E357335425061AE100DAD3CC /* ChimpContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E357335325061AE100DAD3CC /* ChimpContactList.swift */; };
 		E39AC44F2501003200980BF6 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* AuthState.swift */; };
 		E39AC4502501003200980BF6 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* AuthState.swift */; };
 		E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3A24F7D5A700F7A95A /* AppView.swift */; };
@@ -48,12 +67,10 @@
 		E3D7A5F324F4FFC200D3EB62 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5F224F4FFC200D3EB62 /* Tests_macOS.swift */; };
 		E3D7A5F524F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */; };
 		E3D7A5F624F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */; };
-		E3D7A5F724F4FFC200D3EB62 /* ChimpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */; };
-		E3D7A5F824F4FFC200D3EB62 /* ChimpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */; };
+		E3D7A5F724F4FFC200D3EB62 /* ChimpApp+Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CB24F4FFC000D3EB62 /* ChimpApp+Wrapper.swift */; };
+		E3D7A5F824F4FFC200D3EB62 /* ChimpApp+Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CB24F4FFC000D3EB62 /* ChimpApp+Wrapper.swift */; };
 		E3D7A5F924F4FFC200D3EB62 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */; };
 		E3D7A5FA24F4FFC200D3EB62 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */; };
-		E3D7A5FB24F4FFC200D3EB62 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */; };
-		E3D7A5FC24F4FFC200D3EB62 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */; };
 		E3D7A5FD24F4FFC200D3EB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */; };
 		E3D7A5FE24F4FFC200D3EB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */; };
 		E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9724FFD8FF0065B141 /* ContactsState.swift */; };
@@ -62,7 +79,6 @@
 		E3E60AA224FFF4430065B141 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFD99624FA5CF8002E336F /* Profile.swift */; };
 		E3E60AA324FFF4430065B141 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9A24FFD9780065B141 /* Contact.swift */; };
 		E3EFD99724FA5CF8002E336F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFD99624FA5CF8002E336F /* Profile.swift */; };
-		E3FDF8C925024912002B7C5F /* SidebarNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDF8C825024912002B7C5F /* SidebarNavigationButton.swift */; };
 		E3FDF8CB25024977002B7C5F /* ContactListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDF8CA25024977002B7C5F /* ContactListItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +100,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E6A3D30255E91F400E5CE5D /* SideNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNavigationView.swift; sourceTree = "<group>"; };
+		2E6A3D37255EB3AF00E5CE5D /* NavigationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCategory.swift; sourceTree = "<group>"; };
+		2E6A3D3E255EB8D600E5CE5D /* ContactAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddView.swift; sourceTree = "<group>"; };
+		2E6A3D56255EB9BD00E5CE5D /* ExternalContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalContactDetailView.swift; sourceTree = "<group>"; };
+		2E6A3D83255EBB2900E5CE5D /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		2E6A3D8E255EBB5000E5CE5D /* EmptyContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyContactDetailView.swift; sourceTree = "<group>"; };
+		2E6A3D95255EBB8800E5CE5D /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
+		2E6A3DA0255EC0C800E5CE5D /* ContactVerticalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVerticalListView.swift; sourceTree = "<group>"; };
+		2EA83C58255B609C004A9852 /* CommandLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineView.swift; sourceTree = "<group>"; };
+		2EEA70DE255E7F98000C5E75 /* ChimpTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpTextFieldView.swift; sourceTree = "<group>"; };
 		5000EA29254454750023A545 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		500E2FDB253F6A7A005B347D /* AuthErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrors.swift; sourceTree = "<group>"; };
 		5044E96625431EC50041E01B /* ChimpDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpDatePicker.swift; sourceTree = "<group>"; };
@@ -99,14 +125,12 @@
 		509B6F622540B6C4002D165F /* ContactOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptions.swift; sourceTree = "<group>"; };
 		509B6F6D2540BEDC002D165F /* ContactErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactErrors.swift; sourceTree = "<group>"; };
 		509B6F762540C0A9002D165F /* AccessTokenErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenErrors.swift; sourceTree = "<group>"; };
-		E357335325061AE100DAD3CC /* ChimpContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpContactList.swift; sourceTree = "<group>"; };
 		E39AC44E2501003200980BF6 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
 		E3D6EF3A24F7D5A700F7A95A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		E3D7A5CA24F4FFC000D3EB62 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
-		E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpApp.swift; sourceTree = "<group>"; };
+		E3D7A5CB24F4FFC000D3EB62 /* ChimpApp+Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChimpApp+Wrapper.swift"; sourceTree = "<group>"; };
 		E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3D7A5D324F4FFC200D3EB62 /* Chimp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chimp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D7A5D624F4FFC200D3EB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,7 +146,6 @@
 		E3E60A9724FFD8FF0065B141 /* ContactsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsState.swift; sourceTree = "<group>"; };
 		E3E60A9A24FFD9780065B141 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		E3EFD99624FA5CF8002E336F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		E3FDF8C825024912002B7C5F /* SidebarNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigationButton.swift; sourceTree = "<group>"; };
 		E3FDF8CA25024977002B7C5F /* ContactListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +181,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E6A3D55255EB98E00E5CE5D /* Contact Views */ = {
+			isa = PBXGroup;
+			children = (
+				2E6A3D83255EBB2900E5CE5D /* ContactsView.swift */,
+				2E6A3D3E255EB8D600E5CE5D /* ContactAddView.swift */,
+				2E6A3D56255EB9BD00E5CE5D /* ExternalContactDetailView.swift */,
+				2E6A3D8E255EBB5000E5CE5D /* EmptyContactDetailView.swift */,
+				2E6A3D95255EBB8800E5CE5D /* ContactDetailView.swift */,
+				2E6A3DA0255EC0C800E5CE5D /* ContactVerticalListView.swift */,
+			);
+			path = "Contact Views";
+			sourceTree = "<group>";
+		};
+		2E6A3D81255EBAE200E5CE5D /* Today Views */ = {
+			isa = PBXGroup;
+			children = (
+				E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */,
+			);
+			path = "Today Views";
+			sourceTree = "<group>";
+		};
+		2E6A3D82255EBAF300E5CE5D /* project-views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "project-views";
+			sourceTree = "<group>";
+		};
 		500E2FEA253F72E4005B347D /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,10 +262,9 @@
 		E393AD032503FF6A0071D4E3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E3FDF8C825024912002B7C5F /* SidebarNavigationButton.swift */,
 				E3FDF8CA25024977002B7C5F /* ContactListItem.swift */,
-				E357335325061AE100DAD3CC /* ChimpContactList.swift */,
 				5044E96625431EC50041E01B /* ChimpDatePicker.swift */,
+				2EEA70DE255E7F98000C5E75 /* ChimpTextFieldView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -231,12 +281,16 @@
 		E393AD062503FFA00071D4E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E393AD032503FF6A0071D4E3 /* Components */,
-				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */,
 				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
+				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp+Wrapper.swift */,
 				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
-				E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */,
+				2EA83C58255B609C004A9852 /* CommandLineView.swift */,
 				5000EA29254454750023A545 /* LoadingView.swift */,
+				2E6A3D30255E91F400E5CE5D /* SideNavigationView.swift */,
+				E393AD032503FF6A0071D4E3 /* Components */,
+				2E6A3D81255EBAE200E5CE5D /* Today Views */,
+				2E6A3D55255EB98E00E5CE5D /* Contact Views */,
+				2E6A3D82255EBAF300E5CE5D /* project-views */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +301,7 @@
 				5090A529253CB8F500A211EE /* Auth.swift */,
 				E3EFD99624FA5CF8002E336F /* Profile.swift */,
 				E3E60A9A24FFD9780065B141 /* Contact.swift */,
+				2E6A3D37255EB3AF00E5CE5D /* NavigationCategory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,9 +324,8 @@
 				504C5D952545994C003BDFA1 /* Utils */,
 				5090A53C253CBCE400A211EE /* Service */,
 				E393AD072503FFB50071D4E3 /* Model */,
-				E393AD062503FFA00071D4E3 /* View */,
 				E393AD052503FF920071D4E3 /* State */,
-				E3D7A5CD24F4FFC000D3EB62 /* Persistence.swift */,
+				E393AD062503FFA00071D4E3 /* View */,
 				E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */,
 				E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */,
 			);
@@ -484,20 +538,28 @@
 				E3D7A5F524F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
 				504AD45725442C0A001BCEEB /* CoreDataManager.swift in Sources */,
 				509B6F582540B6A4002D165F /* ContactRequestMaker.swift in Sources */,
-				E3FDF8C925024912002B7C5F /* SidebarNavigationButton.swift in Sources */,
+				2E6A3DA1255EC0C800E5CE5D /* ContactVerticalListView.swift in Sources */,
 				E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */,
 				5090A549253CD0E900A211EE /* AuthRequest.swift in Sources */,
 				E3E60A9B24FFD9780065B141 /* Contact.swift in Sources */,
-				E3D7A5FB24F4FFC200D3EB62 /* Persistence.swift in Sources */,
+				2EEA70DF255E7F98000C5E75 /* ChimpTextFieldView.swift in Sources */,
+				2E6A3D84255EBB2900E5CE5D /* ContactsView.swift in Sources */,
+				2E6A3D96255EBB8800E5CE5D /* ContactDetailView.swift in Sources */,
+				2E6A3D8F255EBB5000E5CE5D /* EmptyContactDetailView.swift in Sources */,
+				2E6A3D31255E91F400E5CE5D /* SideNavigationView.swift in Sources */,
 				509B6EEB253F8253002D165F /* AuthOptions.swift in Sources */,
+				2E6A3D3F255EB8D600E5CE5D /* ContactAddView.swift in Sources */,
 				509B6F4D2540B68E002D165F /* ContactService.swift in Sources */,
 				509B6F6E2540BEDC002D165F /* ContactErrors.swift in Sources */,
 				5000EA2A254454750023A545 /* LoadingView.swift in Sources */,
+				2E6A3D38255EB3AF00E5CE5D /* NavigationCategory.swift in Sources */,
 				E39AC44F2501003200980BF6 /* AuthState.swift in Sources */,
 				E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */,
+				2EA83C59255B609C004A9852 /* CommandLineView.swift in Sources */,
+				2E6A3D57255EB9BD00E5CE5D /* ExternalContactDetailView.swift in Sources */,
 				E3D6EF3F24F7D6C600F7A95A /* TodayView.swift in Sources */,
 				504C5DA22545CBA2003BDFA1 /* PersistenceController.swift in Sources */,
-				E3D7A5F724F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
+				E3D7A5F724F4FFC200D3EB62 /* ChimpApp+Wrapper.swift in Sources */,
 				E3D7A5F924F4FFC200D3EB62 /* LoginView.swift in Sources */,
 				509B6F632540B6C4002D165F /* ContactOptions.swift in Sources */,
 				5090A52A253CB8F500A211EE /* Auth.swift in Sources */,
@@ -505,7 +567,6 @@
 				E3EFD99724FA5CF8002E336F /* Profile.swift in Sources */,
 				5090A53E253CBCFC00A211EE /* AuthService.swift in Sources */,
 				E3FDF8CB25024977002B7C5F /* ContactListItem.swift in Sources */,
-				E357335425061AE100DAD3CC /* ChimpContactList.swift in Sources */,
 				5044E96725431EC50041E01B /* ChimpDatePicker.swift in Sources */,
 				509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */,
 				500E2FDC253F6A7A005B347D /* AuthErrors.swift in Sources */,
@@ -516,29 +577,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E6A3D90255EBB5000E5CE5D /* EmptyContactDetailView.swift in Sources */,
 				E3D7A5F624F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
-				E3D7A5FC24F4FFC200D3EB62 /* Persistence.swift in Sources */,
+				2EA83C5E255B609F004A9852 /* CommandLineView.swift in Sources */,
 				509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */,
 				509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */,
 				5090A54A253CD0E900A211EE /* AuthRequest.swift in Sources */,
 				5090A52B253CB8F500A211EE /* Auth.swift in Sources */,
 				5044E96825431EC50041E01B /* ChimpDatePicker.swift in Sources */,
+				2EEA70E0255E7F98000C5E75 /* ChimpTextFieldView.swift in Sources */,
+				2E6A3D97255EBB8800E5CE5D /* ContactDetailView.swift in Sources */,
 				5090A53F253CBCFC00A211EE /* AuthService.swift in Sources */,
 				E3E60AA324FFF4430065B141 /* Contact.swift in Sources */,
 				509B6EEC253F8253002D165F /* AuthOptions.swift in Sources */,
 				500E2FE1253F7161005B347D /* AuthErrors.swift in Sources */,
 				509B6F4E2540B68E002D165F /* ContactService.swift in Sources */,
+				2E6A3D40255EB8D600E5CE5D /* ContactAddView.swift in Sources */,
 				E3D6EF3C24F7D5A700F7A95A /* AppView.swift in Sources */,
+				2E6A3D32255E91F400E5CE5D /* SideNavigationView.swift in Sources */,
 				509B6F642540B6C4002D165F /* ContactOptions.swift in Sources */,
+				2E6A3D85255EBB2900E5CE5D /* ContactsView.swift in Sources */,
 				E39AC4502501003200980BF6 /* AuthState.swift in Sources */,
 				E3D6EF4024F7D6C600F7A95A /* TodayView.swift in Sources */,
 				E3E60AA224FFF4430065B141 /* Profile.swift in Sources */,
-				E3D7A5F824F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
+				E3D7A5F824F4FFC200D3EB62 /* ChimpApp+Wrapper.swift in Sources */,
+				2E6A3D58255EB9BD00E5CE5D /* ExternalContactDetailView.swift in Sources */,
 				504AD45825442C0A001BCEEB /* CoreDataManager.swift in Sources */,
 				E3E60A9924FFD8FF0065B141 /* ContactsState.swift in Sources */,
 				E3D7A5FA24F4FFC200D3EB62 /* LoginView.swift in Sources */,
 				509B6F592540B6A4002D165F /* ContactRequestMaker.swift in Sources */,
+				2E6A3D39255EB3AF00E5CE5D /* NavigationCategory.swift in Sources */,
 				504C5D9825459959003BDFA1 /* RequestMaker.swift in Sources */,
+				2E6A3DA2255EC0C800E5CE5D /* ContactVerticalListView.swift in Sources */,
 				5000EA2B254454750023A545 /* LoadingView.swift in Sources */,
 				504C5DA32545CBA2003BDFA1 /* PersistenceController.swift in Sources */,
 			);

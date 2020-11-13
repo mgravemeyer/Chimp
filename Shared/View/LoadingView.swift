@@ -14,4 +14,3 @@ struct LoadingView: View {
         }.frame(width: 1000, height: 600).background(Color.white)
     }
 }
-

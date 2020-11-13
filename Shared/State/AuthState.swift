@@ -20,7 +20,10 @@ class AuthState: ObservableObject {
     
     //* via REST API (backend services)
     
-    
+    init() {
+        //TO:DO: creating fetch request auth state from core data
+        //checkAuth(authDetail: T##FetchedResults<AuthDetail>)
+    }
     
     @Published var loggedIn = false
     @Published var token = ""
