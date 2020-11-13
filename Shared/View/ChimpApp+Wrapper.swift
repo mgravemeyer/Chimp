@@ -39,7 +39,7 @@ struct AppWrapper: View {
     @EnvironmentObject var authState: AuthState 
     
     var body: some View{
-        if authState.authLoading{
+        if !authState.authLoading{
             // on initial launch this will always get fired
             LoadingView().onAppear{
                 self.authState.checkAuth(authDetail: authDetail)

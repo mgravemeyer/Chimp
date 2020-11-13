@@ -202,13 +202,6 @@
 			path = "Today Views";
 			sourceTree = "<group>";
 		};
-		2E6A3D82255EBAF300E5CE5D /* project-views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "project-views";
-			sourceTree = "<group>";
-		};
 		500E2FEA253F72E4005B347D /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,7 +283,6 @@
 				E393AD032503FF6A0071D4E3 /* Components */,
 				2E6A3D81255EBAE200E5CE5D /* Today Views */,
 				2E6A3D55255EB98E00E5CE5D /* Contact Views */,
-				2E6A3D82255EBAF300E5CE5D /* project-views */,
 			);
 			path = View;
 			sourceTree = "<group>";
