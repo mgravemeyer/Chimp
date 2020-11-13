@@ -19,7 +19,6 @@ struct LoginView: View {
     @State var password = String()
     @State var error = String()
     
-    
     var body: some View {
         HStack {
             Group {

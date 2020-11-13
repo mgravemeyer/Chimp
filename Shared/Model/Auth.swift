@@ -20,6 +20,7 @@ struct AuthResponseModel: Codable{
 }
 
 
+
 //struct Errors: Codable{
 //    let msg: String?
 //    let param: String?
