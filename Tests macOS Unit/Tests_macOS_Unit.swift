@@ -9,20 +9,31 @@ import XCTest
 @testable import Chimp
 
 class Tests_macOS_Unit: XCTestCase {
+    
+    private var context: NSManagedObjectContext?
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.context = NSManagedObjectContext.contextForTests()
+        continueAfterFailure = false
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testSaveCoreData() throws {
+        let newContactDetail = ContactDetail(context: self.context!)
+        newContactDetail.dob = 12345678901
+        newContactDetail.email = "test@test.com"
+        newContactDetail.first_name = "First"
+        newContactDetail.last_name = "Last"
+        newContactDetail.note = "Test Note"
+        
+        CoreDataManager.instance.save(viewContext: self.context!) { (done) in
+            if(done) {
+                XCTAssertTrue(true, "saved data into coreData")
+                print("true")
+            } else {
+                XCTAssertTrue(false, "couldn't save data into coreData")
+            }
+        }
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
 }
 
 //create in-memory CoreData stack for tests
