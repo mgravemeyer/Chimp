@@ -17,6 +17,11 @@ class Tests_macOS_Unit: XCTestCase {
         continueAfterFailure = false
     }
     
+    func testCoreDataManager() throws {
+        let instance = CoreDataManager.instance
+        XCTAssertNotNil(instance)
+    }
+    
     func testSaveCoreData() throws {
         let newContactDetail = ContactDetail(context: self.context!)
         newContactDetail.dob = 12345678901

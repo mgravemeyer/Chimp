@@ -20,5 +20,4 @@ struct CoreDataManager {
             fatalError("cData save err: \(err)")
         }
     }
-    
 }

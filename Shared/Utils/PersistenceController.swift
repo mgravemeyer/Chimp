@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+
 struct PersistenceController{
     static let shared = PersistenceController()
     
@@ -20,7 +21,7 @@ struct PersistenceController{
             }
             
             //core data stack is ready to be used
-            
+    
             
         }
     }
