@@ -73,6 +73,7 @@
 		E3D7A5FA24F4FFC200D3EB62 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */; };
 		E3D7A5FD24F4FFC200D3EB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */; };
 		E3D7A5FE24F4FFC200D3EB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */; };
+		E3D8E87E2564294200F53DFE /* Tests_macOS_Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8E87D2564294200F53DFE /* Tests_macOS_Unit.swift */; };
 		E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9724FFD8FF0065B141 /* ContactsState.swift */; };
 		E3E60A9924FFD8FF0065B141 /* ContactsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9724FFD8FF0065B141 /* ContactsState.swift */; };
 		E3E60A9B24FFD9780065B141 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E60A9A24FFD9780065B141 /* Contact.swift */; };
@@ -91,6 +92,13 @@
 			remoteInfo = "Chimp (iOS)";
 		};
 		E3D7A5EF24F4FFC200D3EB62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3D7A5C424F4FFC000D3EB62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3D7A5DA24F4FFC200D3EB62;
+			remoteInfo = "Chimp (macOS)";
+		};
+		E3D8E8802564294200F53DFE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E3D7A5C424F4FFC000D3EB62 /* Project object */;
 			proxyType = 1;
@@ -143,6 +151,9 @@
 		E3D7A5EE24F4FFC200D3EB62 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D7A5F224F4FFC200D3EB62 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		E3D7A5F424F4FFC200D3EB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3D8E87B2564294200F53DFE /* Tests macOS Unit.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS Unit.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D8E87D2564294200F53DFE /* Tests_macOS_Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS_Unit.swift; sourceTree = "<group>"; };
+		E3D8E87F2564294200F53DFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3E60A9724FFD8FF0065B141 /* ContactsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsState.swift; sourceTree = "<group>"; };
 		E3E60A9A24FFD9780065B141 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		E3EFD99624FA5CF8002E336F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -172,6 +183,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E3D7A5EB24F4FFC200D3EB62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D8E8782564294200F53DFE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -306,6 +324,7 @@
 				E3D7A5DC24F4FFC200D3EB62 /* macOS */,
 				E3D7A5E624F4FFC200D3EB62 /* Tests iOS */,
 				E3D7A5F124F4FFC200D3EB62 /* Tests macOS */,
+				E3D8E87C2564294200F53DFE /* Tests macOS Unit */,
 				E3D7A5D424F4FFC200D3EB62 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -331,6 +350,7 @@
 				E3D7A5DB24F4FFC200D3EB62 /* Chimp.app */,
 				E3D7A5E324F4FFC200D3EB62 /* Tests iOS.xctest */,
 				E3D7A5EE24F4FFC200D3EB62 /* Tests macOS.xctest */,
+				E3D8E87B2564294200F53DFE /* Tests macOS Unit.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -368,6 +388,15 @@
 				E3D7A5F424F4FFC200D3EB62 /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		E3D8E87C2564294200F53DFE /* Tests macOS Unit */ = {
+			isa = PBXGroup;
+			children = (
+				E3D8E87D2564294200F53DFE /* Tests_macOS_Unit.swift */,
+				E3D8E87F2564294200F53DFE /* Info.plist */,
+			);
+			path = "Tests macOS Unit";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,13 +472,31 @@
 			productReference = E3D7A5EE24F4FFC200D3EB62 /* Tests macOS.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		E3D8E87A2564294200F53DFE /* Tests macOS Unit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3D8E8842564294200F53DFE /* Build configuration list for PBXNativeTarget "Tests macOS Unit" */;
+			buildPhases = (
+				E3D8E8772564294200F53DFE /* Sources */,
+				E3D8E8782564294200F53DFE /* Frameworks */,
+				E3D8E8792564294200F53DFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3D8E8812564294200F53DFE /* PBXTargetDependency */,
+			);
+			name = "Tests macOS Unit";
+			productName = "Tests macOS Unit";
+			productReference = E3D8E87B2564294200F53DFE /* Tests macOS Unit.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		E3D7A5C424F4FFC000D3EB62 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					E3D7A5D224F4FFC200D3EB62 = {
@@ -464,6 +511,10 @@
 					};
 					E3D7A5ED24F4FFC200D3EB62 = {
 						CreatedOnToolsVersion = 12.0;
+						TestTargetID = E3D7A5DA24F4FFC200D3EB62;
+					};
+					E3D8E87A2564294200F53DFE = {
+						CreatedOnToolsVersion = 12.2;
 						TestTargetID = E3D7A5DA24F4FFC200D3EB62;
 					};
 				};
@@ -485,6 +536,7 @@
 				E3D7A5DA24F4FFC200D3EB62 /* Chimp (macOS) */,
 				E3D7A5E224F4FFC200D3EB62 /* Tests iOS */,
 				E3D7A5ED24F4FFC200D3EB62 /* Tests macOS */,
+				E3D8E87A2564294200F53DFE /* Tests macOS Unit */,
 			);
 		};
 /* End PBXProject section */
@@ -514,6 +566,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E3D7A5EC24F4FFC200D3EB62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D8E8792564294200F53DFE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -622,6 +681,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E3D8E8772564294200F53DFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3D8E87E2564294200F53DFE /* Tests_macOS_Unit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -634,6 +701,11 @@
 			isa = PBXTargetDependency;
 			target = E3D7A5DA24F4FFC200D3EB62 /* Chimp (macOS) */;
 			targetProxy = E3D7A5EF24F4FFC200D3EB62 /* PBXContainerItemProxy */;
+		};
+		E3D8E8812564294200F53DFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3D7A5DA24F4FFC200D3EB62 /* Chimp (macOS) */;
+			targetProxy = E3D8E8802564294200F53DFE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -935,6 +1007,50 @@
 			};
 			name = Release;
 		};
+		E3D8E8822564294200F53DFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				INFOPLIST_FILE = "Tests macOS Unit/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chimp.chimp.Tests-macOS-Unit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chimp.app/Contents/MacOS/Chimp";
+			};
+			name = Debug;
+		};
+		E3D8E8832564294200F53DFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				INFOPLIST_FILE = "Tests macOS Unit/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chimp.chimp.Tests-macOS-Unit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chimp.app/Contents/MacOS/Chimp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -979,6 +1095,15 @@
 			buildConfigurations = (
 				E3D7A60B24F4FFC200D3EB62 /* Debug */,
 				E3D7A60C24F4FFC200D3EB62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3D8E8842564294200F53DFE /* Build configuration list for PBXNativeTarget "Tests macOS Unit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3D8E8822564294200F53DFE /* Debug */,
+				E3D8E8832564294200F53DFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

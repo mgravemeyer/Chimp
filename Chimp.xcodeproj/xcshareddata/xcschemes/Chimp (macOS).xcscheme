@@ -38,6 +38,16 @@
                ReferencedContainer = "container:Chimp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E3D8E87A2564294200F53DFE"
+               BuildableName = "Tests macOS Unit.xctest"
+               BlueprintName = "Tests macOS Unit"
+               ReferencedContainer = "container:Chimp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
