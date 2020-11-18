@@ -10,7 +10,7 @@ import Foundation
 class AuthRequest{
     static let instance = AuthRequest()
     
-    private var _REST_API_HOST_ = "http://127.0.0.1:5000/api"
+    private var _REST_API_HOST_ = "http://167.99.136.248:4000/api"
     private var _AUTH_ = "auth"
     
     private let requestMaker = RequestMaker.instance
