@@ -13,6 +13,10 @@ import SwiftUI
 
 class ContactsState: ObservableObject {
     
+    init() {
+        getAllContactsFromCD()
+    }
+    
     //Default "flow" of data saving:
     //CoreData first -> then to DB*
     
@@ -25,14 +29,23 @@ class ContactsState: ObservableObject {
     
     
     //getting all contacts from CoreData
-    func getAllContactsFromCD(contactsDetail: FetchedResults<ContactDetail>){
-        for contactDetail in contactsDetail{
-            guard let fname = contactDetail.first_name, let lname = contactDetail.last_name, let phone = contactDetail.phone , let email = contactDetail.email, let _ = contactDetail.note  else {return}
-            let dob = Int(contactDetail.dob/1000) // (Integer/Epoch format from CoreData)
-            let dob_date = Date(timeIntervalSince1970: TimeInterval(dob)) // date format (to be converted to str)
-            let dob_str = dob_date.toString(dateFormat: "dd.MM.YYYY")//Str format, for UI
-            contacts.append(Contact(firstname: fname, lastname: lname, email: email, telephone: phone, birthday: dob_str, company: ""))
-
+    func getAllContactsFromCD() {
+        let contacts = CoreDataManager.instance.fetchRecordsForEntity("ContactDetail", inManagedObjectContext: PersistenceController.shared.container.viewContext)
+        
+        //to:do unwrap values safely, not force unwrap
+        for result in contacts as [NSManagedObject] {
+            let firstName = result.value(forKey: "first_name") as! String
+            let lastName = result.value(forKey: "last_name") as! String
+            let email = result.value(forKey: "email") as! String
+            let phone = result.value(forKey: "phone") as! String
+            
+            let dob = result.value(forKey: "dob") as! Int
+            let dob_date = Date(timeIntervalSince1970: TimeInterval(dob))
+            let dob_str = dob_date.toString(dateFormat: "dd.MM.YYYY")
+            
+            let contact = Contact(firstname: firstName, lastname: lastName, email: email, telephone: phone, birthday: dob_str, company: "")
+            
+            self.contacts.append(contact)
         }
     }
     
