@@ -59,6 +59,7 @@
 		509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
 		E39AC44F2501003200980BF6 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* AuthState.swift */; };
 		E39AC4502501003200980BF6 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* AuthState.swift */; };
+		E3AC5E092564432F00709D04 /* Chimp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */; };
 		E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3A24F7D5A700F7A95A /* AppView.swift */; };
 		E3D6EF3C24F7D5A700F7A95A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3A24F7D5A700F7A95A /* AppView.swift */; };
 		E3D6EF3F24F7D6C600F7A95A /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */; };
@@ -686,6 +687,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D8E87E2564294200F53DFE /* Tests_macOS_Unit.swift in Sources */,
+				E3AC5E092564432F00709D04 /* Chimp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

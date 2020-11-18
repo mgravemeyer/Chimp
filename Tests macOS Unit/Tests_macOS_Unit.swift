@@ -39,8 +39,12 @@ class Tests_macOS_Unit: XCTestCase {
             }
         }
     }
+    
+    func testLoadPersistentContainer() throws {
+        XCTAssertNoThrow(PersistenceController.shared.container.loadPersistentStores, "loaded persistenceController")
+    }
 }
-
+    
 //create in-memory CoreData stack for tests
 extension NSManagedObjectContext {
     class func contextForTests() -> NSManagedObjectContext {
