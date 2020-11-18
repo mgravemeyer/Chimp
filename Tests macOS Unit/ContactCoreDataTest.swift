@@ -1,14 +1,14 @@
 //
-//  Tests_macOS_Unit.swift
+//  ContactCoreDataTest.swift
 //  Tests macOS Unit
 //
-//  Created by Maximilian Gravemeyer on 17.11.20.
+//  Created by Maximilian Gravemeyer on 18.11.20.
 //
 
 import XCTest
 @testable import Chimp
 
-class Tests_macOS_Unit: XCTestCase {
+class ContactCoreDataTest: XCTestCase {
     
     private var context: NSManagedObjectContext?
 
@@ -22,7 +22,11 @@ class Tests_macOS_Unit: XCTestCase {
         XCTAssertNotNil(instance)
     }
     
-    func test_save_coreData() throws {
+    func test_load_persistent_container() throws {
+        XCTAssertNoThrow(PersistenceController.shared.container.loadPersistentStores, "loaded persistenceController")
+    }
+
+    func test_save_new_contact() throws {
         let newContactDetail = ContactDetail(context: self.context!)
         newContactDetail.dob = 12345678901
         newContactDetail.email = "test@test.com"
@@ -39,24 +43,5 @@ class Tests_macOS_Unit: XCTestCase {
             }
         }
     }
-    
-    func test_load_persistent_container() throws {
-        XCTAssertNoThrow(PersistenceController.shared.container.loadPersistentStores, "loaded persistenceController")
-    }
-}
 
-//create in-memory CoreData stack for tests
-extension NSManagedObjectContext {
-    class func contextForTests() -> NSManagedObjectContext {
-        // Get the model
-        let model = NSManagedObjectModel.mergedModel(from: Bundle.allBundles)!
-        // Create and configure the coordinator
-        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
-        try! coordinator.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)
-        
-        // Setup the context
-        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        context.persistentStoreCoordinator = coordinator
-        return context
-    }
 }
