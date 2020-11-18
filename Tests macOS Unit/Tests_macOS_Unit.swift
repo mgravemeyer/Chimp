@@ -17,12 +17,12 @@ class Tests_macOS_Unit: XCTestCase {
         continueAfterFailure = false
     }
     
-    func testCoreDataManager() throws {
+    func test_init_coreDataManager() throws {
         let instance = CoreDataManager.instance
         XCTAssertNotNil(instance)
     }
     
-    func testSaveCoreData() throws {
+    func test_save_coreData() throws {
         let newContactDetail = ContactDetail(context: self.context!)
         newContactDetail.dob = 12345678901
         newContactDetail.email = "test@test.com"
@@ -40,11 +40,11 @@ class Tests_macOS_Unit: XCTestCase {
         }
     }
     
-    func testLoadPersistentContainer() throws {
+    func test_load_persistent_container() throws {
         XCTAssertNoThrow(PersistenceController.shared.container.loadPersistentStores, "loaded persistenceController")
     }
 }
-    
+
 //create in-memory CoreData stack for tests
 extension NSManagedObjectContext {
     class func contextForTests() -> NSManagedObjectContext {
