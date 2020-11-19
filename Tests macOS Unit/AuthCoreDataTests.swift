@@ -11,6 +11,7 @@ import XCTest
 class AuthStateTests: XCTestCase {
     
     private var context: NSManagedObjectContext?
+    private var authState = AuthState()
 
     override func setUpWithError() throws {
         self.context = NSManagedObjectContext.contextForTests()

@@ -14,7 +14,7 @@ import SwiftUI
 class ContactsState: ObservableObject {
     
     init() {
-        getAllContactsFromCD()
+        fetchContacts()
     }
     
     //Default "flow" of data saving:
@@ -28,12 +28,16 @@ class ContactsState: ObservableObject {
     @Published var selectedContact = ""
     
     
+    func fetchContacts() {
+        self.contacts.append(contentsOf: getAllContactsFromCD())
+    }
+    
     //getting all contacts from CoreData
-    func getAllContactsFromCD() {
-        let contacts = CoreDataManager.instance.fetchRecordsForEntity("ContactDetail", inManagedObjectContext: PersistenceController.shared.container.viewContext)
-        
+    func getAllContactsFromCD() -> [Contact] {
+        let contactsCD = CoreDataManager.instance.fetchRecordsForEntity("ContactDetail", inManagedObjectContext: PersistenceController.shared.container.viewContext)
+        var contactsFetched = [Contact]()
         //to:do unwrap values safely, not force unwrap
-        for result in contacts as [NSManagedObject] {
+        for result in contactsCD as [NSManagedObject] {
             let firstName = result.value(forKey: "first_name") as! String
             let lastName = result.value(forKey: "last_name") as! String
             let email = result.value(forKey: "email") as! String
@@ -44,9 +48,9 @@ class ContactsState: ObservableObject {
             let dob_str = dob_date.toString(dateFormat: "dd.MM.YYYY")
             
             let contact = Contact(firstname: firstName, lastname: lastName, email: email, telephone: phone, birthday: dob_str, company: "")
-            
-            self.contacts.append(contact)
+            contactsFetched.append(contact)
         }
+        return contactsFetched
     }
     
     
