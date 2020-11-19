@@ -14,7 +14,7 @@ class CoreDataManagerTests: XCTestCase {
 
     override func setUpWithError() throws {
         self.context = NSManagedObjectContext.contextForTests()
-        continueAfterFailure = false
+        continueAfterFailure = true
     }
     
     func test_init() throws {

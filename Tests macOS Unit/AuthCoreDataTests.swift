@@ -14,6 +14,6 @@ class AuthStateTests: XCTestCase {
 
     override func setUpWithError() throws {
         self.context = NSManagedObjectContext.contextForTests()
-        continueAfterFailure = false
+        continueAfterFailure = true
     }
 }
