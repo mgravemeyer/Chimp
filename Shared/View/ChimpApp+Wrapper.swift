@@ -29,10 +29,6 @@ struct AppWrapper: View {
     //Core data result for AuthDetail
     @FetchRequest(sortDescriptors: [])
     private var authDetail: FetchedResults<AuthDetail>
-    
-    //Core data result for ContactsDetail
-    @FetchRequest(sortDescriptors: [])
-    private var contactsDetail: FetchedResults<ContactDetail>
 
     @EnvironmentObject var contactsState: ContactsState
     
@@ -58,9 +54,7 @@ struct AppWrapper: View {
                             .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
                     }
                     AppView()
-                        .zIndex(0).onAppear(){
-                            self.contactsState.getAllContactsFromCD(contactsDetail: contactsDetail)
-                        }
+                        .zIndex(0)
                 }.edgesIgnoringSafeArea(.all)
             }
         }
