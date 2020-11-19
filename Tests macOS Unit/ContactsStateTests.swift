@@ -8,7 +8,7 @@
 import XCTest
 @testable import Chimp
 
-class ContactCoreDataTest: XCTestCase {
+class ContactsStateTests: XCTestCase {
     
     private var context: NSManagedObjectContext?
 

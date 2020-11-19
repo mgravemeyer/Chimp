@@ -8,7 +8,7 @@
 import XCTest
 @testable import Chimp
 
-class AuthCoreDataTests: XCTestCase {
+class AuthStateTests: XCTestCase {
     
     private var context: NSManagedObjectContext?
 

@@ -57,7 +57,7 @@
 		509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F6D2540BEDC002D165F /* ContactErrors.swift */; };
 		509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
 		509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
-		E360BAEE256528CE0019C0A6 /* ContactCoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360BAED256528CE0019C0A6 /* ContactCoreDataTest.swift */; };
+		E360BAEE256528CE0019C0A6 /* ContactsStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360BAED256528CE0019C0A6 /* ContactsStateTests.swift */; };
 		E360BAF5256528F80019C0A6 /* SupportClassesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360BAF4256528F80019C0A6 /* SupportClassesTests.swift */; };
 		E39A248F2566739C003CCE4A /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39A248E2566739C003CCE4A /* CoreDataManagerTests.swift */; };
 		E39A249B25667DB8003CCE4A /* PersistenceControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39A249A25667DB8003CCE4A /* PersistenceControllerTests.swift */; };
@@ -138,7 +138,7 @@
 		509B6F622540B6C4002D165F /* ContactOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptions.swift; sourceTree = "<group>"; };
 		509B6F6D2540BEDC002D165F /* ContactErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactErrors.swift; sourceTree = "<group>"; };
 		509B6F762540C0A9002D165F /* AccessTokenErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenErrors.swift; sourceTree = "<group>"; };
-		E360BAED256528CE0019C0A6 /* ContactCoreDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCoreDataTest.swift; sourceTree = "<group>"; };
+		E360BAED256528CE0019C0A6 /* ContactsStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsStateTests.swift; sourceTree = "<group>"; };
 		E360BAF4256528F80019C0A6 /* SupportClassesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportClassesTests.swift; sourceTree = "<group>"; };
 		E39A248E2566739C003CCE4A /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
 		E39A249A25667DB8003CCE4A /* PersistenceControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceControllerTests.swift; sourceTree = "<group>"; };
@@ -405,7 +405,7 @@
 				E39A248E2566739C003CCE4A /* CoreDataManagerTests.swift */,
 				E39A249A25667DB8003CCE4A /* PersistenceControllerTests.swift */,
 				E3D8E87D2564294200F53DFE /* AuthCoreDataTests.swift */,
-				E360BAED256528CE0019C0A6 /* ContactCoreDataTest.swift */,
+				E360BAED256528CE0019C0A6 /* ContactsStateTests.swift */,
 				E360BAF4256528F80019C0A6 /* SupportClassesTests.swift */,
 				E3D8E87F2564294200F53DFE /* Info.plist */,
 			);
@@ -700,7 +700,7 @@
 			files = (
 				E39A249B25667DB8003CCE4A /* PersistenceControllerTests.swift in Sources */,
 				E3D8E87E2564294200F53DFE /* AuthCoreDataTests.swift in Sources */,
-				E360BAEE256528CE0019C0A6 /* ContactCoreDataTest.swift in Sources */,
+				E360BAEE256528CE0019C0A6 /* ContactsStateTests.swift in Sources */,
 				E360BAF5256528F80019C0A6 /* SupportClassesTests.swift in Sources */,
 				E39A248F2566739C003CCE4A /* CoreDataManagerTests.swift in Sources */,
 				E3AC5E092564432F00709D04 /* Chimp.xcdatamodeld in Sources */,
