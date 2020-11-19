@@ -19,6 +19,8 @@ class ContactsStateTests: XCTestCase {
     }
     
     func test_getAllContactsFromCD() throws {
-        XCTAssertNil(contactsState.getAllContactsFromCD(inManagedObjectContext: context!))
+        XCTAssertEqual(contactsState.getAllContactsFromCD(inManagedObjectContext: context!), [])
     }
+    
+    func test_
 }
