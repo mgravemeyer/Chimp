@@ -21,4 +21,9 @@ class ContactsStateTests: XCTestCase {
     func test_getAllContactsFromCD() throws {
         XCTAssertEqual(contactsState.getAllContactsFromCD(inManagedObjectContext: context!), [])
     }
+    
+    func test_createNewContactCD() throws {
+        let contactData = ["first_name": "firstName", "last_name": "lastName", "phone": "0162434343", "email": "test@test.de", "dob": "123456789", "note": "testNote"]
+        contactsState.createContactCD(contactData: contactData, viewContext: context!)
+    }
 }

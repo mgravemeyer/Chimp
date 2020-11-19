@@ -84,7 +84,7 @@ struct ContactAddView: View {
                         }.onTapGesture {
                             // TODO: save new contact function to the DB
                             contactData["dob"] = String(Int(birthDate.timeIntervalSince1970*1000)) // d.o.b in epoch in string format
-                            self.contactsState.createContactCD(contactData: contactData, ,viewContext: viewContext)
+                            self.contactsState.createContactCD(contactData: contactData, viewContext: viewContext)
                           
                             contactsState.addMenuePressed.toggle()
                         }
