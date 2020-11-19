@@ -6,27 +6,35 @@
 //
 
 import XCTest
+@testable import Chimp
 
 class CoreDataManagerTests: XCTestCase {
+    
+    private var context: NSManagedObjectContext?
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.context = NSManagedObjectContext.contextForTests()
+        continueAfterFailure = false
+    }
+    
+    func test_init() throws {
+        let instance = CoreDataManager.instance
+        XCTAssertNotNil(instance)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_save_data() throws {
+        _ = ContactDetail(context: self.context!)
+        CoreDataManager.instance.save(viewContext: self.context!) { (done) in
+            if(done) {
+                XCTAssertTrue(true, "saved data into coreData")
+                print("true")
+            } else {
+                XCTAssertTrue(false, "couldn't save data into coreData")
+            }
         }
     }
-
+    
+    func test_load_data() throws {
+        XCTAssertNotNil(CoreDataManager.instance.fetchRecordsForEntity("ContactDetail", inManagedObjectContext: context!))
+    }
 }

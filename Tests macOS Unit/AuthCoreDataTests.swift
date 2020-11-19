@@ -16,13 +16,4 @@ class AuthCoreDataTests: XCTestCase {
         self.context = NSManagedObjectContext.contextForTests()
         continueAfterFailure = false
     }
-    
-    func test_init_coreDataManager() throws {
-        let instance = CoreDataManager.instance
-        XCTAssertNotNil(instance)
-    }
-    
-    func test_load_persistent_container() throws {
-        XCTAssertNoThrow(PersistenceController.shared.container.loadPersistentStores, "loaded persistenceController")
-    }
 }
