@@ -29,12 +29,12 @@ class ContactsState: ObservableObject {
     
     
     func fetchContacts() {
-        self.contacts.append(contentsOf: getAllContactsFromCD())
+        self.contacts.append(contentsOf: getAllContactsFromCD(inManagedObjectContext: PersistenceController().container.viewContext))
     }
     
     //getting all contacts from CoreData
-    func getAllContactsFromCD() -> [Contact] {
-        let contactsCD = CoreDataManager.instance.fetchRecordsForEntity("ContactDetail", inManagedObjectContext: PersistenceController.shared.container.viewContext)
+    func getAllContactsFromCD(inManagedObjectContext viewContext: NSManagedObjectContext) -> [Contact] {
+        let contactsCD = CoreDataManager.instance.fetchRecordsForEntity("ContactDetail", inManagedObjectContext: viewContext)
         var contactsFetched = [Contact]()
         //to:do unwrap values safely, not force unwrap
         for result in contactsCD as [NSManagedObject] {
