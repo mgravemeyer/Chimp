@@ -13,8 +13,8 @@ import SwiftUI
 
 class ContactsState: ObservableObject {
     
-    init() {
-        fetchContacts()
+    init(inManagedObjectContext: NSManagedObjectContext) {
+        fetchContacts(inManagedObjectContext: inManagedObjectContext)
     }
     
     //Default "flow" of data saving:
@@ -28,8 +28,8 @@ class ContactsState: ObservableObject {
     @Published var selectedContact = ""
     
     
-    func fetchContacts() {
-        self.contacts.append(contentsOf: getAllContactsFromCD(inManagedObjectContext: PersistenceController().container.viewContext))
+    func fetchContacts(inManagedObjectContext: NSManagedObjectContext) {
+        self.contacts.append(contentsOf: getAllContactsFromCD(inManagedObjectContext: inManagedObjectContext))
     }
     
     //getting all contacts from CoreData
