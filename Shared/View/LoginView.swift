@@ -50,7 +50,6 @@ struct LoginView: View {
                             self.authState.authUser(email: email, password: password, option: .signUp, authDetail: authDetail, viewContext: viewContext)
                         }
 
-                       
                         
                         if error != "" {
                             Text(self.error)

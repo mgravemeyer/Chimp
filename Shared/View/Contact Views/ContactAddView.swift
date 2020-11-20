@@ -18,8 +18,11 @@ struct ContactAddView: View {
     @EnvironmentObject var authState: AuthState
     let gray = Color(red: 207/255, green: 207/255, blue: 212/255)
     let lightGray = Color(red: 240/255, green: 240/255, blue: 240/255)
-    
-    @State var contactData = ["first_name": "", "last_name": "", "phone": "", "email": "", "dob": "", "note": ""] // dob is date of birth
+
+    @State var firstName = String()
+    @State var lastName = String()
+    @State var email = String()
+    @State var telephone = String()
     @State var birthDate = Date()
     @State var selected = false
     @State var hoverRow = false
@@ -47,9 +50,8 @@ struct ContactAddView: View {
                         Button {
                             for (contactD) in contactsDetail{
                                 viewContext.delete(contactD)
-                                CoreDataManager.instance.save(viewContext: viewContext){(_)in}
+                                CoreDataManager.shared.save(viewContext: viewContext){(_)in}
                             }
-                            
                         } label: {
                             Text("delete cdata ")
                                 .fontWeight(.semibold)
@@ -64,12 +66,12 @@ struct ContactAddView: View {
                             Text("Contact").font(.system(size: 30)).fontWeight(.light).zIndex(1)
                         }
                         HStack {
-                            ChimpTextField(placeholder: "First Name", value: self.binding(for: "first_name"))
-                            ChimpTextField(placeholder: "Last Name", value: self.binding(for: "last_name"))
+                            ChimpTextField(placeholder: "First Name", value: self.$firstName)
+                            ChimpTextField(placeholder: "Last Name", value: self.$lastName)
                         }
                         
-                        ChimpTextField(placeholder: "E-Mail", value: self.binding(for: "email"))
-                        ChimpTextField(placeholder: "Telephone", value: self.binding(for: "phone"))
+                        ChimpTextField(placeholder: "E-Mail", value: self.$email)
+                        ChimpTextField(placeholder: "Telephone", value: self.$telephone)
                         
                         ChimpDatePicker(birthDate: self.$birthDate)
                        
@@ -83,9 +85,14 @@ struct ContactAddView: View {
                             }
                         }.onTapGesture {
                             // TODO: save new contact function to the DB
-                            contactData["dob"] = String(Int(birthDate.timeIntervalSince1970*1000)) // d.o.b in epoch in string format
-                            self.contactsState.createContactCD(contactData: contactData,contactsDetail: contactsDetail ,viewContext: viewContext)
-                          
+                            self.contactsState.createContactCD(contactData: Contact(
+                                                                firstname: self.firstName,
+                                                                lastname: self.lastName,
+                                                                email: self.email,
+                                                                telephone: self.telephone,
+                                                                birthday: String(Int(self.birthDate.timeIntervalSince1970*1000)), // d.o.b in epoch in string format
+                                                                company: ""),
+                                                               viewContext: viewContext)
                             contactsState.addMenuePressed.toggle()
                         }
                     }.frame(maxWidth: 320, maxHeight: 320)
@@ -94,15 +101,6 @@ struct ContactAddView: View {
             }
         }
     }
-    
-    //this is used to bind [String:String]
-    //(as it's not possible using $)
-    private func binding(for key: String) -> Binding<String> {
-       return .init(
-        get: { (self.contactData[key, default: ""] )},
-           set: { self.contactData[key] = $0 })
-    }
-    
 }
 
 //TO:DO: PUT FUNTION INTO CLASS OR STRUCT

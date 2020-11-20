@@ -8,21 +8,13 @@
 import XCTest
 @testable import Chimp
 
-class AuthCoreDataTests: XCTestCase {
+class AuthStateTests: XCTestCase {
     
     private var context: NSManagedObjectContext?
+    private var authState = AuthState()
 
     override func setUpWithError() throws {
         self.context = NSManagedObjectContext.contextForTests()
-        continueAfterFailure = false
-    }
-    
-    func test_init_coreDataManager() throws {
-        let instance = CoreDataManager.instance
-        XCTAssertNotNil(instance)
-    }
-    
-    func test_load_persistent_container() throws {
-        XCTAssertNoThrow(PersistenceController.shared.container.loadPersistentStores, "loaded persistenceController")
+        continueAfterFailure = true
     }
 }

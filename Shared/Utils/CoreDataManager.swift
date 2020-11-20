@@ -10,9 +10,11 @@ import CoreData
 import SwiftUI
 struct CoreDataManager {
     
-    static let instance = CoreDataManager()
+    private init() {}
     
-    func fetchRecordsForEntity(_ entity: String, inManagedObjectContext viewContext: NSManagedObjectContext) -> [NSManagedObject] {
+    static let shared = CoreDataManager()
+    
+    func fetch(_ entity: String, inManagedObjectContext viewContext: NSManagedObjectContext) -> [NSManagedObject] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         var result = [NSManagedObject]()
         do {

@@ -12,7 +12,7 @@ struct PersistenceController{
     static let shared = PersistenceController()
     
     let container: NSPersistentContainer
-    init(){
+    private init(){
         container = NSPersistentContainer(name: "Chimp")
         
         container.loadPersistentStores { (storeDescription, error) in
