@@ -13,7 +13,7 @@ struct Contact: Identifiable, Hashable {
     private(set) var lastname: String
     private(set) var email: String
     private(set) var telephone: String
-    private(set) var birthday: String // Display as string
+    var birthday: String // Display as string
     private(set) var company: String
     
     func getGroup() -> Character {

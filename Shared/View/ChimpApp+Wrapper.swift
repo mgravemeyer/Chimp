@@ -12,7 +12,7 @@ struct ChimpApp: App {
    
     let persistenceController = PersistenceController.shared
     @StateObject var authState = AuthState()
-    @StateObject var contactsState = ContactsState()
+    @StateObject var contactsState = ContactsState(inManagedObjectContext: PersistenceController.shared.container.viewContext)
 
     var body: some Scene {
             WindowGroup {
