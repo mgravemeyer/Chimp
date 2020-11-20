@@ -55,29 +55,37 @@ class ContactsState: ObservableObject {
     
     
     //creating a new Contact in CoreData
-    func createContactCD(contactData: [String:String], viewContext: NSManagedObjectContext) {
+    func createContactCD(contactData: Contact, viewContext: NSManagedObjectContext) {
+        
+        var modifiedBirthdayContact = contactData
+        
         let newContactDetail = ContactDetail(context: viewContext)
-        for data in contactData{
-            if data.key == "dob"{
-                newContactDetail.setValue(Int(data.value), forKey: data.key)
-            }else{
-                newContactDetail.setValue(data.value, forKey: data.key)
-            }
-        }
+        
+        //to:do for loop adding values
+        newContactDetail.setValue(contactData.firstname, forKey: "first_name")
+        newContactDetail.setValue(contactData.lastname, forKey: "last_name")
+        newContactDetail.setValue(contactData.email, forKey: "email")
+        newContactDetail.setValue(Int(contactData.birthday), forKey: "dob")
+        //to:do change note to get from contact
+        newContactDetail.setValue("note", forKey: "note")
+        newContactDetail.setValue(contactData.telephone, forKey: "phone")
+
         CoreDataManager.shared.save(viewContext: viewContext) { (done) in
             if(done){
                 print(done)
             }
         }
-        let dob = Int(Int(contactData["dob"]!)!/1000) // (Integer/Epoch format View)
+        
+        //to:do avoid data converting
+        let dob = Int(Int(contactData.birthday)!/1000) // (Integer/Epoch format View)
         let dob_date = Date(timeIntervalSince1970: TimeInterval(dob)) // date format (to be converted to str)
-        let dob_str = dob_date.toString(dateFormat: "dd.MM.YYYY")//Str format, for UI
-        addContact(firstname: contactData["first_name"]!, lastname: contactData["last_name"]!, email: contactData["email"]!, telephone: contactData["phone"]!, birthday:dob_str, company: "")
+        modifiedBirthdayContact.birthday = dob_date.toString(dateFormat: "dd.MM.YYYY")//Str format, for UI
+        addContact(contact: modifiedBirthdayContact)
     }
     
     //UI
-    func addContact(firstname: String, lastname: String, email: String, telephone: String, birthday: String, company: String) {
-        contacts.append(Contact(firstname: firstname, lastname: lastname, email: email, telephone: telephone, birthday: birthday, company: company))
+    func addContact(contact: Contact) {
+        contacts.append(contact)
     }
   
     func getContactCategories() -> [String] {
