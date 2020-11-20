@@ -29,18 +29,22 @@ struct LoginView: View {
                     Text("Chimp")
                         .fontWeight(.bold)
                         .font(.largeTitle)
-                        .padding(10)
-                    Text("The Tool That Doesnt Let You Look Like A Monkey")
-                        .font(.subheadline)
-                        .padding(.bottom, 10)
+                        .padding(.bottom, 8)
+                    HStack{
+                        Text("All your tasks, projects and contacts")
+                            .font(.system(size: 14.0)).fontWeight(.light)
+                        Text("in one place. ")
+                            .font(.system(size: 14.0)).fontWeight(.bold)
+                    }.padding(.bottom, 16)
+                    
                     Group {
                         TextField("Username", text: self.$email).textFieldStyle(PlainTextFieldStyle()).padding(.bottom, 5)
                         SecureField("Password", text: self.$password).textFieldStyle(PlainTextFieldStyle()).padding(.bottom, 5)
-                    }.frame(width: 260)
+                    }.frame(width: 260).padding(.bottom, 8)
                     VStack {
                         ChimpPrimaryButton(buttonSize: .buttonMd, buttonColor: .chimpSecondary, isPressed: self.$isPressed, buttonText: "Sign In").onTapGesture {
                             self.authState.authUser(email: email, password: password, option: .signIn, authDetail: authDetail, viewContext: viewContext)
-                        }
+                        }.padding(.bottom, 4)
 
                         ChimpPrimaryButton(buttonSize: .buttonMd, buttonColor: .chimpPrimary, isPressed: self.$isPressed, buttonText: "Sign Up").onTapGesture {
                             self.authState.authUser(email: email, password: password, option: .signUp, authDetail: authDetail, viewContext: viewContext)
