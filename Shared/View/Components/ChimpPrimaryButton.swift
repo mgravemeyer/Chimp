@@ -14,36 +14,47 @@ struct ChimpPrimaryButton: View {
     }
     
     enum ChimpButtonColor {
-        case primary
-        case secondary
+        case chimpPrimary
+        case chimpSecondary
     }
     
-    var selectedSize: CGFloat
+    var selectedHeight: CGFloat
     var selectedWidth: CGFloat
-    var btnColor:Color
     @Binding var isPressed: Bool
     var buttonText: String
     @State var isHovered = Bool()
+    
+    var btnColor:Color
+    var btnHoverColor: Color
+    var textColor: Color
+    var textHoverColor: Color
     
     init(buttonSize: ChimpButtonSize, buttonColor: ChimpButtonColor ,isPressed: Binding<Bool>, buttonText: String) {
         self._isPressed = isPressed
         self.buttonText = buttonText
         switch buttonSize {
         case .buttonLg:
-            self.selectedSize = 100.0
-            self.selectedWidth = 50.0
+            self.selectedHeight = 20.0
+            self.selectedWidth = 70.0
         case .buttonMd:
-            self.selectedSize = 75.0
-            self.selectedWidth = 35.0
+            self.selectedHeight = 28.0
+            self.selectedWidth = 70.0
             
         }
         
         switch buttonColor {
-        case .primary:
-            self.btnColor = Color.primary
-        case .secondary:
-            self.btnColor = Color.secondary
+        case .chimpPrimary:
+            self.btnColor = Color.chimpPrimary
+            self.btnHoverColor = Color.chimpSecondary
+            self.textColor = Color.chimpSecondary
+            self.textHoverColor = Color.chimpPrimary
+        case .chimpSecondary:
+            self.btnColor = Color.chimpSecondary
+            self.btnHoverColor = Color.chimpPrimary
+            self.textColor = Color.chimpPrimary
+            self.textHoverColor = Color.chimpSecondary
         }
+        
         
     }
     
@@ -51,11 +62,12 @@ struct ChimpPrimaryButton: View {
     
     var body: some View {
         ZStack{
-            Text(buttonText).foregroundColor(isHovered ?  Color(red: 27/255, green:7/255, blue: 242/255) : Color.white).zIndex(1)
+            Text(buttonText).foregroundColor(isHovered ? textHoverColor : textColor).zIndex(1)
             RoundedRectangle(cornerRadius: 10)
-                .frame(width: self.selectedSize, height: self.selectedWidth)
+                .shadow(color: Color(red: 217/255, green: 217/255, blue: 217/255), radius: 0.8, x: 0.4, y: 0)
+                .frame(width: self.selectedWidth, height: self.selectedHeight)
                 .zIndex(0)
-                .foregroundColor(btnColor)
+                .foregroundColor(isHovered ? btnHoverColor : btnColor)
                 .onHover { (isHovered) in
                     self.isHovered = isHovered
                 }
