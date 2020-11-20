@@ -19,7 +19,8 @@ class ContactsStateTests: XCTestCase {
     
     func test_addContact() throws {
         let contactsState = ContactsState(inManagedObjectContext: context!)
-        contactsState.addContact(firstname: "firstNameUI", lastname: "lastNameUI", email: "test@test.de", telephone: "123456789", birthday: "123456789", company: "testNote")
+        let contact = Contact(firstname: "firstNameUI", lastname: "lastNameUI", email: "test@test.deUI", telephone: "016284392", birthday: "123456789", company: "companyUI")
+        contactsState.addContact(contact: contact)
         print(contactsState.contacts.count)
         for contact in contactsState.contacts {
             print(contact)
@@ -31,7 +32,8 @@ class ContactsStateTests: XCTestCase {
     }
 
     func test_createNewContactCD() throws {
-        let contactData = ["first_name": "firstName", "last_name": "lastName", "phone": "0162434343", "email": "test@test.de", "dob": "123456789", "note": "testNote"]
+        
+        let contactData = Contact(firstname: "firstName", lastname: "lastName", email: "016243829", telephone: "test@test.de", birthday: "123456789", company: "company")
         ContactsState(inManagedObjectContext: context!).createContactCD(contactData: contactData, viewContext: context!)
         XCTAssertEqual(ContactsState(inManagedObjectContext: context!).getAllContactsFromCD(inManagedObjectContext: context!).count, 1)
     }
