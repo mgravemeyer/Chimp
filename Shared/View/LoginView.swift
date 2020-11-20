@@ -18,7 +18,7 @@ struct LoginView: View {
     @State var email = String()
     @State var password = String()
     @State var error = String()
-    
+    @State var isPressed = false
     var body: some View {
         HStack {
             Group {
@@ -40,7 +40,7 @@ struct LoginView: View {
                     VStack {
                         Button {
                             self.authState.authUser(email: email, password: password, option: .signIn, authDetail: authDetail, viewContext: viewContext)
-
+                            
                         } label: {
                             Text("Sign In")
                                 .fontWeight(.semibold)
@@ -50,15 +50,15 @@ struct LoginView: View {
                         
                         Button {
                             self.authState.authUser(email: email, password: password, option: .signUp, authDetail: authDetail, viewContext: viewContext)
-
+                            
                         } label: {
                             Text("Sign Up")
                                 .fontWeight(.semibold)
                                 .frame(minWidth: 230)
                                 .foregroundColor(Color.blue)
                         }
-
-
+                        
+                        
                         Button {
                             printCdata()
                         } label: {
@@ -67,11 +67,15 @@ struct LoginView: View {
                                 .frame(minWidth: 230)
                                 .foregroundColor(Color.blue)
                         }
+                        ChimpPrimaryButton(buttonSize: .ButtonMD, isPressed: self.$isPressed, buttonText: "sign up").onTapGesture {
+                            self.authState.authUser(email: email, password: password, option: .signUp, authDetail: authDetail, viewContext: viewContext)
+                        }
+
                         Button {
                             for (userD) in authDetail{
                                 viewContext.delete(userD)
                                 CoreDataManager.instance.save(viewContext: viewContext){(_)in}
-
+                                
                             }
                             
                         } label: {
