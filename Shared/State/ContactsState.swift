@@ -34,7 +34,7 @@ class ContactsState: ObservableObject {
     
     //getting all contacts from CoreData
     func getAllContactsFromCD(inManagedObjectContext viewContext: NSManagedObjectContext) -> [Contact] {
-        let contactsCD = CoreDataManager.instance.fetchRecordsForEntity("ContactDetail", inManagedObjectContext: viewContext)
+        let contactsCD = CoreDataManager.instance.fetch("ContactDetail", inManagedObjectContext: viewContext)
         var contactsFetched = [Contact]()
         //to:do unwrap values safely, not force unwrap
         for result in contactsCD as [NSManagedObject] {
