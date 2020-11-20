@@ -33,6 +33,8 @@
 		500E2FE1253F7161005B347D /* AuthErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E2FDB253F6A7A005B347D /* AuthErrors.swift */; };
 		50327F2A2568093200B583F4 /* ChimpPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50327F292568093200B583F4 /* ChimpPrimaryButton.swift */; };
 		50327F2B2568093200B583F4 /* ChimpPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50327F292568093200B583F4 /* ChimpPrimaryButton.swift */; };
+		50327F322568176200B583F4 /* ChimpColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50327F312568176200B583F4 /* ChimpColors.swift */; };
+		50327F332568176200B583F4 /* ChimpColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50327F312568176200B583F4 /* ChimpColors.swift */; };
 		5044E96725431EC50041E01B /* ChimpDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044E96625431EC50041E01B /* ChimpDatePicker.swift */; };
 		5044E96825431EC50041E01B /* ChimpDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044E96625431EC50041E01B /* ChimpDatePicker.swift */; };
 		504AD45725442C0A001BCEEB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504AD45625442C0A001BCEEB /* CoreDataManager.swift */; };
@@ -126,6 +128,7 @@
 		5000EA29254454750023A545 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		500E2FDB253F6A7A005B347D /* AuthErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrors.swift; sourceTree = "<group>"; };
 		50327F292568093200B583F4 /* ChimpPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpPrimaryButton.swift; sourceTree = "<group>"; };
+		50327F312568176200B583F4 /* ChimpColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpColors.swift; sourceTree = "<group>"; };
 		5044E96625431EC50041E01B /* ChimpDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpDatePicker.swift; sourceTree = "<group>"; };
 		504AD45625442C0A001BCEEB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		504C5D9625459959003BDFA1 /* RequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMaker.swift; sourceTree = "<group>"; };
@@ -285,6 +288,7 @@
 				5044E96625431EC50041E01B /* ChimpDatePicker.swift */,
 				2EEA70DE255E7F98000C5E75 /* ChimpTextFieldView.swift */,
 				50327F292568093200B583F4 /* ChimpPrimaryButton.swift */,
+				50327F312568176200B583F4 /* ChimpColors.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -610,6 +614,7 @@
 				2E6A3D8F255EBB5000E5CE5D /* EmptyContactDetailView.swift in Sources */,
 				2E6A3D31255E91F400E5CE5D /* SideNavigationView.swift in Sources */,
 				509B6EEB253F8253002D165F /* AuthOptions.swift in Sources */,
+				50327F322568176200B583F4 /* ChimpColors.swift in Sources */,
 				2E6A3D3F255EB8D600E5CE5D /* ContactAddView.swift in Sources */,
 				509B6F4D2540B68E002D165F /* ContactService.swift in Sources */,
 				509B6F6E2540BEDC002D165F /* ContactErrors.swift in Sources */,
@@ -643,6 +648,7 @@
 				2E6A3D90255EBB5000E5CE5D /* EmptyContactDetailView.swift in Sources */,
 				E3D7A5F624F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
 				2EA83C5E255B609F004A9852 /* CommandLineView.swift in Sources */,
+				50327F332568176200B583F4 /* ChimpColors.swift in Sources */,
 				509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */,
 				509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */,
 				5090A54A253CD0E900A211EE /* AuthRequest.swift in Sources */,
