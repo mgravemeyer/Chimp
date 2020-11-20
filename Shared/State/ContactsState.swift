@@ -34,7 +34,7 @@ class ContactsState: ObservableObject {
     
     //getting all contacts from CoreData
     func getAllContactsFromCD(inManagedObjectContext viewContext: NSManagedObjectContext) -> [Contact] {
-        let contactsCD = CoreDataManager.instance.fetch("ContactDetail", inManagedObjectContext: viewContext)
+        let contactsCD = CoreDataManager.shared.fetch("ContactDetail", inManagedObjectContext: viewContext)
         var contactsFetched = [Contact]()
         //to:do unwrap values safely, not force unwrap
         for result in contactsCD as [NSManagedObject] {
@@ -64,7 +64,7 @@ class ContactsState: ObservableObject {
                 newContactDetail.setValue(data.value, forKey: data.key)
             }
         }
-        CoreDataManager.instance.save(viewContext: viewContext) { (done) in
+        CoreDataManager.shared.save(viewContext: viewContext) { (done) in
             if(done){
                 print(done)
             }

@@ -12,7 +12,7 @@ struct CoreDataManager {
     
     private init() {}
     
-    static let instance = CoreDataManager()
+    static let shared = CoreDataManager()
     
     func fetch(_ entity: String, inManagedObjectContext viewContext: NSManagedObjectContext) -> [NSManagedObject] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)

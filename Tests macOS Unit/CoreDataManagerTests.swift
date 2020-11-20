@@ -18,13 +18,13 @@ class CoreDataManagerTests: XCTestCase {
     }
     
     func test_init() throws {
-        let instance = CoreDataManager.instance
+        let instance = CoreDataManager.shared
         XCTAssertNotNil(instance)
     }
 
     func test_save_data() throws {
         _ = ContactDetail(context: self.context!)
-        CoreDataManager.instance.save(viewContext: self.context!) { (done) in
+        CoreDataManager.shared.save(viewContext: self.context!) { (done) in
             if(done) {
                 XCTAssertTrue(true, "saved data into coreData")
                 print("true")
@@ -35,6 +35,6 @@ class CoreDataManagerTests: XCTestCase {
     }
     
     func test_load_data() throws {
-        XCTAssertNotNil(CoreDataManager.instance.fetchRecordsForEntity("ContactDetail", inManagedObjectContext: context!))
+        XCTAssertNotNil(CoreDataManager.shared.fetchRecordsForEntity("ContactDetail", inManagedObjectContext: context!))
     }
 }

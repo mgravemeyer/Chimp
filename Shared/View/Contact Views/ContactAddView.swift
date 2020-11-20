@@ -47,7 +47,7 @@ struct ContactAddView: View {
                         Button {
                             for (contactD) in contactsDetail{
                                 viewContext.delete(contactD)
-                                CoreDataManager.instance.save(viewContext: viewContext){(_)in}
+                                CoreDataManager.shared.save(viewContext: viewContext){(_)in}
                             }
                             
                         } label: {
