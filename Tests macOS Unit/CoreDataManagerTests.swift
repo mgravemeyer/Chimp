@@ -35,6 +35,6 @@ class CoreDataManagerTests: XCTestCase {
     }
     
     func test_load_data() throws {
-        XCTAssertNotNil(CoreDataManager.shared.fetchRecordsForEntity("ContactDetail", inManagedObjectContext: context!))
+        XCTAssertNotNil(CoreDataManager.shared.fetch("ContactDetail", inManagedObjectContext: context!))
     }
 }
