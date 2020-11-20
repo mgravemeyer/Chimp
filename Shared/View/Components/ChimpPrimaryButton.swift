@@ -23,8 +23,8 @@ struct ChimpPrimaryButton: View {
             self.selectedSize = 100.0
             self.selectedWidth = 50.0
         case .ButtonMD:
-            self.selectedSize = 50.0
-            self.selectedWidth = 25.0
+            self.selectedSize = 75.0
+            self.selectedWidth = 35.0
  
         }
     }
@@ -33,8 +33,8 @@ struct ChimpPrimaryButton: View {
     
     var body: some View {
         ZStack{
-            Text(buttonText).zIndex(1)
-            RoundedRectangle(cornerRadius: 25)
+            Text(buttonText).foregroundColor(isHovered ?  Color(red: 27/255, green:7/255, blue: 242/255) : Color.white).zIndex(1)
+            RoundedRectangle(cornerRadius: 10)
                 .frame(width: self.selectedSize, height: self.selectedWidth)
                 .zIndex(0)
                 .foregroundColor(isHovered ? Color(red: 240/255, green: 240/255, blue: 240/255) : Color(red: 27/255, green:7/255, blue: 242/255))
@@ -50,5 +50,6 @@ struct ChimpPrimaryButton: View {
 enum ChimpButtonCases {
     case ButtonLG
     case ButtonMD
-
 }
+
+
