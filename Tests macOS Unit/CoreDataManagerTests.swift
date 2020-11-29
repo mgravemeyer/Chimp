@@ -10,10 +10,8 @@ import XCTest
 
 class CoreDataManagerTests: XCTestCase {
     
-    private var context: NSManagedObjectContext?
-
     override func setUpWithError() throws {
-        self.context = NSManagedObjectContext.contextForTests()
+        CoreDataManager.shared.changeToDevelopmentMode()
         continueAfterFailure = true
     }
     
@@ -21,10 +19,14 @@ class CoreDataManagerTests: XCTestCase {
         let instance = CoreDataManager.shared
         XCTAssertNotNil(instance)
     }
+    
+    func test_load_empty_data() throws {
+        XCTAssertEqual(CoreDataManager.shared.fetch("ContactDetail"), [])
+    }
 
     func test_save_data() throws {
-        _ = ContactDetail(context: self.context!)
-        CoreDataManager.shared.save(viewContext: self.context!) { (done) in
+        _ = ContactDetail()
+        CoreDataManager.shared.save() { (done) in
             if(done) {
                 XCTAssertTrue(true, "saved data into coreData")
                 print("true")
@@ -35,6 +37,6 @@ class CoreDataManagerTests: XCTestCase {
     }
     
     func test_load_data() throws {
-        XCTAssertNotNil(CoreDataManager.shared.fetch("ContactDetail", inManagedObjectContext: context!))
+        XCTAssertNotNil(CoreDataManager.shared.fetch("ContactDetail"))
     }
 }

@@ -14,13 +14,13 @@ class PersistenceControllerTests: XCTestCase {
         continueAfterFailure = true
     }
     
-    func test_init() throws {
-        let instance = PersistenceController.shared
-        XCTAssertNotNil(instance)
-    }
-    
-    func test_load_container() throws {
-        XCTAssertNoThrow(PersistenceController.shared.container.loadPersistentStores, "loaded persistenceController")
-    }
+//    func test_init() throws {
+//        let instance = PersistenceController.shared
+//        XCTAssertNotNil(instance)
+//    }
+//    
+//    func test_load_container() throws {
+//        XCTAssertNoThrow(PersistenceController.shared.container.loadPersistentStores, "loaded persistenceController")
+//    }
 
 }
