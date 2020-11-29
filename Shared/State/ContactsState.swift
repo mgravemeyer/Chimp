@@ -31,7 +31,7 @@ class ContactsState: ObservableObject {
     func fetchContacts() {
         self.contacts.append(contentsOf: getAllContactsFromCD())
     }
-
+    
     //getting all contacts from CoreData
     func getAllContactsFromCD() -> [Contact] {
         let contactsCD = CoreDataManager.shared.fetch("ContactDetail")
@@ -53,7 +53,7 @@ class ContactsState: ObservableObject {
         return contactsFetched
     }
     
-
+    
     //creating a new Contact in CoreData
     func createContactCD(contactData: Contact) {
         

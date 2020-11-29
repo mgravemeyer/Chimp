@@ -25,7 +25,7 @@ class AuthState: ObservableObject {
         //checkAuth(authDetail: T##FetchedResults<AuthDetail>)
     }
     
-    @Published var loggedIn = true
+    @Published var loggedIn = false
     @Published var token = ""
     @Published var user_uid = ""
     @Published var authLoading = true
