@@ -55,11 +55,11 @@ class ContactsState: ObservableObject {
     
     
     //creating a new Contact in CoreData
-    func createContactCD(contactData: Contact, viewContext: NSManagedObjectContext) {
+    func createContactCD(contactData: Contact) {
         
         var modifiedBirthdayContact = contactData
         
-        let newContactDetail = ContactDetail(context: viewContext)
+        let newContactDetail = ContactDetail(context: CoreDataManager.shared.viewContext)
         
         //to:do for loop adding values
         newContactDetail.setValue(contactData.firstname, forKey: "first_name")
@@ -70,7 +70,7 @@ class ContactsState: ObservableObject {
         newContactDetail.setValue("note", forKey: "note")
         newContactDetail.setValue(contactData.telephone, forKey: "phone")
 
-        CoreDataManager.shared.save(viewContext: viewContext) { (done) in
+        CoreDataManager.shared.save(viewContext: CoreDataManager.shared.viewContext) { (done) in
             if(done){
                 print(done)
             }

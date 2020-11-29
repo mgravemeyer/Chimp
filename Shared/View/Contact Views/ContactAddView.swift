@@ -91,8 +91,8 @@ struct ContactAddView: View {
                                                                 email: self.email,
                                                                 telephone: self.telephone,
                                                                 birthday: String(Int(self.birthDate.timeIntervalSince1970*1000)), // d.o.b in epoch in string format
-                                                                company: ""),
-                                                               viewContext: viewContext)
+                                                                company: "")
+                            )
                             contactsState.addMenuePressed.toggle()
                         }
                     }.frame(maxWidth: 320, maxHeight: 320)
