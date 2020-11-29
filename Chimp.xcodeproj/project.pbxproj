@@ -37,8 +37,6 @@
 		504AD45825442C0A001BCEEB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504AD45625442C0A001BCEEB /* CoreDataManager.swift */; };
 		504C5D9725459959003BDFA1 /* RequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C5D9625459959003BDFA1 /* RequestMaker.swift */; };
 		504C5D9825459959003BDFA1 /* RequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C5D9625459959003BDFA1 /* RequestMaker.swift */; };
-		504C5DA22545CBA2003BDFA1 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C5DA12545CBA2003BDFA1 /* PersistenceController.swift */; };
-		504C5DA32545CBA2003BDFA1 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C5DA12545CBA2003BDFA1 /* PersistenceController.swift */; };
 		5090A52A253CB8F500A211EE /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A529253CB8F500A211EE /* Auth.swift */; };
 		5090A52B253CB8F500A211EE /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A529253CB8F500A211EE /* Auth.swift */; };
 		5090A53E253CBCFC00A211EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A53D253CBCFC00A211EE /* AuthService.swift */; };
@@ -128,7 +126,6 @@
 		5044E96625431EC50041E01B /* ChimpDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpDatePicker.swift; sourceTree = "<group>"; };
 		504AD45625442C0A001BCEEB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		504C5D9625459959003BDFA1 /* RequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMaker.swift; sourceTree = "<group>"; };
-		504C5DA12545CBA2003BDFA1 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		5090A529253CB8F500A211EE /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		5090A53D253CBCFC00A211EE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5090A548253CD0E900A211EE /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
@@ -243,7 +240,6 @@
 		504C5D952545994C003BDFA1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				504C5DA12545CBA2003BDFA1 /* PersistenceController.swift */,
 				504AD45625442C0A001BCEEB /* CoreDataManager.swift */,
 				504C5D9625459959003BDFA1 /* RequestMaker.swift */,
 			);
@@ -622,7 +618,6 @@
 				2EA83C59255B609C004A9852 /* CommandLineView.swift in Sources */,
 				2E6A3D57255EB9BD00E5CE5D /* ExternalContactDetailView.swift in Sources */,
 				E3D6EF3F24F7D6C600F7A95A /* TodayView.swift in Sources */,
-				504C5DA22545CBA2003BDFA1 /* PersistenceController.swift in Sources */,
 				E3D7A5F724F4FFC200D3EB62 /* ChimpApp+Wrapper.swift in Sources */,
 				E3D7A5F924F4FFC200D3EB62 /* LoginView.swift in Sources */,
 				509B6F632540B6C4002D165F /* ContactOptions.swift in Sources */,
@@ -674,7 +669,6 @@
 				504C5D9825459959003BDFA1 /* RequestMaker.swift in Sources */,
 				2E6A3DA2255EC0C800E5CE5D /* ContactVerticalListView.swift in Sources */,
 				5000EA2B254454750023A545 /* LoadingView.swift in Sources */,
-				504C5DA32545CBA2003BDFA1 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
