@@ -34,7 +34,8 @@ class AuthState: ObservableObject {
     
     //checking if user is Authed (at least fired once on intial app launched)
     func checkAuth(authDetail: FetchedResults<AuthDetail>) {
-        if !authDetail.isEmpty {
+        let authStateFetched = CoreDataManager.shared.fetch("AuthDetail")
+        if !authStateFetched.isEmpty || authStateFetched != [] {
             // if there is  data stored in AuthDetail CoreData
             //means it's very very likely that the  user is authenticated (logged in)
             guard let user_uid = authDetail[0].user_uid, let token = authDetail[0].token else {
@@ -43,6 +44,8 @@ class AuthState: ObservableObject {
             
             if user_uid != "" && token != "" { // just to double check
                 DispatchQueue.main.async{
+                    print(user_uid)
+                    print(token)
                     self.token = token
                     self.user_uid = user_uid
                     self.loggedIn = true
