@@ -26,7 +26,7 @@ class CoreDataManager {
     let container: NSPersistentContainer
     var viewContext: NSManagedObjectContext
     
-    func fetch(_ entity: String, inManagedObjectContext viewContext: NSManagedObjectContext) -> [NSManagedObject] {
+    func fetch(_ entity: String) -> [NSManagedObject] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         var result = [NSManagedObject]()
         do {

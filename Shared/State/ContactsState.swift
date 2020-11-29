@@ -13,8 +13,8 @@ import SwiftUI
 
 class ContactsState: ObservableObject {
     
-    init(inManagedObjectContext: NSManagedObjectContext) {
-        fetchContacts(inManagedObjectContext: inManagedObjectContext)
+    init() {
+        fetchContacts()
     }
     
     //Default "flow" of data saving:
@@ -28,13 +28,13 @@ class ContactsState: ObservableObject {
     @Published var selectedContact = ""
     
     
-    func fetchContacts(inManagedObjectContext: NSManagedObjectContext) {
-        self.contacts.append(contentsOf: getAllContactsFromCD(inManagedObjectContext: inManagedObjectContext))
+    func fetchContacts() {
+        self.contacts.append(contentsOf: getAllContactsFromCD())
     }
     
     //getting all contacts from CoreData
-    func getAllContactsFromCD(inManagedObjectContext viewContext: NSManagedObjectContext) -> [Contact] {
-        let contactsCD = CoreDataManager.shared.fetch("ContactDetail", inManagedObjectContext: viewContext)
+    func getAllContactsFromCD() -> [Contact] {
+        let contactsCD = CoreDataManager.shared.fetch("ContactDetail")
         var contactsFetched = [Contact]()
         //to:do unwrap values safely, not force unwrap
         for result in contactsCD as [NSManagedObject] {
