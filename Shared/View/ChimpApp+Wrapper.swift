@@ -10,14 +10,13 @@ import SwiftUI
 @main
 struct ChimpApp: App {
    
-    let persistenceController = PersistenceController.shared
     @StateObject var authState = AuthState()
-    @StateObject var contactsState = ContactsState(inManagedObjectContext: PersistenceController.shared.container.viewContext)
+    @StateObject var contactsState = ContactsState()
 
     var body: some Scene {
             WindowGroup {
                 AppWrapper()
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .environment(\.managedObjectContext, CoreDataManager.shared.viewContext)
                     .environmentObject(authState)
                     .environmentObject(contactsState)
             }.windowStyle(HiddenTitleBarWindowStyle())

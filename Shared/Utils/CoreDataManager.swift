@@ -19,12 +19,12 @@ class CoreDataManager {
             }
             //core data stack is ready to be used
         }
-        objectContext = container.viewContext
+        viewContext = container.viewContext
     }
     
     static let shared = CoreDataManager()
     let container: NSPersistentContainer
-    var objectContext: NSManagedObjectContext
+    var viewContext: NSManagedObjectContext
     
     func fetch(_ entity: String, inManagedObjectContext viewContext: NSManagedObjectContext) -> [NSManagedObject] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
@@ -53,7 +53,7 @@ class CoreDataManager {
     }
     
     func changeToDevelopmentMode() {
-        objectContext = NSManagedObjectContext.contextForTests()
+        viewContext = NSManagedObjectContext.contextForTests()
     }
 }
 
