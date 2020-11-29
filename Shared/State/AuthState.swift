@@ -95,7 +95,7 @@ class AuthState: ObservableObject {
         let newAuthDetail = AuthDetail(context: viewContext)
         newAuthDetail.token = token
         newAuthDetail.user_uid = user_uid
-        CoreDataManager.shared.save(viewContext: viewContext) {[unowned self] (saved) in
+        CoreDataManager.shared.save() {[unowned self] (saved) in
             if(saved){
                 DispatchQueue.main.async {
                     self.loggedIn = true
@@ -113,7 +113,7 @@ class AuthState: ObservableObject {
             viewContext.delete(userD)
         }
         
-        CoreDataManager.shared.save(viewContext: viewContext){[unowned self] (saved) in
+        CoreDataManager.shared.save(){[unowned self] (saved) in
             if saved{
                 DispatchQueue.main.async{
                     self.loggedIn = false

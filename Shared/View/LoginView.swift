@@ -70,7 +70,7 @@ struct LoginView: View {
                         Button {
                             for (userD) in authDetail{
                                 viewContext.delete(userD)
-                                CoreDataManager.shared.save(viewContext: viewContext){(_)in}
+                                CoreDataManager.shared.save(){(_)in}
 
                             }
                             

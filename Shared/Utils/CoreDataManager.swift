@@ -41,7 +41,7 @@ class CoreDataManager {
         return result
     }
     
-    func save(viewContext: NSManagedObjectContext, saved: @escaping (_ status: Bool)->()){
+    func save(saved: @escaping (_ status: Bool)->()){
         do{
             try viewContext.save()
             saved(true)

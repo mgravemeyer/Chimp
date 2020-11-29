@@ -10,7 +10,6 @@ import SwiftUI
 struct ContactAddView: View {
  
     //CoreData stack for ContactDetail
-    @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [])
     private var contactsDetail: FetchedResults<ContactDetail>
 
@@ -39,8 +38,8 @@ struct ContactAddView: View {
                         }.padding(.trailing, 20).padding(.top, 30)
                         Button {
                             for (contactD) in contactsDetail{
-                                viewContext.delete(contactD)
-                                CoreDataManager.shared.save(viewContext: viewContext){(_)in}
+                                CoreDataManager.shared.viewContext.delete(contactD)
+                                CoreDataManager.shared.save(){(_)in}
                             }
                         } label: {
                             Text("delete cdata ")

@@ -70,7 +70,7 @@ class ContactsState: ObservableObject {
         newContactDetail.setValue("note", forKey: "note")
         newContactDetail.setValue(contactData.telephone, forKey: "phone")
 
-        CoreDataManager.shared.save(viewContext: CoreDataManager.shared.viewContext) { (done) in
+        CoreDataManager.shared.save() { (done) in
             if(done){
                 print(done)
             }
