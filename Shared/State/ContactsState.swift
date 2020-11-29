@@ -53,7 +53,7 @@ class ContactsState: ObservableObject {
         return contactsFetched
     }
     
-    
+
     //creating a new Contact in CoreData
     func createContactCD(contactData: Contact) {
         
