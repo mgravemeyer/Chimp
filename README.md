@@ -21,6 +21,7 @@ The project aims to create a management solution to support the administrational
 
 ### Technologies
 Swift with SwiftUI
+
 [🎨 Style Guide that we use](https://github.com/raywenderlich/swift-style-guide)
 
 [🔒 We follow the SOLID prininciples](https://medium.com/flawless-app-stories/s-o-l-i-d-principle-with-swift-b42f597ba7e2)
