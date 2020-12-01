@@ -18,8 +18,10 @@ class CoreDataManagerTests: XCTestCase {
     func test_init() throws {
         let instance = CoreDataManager.shared
         XCTAssertNotNil(instance)
+        XCTAssertNotNil(CoreDataManager.shared.viewContext)
     }
     
+    //load empty data to test if coreDataManager uses the test contextView container
     func test_load_empty_data() throws {
         XCTAssertEqual(CoreDataManager.shared.fetch("ContactDetail"), [])
     }
