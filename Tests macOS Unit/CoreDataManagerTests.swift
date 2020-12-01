@@ -25,7 +25,7 @@ class CoreDataManagerTests: XCTestCase {
     func test_load_empty_data() throws {
         XCTAssertEqual(CoreDataManager.shared.fetch("ContactDetail"), [])
     }
-
+    
     func test_save_load_data() throws {
         _ = ContactDetail()
         CoreDataManager.shared.save() { (done) in
