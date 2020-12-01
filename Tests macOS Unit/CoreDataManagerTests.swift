@@ -28,15 +28,10 @@ class CoreDataManagerTests: XCTestCase {
         _ = ContactDetail()
         CoreDataManager.shared.save() { (done) in
             if(done) {
-                XCTAssertTrue(true, "saved data into coreData")
-                print("true")
+                XCTAssertNotNil(CoreDataManager.shared.fetch("ContactDetail"), "saved data into coreData")
             } else {
                 XCTAssertTrue(false, "couldn't save data into coreData")
             }
         }
-    }
-    
-    func test_load_data() throws {
-        XCTAssertNotNil(CoreDataManager.shared.fetch("ContactDetail"))
     }
 }
