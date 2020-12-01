@@ -23,4 +23,9 @@ class AuthStateTests: XCTestCase {
         authState.checkAuth()
         XCTAssertTrue(!authState.loggedIn, "user ist not logged in")
     }
+    
+    func test_auth_user() throws {
+        let authState = AuthState()
+        authState.authUser(email: "testmail@web.de", password: "testpassword@web.de", option: .signIn, authDetail: <#T##FetchedResults<AuthDetail>#>, viewContext: <#T##NSManagedObjectContext#>)
+    }
 }

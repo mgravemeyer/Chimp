@@ -39,7 +39,7 @@ struct LoginView: View {
                     }.frame(width: 260)
                     VStack {
                         Button {
-                            self.authState.authUser(email: email, password: password, option: .signIn, authDetail: authDetail, viewContext: viewContext)
+                            self.authState.authUser(email: email, password: password, option: .signIn, viewContext: viewContext)
 
                         } label: {
                             Text("Sign In")
@@ -49,7 +49,7 @@ struct LoginView: View {
                         }
                         
                         Button {
-                            self.authState.authUser(email: email, password: password, option: .signUp, authDetail: authDetail, viewContext: viewContext)
+                            self.authState.authUser(email: email, password: password, option: .signUp, viewContext: viewContext)
 
                         } label: {
                             Text("Sign Up")

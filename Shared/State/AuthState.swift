@@ -64,7 +64,7 @@ class AuthState: ObservableObject {
     //creating a new user in DB on sign up
     // and or returning response (token and user_uid a.k.a AuthDetail) from DB
     //then, on saveAuthDetail() call, it saves the responses to CoreData
-    func authUser(email: String, password: String, option: AuthOptions, authDetail:FetchedResults<AuthDetail>, viewContext: NSManagedObjectContext) {
+    func authUser(email: String, password: String, option: AuthOptions, viewContext: NSManagedObjectContext) {
         authService.authUser(email: email, password: password, option: option) {[unowned self] (result) in
             switch result {
             case .success(let response):
