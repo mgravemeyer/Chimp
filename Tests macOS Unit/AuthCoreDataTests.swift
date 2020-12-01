@@ -26,6 +26,6 @@ class AuthStateTests: XCTestCase {
     
     func test_auth_user() throws {
         let authState = AuthState()
-        authState.authUser(email: "testmail@web.de", password: "testpassword@web.de", option: .signIn, authDetail: <#T##FetchedResults<AuthDetail>#>, viewContext: <#T##NSManagedObjectContext#>)
+        authState.authUser(email: "testmail@web.de", password: "testpassword@web.de", option: .signIn, viewContext: <#T##NSManagedObjectContext#>)
     }
 }
