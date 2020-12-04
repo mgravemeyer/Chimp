@@ -288,6 +288,19 @@
 			path = "Access Token";
 			sourceTree = "<group>";
 		};
+		E34675D1257AF1EE00EDD6FD /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
+				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp+Wrapper.swift */,
+				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
+				2EA83C58255B609C004A9852 /* CommandLineView.swift */,
+				5000EA29254454750023A545 /* LoadingView.swift */,
+				2E6A3D30255E91F400E5CE5D /* SideNavigationView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		E393AD032503FF6A0071D4E3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,12 +326,7 @@
 		E393AD062503FFA00071D4E3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
-				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp+Wrapper.swift */,
-				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
-				2EA83C58255B609C004A9852 /* CommandLineView.swift */,
-				5000EA29254454750023A545 /* LoadingView.swift */,
-				2E6A3D30255E91F400E5CE5D /* SideNavigationView.swift */,
+				E34675D1257AF1EE00EDD6FD /* Screens */,
 				E393AD032503FF6A0071D4E3 /* Components */,
 				2E6A3D81255EBAE200E5CE5D /* Today Views */,
 				2E6A3D55255EB98E00E5CE5D /* Contact Views */,
