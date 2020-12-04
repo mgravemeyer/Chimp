@@ -10,7 +10,6 @@ import SwiftUI
 struct ContactAddView: View {
  
     //CoreData stack for ContactDetail
-    @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [])
     private var contactsDetail: FetchedResults<ContactDetail>
 
@@ -37,20 +36,10 @@ struct ContactAddView: View {
                         Button("Close") {
                             contactsState.addMenuePressed.toggle()
                         }.padding(.trailing, 20).padding(.top, 30)
-                        Button("Print cdata contact") {
-                            for (_,contactDetail) in contactsDetail.enumerated(){
-                                guard let fname = contactDetail.first_name, let lname = contactDetail.last_name, let phone = contactDetail.phone , let email = contactDetail.email, let note = contactDetail.note  else {return}
-                                let dob = contactDetail.dob
-                                print("\(fname) \(lname)'s birthday is on \(dob)")
-                                print("Phone: \(phone)")
-                                print("Email: \(email)")
-                                print("Note: \(note)")
-                            }
-                        }.padding(.trailing, 20).padding(.top, 30)
                         Button {
                             for (contactD) in contactsDetail{
-                                viewContext.delete(contactD)
-                                CoreDataManager.shared.save(viewContext: viewContext){(_)in}
+                                CoreDataManager.shared.viewContext.delete(contactD)
+                                CoreDataManager.shared.save(){(_)in}
                             }
                         } label: {
                             Text("delete cdata ")
@@ -91,8 +80,8 @@ struct ContactAddView: View {
                                                                 email: self.email,
                                                                 telephone: self.telephone,
                                                                 birthday: String(Int(self.birthDate.timeIntervalSince1970*1000)), // d.o.b in epoch in string format
-                                                                company: ""),
-                                                               viewContext: viewContext)
+                                                                company: "")
+                            )
                             contactsState.addMenuePressed.toggle()
                         }
                     }.frame(maxWidth: 320, maxHeight: 320)

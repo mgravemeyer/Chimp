@@ -10,14 +10,13 @@ import SwiftUI
 @main
 struct ChimpApp: App {
    
-    let persistenceController = PersistenceController.shared
     @StateObject var authState = AuthState()
-    @StateObject var contactsState = ContactsState(inManagedObjectContext: PersistenceController.shared.container.viewContext)
+    @StateObject var contactsState = ContactsState()
 
     var body: some Scene {
             WindowGroup {
                 AppWrapper()
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .environment(\.managedObjectContext, CoreDataManager.shared.viewContext)
                     .environmentObject(authState)
                     .environmentObject(contactsState)
             }.windowStyle(HiddenTitleBarWindowStyle())
@@ -25,10 +24,6 @@ struct ChimpApp: App {
 }
 
 struct AppWrapper: View {
-    
-    //Core data result for AuthDetail
-    @FetchRequest(sortDescriptors: [])
-    private var authDetail: FetchedResults<AuthDetail>
 
     @EnvironmentObject var contactsState: ContactsState
     
@@ -38,7 +33,7 @@ struct AppWrapper: View {
         if authState.authLoading{
             // on initial launch this will always get fired
             LoadingView().onAppear{
-                self.authState.checkAuth(authDetail: authDetail)
+                self.authState.checkAuth()
             }
         }else{
             if !authState.loggedIn {

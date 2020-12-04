@@ -10,31 +10,30 @@ import XCTest
 
 class CoreDataManagerTests: XCTestCase {
     
-    private var context: NSManagedObjectContext?
-
     override func setUpWithError() throws {
-        self.context = NSManagedObjectContext.contextForTests()
+        CoreDataManager.shared.changeToDevelopmentMode()
         continueAfterFailure = true
     }
     
     func test_init() throws {
         let instance = CoreDataManager.shared
         XCTAssertNotNil(instance)
+        XCTAssertNotNil(CoreDataManager.shared.viewContext)
     }
-
-    func test_save_data() throws {
-        _ = ContactDetail(context: self.context!)
-        CoreDataManager.shared.save(viewContext: self.context!) { (done) in
+    
+    //load empty data to test if coreDataManager uses the test contextView container
+    func test_load_empty_data() throws {
+        XCTAssertEqual(CoreDataManager.shared.fetch("ContactDetail"), [])
+    }
+    
+    func test_save_load_data() throws {
+        _ = ContactDetail()
+        CoreDataManager.shared.save() { (done) in
             if(done) {
-                XCTAssertTrue(true, "saved data into coreData")
-                print("true")
+                XCTAssertNotNil(CoreDataManager.shared.fetch("ContactDetail"), "saved data into coreData")
             } else {
                 XCTAssertTrue(false, "couldn't save data into coreData")
             }
         }
-    }
-    
-    func test_load_data() throws {
-        XCTAssertNotNil(CoreDataManager.shared.fetch("ContactDetail", inManagedObjectContext: context!))
     }
 }

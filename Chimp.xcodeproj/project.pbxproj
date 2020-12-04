@@ -43,8 +43,6 @@
 		504AD45825442C0A001BCEEB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504AD45625442C0A001BCEEB /* CoreDataManager.swift */; };
 		504C5D9725459959003BDFA1 /* RequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C5D9625459959003BDFA1 /* RequestMaker.swift */; };
 		504C5D9825459959003BDFA1 /* RequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C5D9625459959003BDFA1 /* RequestMaker.swift */; };
-		504C5DA22545CBA2003BDFA1 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C5DA12545CBA2003BDFA1 /* PersistenceController.swift */; };
-		504C5DA32545CBA2003BDFA1 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C5DA12545CBA2003BDFA1 /* PersistenceController.swift */; };
 		5090A52A253CB8F500A211EE /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A529253CB8F500A211EE /* Auth.swift */; };
 		5090A52B253CB8F500A211EE /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A529253CB8F500A211EE /* Auth.swift */; };
 		5090A53E253CBCFC00A211EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090A53D253CBCFC00A211EE /* AuthService.swift */; };
@@ -64,9 +62,7 @@
 		509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
 		509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
 		E360BAEE256528CE0019C0A6 /* ContactsStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360BAED256528CE0019C0A6 /* ContactsStateTests.swift */; };
-		E360BAF5256528F80019C0A6 /* SupportClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360BAF4256528F80019C0A6 /* SupportClasses.swift */; };
 		E39A248F2566739C003CCE4A /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39A248E2566739C003CCE4A /* CoreDataManagerTests.swift */; };
-		E39A249B25667DB8003CCE4A /* PersistenceControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39A249A25667DB8003CCE4A /* PersistenceControllerTests.swift */; };
 		E39AC44F2501003200980BF6 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* AuthState.swift */; };
 		E39AC4502501003200980BF6 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AC44E2501003200980BF6 /* AuthState.swift */; };
 		E3AC5E092564432F00709D04 /* Chimp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */; };
@@ -137,7 +133,6 @@
 		5044E96625431EC50041E01B /* ChimpDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpDatePicker.swift; sourceTree = "<group>"; };
 		504AD45625442C0A001BCEEB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		504C5D9625459959003BDFA1 /* RequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMaker.swift; sourceTree = "<group>"; };
-		504C5DA12545CBA2003BDFA1 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		5090A529253CB8F500A211EE /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		5090A53D253CBCFC00A211EE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5090A548253CD0E900A211EE /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
@@ -148,9 +143,7 @@
 		509B6F6D2540BEDC002D165F /* ContactErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactErrors.swift; sourceTree = "<group>"; };
 		509B6F762540C0A9002D165F /* AccessTokenErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenErrors.swift; sourceTree = "<group>"; };
 		E360BAED256528CE0019C0A6 /* ContactsStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsStateTests.swift; sourceTree = "<group>"; };
-		E360BAF4256528F80019C0A6 /* SupportClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportClasses.swift; sourceTree = "<group>"; };
 		E39A248E2566739C003CCE4A /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
-		E39A249A25667DB8003CCE4A /* PersistenceControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceControllerTests.swift; sourceTree = "<group>"; };
 		E39AC44E2501003200980BF6 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
 		E3D6EF3A24F7D5A700F7A95A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		E3D6EF3E24F7D6C600F7A95A /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
@@ -260,7 +253,6 @@
 		504C5D952545994C003BDFA1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				504C5DA12545CBA2003BDFA1 /* PersistenceController.swift */,
 				504AD45625442C0A001BCEEB /* CoreDataManager.swift */,
 				504C5D9625459959003BDFA1 /* RequestMaker.swift */,
 			);
@@ -423,10 +415,8 @@
 			isa = PBXGroup;
 			children = (
 				E39A248E2566739C003CCE4A /* CoreDataManagerTests.swift */,
-				E39A249A25667DB8003CCE4A /* PersistenceControllerTests.swift */,
 				E3D8E87D2564294200F53DFE /* AuthCoreDataTests.swift */,
 				E360BAED256528CE0019C0A6 /* ContactsStateTests.swift */,
-				E360BAF4256528F80019C0A6 /* SupportClasses.swift */,
 				E3D8E87F2564294200F53DFE /* Info.plist */,
 			);
 			path = "Tests macOS Unit";
@@ -645,7 +635,6 @@
 				2EA83C59255B609C004A9852 /* CommandLineView.swift in Sources */,
 				2E6A3D57255EB9BD00E5CE5D /* ExternalContactDetailView.swift in Sources */,
 				E3D6EF3F24F7D6C600F7A95A /* TodayView.swift in Sources */,
-				504C5DA22545CBA2003BDFA1 /* PersistenceController.swift in Sources */,
 				E3D7A5F724F4FFC200D3EB62 /* ChimpApp+Wrapper.swift in Sources */,
 				E3D7A5F924F4FFC200D3EB62 /* LoginView.swift in Sources */,
 				509B6F632540B6C4002D165F /* ContactOptions.swift in Sources */,
@@ -700,7 +689,6 @@
 				50327F3C2568181700B583F4 /* ButtonCases.swift in Sources */,
 				2E6A3DA2255EC0C800E5CE5D /* ContactVerticalListView.swift in Sources */,
 				5000EA2B254454750023A545 /* LoadingView.swift in Sources */,
-				504C5DA32545CBA2003BDFA1 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,10 +712,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E39A249B25667DB8003CCE4A /* PersistenceControllerTests.swift in Sources */,
 				E3D8E87E2564294200F53DFE /* AuthCoreDataTests.swift in Sources */,
 				E360BAEE256528CE0019C0A6 /* ContactsStateTests.swift in Sources */,
-				E360BAF5256528F80019C0A6 /* SupportClasses.swift in Sources */,
 				E39A248F2566739C003CCE4A /* CoreDataManagerTests.swift in Sources */,
 				E3AC5E092564432F00709D04 /* Chimp.xcdatamodeld in Sources */,
 			);

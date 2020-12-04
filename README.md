@@ -18,5 +18,9 @@ The project aims to create a management solution to support the administrational
 
 [🖥 Our Website](https://chimp.berlin/en)
 
-### If you're interested in joining us on this amazing journey, shoot us a message or join our slack channel.
-[#temp-pppspring2021-chimp](https://codeuniversity.slack.com/archives/C01F6T15Q92)
+### Technologies
+Swift with SwiftUI
+
+[🎨 Style Guide that we use](https://github.com/raywenderlich/swift-style-guide)
+
+[🔒 We follow the SOLID prininciples](https://medium.com/flawless-app-stories/s-o-l-i-d-principle-with-swift-b42f597ba7e2)

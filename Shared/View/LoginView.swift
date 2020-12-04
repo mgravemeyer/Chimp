@@ -43,14 +43,12 @@ struct LoginView: View {
                     }.frame(width: 260).padding(.bottom, 8)
                     VStack {
                         ChimpPrimaryButton(buttonSize: .buttonMd, buttonColor: .chimpSecondary, isPressed: self.$isPressed, buttonText: "Sign In").onTapGesture {
-                            self.authState.authUser(email: email, password: password, option: .signIn, authDetail: authDetail, viewContext: viewContext)
+                            self.authState.authUser(email: email, password: password, option: .signIn)
                         }.padding(.bottom, 4)
 
                         ChimpPrimaryButton(buttonSize: .buttonMd, buttonColor: .chimpPrimary, isPressed: self.$isPressed, buttonText: "Sign Up").onTapGesture {
-                            self.authState.authUser(email: email, password: password, option: .signUp, authDetail: authDetail, viewContext: viewContext)
+                            self.authState.authUser(email: email, password: password, option: .signUp)
                         }
-
-                        
                         if error != "" {
                             Text(self.error)
                                 .fontWeight(.semibold)

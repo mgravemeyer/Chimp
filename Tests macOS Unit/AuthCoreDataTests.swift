@@ -17,4 +17,15 @@ class AuthStateTests: XCTestCase {
         self.context = NSManagedObjectContext.contextForTests()
         continueAfterFailure = true
     }
+    
+    func test_check_auth() throws {
+        let authState = AuthState()
+        authState.checkAuth()
+        XCTAssertTrue(!authState.loggedIn, "user ist not logged in")
+    }
+    
+    func test_auth_user() throws {
+        let authState = AuthState()
+        authState.authUser(email: "testmail@web.de", password: "testpassword@web.de", option: .signIn)
+    }
 }
