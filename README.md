@@ -18,7 +18,6 @@ The project aims to create a management solution to support the administrational
 
 [🖥 Our Website](https://chimp.berlin/en)
 
-
 ### Technologies
 Swift with SwiftUI
 
