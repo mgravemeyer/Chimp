@@ -26,7 +26,6 @@ struct AppView: View {
     }
     func addContact() {
         contactsState.addMenuePressed.toggle()
-        print("Added Contact")
     }
 }
 
@@ -38,12 +37,5 @@ struct TagView: View {
             .foregroundColor(Color.white)
             .background(Color.orange)
             .cornerRadius(10)
-    }
-}
-
-extension View {
-    func Print(_ vars: Any...) -> some View {
-        for v in vars { print(v) }
-        return EmptyView()
     }
 }

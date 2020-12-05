@@ -35,8 +35,6 @@
 		50327F2B2568093200B583F4 /* ChimpPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50327F292568093200B583F4 /* ChimpPrimaryButton.swift */; };
 		50327F322568176200B583F4 /* ChimpColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50327F312568176200B583F4 /* ChimpColors.swift */; };
 		50327F332568176200B583F4 /* ChimpColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50327F312568176200B583F4 /* ChimpColors.swift */; };
-		50327F3B2568181700B583F4 /* ButtonCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50327F3A2568181700B583F4 /* ButtonCases.swift */; };
-		50327F3C2568181700B583F4 /* ButtonCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50327F3A2568181700B583F4 /* ButtonCases.swift */; };
 		5044E96725431EC50041E01B /* ChimpDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044E96625431EC50041E01B /* ChimpDatePicker.swift */; };
 		5044E96825431EC50041E01B /* ChimpDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044E96625431EC50041E01B /* ChimpDatePicker.swift */; };
 		504AD45725442C0A001BCEEB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504AD45625442C0A001BCEEB /* CoreDataManager.swift */; };
@@ -127,7 +125,6 @@
 		500E2FDB253F6A7A005B347D /* AuthErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrors.swift; sourceTree = "<group>"; };
 		50327F292568093200B583F4 /* ChimpPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpPrimaryButton.swift; sourceTree = "<group>"; };
 		50327F312568176200B583F4 /* ChimpColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpColors.swift; sourceTree = "<group>"; };
-		50327F3A2568181700B583F4 /* ButtonCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCases.swift; sourceTree = "<group>"; };
 		5044E96625431EC50041E01B /* ChimpDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpDatePicker.swift; sourceTree = "<group>"; };
 		504AD45625442C0A001BCEEB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		504C5D9625459959003BDFA1 /* RequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMaker.swift; sourceTree = "<group>"; };
@@ -231,14 +228,6 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		50327F39256817E900B583F4 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				50327F3A2568181700B583F4 /* ButtonCases.swift */,
-			);
-			path = Buttons;
-			sourceTree = "<group>";
-		};
 		504C5D952545994C003BDFA1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,7 +282,6 @@
 		E393AD032503FF6A0071D4E3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				50327F39256817E900B583F4 /* Buttons */,
 				E3FDF8CA25024977002B7C5F /* ContactListItem.swift */,
 				5044E96625431EC50041E01B /* ChimpDatePicker.swift */,
 				2EEA70DE255E7F98000C5E75 /* ChimpTextFieldView.swift */,
@@ -306,8 +294,8 @@
 		E393AD052503FF920071D4E3 /* State */ = {
 			isa = PBXGroup;
 			children = (
-				E3E60A9724FFD8FF0065B141 /* ContactsState.swift */,
 				E39AC44E2501003200980BF6 /* AuthState.swift */,
+				E3E60A9724FFD8FF0065B141 /* ContactsState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -608,7 +596,6 @@
 				E3D7A5F524F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
 				504AD45725442C0A001BCEEB /* CoreDataManager.swift in Sources */,
 				509B6F582540B6A4002D165F /* ContactRequestMaker.swift in Sources */,
-				50327F3B2568181700B583F4 /* ButtonCases.swift in Sources */,
 				2E6A3DA1255EC0C800E5CE5D /* ContactVerticalListView.swift in Sources */,
 				E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */,
 				5090A549253CD0E900A211EE /* AuthRequest.swift in Sources */,
@@ -680,7 +667,6 @@
 				509B6F592540B6A4002D165F /* ContactRequestMaker.swift in Sources */,
 				2E6A3D39255EB3AF00E5CE5D /* NavigationCategory.swift in Sources */,
 				504C5D9825459959003BDFA1 /* RequestMaker.swift in Sources */,
-				50327F3C2568181700B583F4 /* ButtonCases.swift in Sources */,
 				2E6A3DA2255EC0C800E5CE5D /* ContactVerticalListView.swift in Sources */,
 				5000EA2B254454750023A545 /* LoadingView.swift in Sources */,
 			);

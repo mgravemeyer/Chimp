@@ -60,15 +60,4 @@ struct LoginView: View {
             }.frame(width: 500, height: 600).padding(.bottom, 70)
         }.frame(width: 1000, height: 600).background(Color.white)
     }
-    
-    private func printCdata(){
-        for (ix,userD) in authDetail.enumerated(){
-            print(ix)
-            guard let user_uid = userD.user_uid, let token = userD.token else  {
-                return
-            }
-            print(user_uid)
-            print(token)
-        }
-    }
 }
