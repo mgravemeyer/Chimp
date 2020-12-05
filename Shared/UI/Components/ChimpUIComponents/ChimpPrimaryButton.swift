@@ -69,5 +69,11 @@ struct ChimpPrimaryButton: View {
     }
 }
 
-
-
+#if DEBUG
+struct ChimpPrimaryButton_Previews : PreviewProvider {
+    @State static var isPressed = false
+    static var previews: some View {
+        ChimpPrimaryButton(buttonSize: .buttonLg, buttonColor: .chimpPrimary, isPressed: $isPressed, buttonText: "some text")
+    }
+}
+#endif

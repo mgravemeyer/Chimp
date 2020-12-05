@@ -269,8 +269,8 @@
 		E34675D1257AF1EE00EDD6FD /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
 				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp+Wrapper.swift */,
+				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
 				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
 				2EA83C58255B609C004A9852 /* CommandLineView.swift */,
 				5000EA29254454750023A545 /* LoadingView.swift */,

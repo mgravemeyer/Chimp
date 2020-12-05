@@ -47,3 +47,11 @@ struct LoginView: View {
         }.frame(width: 1000, height: 600).background(Color.white)
     }
 }
+
+#if DEBUG
+struct LoginView_Previews : PreviewProvider {
+    static var previews: some View {
+        LoginView().environmentObject(AuthState())
+    }
+}
+#endif
