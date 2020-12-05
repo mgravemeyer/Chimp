@@ -204,7 +204,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E6A3D55255EB98E00E5CE5D /* Contact Views */ = {
+		2E6A3D55255EB98E00E5CE5D /* ContactsViewComponents */ = {
 			isa = PBXGroup;
 			children = (
 				2E6A3D83255EBB2900E5CE5D /* ContactsView.swift */,
@@ -214,7 +214,7 @@
 				2E6A3D95255EBB8800E5CE5D /* ContactDetailView.swift */,
 				2E6A3DA0255EC0C800E5CE5D /* ContactVerticalListView.swift */,
 			);
-			path = "Contact Views";
+			path = ContactsViewComponents;
 			sourceTree = "<group>";
 		};
 		500E2FEA253F72E4005B347D /* Auth */ = {
@@ -279,7 +279,7 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		E393AD032503FF6A0071D4E3 /* Components */ = {
+		E3467619257BB13100EDD6FD /* ChimpUIComponents */ = {
 			isa = PBXGroup;
 			children = (
 				E3FDF8CA25024977002B7C5F /* ContactListItem.swift */,
@@ -287,6 +287,15 @@
 				2EEA70DE255E7F98000C5E75 /* ChimpTextFieldView.swift */,
 				50327F292568093200B583F4 /* ChimpPrimaryButton.swift */,
 				50327F312568176200B583F4 /* ChimpColors.swift */,
+			);
+			path = ChimpUIComponents;
+			sourceTree = "<group>";
+		};
+		E393AD032503FF6A0071D4E3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E3467619257BB13100EDD6FD /* ChimpUIComponents */,
+				2E6A3D55255EB98E00E5CE5D /* ContactsViewComponents */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -305,7 +314,6 @@
 			children = (
 				E34675D1257AF1EE00EDD6FD /* Screens */,
 				E393AD032503FF6A0071D4E3 /* Components */,
-				2E6A3D55255EB98E00E5CE5D /* Contact Views */,
 			);
 			path = UI;
 			sourceTree = "<group>";
