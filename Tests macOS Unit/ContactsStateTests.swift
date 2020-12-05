@@ -12,7 +12,7 @@ class ContactsStateTests: XCTestCase {
         let contactsState = ContactsState()
         XCTAssertTrue(contactsState.contacts.count == 0)
         let contact = Contact(firstname: "firstNameUI", lastname: "lastNameUI", email: "test@test.deUI", telephone: "016284392", birthday: "123456789", company: "companyUI")
-        contactsState.addContact(contact: contact)
+        contactsState.createContact(contact: contact)
         XCTAssertTrue(contactsState.contacts.count == 1)
     }
 

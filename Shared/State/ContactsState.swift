@@ -26,13 +26,8 @@ class ContactsState: ObservableObject {
     }
     
     //creating a new Contact in CoreData
-    func createContactCD(contactData: Contact) {
-        CoreDataManager.shared.saveContact(contactData: contactData)
-        addContact(contact: contactData)
-    }
-    
-    //UI
-    func addContact(contact: Contact) {
+    func createContact(contact: Contact) {
+        CoreDataManager.shared.saveContact(contactData: contact)
         contacts.insert(contact)
     }
   

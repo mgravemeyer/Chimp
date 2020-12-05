@@ -67,7 +67,7 @@ struct ContactAddView: View {
                             }
                         }.onTapGesture {
                             // TODO: save new contact function to the DB
-                            self.contactsState.createContactCD(contactData: Contact(
+                            self.contactsState.createContact(contact: Contact(
                                                                 firstname: self.firstName,
                                                                 lastname: self.lastName,
                                                                 email: self.email,
