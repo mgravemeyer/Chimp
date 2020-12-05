@@ -15,3 +15,13 @@ struct AppView: View {
         }.frame(minWidth: 900, minHeight: 500)
     }
 }
+
+#if DEBUG
+struct AppView_Previews : PreviewProvider {
+    @ObservedObject static var authSate = AuthState()
+    @ObservedObject static var contactsState = ContactsState()
+    static var previews: some View {
+        AppView().environmentObject(authSate).environmentObject(contactsState)
+    }
+}
+#endif

@@ -44,3 +44,16 @@ struct AppWrapper: View {
         }
     }
 }
+
+#if DEBUG
+struct AppWrapper_Previews : PreviewProvider {
+    init() {
+        CoreDataManager.shared.changeToDevelopmentMode()
+    }
+    @ObservedObject static var authSate = AuthState()
+    @ObservedObject static var contactsState = ContactsState()
+    static var previews: some View {
+        AppWrapper().environmentObject(authSate).environmentObject(contactsState)
+    }
+}
+#endif
