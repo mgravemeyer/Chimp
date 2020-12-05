@@ -9,16 +9,12 @@ import SwiftUI
 
 struct LoginView: View {
     
-    //CoreData stack for AuthDetail
-    @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [])
-    private var authDetail: FetchedResults<AuthDetail>
-    
     @EnvironmentObject var authState: AuthState
     @State var email = String()
     @State var password = String()
     @State var error = String()
     @State var isPressed = false
+    
     var body: some View {
         HStack {
             Group {
