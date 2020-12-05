@@ -18,10 +18,12 @@ class ContactsState: ObservableObject {
     
     func fetchContacts() {
         self.contacts.formUnion(CoreDataManager.shared.fetchContacts())
+        /* to:do error handling */
     }
     
     func createContact(contact: Contact) {
         CoreDataManager.shared.saveContact(contactData: contact)
+        /* to:do error handling */
         contacts.insert(contact)
     }
   

@@ -8,7 +8,7 @@ class ContactsStateTests: XCTestCase {
         continueAfterFailure = true
     }
     
-    func test_addContact() throws {
+    func test_createContact() throws {
         let contactsState = ContactsState()
         XCTAssertTrue(contactsState.contacts.count == 0)
         let contact = Contact(firstname: "firstNameUI", lastname: "lastNameUI", email: "test@test.deUI", telephone: "016284392", birthday: "123456789", company: "companyUI")
