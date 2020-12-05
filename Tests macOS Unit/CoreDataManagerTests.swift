@@ -16,17 +16,17 @@ class CoreDataManagerTests: XCTestCase {
     
     //load empty data to test if coreDataManager uses the test contextView container
     func test_load_empty_data() throws {
-        XCTAssertEqual(CoreDataManager.shared.fetch("ContactDetail"), [])
+        let fetchResult = CoreDataManager.shared.fetch("ContactDetail")
+        XCTAssertEqual(fetchResult.1, [])
     }
     
     func test_save_load_data() throws {
         _ = ContactDetail()
-        CoreDataManager.shared.save() { (done) in
-            if(done) {
-                XCTAssertNotNil(CoreDataManager.shared.fetch("ContactDetail"), "saved data into coreData")
-            } else {
-                XCTAssertTrue(false, "couldn't save data into coreData")
-            }
+        let saveResult = CoreDataManager.shared.save()
+        if(saveResult == nil) {
+            XCTAssertNotNil(CoreDataManager.shared.fetch("ContactDetail"), "saved data into coreData")
+        } else {
+            XCTAssertTrue(false, "couldn't save data into coreData")
         }
     }
 }

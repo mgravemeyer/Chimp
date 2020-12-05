@@ -4,6 +4,7 @@ import SwiftUI
 
 enum CoreDataErrors: String, Error {
     case fetchError = "Couldnt fetch data from coreData"
+    case saveError = "Couldnt save data to coreData"
 }
 
 class CoreDataManager {
@@ -47,7 +48,7 @@ class CoreDataManager {
         }
     }
     
-    func saveContact(contactData: Contact) {
+    func saveContact(contactData: Contact) -> CoreDataErrors? {
         var modifiedBirthdayContact = contactData
         
         let newContactDetail = ContactDetail(context: CoreDataManager.shared.viewContext)
@@ -61,10 +62,11 @@ class CoreDataManager {
         newContactDetail.setValue("note", forKey: "note")
         newContactDetail.setValue(contactData.telephone, forKey: "phone")
         
-        save() { (done) in
-            if(done){
-                print(done)
-            }
+        let saveResult = save()
+        if saveResult == nil {
+            return nil
+        } else {
+            return .saveError
         }
     }
     
@@ -78,19 +80,17 @@ class CoreDataManager {
                 result = records
             }
         } catch {
-            print("Unable to fetch managed objects for entity \(entity).")
+            return (.fetchError, result)
         }
         return (nil, result)
     }
     
-    func save(saved: @escaping (_ status: Bool)->()){
+    func save() -> (CoreDataErrors?) {
         do{
             try viewContext.save()
-            saved(true)
+            return nil
         }catch{
-            saved(false)
-            let err = error as NSError
-            fatalError("cData save err: \(err)")
+            return .saveError
         }
     }
     

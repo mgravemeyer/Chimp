@@ -25,9 +25,11 @@ class ContactsState: ObservableObject {
     }
     
     func createContact(contact: Contact) {
-        CoreDataManager.shared.saveContact(contactData: contact)
+        let saveResult = CoreDataManager.shared.saveContact(contactData: contact)
+        if saveResult == nil {
+            contacts.insert(contact)
+        }
         /* to:do error handling */
-        contacts.insert(contact)
     }
   
     func getContactCategories() -> [String] {
