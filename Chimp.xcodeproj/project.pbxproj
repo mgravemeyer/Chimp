@@ -223,8 +223,8 @@
 		500E2FEA253F72E4005B347D /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				500E2FDB253F6A7A005B347D /* AuthErrors.swift */,
 				5090A53D253CBCFC00A211EE /* AuthService.swift */,
+				500E2FDB253F6A7A005B347D /* AuthErrors.swift */,
 				5090A548253CD0E900A211EE /* AuthRequest.swift */,
 				509B6EEA253F8253002D165F /* AuthOptions.swift */,
 			);
@@ -350,10 +350,10 @@
 			isa = PBXGroup;
 			children = (
 				E393AD062503FFA00071D4E3 /* UI */,
+				E393AD052503FF920071D4E3 /* State */,
 				504C5D952545994C003BDFA1 /* Utils */,
 				5090A53C253CBCE400A211EE /* Service */,
 				E393AD072503FFB50071D4E3 /* Model */,
-				E393AD052503FF920071D4E3 /* State */,
 				E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */,
 				E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */,
 			);

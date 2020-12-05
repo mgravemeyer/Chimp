@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Contact: Identifiable, Hashable {
+struct Contact: Identifiable, Hashable, Equatable {
     let id = UUID()
     private(set) var firstname: String
     private(set) var lastname: String

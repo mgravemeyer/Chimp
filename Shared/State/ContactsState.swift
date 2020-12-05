@@ -22,14 +22,14 @@ class ContactsState: ObservableObject {
     
     //* via REST API (backend services)
     
-    @Published private(set) var contacts = [Contact]()
+    @Published private(set) var contacts = Set<Contact>()
     @Published var addMenuePressed = false
     @Published var advancedMenuePressed = false
     @Published var selectedContact = ""
     
     
     func fetchContacts() {
-        self.contacts.append(contentsOf: getAllContactsFromCD())
+        self.contacts.formUnion(getAllContactsFromCD())
     }
     
     //getting all contacts from CoreData
@@ -85,7 +85,7 @@ class ContactsState: ObservableObject {
     
     //UI
     func addContact(contact: Contact) {
-        contacts.append(contact)
+        contacts.insert(contact)
     }
   
     func getContactCategories() -> [String] {

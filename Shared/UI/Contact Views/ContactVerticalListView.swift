@@ -16,7 +16,7 @@ struct ContactVerticalListView: View {
         HStack(alignment: .top) {
             Text(self.categorie).font(.system(size: 30)).fontWeight(.bold).padding(.trailing, 10).frame(width: 40)
             VStack(alignment: .leading) {
-                ForEach(contactsState.contacts, id: \.self) { contact in
+                ForEach(Array(contactsState.contacts), id: \.self) { contact in
                     if String(contact.lastname.first!) == categorie {
                         if contact.id.uuidString == contactsState.selectedContact {
                             ContactVerticalListItem(contact: contact, selected: true).padding(.bottom, 8)
