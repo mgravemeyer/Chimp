@@ -50,8 +50,9 @@ struct LoginView: View {
 
 #if DEBUG
 struct LoginView_Previews : PreviewProvider {
+    @ObservedObject static var authSate = AuthState()
     static var previews: some View {
-        LoginView().environmentObject(AuthState())
+        LoginView().environmentObject(authSate)
     }
 }
 #endif

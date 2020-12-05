@@ -54,6 +54,15 @@ struct CommandLineView: View {
     }
 }
 
+#if DEBUG
+struct CommandLineView_Previews : PreviewProvider {
+    @ObservedObject static var contactsState = ContactsState()
+    static var previews: some View {
+        CommandLineView().environmentObject(contactsState)
+    }
+}
+#endif
+
 struct CommandLineRowView: View {
     @State var contact: Contact
     @State var isHovered : Bool
