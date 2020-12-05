@@ -232,7 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				504AD45625442C0A001BCEEB /* CoreDataManager.swift */,
-				504C5D9625459959003BDFA1 /* RequestMaker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -331,6 +330,7 @@
 		E3AF5016257BF1DF00417440 /* ApiServices */ = {
 			isa = PBXGroup;
 			children = (
+				504C5D9625459959003BDFA1 /* RequestMaker.swift */,
 				509B6F752540C09A002D165F /* Access Token */,
 				509B6F2C2540AE90002D165F /* Contact */,
 				500E2FEA253F72E4005B347D /* Auth */,
