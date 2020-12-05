@@ -1,10 +1,3 @@
-//
-//  UserState.swift
-//  Chimp
-//
-//  Created by Maximilian Gravemeyer on 03.09.20.
-//
-
 import Foundation
 import CoreData
 import SwiftUI

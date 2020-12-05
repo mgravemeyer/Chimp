@@ -1,10 +1,3 @@
-//
-//  RequestMakerService.swift
-//  Chimp
-//
-//  Created by Sean on 19.10.20.
-//
-
 import Foundation
 
 class AuthRequest{

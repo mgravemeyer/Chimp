@@ -1,10 +1,3 @@
-//
-//  ChimpAppView.swift
-//  Chimp
-//
-//  Created by Maximilian Gravemeyer on 27.08.20.
-//
-
 import SwiftUI
 
 struct AppView: View {

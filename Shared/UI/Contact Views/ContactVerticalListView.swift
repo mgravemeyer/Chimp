@@ -1,10 +1,3 @@
-//
-//  ContactVerticalListView.swift
-//  Chimp
-//
-//  Created by Maximilian Gravemeyer on 13.11.20.
-//
-
 import SwiftUI
 
 struct ContactVerticalListView: View {

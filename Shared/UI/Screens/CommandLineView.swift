@@ -1,10 +1,3 @@
-//
-//  CommandLineView.swift
-//  Chimp (iOS)
-//
-//  Created by Maximilian Gravemeyer on 11.11.20.
-//
-
 import SwiftUI
 
 struct CommandLineView: View {

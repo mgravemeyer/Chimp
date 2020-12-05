@@ -1,10 +1,3 @@
-//
-//  Contact.swift
-//  Chimp
-//
-//  Created by Maximilian Gravemeyer on 02.09.20.
-//
-
 import Foundation
 
 struct Contact: Identifiable, Hashable, Equatable {

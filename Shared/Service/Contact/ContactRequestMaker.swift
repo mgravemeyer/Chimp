@@ -1,10 +1,3 @@
-//
-//  ContactRequestMaker.swift
-//  Chimp (iOS)
-//
-//  Created by Sean on 22.10.20.
-//
-
 import Foundation
 
 class ContactRequestMaker{

@@ -1,10 +1,3 @@
-//
-//  RequestMaker.swift
-//  Chimp
-//
-//  Created by Sean on 25.10.20.
-//
-
 import Foundation
 
 struct RequestMaker{

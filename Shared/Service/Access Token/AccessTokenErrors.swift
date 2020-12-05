@@ -1,10 +1,3 @@
-//
-//  AccessTokenErrors.swift
-//  Chimp
-//
-//  Created by Sean on 22.10.20.
-//
-
 import Foundation
 
 enum AccessTokenErrors: String, Error {

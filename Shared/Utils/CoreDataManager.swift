@@ -1,10 +1,3 @@
-//
-//  SaveContext.swift
-//  Chimp
-//
-//  Created by Sean on 24.10.20.
-//
-
 import Foundation
 import CoreData
 import SwiftUI

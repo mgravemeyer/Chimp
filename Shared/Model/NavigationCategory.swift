@@ -1,10 +1,3 @@
-//
-//  NavigationCategory.swift
-//  Chimp
-//
-//  Created by Maximilian Gravemeyer on 13.11.20.
-//
-
 import Foundation
 
 struct NavigationCategory: Identifiable, Hashable {

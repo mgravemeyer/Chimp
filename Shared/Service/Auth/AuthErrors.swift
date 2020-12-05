@@ -1,10 +1,3 @@
-//
-//  AuthError.swift
-//  Chimp (iOS)
-//
-//  Created by Sean on 21.10.20.
-//
-
 import Foundation
 
 enum AuthErrors: String, Error {

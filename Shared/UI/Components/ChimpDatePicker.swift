@@ -1,10 +1,3 @@
-//
-//  ChimpDatePicker.swift
-//  Chimp
-//
-//  Created by Sean on 23.10.20.
-//
-
 import SwiftUI
 
 struct ChimpDatePicker: View {
