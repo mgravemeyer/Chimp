@@ -7,7 +7,7 @@ import SwiftUI
 class ContactsState: ObservableObject {
     
     init() {
-        fetchContactsCD()
+        fetchContacts()
     }
     
     //Default "flow" of data saving:
@@ -21,7 +21,7 @@ class ContactsState: ObservableObject {
     @Published var selectedContact = ""
     
     
-    func fetchContactsCD() {
+    func fetchContacts() {
         self.contacts.formUnion(CoreDataManager.shared.fetchContacts())
     }
     

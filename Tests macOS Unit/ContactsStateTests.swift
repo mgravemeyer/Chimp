@@ -19,13 +19,16 @@ class ContactsStateTests: XCTestCase {
     }
 
     func test_getAllContactsFromCD() throws {
-        XCTAssertEqual(ContactsState().getAllContactsFromCD(), [])
+        let contactsState = ContactsState()
+        contactsState.fetchContactsCD()
+        XCTAssertEqual(contactsState.contacts, [])
     }
 
     func test_createNewContactCD() throws {
-
+        let contactsState = ContactsState()
         let contactData = Contact(firstname: "firstName", lastname: "lastName", email: "016243829", telephone: "test@test.de", birthday: "123456789", company: "company")
-        ContactsState().createContactCD(contactData: contactData)
-        XCTAssertEqual(ContactsState().getAllContactsFromCD().count, 1)
+        contactsState.createContactCD(contactData: contactData)
+        contactsState.fetchContactsCD()
+        XCTAssertEqual(contactsState.contacts.count, 1)
     }
 }
