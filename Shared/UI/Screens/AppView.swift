@@ -21,12 +21,6 @@ struct AppView: View {
             }
         }.frame(minWidth: 900, minHeight: 500)
     }
-    func toggleSidebar() {
-            NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
-    }
-    func addContact() {
-        contactsState.addMenuePressed.toggle()
-    }
 }
 
 struct TagView: View {
