@@ -26,16 +26,14 @@ struct ChimpApp: App {
 struct AppWrapper: View {
 
     @EnvironmentObject var contactsState: ContactsState
-    
     @EnvironmentObject var authState: AuthState 
     
     var body: some View{
-        if authState.authLoading{
-            // on initial launch this will always get fired
-            LoadingView().onAppear{
+        if authState.authLoading {
+            LoadingView().onAppear {
                 self.authState.checkAuth()
             }
-        }else{
+        } else {
             if !authState.loggedIn {
                 LoginView()
             } else {
@@ -53,14 +51,5 @@ struct AppWrapper: View {
                 }.edgesIgnoringSafeArea(.all)
             }
         }
-    }
-}
-
-
-
-extension NSTextField {
-    open override var focusRingType: NSFocusRingType {
-        get { .none }
-        set { }
     }
 }
