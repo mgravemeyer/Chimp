@@ -17,7 +17,10 @@ class ContactsState: ObservableObject {
     
     
     func fetchContacts() {
-        self.contacts.formUnion(CoreDataManager.shared.fetchContacts())
+        let fetchResult = CoreDataManager.shared.fetchContacts()
+        if fetchResult.0 == nil {
+            self.contacts.formUnion(fetchResult.1)
+        }
         /* to:do error handling */
     }
     
