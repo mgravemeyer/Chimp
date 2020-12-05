@@ -16,7 +16,7 @@ class AuthState: ObservableObject {
     private let authService = AuthService.instance
     
     func checkAuth() {
-        let authStateFetched = CoreDataManager.shared.fetch("AuthDetail")
+        let authStateFetched = CoreDataManager.shared.fetch("AuthDetail").1
         if !authStateFetched.isEmpty || authStateFetched != [] {
             
             var user_uid = String()

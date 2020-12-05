@@ -3,10 +3,7 @@ import CoreData
 import SwiftUI
 
 enum CoreDataErrors: String, Error {
-    case userNotFound = "We are unable to find any account with this email & password combination."
-    case userAlreadyExists = "This account already exists!"
-    case incorrectInputSignIn = "Sign in error - data isn't valid! Make sure to fill in all necessary field(s) correctly!"
-    case incorrectInputSignUp = "Sign up error - data isn't valid! Make sure to fill in all necessary field(s) correctly!"
+    case fetchError = "Couldnt fetch data from coreData"
 }
 
 class CoreDataManager {
@@ -28,22 +25,26 @@ class CoreDataManager {
     
     func fetchContacts() -> (CoreDataErrors?, [Contact]) {
         let contactsCD = fetch("ContactDetail")
-        var contactsFetched = [Contact]()
         //to:do unwrap values safely, not force unwrap
-        for result in contactsCD as [NSManagedObject] {
-            let firstName = result.value(forKey: "first_name") as! String
-            let lastName = result.value(forKey: "last_name") as! String
-            let email = result.value(forKey: "email") as! String
-            let phone = result.value(forKey: "phone") as! String
-            
-            let dob = result.value(forKey: "dob") as! Int
-            let dob_date = Date(timeIntervalSince1970: TimeInterval(dob))
-            let dob_str = dob_date.toString(dateFormat: "dd.MM.YYYY")
-            
-            let contact = Contact(firstname: firstName, lastname: lastName, email: email, telephone: phone, birthday: dob_str, company: "")
-            contactsFetched.append(contact)
+        if contactsCD.0 == nil {
+            var contactsFetched = [Contact]()
+            for result in contactsCD.1 as [NSManagedObject] {
+                let firstName = result.value(forKey: "first_name") as! String
+                let lastName = result.value(forKey: "last_name") as! String
+                let email = result.value(forKey: "email") as! String
+                let phone = result.value(forKey: "phone") as! String
+                
+                let dob = result.value(forKey: "dob") as! Int
+                let dob_date = Date(timeIntervalSince1970: TimeInterval(dob))
+                let dob_str = dob_date.toString(dateFormat: "dd.MM.YYYY")
+                
+                let contact = Contact(firstname: firstName, lastname: lastName, email: email, telephone: phone, birthday: dob_str, company: "")
+                contactsFetched.append(contact)
+            }
+            return (nil, contactsFetched)
+        } else {
+            return (.fetchError, [Contact]())
         }
-        return (nil, contactsFetched)
     }
     
     func saveContact(contactData: Contact) {
@@ -67,7 +68,7 @@ class CoreDataManager {
         }
     }
     
-    func fetch(_ entity: String) -> [NSManagedObject] {
+    func fetch(_ entity: String) -> (CoreDataErrors? ,[NSManagedObject]) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         var result = [NSManagedObject]()
         do {
@@ -79,7 +80,7 @@ class CoreDataManager {
         } catch {
             print("Unable to fetch managed objects for entity \(entity).")
         }
-        return result
+        return (nil, result)
     }
     
     func save(saved: @escaping (_ status: Bool)->()){
