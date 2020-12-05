@@ -231,7 +231,6 @@
 		504C5D952545994C003BDFA1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				504AD45625442C0A001BCEEB /* CoreDataManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -341,6 +340,7 @@
 		E3AF5017257BF1EE00417440 /* CoreDataServices */ = {
 			isa = PBXGroup;
 			children = (
+				504AD45625442C0A001BCEEB /* CoreDataManager.swift */,
 			);
 			path = CoreDataServices;
 			sourceTree = "<group>";
