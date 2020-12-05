@@ -10,11 +10,6 @@ class ContactsState: ObservableObject {
         fetchContacts()
     }
     
-    //Default "flow" of data saving:
-    //CoreData first -> then to DB*
-    
-    //* via REST API (backend services)
-    
     @Published private(set) var contacts = Set<Contact>()
     @Published var addMenuePressed = false
     @Published var advancedMenuePressed = false
@@ -25,7 +20,6 @@ class ContactsState: ObservableObject {
         self.contacts.formUnion(CoreDataManager.shared.fetchContacts())
     }
     
-    //creating a new Contact in CoreData
     func createContact(contact: Contact) {
         CoreDataManager.shared.saveContact(contactData: contact)
         contacts.insert(contact)
