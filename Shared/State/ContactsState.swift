@@ -21,37 +21,14 @@ class ContactsState: ObservableObject {
     @Published var selectedContact = ""
     
     
-    private func fetchContacts() {
+    func fetchContacts() {
         self.contacts.formUnion(CoreDataManager.shared.fetchContacts())
     }
     
     //creating a new Contact in CoreData
     func createContactCD(contactData: Contact) {
-        
-        var modifiedBirthdayContact = contactData
-        
-        let newContactDetail = ContactDetail(context: CoreDataManager.shared.viewContext)
-        
-        //to:do for loop adding values
-        newContactDetail.setValue(contactData.firstname, forKey: "first_name")
-        newContactDetail.setValue(contactData.lastname, forKey: "last_name")
-        newContactDetail.setValue(contactData.email, forKey: "email")
-        newContactDetail.setValue(Int(contactData.birthday), forKey: "dob")
-        //to:do change note to get from contact
-        newContactDetail.setValue("note", forKey: "note")
-        newContactDetail.setValue(contactData.telephone, forKey: "phone")
-
-        CoreDataManager.shared.save() { (done) in
-            if(done){
-                print(done)
-            }
-        }
-        
-        //to:do avoid data converting
-        let dob = Int(Int(contactData.birthday)!/1000) // (Integer/Epoch format View)
-        let dob_date = Date(timeIntervalSince1970: TimeInterval(dob)) // date format (to be converted to str)
-        modifiedBirthdayContact.birthday = dob_date.toString(dateFormat: "dd.MM.YYYY")//Str format, for UI
-        addContact(contact: modifiedBirthdayContact)
+        CoreDataManager.shared.saveContact(contactData: contactData)
+        addContact(contact: contactData)
     }
     
     //UI

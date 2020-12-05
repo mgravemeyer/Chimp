@@ -39,6 +39,27 @@ class CoreDataManager {
         return contactsFetched
     }
     
+    func saveContact(contactData: Contact) {
+        var modifiedBirthdayContact = contactData
+        
+        let newContactDetail = ContactDetail(context: CoreDataManager.shared.viewContext)
+        
+        //to:do for loop adding values
+        newContactDetail.setValue(contactData.firstname, forKey: "first_name")
+        newContactDetail.setValue(contactData.lastname, forKey: "last_name")
+        newContactDetail.setValue(contactData.email, forKey: "email")
+        newContactDetail.setValue(Int(contactData.birthday), forKey: "dob")
+        //to:do change note to get from contact
+        newContactDetail.setValue("note", forKey: "note")
+        newContactDetail.setValue(contactData.telephone, forKey: "phone")
+        
+        save() { (done) in
+            if(done){
+                print(done)
+            }
+        }
+    }
+    
     func fetch(_ entity: String) -> [NSManagedObject] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         var result = [NSManagedObject]()
