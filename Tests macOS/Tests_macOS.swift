@@ -18,6 +18,10 @@ class Tests_macOS: XCTestCase {
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
+        var launchArguments: [AnyHashable] = []
+        launchArguments.append("-AppleInterfaceStyle")
+        launchArguments.append("Dark")
+        app.launchArguments = launchArguments as! [String]
         app.launch()
 
         // Use recording to get started writing UI tests.
