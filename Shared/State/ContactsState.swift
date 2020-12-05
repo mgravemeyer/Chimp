@@ -7,7 +7,7 @@ import SwiftUI
 class ContactsState: ObservableObject {
     
     init() {
-        fetchContacts()
+        fetchContactsCD()
     }
     
     //Default "flow" of data saving:
@@ -21,29 +21,8 @@ class ContactsState: ObservableObject {
     @Published var selectedContact = ""
     
     
-    func fetchContacts() {
-        self.contacts.formUnion(getAllContactsFromCD())
-    }
-    
-    //getting all contacts from CoreData
-    func getAllContactsFromCD() -> [Contact] {
-        let contactsCD = CoreDataManager.shared.fetch("ContactDetail")
-        var contactsFetched = [Contact]()
-        //to:do unwrap values safely, not force unwrap
-        for result in contactsCD as [NSManagedObject] {
-            let firstName = result.value(forKey: "first_name") as! String
-            let lastName = result.value(forKey: "last_name") as! String
-            let email = result.value(forKey: "email") as! String
-            let phone = result.value(forKey: "phone") as! String
-            
-            let dob = result.value(forKey: "dob") as! Int
-            let dob_date = Date(timeIntervalSince1970: TimeInterval(dob))
-            let dob_str = dob_date.toString(dateFormat: "dd.MM.YYYY")
-            
-            let contact = Contact(firstname: firstName, lastname: lastName, email: email, telephone: phone, birthday: dob_str, company: "")
-            contactsFetched.append(contact)
-        }
-        return contactsFetched
+    func fetchContactsCD() {
+        self.contacts.formUnion(CoreDataManager.shared.fetchContacts())
     }
     
     

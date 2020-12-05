@@ -19,6 +19,26 @@ class CoreDataManager {
     let container: NSPersistentContainer
     var viewContext: NSManagedObjectContext
     
+    func fetchContacts() -> [Contact] {
+        let contactsCD = fetch("ContactDetail")
+        var contactsFetched = [Contact]()
+        //to:do unwrap values safely, not force unwrap
+        for result in contactsCD as [NSManagedObject] {
+            let firstName = result.value(forKey: "first_name") as! String
+            let lastName = result.value(forKey: "last_name") as! String
+            let email = result.value(forKey: "email") as! String
+            let phone = result.value(forKey: "phone") as! String
+            
+            let dob = result.value(forKey: "dob") as! Int
+            let dob_date = Date(timeIntervalSince1970: TimeInterval(dob))
+            let dob_str = dob_date.toString(dateFormat: "dd.MM.YYYY")
+            
+            let contact = Contact(firstname: firstName, lastname: lastName, email: email, telephone: phone, birthday: dob_str, company: "")
+            contactsFetched.append(contact)
+        }
+        return contactsFetched
+    }
+    
     func fetch(_ entity: String) -> [NSManagedObject] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         var result = [NSManagedObject]()
