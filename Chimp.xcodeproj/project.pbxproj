@@ -240,9 +240,8 @@
 		5090A53C253CBCE400A211EE /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				509B6F752540C09A002D165F /* Access Token */,
-				509B6F2C2540AE90002D165F /* Contact */,
-				500E2FEA253F72E4005B347D /* Auth */,
+				E3AF5017257BF1EE00417440 /* CoreDataServices */,
+				E3AF5016257BF1DF00417440 /* ApiServices */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -329,6 +328,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E3AF5016257BF1DF00417440 /* ApiServices */ = {
+			isa = PBXGroup;
+			children = (
+				509B6F752540C09A002D165F /* Access Token */,
+				509B6F2C2540AE90002D165F /* Contact */,
+				500E2FEA253F72E4005B347D /* Auth */,
+			);
+			path = ApiServices;
+			sourceTree = "<group>";
+		};
+		E3AF5017257BF1EE00417440 /* CoreDataServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreDataServices;
+			sourceTree = "<group>";
+		};
 		E3D7A5C324F4FFC000D3EB62 = {
 			isa = PBXGroup;
 			children = (
@@ -347,9 +363,9 @@
 			children = (
 				E393AD062503FFA00071D4E3 /* UI */,
 				E393AD052503FF920071D4E3 /* State */,
-				504C5D952545994C003BDFA1 /* Utils */,
 				5090A53C253CBCE400A211EE /* Service */,
 				E393AD072503FFB50071D4E3 /* Model */,
+				504C5D952545994C003BDFA1 /* Utils */,
 				E3D7A5CE24F4FFC200D3EB62 /* Assets.xcassets */,
 				E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */,
 			);
@@ -895,7 +911,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q33X652UWU;
+				DEVELOPMENT_TEAM = V2JY6WCGLS;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -920,7 +936,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q33X652UWU;
+				DEVELOPMENT_TEAM = V2JY6WCGLS;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
