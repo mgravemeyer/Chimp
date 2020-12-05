@@ -325,11 +325,11 @@
 			isa = PBXGroup;
 			children = (
 				E3D7A5C824F4FFC000D3EB62 /* Shared */,
-				E3D7A5D524F4FFC200D3EB62 /* iOS */,
 				E3D7A5DC24F4FFC200D3EB62 /* macOS */,
-				E3D7A5E624F4FFC200D3EB62 /* Tests iOS */,
 				E3D7A5F124F4FFC200D3EB62 /* Tests macOS */,
 				E3D8E87C2564294200F53DFE /* Tests macOS Unit */,
+				E3D7A5D524F4FFC200D3EB62 /* iOS */,
+				E3D7A5E624F4FFC200D3EB62 /* Tests iOS */,
 				E3D7A5D424F4FFC200D3EB62 /* Products */,
 			);
 			sourceTree = "<group>";
