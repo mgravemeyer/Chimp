@@ -21,10 +21,9 @@ class ContactsState: ObservableObject {
     @Published var selectedContact = ""
     
     
-    func fetchContacts() {
+    private func fetchContacts() {
         self.contacts.formUnion(CoreDataManager.shared.fetchContacts())
     }
-    
     
     //creating a new Contact in CoreData
     func createContactCD(contactData: Contact) {

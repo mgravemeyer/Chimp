@@ -10,11 +10,10 @@ class ContactsStateTests: XCTestCase {
     
     func test_addContact() throws {
         let contactsState = ContactsState()
+        XCTAssertTrue(contactsState.contacts.count == 0)
         let contact = Contact(firstname: "firstNameUI", lastname: "lastNameUI", email: "test@test.deUI", telephone: "016284392", birthday: "123456789", company: "companyUI")
         contactsState.addContact(contact: contact)
-        for contact in contactsState.contacts {
-            print(contact)
-        }
+        XCTAssertTrue(contactsState.contacts.count == 1)
     }
 
     func test_fetchContacts() throws {
