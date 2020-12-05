@@ -23,7 +23,6 @@ struct LoginView: View {
                         Text("in one place. ")
                             .font(.system(size: 14.0)).fontWeight(.bold)
                     }.padding(.bottom, 16)
-                    
                     Group {
                         TextField("Username", text: self.$email).textFieldStyle(PlainTextFieldStyle()).padding(.bottom, 5)
                         SecureField("Password", text: self.$password).textFieldStyle(PlainTextFieldStyle()).padding(.bottom, 5)

@@ -28,11 +28,13 @@ struct AppWrapper: View {
             } else {
                 ZStack {
                     if contactsState.addMenuePressed {
-                        ContactAddView().zIndex(1)
+                        ContactAddView()
+                            .zIndex(1)
                             .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
                     }
                     if contactsState.advancedMenuePressed {
-                        CommandLineView().zIndex(1)
+                        CommandLineView()
+                            .zIndex(1)
                             .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
                     }
                     AppView()
