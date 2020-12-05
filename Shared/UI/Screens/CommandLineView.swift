@@ -14,14 +14,12 @@ struct CommandLineView: View {
     @State var isSelected = false
     @State var geoBox = CGFloat()
     var body: some View {
-        
         let binding = Binding<String>(get: {
                     self.advancedCommand
             }, set: {
                     self.advancedCommand = $0
                 self.boxHeight = CGFloat(50 + contactsState.getContactsBySearch(search: advancedCommand).count * 55)
             })
-        
         GeometryReader { geometry in
             ZStack {
                 VStack {
@@ -66,7 +64,6 @@ struct CommandLineView: View {
 struct CommandLineRowView: View {
     @State var contact: Contact
     @State var isHovered : Bool
-    
     var body: some View {
         HStack {
             Text(contact.firstname).font(.system(size: 18, weight: .medium))

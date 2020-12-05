@@ -9,10 +9,8 @@ import SwiftUI
 
 @main
 struct ChimpApp: App {
-   
     @StateObject var authState = AuthState()
     @StateObject var contactsState = ContactsState()
-
     var body: some Scene {
             WindowGroup {
                 AppWrapper()
@@ -24,10 +22,8 @@ struct ChimpApp: App {
 }
 
 struct AppWrapper: View {
-
     @EnvironmentObject var contactsState: ContactsState
-    @EnvironmentObject var authState: AuthState 
-    
+    @EnvironmentObject var authState: AuthState
     var body: some View{
         if authState.authLoading {
             LoadingView().onAppear {

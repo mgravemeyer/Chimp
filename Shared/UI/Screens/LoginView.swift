@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct LoginView: View {
-    
     @EnvironmentObject var authState: AuthState
     @State var email = String()
     @State var password = String()
     @State var error = String()
     @State var isPressed = false
-    
     var body: some View {
         HStack {
             Group {
