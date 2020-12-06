@@ -22,14 +22,14 @@ struct AppView_Previews : PreviewProvider {
     @ObservedObject static var contactsState = ContactsState()
     static var previews: some View {
         HStack {
-            PreviewCoreDataWrapper {
+//            PreviewCoreDataWrapper {
 //                .environmentObject({ () -> AuthState in
 //                    let authState = AuthState()
 //                    authState.loggedIn = true
 //                    return authState
 //                }())
                 AppView().environmentObject(authSate).environmentObject(contactsState)
-            }
+//            }
         }
     }
 }
