@@ -59,8 +59,6 @@
 		509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F6D2540BEDC002D165F /* ContactErrors.swift */; };
 		509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
 		509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
-		E32CC6E1257CDB190040E43B /* PreviewCoreDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32CC6E0257CDB190040E43B /* PreviewCoreDataWrapper.swift */; };
-		E32CC6E7257CE08D0040E43B /* PreviewCoreDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32CC6E0257CDB190040E43B /* PreviewCoreDataWrapper.swift */; };
 		E32F01CF257C14540069DB4D /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F01CE257C14540069DB4D /* TagView.swift */; };
 		E32F01D0257C14540069DB4D /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F01CE257C14540069DB4D /* TagView.swift */; };
 		E32F01E1257C19D70069DB4D /* CommandLineRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F01E0257C19D70069DB4D /* CommandLineRowView.swift */; };
@@ -145,7 +143,6 @@
 		509B6F622540B6C4002D165F /* ContactOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptions.swift; sourceTree = "<group>"; };
 		509B6F6D2540BEDC002D165F /* ContactErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactErrors.swift; sourceTree = "<group>"; };
 		509B6F762540C0A9002D165F /* AccessTokenErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenErrors.swift; sourceTree = "<group>"; };
-		E32CC6E0257CDB190040E43B /* PreviewCoreDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCoreDataWrapper.swift; sourceTree = "<group>"; };
 		E32F01CE257C14540069DB4D /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		E32F01E0257C19D70069DB4D /* CommandLineRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineRowView.swift; sourceTree = "<group>"; };
 		E32F01F2257C1D220069DB4D /* SideNavigationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNavigationRow.swift; sourceTree = "<group>"; };
@@ -279,7 +276,6 @@
 		E34675D1257AF1EE00EDD6FD /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E32CC6E0257CDB190040E43B /* PreviewCoreDataWrapper.swift */,
 				E3D7A5CB24F4FFC000D3EB62 /* ChimpApp+Wrapper.swift */,
 				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
 				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
@@ -659,7 +655,6 @@
 				2EA83C59255B609C004A9852 /* CommandLineView.swift in Sources */,
 				2E6A3D57255EB9BD00E5CE5D /* ExternalContactDetailView.swift in Sources */,
 				E32F01F3257C1D220069DB4D /* SideNavigationRow.swift in Sources */,
-				E32CC6E1257CDB190040E43B /* PreviewCoreDataWrapper.swift in Sources */,
 				E3D7A5F724F4FFC200D3EB62 /* ChimpApp+Wrapper.swift in Sources */,
 				E3D7A5F924F4FFC200D3EB62 /* LoginView.swift in Sources */,
 				509B6F632540B6C4002D165F /* ContactOptions.swift in Sources */,
@@ -686,7 +681,6 @@
 				509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */,
 				509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */,
 				5090A54A253CD0E900A211EE /* AuthRequest.swift in Sources */,
-				E32CC6E7257CE08D0040E43B /* PreviewCoreDataWrapper.swift in Sources */,
 				5090A52B253CB8F500A211EE /* Auth.swift in Sources */,
 				5044E96825431EC50041E01B /* ChimpDatePicker.swift in Sources */,
 				2EEA70E0255E7F98000C5E75 /* ChimpTextFieldView.swift in Sources */,
