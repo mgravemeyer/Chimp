@@ -28,6 +28,8 @@ struct AppWrapper: View {
                 LoginView()
             } else {
                 ZStack {
+                    AppView()
+                        .zIndex(0)
                     if contactsState.addMenuePressed {
                         ContactAddView()
                             .zIndex(1)
@@ -38,8 +40,6 @@ struct AppWrapper: View {
                             .zIndex(1)
                             .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
                     }
-                    AppView()
-                        .zIndex(0)
                 }.edgesIgnoringSafeArea(.all)
             }
         }

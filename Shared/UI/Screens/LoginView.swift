@@ -52,7 +52,10 @@ struct LoginView: View {
 struct LoginView_Previews : PreviewProvider {
     @ObservedObject static var authSate = AuthState()
     static var previews: some View {
-        LoginView().environmentObject(authSate)
+        LoginView(
+        email: "veryLongEmailIsVeryLongForTheTestForUli@web.de",
+        password: "thisIsAVeryveryLongPasswordThatIsGetingTestd"
+        ).environmentObject(authSate)
     }
 }
 #endif

@@ -21,13 +21,11 @@ class CoreDataManagerTests: XCTestCase {
     }
     
     func test_save_load_data() throws {
-        _ = ContactDetail()
+        let contact = ContactDetail()
         let saveResult = CoreDataManager.shared.save()
-        if(saveResult == nil) {
-            XCTAssertNotNil(CoreDataManager.shared.fetch("ContactDetail"), "saved data into coreData")
-        } else {
-            let fetchResult = CoreDataManager.shared.fetch("ContactDetail")
-            XCTAssertEqual(fetchResult.1.count, 1, "couldn't save data into coreData")
-        }
+        XCTAssertNil(saveResult, "no errors appeared while saving data into coreData")
+        XCTAssertNotNil(CoreDataManager.shared.fetch("ContactDetail"), "saved data into coreData")
+        let fetchResult = CoreDataManager.shared.fetch("ContactDetail")
+        XCTAssertEqual(fetchResult.1.count, 1, "couldn't save data into coreData")
     }
 }
