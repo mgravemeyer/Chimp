@@ -20,12 +20,16 @@ struct AppView: View {
 struct AppView_Previews : PreviewProvider {
     @ObservedObject static var authSate = AuthState()
     @ObservedObject static var contactsState = ContactsState()
-    init() {
-        CoreDataManager.shared.changeToDevelopmentMode()
-    }
     static var previews: some View {
         HStack {
-            AppView().environmentObject(authSate).environmentObject(contactsState)
+            PreviewCoreDataWrapper {
+//                .environmentObject({ () -> AuthState in
+//                    let authState = AuthState()
+//                    authState.loggedIn = true
+//                    return authState
+//                }())
+                AppView().environmentObject(authSate).environmentObject(contactsState)
+            }
         }
     }
 }
