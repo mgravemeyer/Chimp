@@ -439,8 +439,8 @@
 			isa = PBXGroup;
 			children = (
 				E39A248E2566739C003CCE4A /* CoreDataManagerTests.swift */,
-				E3D8E87D2564294200F53DFE /* AuthCoreDataTests.swift */,
 				E360BAED256528CE0019C0A6 /* ContactsStateTests.swift */,
+				E3D8E87D2564294200F53DFE /* AuthCoreDataTests.swift */,
 				E3D8E87F2564294200F53DFE /* Info.plist */,
 			);
 			path = "Tests macOS Unit";

@@ -14,6 +14,7 @@ class ContactsStateTests: XCTestCase {
         let contact = Contact(firstname: "firstName", lastname: "lastName", email: "test@test.de", telephone: "016284392", birthday: "123456789", company: "company")
         contactsState.createContact(contact: contact)
         XCTAssertTrue(contactsState.contacts.count == 1)
+        XCTAssertTrue(contactsState.contacts.contains(contact))
     }
 
     func test_fetchContacts() throws {
