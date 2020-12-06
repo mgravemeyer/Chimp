@@ -17,6 +17,7 @@ struct ChimpApp: App {
 struct AppWrapper: View {
     @EnvironmentObject var contactsState: ContactsState
     @EnvironmentObject var authState: AuthState
+    
     var body: some View{
         if authState.authLoading {
             LoadingView().onAppear {
@@ -47,13 +48,23 @@ struct AppWrapper: View {
 
 #if DEBUG
 struct AppWrapper_Previews : PreviewProvider {
-    init() {
-        CoreDataManager.shared.changeToDevelopmentMode()
-    }
     @ObservedObject static var authSate = AuthState()
     @ObservedObject static var contactsState = ContactsState()
     static var previews: some View {
-        AppWrapper().environmentObject(authSate).environmentObject(contactsState)
+        PreviewCoreDataWrapper {
+            AppWrapper().environmentObject(authSate).environmentObject(contactsState)
+        }
     }
 }
 #endif
+
+struct PreviewCoreDataWrapper<Content: View>: View {
+    let content: Content
+    init(@ViewBuilder content: @escaping () -> Content) {
+            self.content = content()
+        CoreDataManager.shared.changeToDevelopmentMode()
+        }
+  var body: some View {
+    content
+  }
+}
