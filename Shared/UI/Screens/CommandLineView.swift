@@ -58,7 +58,7 @@ struct CommandLineView: View {
 struct CommandLineView_Previews : PreviewProvider {
     @ObservedObject static var contactsState = ContactsState()
     static var previews: some View {
-        CommandLineView().environmentObject(contactsState)
+        CommandLineView(advancedCommand: "thisIsAVeryLongAdvancedCommandThatIsSadlyToo LongTogettingDisplayed").environmentObject(contactsState)
     }
 }
 #endif
