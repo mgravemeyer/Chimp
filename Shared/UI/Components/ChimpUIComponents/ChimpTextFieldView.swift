@@ -1,10 +1,12 @@
 import SwiftUI
 
 struct ChimpTextField: View {
+    
     @Namespace var chimpTextField
     let placeholder: String
     @Binding var value: String
     @State var animateTextField = false
+    
     var body: some View {
         GeometryReader { geometryTextfield in
             VStack(alignment: .leading) {

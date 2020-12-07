@@ -5,7 +5,7 @@ struct ContactDetailView: View {
     @EnvironmentObject var contactsState: ContactsState
     var contact: Contact
     
-    var body: some View {
+        var body: some View {
         ZStack() {
             VStack(alignment: .leading) {
                 HStack {

@@ -1,8 +1,10 @@
 import SwiftUI
 
 struct ExternalContactDetailView: View {
+    
     let contact: Contact
     let myWindow:NSWindow?
+    
     var body: some View {
         ContactsDetailsExtraWindow(contact: contact).edgesIgnoringSafeArea(.all).padding(.leading, 10)
     }

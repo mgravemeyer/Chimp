@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ChimpDatePicker: View {
+    
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -8,7 +9,6 @@ struct ChimpDatePicker: View {
     }
     
     @Binding var birthDate: Date
-
     
     var body: some View {
         DatePicker(selection: self.$birthDate, in: ...Date(), displayedComponents: .date) {

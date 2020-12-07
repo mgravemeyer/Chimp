@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ChimpPrimaryButton: View {
+    
     enum ChimpButtonSize {
         case buttonLg
         case buttonMd
@@ -32,9 +33,7 @@ struct ChimpPrimaryButton: View {
         case .buttonMd:
             self.selectedHeight = 28.0
             self.selectedWidth = 70.0
-            
         }
-        
         switch buttonColor {
         case .chimpPrimary:
             self.btnColor = Color.chimpPrimary
@@ -47,12 +46,7 @@ struct ChimpPrimaryButton: View {
             self.textColor = Color.chimpPrimary
             self.textHoverColor = Color.chimpSecondary
         }
-        
-        
     }
-    
-    
-    
     var body: some View {
         ZStack{
             Text(buttonText).foregroundColor(isHovered ? textHoverColor : textColor).zIndex(1)
@@ -65,7 +59,6 @@ struct ChimpPrimaryButton: View {
                     self.isHovered = isHovered
                 }
         }
-        
     }
 }
 

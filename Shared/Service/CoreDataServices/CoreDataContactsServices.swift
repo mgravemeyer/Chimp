@@ -21,7 +21,6 @@ extension CoreDataManager {
                 }
                 let dob_date = Date(timeIntervalSince1970: TimeInterval(dob))
                 let dob_str = dob_date.toString(dateFormat: "dd.MM.YYYY")
-                
                 let contact = Contact(firstname: firstName, lastname: lastName, email: email, telephone: phone, birthday: dob_str, company: "")
                 contactsFetched.append(contact)
             }
@@ -38,7 +37,6 @@ extension CoreDataManager {
         newContactDetail.setValue(contactData.lastname, forKey: "last_name")
         newContactDetail.setValue(contactData.email, forKey: "email")
         newContactDetail.setValue(Int(contactData.birthday), forKey: "dob")
-        //to:do change note to get from contact
         newContactDetail.setValue("note", forKey: "note")
         newContactDetail.setValue(contactData.telephone, forKey: "phone")
         

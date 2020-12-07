@@ -1,11 +1,15 @@
 import SwiftUI
 
 struct LoginView: View {
+    
     @EnvironmentObject var authState: AuthState
+    
     @State var email = String()
     @State var password = String()
+    
     @State var error = String()
     @State var isPressed = false
+    
     var body: some View {
         HStack {
             Group {
@@ -31,7 +35,6 @@ struct LoginView: View {
                         ChimpPrimaryButton(buttonSize: .buttonMd, buttonColor: .chimpSecondary, isPressed: self.$isPressed, buttonText: "Sign In").onTapGesture {
                             self.authState.authUser(email: email, password: password, option: .signIn)
                         }.accessibility(identifier: "ChimpButton").padding(.bottom, 4)
-
                         ChimpPrimaryButton(buttonSize: .buttonMd, buttonColor: .chimpPrimary, isPressed: self.$isPressed, buttonText: "Sign Up").onTapGesture {
                             self.authState.authUser(email: email, password: password, option: .signUp)
                         }

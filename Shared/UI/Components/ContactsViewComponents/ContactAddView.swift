@@ -1,21 +1,22 @@
 import SwiftUI
 
 struct ContactAddView: View {
- 
-    //CoreData stack for ContactDetail
-    @FetchRequest(sortDescriptors: [])
-    private var contactsDetail: FetchedResults<ContactDetail>
-
+    
     @EnvironmentObject var contactsState: ContactsState
     @EnvironmentObject var authState: AuthState
+    
+    @FetchRequest(sortDescriptors: [])
+    private var contactsDetail: FetchedResults<ContactDetail>
+    
     let gray = Color(red: 207/255, green: 207/255, blue: 212/255)
     let lightGray = Color(red: 240/255, green: 240/255, blue: 240/255)
-
+    
     @State var firstName = String()
     @State var lastName = String()
     @State var email = String()
     @State var telephone = String()
     @State var birthDate = Date()
+    
     @State var selected = false
     @State var hoverRow = false
         

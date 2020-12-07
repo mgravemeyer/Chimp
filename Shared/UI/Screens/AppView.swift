@@ -1,8 +1,10 @@
 import SwiftUI
 
 struct AppView: View {
+    
     @EnvironmentObject var contactsState: ContactsState
     @EnvironmentObject var authState: AuthState
+    
     var body: some View {
         ZStack {
             Color.white

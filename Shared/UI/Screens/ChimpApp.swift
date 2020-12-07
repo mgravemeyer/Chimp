@@ -2,8 +2,10 @@ import SwiftUI
 
 @main
 struct ChimpApp: App {
+    
     @StateObject var authState = AuthState()
     @StateObject var contactsState = ContactsState()
+    
     var body: some Scene {
             WindowGroup {
                 AppWrapper()

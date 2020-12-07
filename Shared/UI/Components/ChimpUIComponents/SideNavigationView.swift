@@ -2,14 +2,14 @@ import SwiftUI
 
 struct SideNavigationView: View {
     
-    //Core data result for AuthDetail
+    @EnvironmentObject var authState: AuthState
+    
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [])
     private var authDetail: FetchedResults<AuthDetail>
     
     @State var selectedMenue = ""
-    @EnvironmentObject var authState: AuthState
-
+    
     let categories = [
         NavigationCategory(symbol: "☀️", name: "Today", notification: 32),
         NavigationCategory(symbol: "🗓", name: "This Week", notification: 78),

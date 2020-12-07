@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct AppWrapper: View {
+    
     @EnvironmentObject var contactsState: ContactsState
     @EnvironmentObject var authState: AuthState
     

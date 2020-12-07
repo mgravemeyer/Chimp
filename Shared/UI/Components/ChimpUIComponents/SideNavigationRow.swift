@@ -1,10 +1,12 @@
 import SwiftUI
 
 struct SideNavigationRow: View {
+    
     @Binding var selected: String
     @State var selectedBool: Bool
     @State var category: NavigationCategory
     @State private var hoverRow = false
+    
     let gray = Color(red: 207/255, green: 207/255, blue: 212/255)
     let lightGray = Color(red: 240/255, green: 240/255, blue: 240/255)
     

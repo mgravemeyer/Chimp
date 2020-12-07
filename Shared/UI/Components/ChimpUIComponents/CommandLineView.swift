@@ -1,11 +1,13 @@
 import SwiftUI
 
 struct CommandLineView: View {
+    
     @EnvironmentObject var contactsState: ContactsState
     @State var advancedCommand = String()
     @State var boxHeight = CGFloat(50)
     @State var isSelected = false
     @State var geoBox = CGFloat()
+    
     var body: some View {
         let binding = Binding<String>(get: {
                     self.advancedCommand

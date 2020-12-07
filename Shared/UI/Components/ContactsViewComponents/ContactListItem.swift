@@ -1,7 +1,9 @@
 import Foundation
 
 struct ContactListItem: View {
+    
     @State var contact: Contact
+    
     var body: some View {
         VStack {
             HStack {
