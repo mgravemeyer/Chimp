@@ -34,8 +34,12 @@ class CoreDataManager {
                 let lastName = result.value(forKey: "last_name") as! String
                 let email = result.value(forKey: "email") as! String
                 let phone = result.value(forKey: "phone") as! String
-                
-                let dob = result.value(forKey: "dob") as! Int
+                var dob = Int()
+                if let dobOptional = result.value(forKey: "dob") as? Int {
+                    dob = dobOptional
+                } else {
+                    dob = 123456789
+                }
                 let dob_date = Date(timeIntervalSince1970: TimeInterval(dob))
                 let dob_str = dob_date.toString(dateFormat: "dd.MM.YYYY")
                 

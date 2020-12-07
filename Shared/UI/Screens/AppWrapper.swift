@@ -1,19 +1,5 @@
 import SwiftUI
 
-@main
-struct ChimpApp: App {
-    @StateObject var authState = AuthState()
-    @StateObject var contactsState = ContactsState()
-    var body: some Scene {
-            WindowGroup {
-                AppWrapper()
-                    .environment(\.managedObjectContext, CoreDataManager.shared.viewContext)
-                    .environmentObject(authState)
-                    .environmentObject(contactsState)
-            }.windowStyle(HiddenTitleBarWindowStyle())
-    }
-}
-
 struct AppWrapper: View {
     @EnvironmentObject var contactsState: ContactsState
     @EnvironmentObject var authState: AuthState
@@ -54,19 +40,13 @@ struct AppWrapper_Previews : PreviewProvider {
             AppWrapper()
                 .environmentObject(AuthState())
                 .environmentObject(ContactsState())
-                .environment(\.colorScheme, .light)
             AppWrapper()
                 .environmentObject({ () -> AuthState in
                     let authState = AuthState()
                     authState.loggedIn = true
                     return authState
                 }())
-                .environmentObject({ () -> ContactsState in
-                    let contactsState = ContactsState()
-                    contactsState.advancedMenuePressed = true
-                    return contactsState
-                }())
-                .environment(\.colorScheme, .light)
+                .environmentObject(ContactsState())
             AppWrapper()
                 .environmentObject({ () -> AuthState in
                     let authState = AuthState()
@@ -78,35 +58,40 @@ struct AppWrapper_Previews : PreviewProvider {
                     contactsState.addMenuePressed = true
                     return contactsState
                 }())
-                .environment(\.colorScheme, .light)
-                AppWrapper()
-                    .environmentObject(AuthState())
-                    .environmentObject(ContactsState())
-                    .environment(\.colorScheme, .dark)
-                AppWrapper()
-                    .environmentObject({ () -> AuthState in
-                        let authState = AuthState()
-                        authState.loggedIn = true
-                        return authState
-                    }())
-                    .environmentObject({ () -> ContactsState in
-                        let contactsState = ContactsState()
-                        contactsState.advancedMenuePressed = true
-                        return contactsState
-                    }())
-                    .environment(\.colorScheme, .dark)
-                AppWrapper()
-                    .environmentObject({ () -> AuthState in
-                        let authState = AuthState()
-                        authState.loggedIn = true
-                        return authState
-                    }())
-                    .environmentObject({ () -> ContactsState in
-                        let contactsState = ContactsState()
-                        contactsState.addMenuePressed = true
-                        return contactsState
-                    }())
-                    .environment(\.colorScheme, .dark)
+            AppWrapper()
+                .environmentObject({ () -> AuthState in
+                    let authState = AuthState()
+                    authState.loggedIn = true
+                    return authState
+                }())
+                .environmentObject({ () -> ContactsState in
+                    let contactsState = ContactsState()
+                    contactsState.advancedMenuePressed = true
+                    return contactsState
+                }())
+            AppWrapper()
+                .environmentObject({ () -> AuthState in
+                    let authState = AuthState()
+                    authState.loggedIn = false
+                    return authState
+                }())
+                .environmentObject({ () -> ContactsState in
+                    let contactsState = ContactsState()
+                    contactsState.advancedMenuePressed = true
+                    return contactsState
+                }())
+            AppWrapper()
+                .environmentObject({ () -> AuthState in
+                    let authState = AuthState()
+                    authState.loggedIn = true
+                    return authState
+                }())
+                .environmentObject({ () -> ContactsState in
+                    let contactsState = ContactsState()
+                    contactsState.advancedMenuePressed = true
+                    contactsState.addMenuePressed = true
+                    return contactsState
+                }())
         }
     }
 }

@@ -85,6 +85,25 @@ struct ContactAddView: View {
     }
 }
 
+struct ContactAddView_Previews : PreviewProvider {
+    static var previews: some View {
+        CoreDataManager.shared.changeToDevelopmentMode()
+        return VStack {
+            ContactAddView()
+                .frame(width: 500, height: 400)
+            ContactAddView(
+                firstName: "FirstNameadasaggggggggggg",
+                lastName: "LastNamegggggggggggggg",
+                email: "TestEmail@web.deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                telephone: "0162435612341233423253421234123421412314113",
+                birthDate: Date()
+            )
+                .frame(width: 500, height: 400)
+        }.environmentObject(ContactsState())
+    }
+}
+
+
 //TO:DO: PUT FUNTION INTO CLASS OR STRUCT
 func createExternalContactDetailViewWindow(contact: Contact) {
     let mousePos = NSEvent.mouseLocation

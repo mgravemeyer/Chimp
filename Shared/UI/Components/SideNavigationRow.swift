@@ -29,3 +29,16 @@ struct SideNavigationRow: View {
         }.frame(width: 180, height: 37)
     }
 }
+
+#if DEBUG
+struct SideNavigationRow_Previews : PreviewProvider {
+    @State static var selected = String()
+    static var previews: some View {
+        VStack {
+            SideNavigationRow(selected: $selected, selectedBool: false, category: NavigationCategory(symbol: "☀️", name: "Today", notification: 32))
+            SideNavigationRow(selected: $selected, selectedBool: true, category: NavigationCategory(symbol: "🏃🏻‍♂️", name: "SometText", notification: 32))
+            SideNavigationRow(selected: $selected, selectedBool: false, category: NavigationCategory(symbol: "Symbol", name: "TodayTextTooLongasdasd", notification: 32))
+        }
+    }
+}
+#endif

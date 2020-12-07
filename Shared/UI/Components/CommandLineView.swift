@@ -56,9 +56,22 @@ struct CommandLineView: View {
 
 #if DEBUG
 struct CommandLineView_Previews : PreviewProvider {
-    @ObservedObject static var contactsState = ContactsState()
     static var previews: some View {
-        CommandLineView(advancedCommand: "thisIsAVeryLongAdvancedCommandThatIsSadlyToo LongTogettingDisplayed").environmentObject(contactsState)
+        CoreDataManager.shared.changeToDevelopmentMode()
+        return VStack {
+            CommandLineView(advancedCommand: "")
+            CommandLineView(advancedCommand: " ")
+            CommandLineView(advancedCommand: "/")
+            CommandLineView(advancedCommand: "/ someCommandT hatIsVeryLongT oReadAn dToWri te")
+            CommandLineView(advancedCommand: " / someCommandT hatIsVeryLongT oReadAn dToWri te")
+            CommandLineView(advancedCommand: "thisIsAVeryLongAdvancedCommandThatIsSadlyToo LongTogettingDisplayed")
+        }.environmentObject({ () -> ContactsState in
+            let contactsState = ContactsState()
+                contactsState.createContact(contact: Contact(firstname: "longFirstNameTest", lastname: "longLastNameTest", email: "longEmailTest@web.de", telephone: "123456789", birthday: "12.12.2001", company: "Chimp"))
+                contactsState.createContact(contact: Contact(firstname: "tLongFirstName", lastname: "tLongLastName", email: "longEmailTest@web.de", telephone: "123456789", birthday: "12.12.2001", company: "Chimp"))
+                contactsState.createContact(contact: Contact(firstname: "TLongFirstName", lastname: "TLongLastName", email: "longEmailTest@web.de", telephone: "123456789", birthday: "12.12.2001", company: "Chimp"))
+            return contactsState
+        }()).frame(height: 1000)
     }
 }
 #endif
