@@ -2,8 +2,8 @@ import SwiftUI
 
 struct AppView: View {
     
-    @EnvironmentObject var contactsState: ContactsState
     @EnvironmentObject var authState: AuthState
+    @EnvironmentObject var contactsState: ContactsState
     
     var body: some View {
         ZStack {

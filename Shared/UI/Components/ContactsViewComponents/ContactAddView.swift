@@ -26,7 +26,6 @@ struct ContactAddView: View {
                 VStack {
                     HStack {
                         Spacer()
-                        // TODO: make view over window toolbar items, close but should overlay the toolbar items
                         Button("Close") {
                             contactsState.addMenuePressed.toggle()
                         }.padding(.trailing, 20).padding(.top, 30)

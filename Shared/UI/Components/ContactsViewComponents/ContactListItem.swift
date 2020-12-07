@@ -1,4 +1,4 @@
-import Foundation
+import SwiftUI
 
 struct ContactListItem: View {
     

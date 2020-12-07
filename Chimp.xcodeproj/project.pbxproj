@@ -96,6 +96,8 @@
 		E3EFD99724FA5CF8002E336F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFD99624FA5CF8002E336F /* Profile.swift */; };
 		E3FDF8CB25024977002B7C5F /* ContactListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDF8CA25024977002B7C5F /* ContactListItem.swift */; };
 		E3FEAEC6257E4E6800EE1A3D /* ContactListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDF8CA25024977002B7C5F /* ContactListItem.swift */; };
+		E3FEAECF257E5B7500EE1A3D /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FEAECE257E5B7500EE1A3D /* ContactListView.swift */; };
+		E3FEAED0257E5B7500EE1A3D /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FEAECE257E5B7500EE1A3D /* ContactListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +163,7 @@
 		E3E60A9A24FFD9780065B141 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		E3EFD99624FA5CF8002E336F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		E3FDF8CA25024977002B7C5F /* ContactListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListItem.swift; sourceTree = "<group>"; };
+		E3FEAECE257E5B7500EE1A3D /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,12 +194,12 @@
 		2E6A3D55255EB98E00E5CE5D /* ContactsViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				E3FEAECE257E5B7500EE1A3D /* ContactListView.swift */,
+				2E6A3D95255EBB8800E5CE5D /* ContactDetailView.swift */,
 				E3FDF8CA25024977002B7C5F /* ContactListItem.swift */,
-				2E6A3D83255EBB2900E5CE5D /* ContactsView.swift */,
 				2E6A3D3E255EB8D600E5CE5D /* ContactAddView.swift */,
 				2E6A3D56255EB9BD00E5CE5D /* ExternalContactDetailView.swift */,
 				2E6A3D8E255EBB5000E5CE5D /* EmptyContactDetailView.swift */,
-				2E6A3D95255EBB8800E5CE5D /* ContactDetailView.swift */,
 				2E6A3DA0255EC0C800E5CE5D /* ContactVerticalListView.swift */,
 				E32F01CE257C14540069DB4D /* TagView.swift */,
 			);
@@ -258,6 +261,7 @@
 				E36BCF0B257DBF6100EB0263 /* AppWrapper.swift */,
 				E3D7A5CC24F4FFC000D3EB62 /* LoginView.swift */,
 				E3D6EF3A24F7D5A700F7A95A /* AppView.swift */,
+				2E6A3D83255EBB2900E5CE5D /* ContactsView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -273,7 +277,6 @@
 				5044E96625431EC50041E01B /* ChimpDatePicker.swift */,
 				2EEA70DE255E7F98000C5E75 /* ChimpTextFieldView.swift */,
 				50327F292568093200B583F4 /* ChimpPrimaryButton.swift */,
-				50327F312568176200B583F4 /* ChimpColors.swift */,
 			);
 			path = ChimpUIComponents;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			children = (
 				E3467619257BB13100EDD6FD /* ChimpUIComponents */,
 				2E6A3D55255EB98E00E5CE5D /* ContactsViewComponents */,
+				E3FEAECA257E5A7600EE1A3D /* AdditionalStuff */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -390,6 +394,14 @@
 			);
 			name = UnitTests;
 			path = macOS/UnitTests;
+			sourceTree = "<group>";
+		};
+		E3FEAECA257E5A7600EE1A3D /* AdditionalStuff */ = {
+			isa = PBXGroup;
+			children = (
+				50327F312568176200B583F4 /* ChimpColors.swift */,
+			);
+			path = AdditionalStuff;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -535,6 +547,7 @@
 				2E6A3D8F255EBB5000E5CE5D /* EmptyContactDetailView.swift in Sources */,
 				2E6A3D31255E91F400E5CE5D /* SideNavigationView.swift in Sources */,
 				509B6EEB253F8253002D165F /* AuthOptions.swift in Sources */,
+				E3FEAECF257E5B7500EE1A3D /* ContactListView.swift in Sources */,
 				50327F322568176200B583F4 /* ChimpColors.swift in Sources */,
 				2E6A3D3F255EB8D600E5CE5D /* ContactAddView.swift in Sources */,
 				509B6F4D2540B68E002D165F /* ContactService.swift in Sources */,
@@ -583,6 +596,7 @@
 				50327F2B2568093200B583F4 /* ChimpPrimaryButton.swift in Sources */,
 				5090A53F253CBCFC00A211EE /* AuthService.swift in Sources */,
 				E3E60AA324FFF4430065B141 /* Contact.swift in Sources */,
+				E3FEAED0257E5B7500EE1A3D /* ContactListView.swift in Sources */,
 				E36BCF0D257DBF6100EB0263 /* AppWrapper.swift in Sources */,
 				E32F01E2257C19D70069DB4D /* CommandLineRowView.swift in Sources */,
 				509B6EEC253F8253002D165F /* AuthOptions.swift in Sources */,

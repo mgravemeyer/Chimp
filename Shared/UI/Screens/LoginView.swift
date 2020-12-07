@@ -8,7 +8,7 @@ struct LoginView: View {
     @State var password = String()
     
     @State var error = String()
-    @State var isPressed = false
+    @State var chimpButtonPressed = false
     
     var body: some View {
         HStack {
@@ -32,10 +32,10 @@ struct LoginView: View {
                         SecureField("Password", text: self.$password).textFieldStyle(PlainTextFieldStyle()).padding(.bottom, 5)
                     }.frame(width: 260).padding(.bottom, 8)
                     VStack {
-                        ChimpPrimaryButton(buttonSize: .buttonMd, buttonColor: .chimpSecondary, isPressed: self.$isPressed, buttonText: "Sign In").onTapGesture {
+                        ChimpPrimaryButton(buttonSize: .buttonMd, buttonColor: .chimpSecondary, isPressed: self.$chimpButtonPressed, buttonText: "Sign In").onTapGesture {
                             self.authState.authUser(email: email, password: password, option: .signIn)
                         }.accessibility(identifier: "ChimpButton").padding(.bottom, 4)
-                        ChimpPrimaryButton(buttonSize: .buttonMd, buttonColor: .chimpPrimary, isPressed: self.$isPressed, buttonText: "Sign Up").onTapGesture {
+                        ChimpPrimaryButton(buttonSize: .buttonMd, buttonColor: .chimpPrimary, isPressed: self.$chimpButtonPressed, buttonText: "Sign Up").onTapGesture {
                             self.authState.authUser(email: email, password: password, option: .signUp)
                         }
                         if error != "" {
