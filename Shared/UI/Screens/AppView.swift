@@ -21,7 +21,7 @@ struct AppView: View {
 #if DEBUG
 struct AppView_Previews : PreviewProvider {
     static var previews: some View {
-        CoreDataManager.shared.changeToDevelopmentMode()
+        CoreDataService.shared.changeToDevelopmentMode()
         return VStack {
             AppView()
         }

@@ -20,7 +20,7 @@ struct ContactsView: View {
 
 struct ContactsView_Previews : PreviewProvider {
     static var previews: some View {
-        CoreDataManager.shared.changeToDevelopmentMode()
+        CoreDataService.shared.changeToDevelopmentMode()
         return ContactsView()
             .environmentObject({ () -> ContactsState in
             let contactsState = ContactsState()

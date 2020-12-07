@@ -9,7 +9,7 @@ struct ChimpApp: App {
     var body: some Scene {
             WindowGroup {
                 AppWrapper()
-                    .environment(\.managedObjectContext, CoreDataManager.shared.viewContext)
+                    .environment(\.managedObjectContext, CoreDataService.shared.viewContext)
                     .environmentObject(authState)
                     .environmentObject(contactsState)
             }.windowStyle(HiddenTitleBarWindowStyle())

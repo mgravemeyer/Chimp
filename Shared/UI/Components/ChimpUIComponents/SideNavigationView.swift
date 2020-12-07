@@ -59,7 +59,7 @@ struct SideNavigationView: View {
 
 struct SideNavigationView_Previews : PreviewProvider {
     static var previews: some View {
-        CoreDataManager.shared.changeToDevelopmentMode()
+        CoreDataService.shared.changeToDevelopmentMode()
         return VStack {
             SideNavigationView()
         }.environmentObject(ContactsState())

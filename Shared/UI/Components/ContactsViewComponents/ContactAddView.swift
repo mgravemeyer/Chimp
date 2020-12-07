@@ -31,8 +31,8 @@ struct ContactAddView: View {
                         }.padding(.trailing, 20).padding(.top, 30)
                         Button {
                             for (contactD) in contactsDetail{
-                                CoreDataManager.shared.viewContext.delete(contactD)
-                                CoreDataManager.shared.save()
+                                CoreDataService.shared.viewContext.delete(contactD)
+                                CoreDataService.shared.save()
                             }
                         } label: {
                             Text("delete cdata ")
@@ -87,7 +87,7 @@ struct ContactAddView: View {
 
 struct ContactAddView_Previews : PreviewProvider {
     static var previews: some View {
-        CoreDataManager.shared.changeToDevelopmentMode()
+        CoreDataService.shared.changeToDevelopmentMode()
         return VStack {
             ContactAddView()
                 .frame(width: 500, height: 400)

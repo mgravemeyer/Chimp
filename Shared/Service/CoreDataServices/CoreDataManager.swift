@@ -2,7 +2,7 @@ import Foundation
 import CoreData
 import SwiftUI
 
-class CoreDataManager {
+class CoreDataService {
     
     private init() {
         container = NSPersistentContainer(name: "Chimp")
@@ -15,7 +15,7 @@ class CoreDataManager {
         viewContext = container.viewContext
     }
     
-    static let shared = CoreDataManager()
+    static let shared = CoreDataService()
     let container: NSPersistentContainer
     var viewContext: NSManagedObjectContext
     

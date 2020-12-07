@@ -16,7 +16,7 @@ class AuthState: ObservableObject {
     private let authService = AuthService.instance
     
     func checkAuth() {
-        let authStateFetched = CoreDataManager.shared.fetch("AuthDetail").1
+        let authStateFetched = CoreDataService.shared.fetch("AuthDetail").1
         if !authStateFetched.isEmpty || authStateFetched != [] {
             
             var user_uid = String()
@@ -45,7 +45,7 @@ class AuthState: ObservableObject {
         authService.authUser(email: email, password: password, option: option) {[unowned self] (result) in
             switch result {
             case .success(let response):
-                self.saveAuthDetail(result: response,  viewContext: CoreDataManager.shared.viewContext)
+                self.saveAuthDetail(result: response,  viewContext: CoreDataService.shared.viewContext)
             case .failure(let err):
                 print(err.localizedDescription) // maybe assign it to a state and display to user?
             }
@@ -75,7 +75,7 @@ class AuthState: ObservableObject {
         let newAuthDetail = AuthDetail(context: viewContext)
         newAuthDetail.token = token
         newAuthDetail.user_uid = user_uid
-        let saveResult = CoreDataManager.shared.save()
+        let saveResult = CoreDataService.shared.save()
         if(saveResult == nil){
             DispatchQueue.main.async {
                 self.loggedIn = true
@@ -90,7 +90,7 @@ class AuthState: ObservableObject {
         for (userD) in authDetail{
             viewContext.delete(userD)
         }
-        let saveResult = CoreDataManager.shared.save()
+        let saveResult = CoreDataService.shared.save()
             if saveResult == nil {
                 DispatchQueue.main.async{
                     self.loggedIn = false

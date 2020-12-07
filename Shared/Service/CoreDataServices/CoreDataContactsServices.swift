@@ -2,7 +2,7 @@ import Foundation
 import CoreData
 import SwiftUI
 
-extension CoreDataManager {
+extension CoreDataService {
     func fetchContacts() -> (CoreDataErrors?, [Contact]) {
         let contactsCD = fetch("ContactDetail")
         //to:do unwrap values safely, not force unwrap
@@ -31,7 +31,7 @@ extension CoreDataManager {
     }
     
     func saveContact(contactData: Contact) -> CoreDataErrors? {
-        let newContactDetail = ContactDetail(context: CoreDataManager.shared.viewContext)
+        let newContactDetail = ContactDetail(context: CoreDataService.shared.viewContext)
         //to:do for loop adding values
         newContactDetail.setValue(contactData.firstname, forKey: "first_name")
         newContactDetail.setValue(contactData.lastname, forKey: "last_name")

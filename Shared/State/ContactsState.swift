@@ -17,7 +17,7 @@ class ContactsState: ObservableObject {
     
     
     func fetchContacts() {
-        let fetchResult = CoreDataManager.shared.fetchContacts()
+        let fetchResult = CoreDataService.shared.fetchContacts()
         if fetchResult.0 == nil {
             self.contacts.formUnion(fetchResult.1)
         }
@@ -25,7 +25,7 @@ class ContactsState: ObservableObject {
     }
     
     func createContact(contact: Contact) {
-        let saveResult = CoreDataManager.shared.saveContact(contactData: contact)
+        let saveResult = CoreDataService.shared.saveContact(contactData: contact)
         if saveResult == nil {
             /* to:do save contact via api */
             contacts.insert(contact)

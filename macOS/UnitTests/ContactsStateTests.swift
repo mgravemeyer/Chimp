@@ -4,7 +4,7 @@ import XCTest
 class ContactsStateTests: XCTestCase {
 
     override func setUpWithError() throws {
-        CoreDataManager.shared.changeToDevelopmentMode()
+        CoreDataService.shared.changeToDevelopmentMode()
         continueAfterFailure = true
     }
     
