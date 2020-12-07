@@ -95,6 +95,7 @@
 		E3E971B8257DBC4400990B75 /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39A248E2566739C003CCE4A /* CoreDataManagerTests.swift */; };
 		E3EFD99724FA5CF8002E336F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFD99624FA5CF8002E336F /* Profile.swift */; };
 		E3FDF8CB25024977002B7C5F /* ContactListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDF8CA25024977002B7C5F /* ContactListItem.swift */; };
+		E3FEAEC6257E4E6800EE1A3D /* ContactListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FDF8CA25024977002B7C5F /* ContactListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +191,9 @@
 		2E6A3D55255EB98E00E5CE5D /* ContactsViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				E3FDF8CA25024977002B7C5F /* ContactListItem.swift */,
+				2E6A3D83255EBB2900E5CE5D /* ContactsView.swift */,
+				2E6A3D3E255EB8D600E5CE5D /* ContactAddView.swift */,
 				2E6A3D56255EB9BD00E5CE5D /* ExternalContactDetailView.swift */,
 				2E6A3D8E255EBB5000E5CE5D /* EmptyContactDetailView.swift */,
 				2E6A3D95255EBB8800E5CE5D /* ContactDetailView.swift */,
@@ -261,7 +265,11 @@
 		E3467619257BB13100EDD6FD /* ChimpUIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				E3FDF8CA25024977002B7C5F /* ContactListItem.swift */,
+				2E6A3D30255E91F400E5CE5D /* SideNavigationView.swift */,
+				5000EA29254454750023A545 /* LoadingView.swift */,
+				E32F01E0257C19D70069DB4D /* CommandLineRowView.swift */,
+				E32F01F2257C1D220069DB4D /* SideNavigationRow.swift */,
+				2EA83C58255B609C004A9852 /* CommandLineView.swift */,
 				5044E96625431EC50041E01B /* ChimpDatePicker.swift */,
 				2EEA70DE255E7F98000C5E75 /* ChimpTextFieldView.swift */,
 				50327F292568093200B583F4 /* ChimpPrimaryButton.swift */,
@@ -273,13 +281,6 @@
 		E393AD032503FF6A0071D4E3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2EA83C58255B609C004A9852 /* CommandLineView.swift */,
-				2E6A3D83255EBB2900E5CE5D /* ContactsView.swift */,
-				2E6A3D3E255EB8D600E5CE5D /* ContactAddView.swift */,
-				2E6A3D30255E91F400E5CE5D /* SideNavigationView.swift */,
-				5000EA29254454750023A545 /* LoadingView.swift */,
-				E32F01E0257C19D70069DB4D /* CommandLineRowView.swift */,
-				E32F01F2257C1D220069DB4D /* SideNavigationRow.swift */,
 				E3467619257BB13100EDD6FD /* ChimpUIComponents */,
 				2E6A3D55255EB98E00E5CE5D /* ContactsViewComponents */,
 			);
@@ -585,6 +586,7 @@
 				E36BCF0D257DBF6100EB0263 /* AppWrapper.swift in Sources */,
 				E32F01E2257C19D70069DB4D /* CommandLineRowView.swift in Sources */,
 				509B6EEC253F8253002D165F /* AuthOptions.swift in Sources */,
+				E3FEAEC6257E4E6800EE1A3D /* ContactListItem.swift in Sources */,
 				500E2FE1253F7161005B347D /* AuthErrors.swift in Sources */,
 				509B6F4E2540B68E002D165F /* ContactService.swift in Sources */,
 				2E6A3D40255EB8D600E5CE5D /* ContactAddView.swift in Sources */,
