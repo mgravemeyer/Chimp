@@ -48,6 +48,7 @@ class ContactsState: ObservableObject {
         if let contact = contacts.first(where: {$0.id.uuidString == self.selectedContact}) {
             return contact
         } else {
+            /* to:do throw error message to frontend */
             return Contact(firstname: "error", lastname: "error", email: "error", telephone: "error", birthday: "error", company: "error")
         }
     }
