@@ -27,12 +27,15 @@ struct ContactAddView: View {
                     HStack {
                         Spacer()
                         Button("Close") {
-                            contactsState.addMenuePressed.toggle()
+                            contactsState.pressAddMenue()
                         }.padding(.trailing, 20).padding(.top, 30)
                         Button {
                             for (contactD) in contactsDetail{
                                 CoreDataService.shared.viewContext.delete(contactD)
-                                CoreDataService.shared.save()
+                                let savedResult = CoreDataService.shared.save()
+                                if savedResult != nil {
+                                    print("Error appeared while saving a new contact")
+                                }
                             }
                         } label: {
                             Text("delete cdata ")
@@ -75,7 +78,7 @@ struct ContactAddView: View {
                                                                 birthday: String(Int(self.birthDate.timeIntervalSince1970*1000)), // d.o.b in epoch in string format
                                                                 company: "")
                             )
-                            contactsState.addMenuePressed.toggle()
+                            contactsState.pressAddMenue()
                         }
                     }.frame(maxWidth: 320, maxHeight: 320)
                     Spacer()

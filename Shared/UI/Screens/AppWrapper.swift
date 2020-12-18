@@ -56,7 +56,7 @@ struct AppWrapper_Previews : PreviewProvider {
                 }())
                 .environmentObject({ () -> ContactsState in
                     let contactsState = ContactsState()
-                    contactsState.addMenuePressed = true
+                    contactsState.pressAddMenue()
                     return contactsState
                 }())
             AppWrapper()
@@ -67,7 +67,7 @@ struct AppWrapper_Previews : PreviewProvider {
                 }())
                 .environmentObject({ () -> ContactsState in
                     let contactsState = ContactsState()
-                    contactsState.advancedMenuePressed = true
+                    contactsState.pressAddMenue()
                     return contactsState
                 }())
             AppWrapper()
@@ -78,7 +78,7 @@ struct AppWrapper_Previews : PreviewProvider {
                 }())
                 .environmentObject({ () -> ContactsState in
                     let contactsState = ContactsState()
-                    contactsState.advancedMenuePressed = true
+                    contactsState.pressAddMenue()
                     return contactsState
                 }())
             AppWrapper()
@@ -89,8 +89,8 @@ struct AppWrapper_Previews : PreviewProvider {
                 }())
                 .environmentObject({ () -> ContactsState in
                     let contactsState = ContactsState()
-                    contactsState.advancedMenuePressed = true
-                    contactsState.addMenuePressed = true
+                    contactsState.pressAddMenue()
+                    contactsState.pressAddMenue()
                     return contactsState
                 }())
         }

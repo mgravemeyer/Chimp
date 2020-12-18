@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SideNavigationRow: View {
     
+    @Environment(\.colorScheme) var colorScheme
     @Binding var selected: String
     @State var selectedBool: Bool
     @State var category: NavigationCategory
@@ -18,7 +19,7 @@ struct SideNavigationRow: View {
                 Spacer()
                 if category.notification > 0 {
                     ZStack {
-                        Text("\(category.notification)").foregroundColor(Color.white).zIndex(1)
+                        Text("\(category.notification)").foregroundColor(colorScheme == .dark ? Color.chimpDarkText : Color.chimpLightText).zIndex(1)
                         RoundedRectangle(cornerRadius: 6).frame(width: 20, height: 20).foregroundColor(Color(red: 207/255, green: 207/255, blue: 212/255)).padding(10).zIndex(0)
                     }
                 }
@@ -26,7 +27,8 @@ struct SideNavigationRow: View {
             RoundedRectangle(cornerRadius: 10).foregroundColor(selectedBool || hoverRow ? lightGray : Color.white).onHover { (hover) in
                 self.hoverRow = hover
             }
-        }.onTapGesture {
+        }
+        .onTapGesture {
             self.selected = category.id.uuidString
         }.frame(width: 180, height: 37)
     }

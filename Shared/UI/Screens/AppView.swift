@@ -2,12 +2,13 @@ import SwiftUI
 
 struct AppView: View {
     
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var authState: AuthState
     @EnvironmentObject var contactsState: ContactsState
     
     var body: some View {
         ZStack {
-            Color.white
+            colorScheme == .dark ? Color.chimpDarkBackground : Color.chimpLightBackground
             HStack {
                 SideNavigationView().environmentObject(authState)
                 VStack {

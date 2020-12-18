@@ -11,15 +11,15 @@ struct SideNavigationView: View {
     @State var selectedMenue = ""
     
     let categories = [
-        NavigationCategory(symbol: "☀️", name: "Today", notification: 32),
-        NavigationCategory(symbol: "🗓", name: "This Week", notification: 78),
+//        NavigationCategory(symbol: "☀️", name: "Today", notification: 32),
+//        NavigationCategory(symbol: "🗓", name: "This Week", notification: 78),
         NavigationCategory(symbol: "🛠", name: "Projects", notification: 0),
         NavigationCategory(symbol: "🙋‍♂️", name: "Contacts", notification: 0),
-        NavigationCategory(symbol: "📝", name: "Tasks", notification: 0),
-        NavigationCategory(symbol: "🏷", name: "Tags", notification: 0),
-        NavigationCategory(symbol: "📄", name: "Files", notification: 0),
-        NavigationCategory(symbol: "✉️", name: "E-Mails", notification: 0),
-        NavigationCategory(symbol: "⚙️", name: "Settings", notification: 0)
+//        NavigationCategory(symbol: "📝", name: "Tasks", notification: 0),
+//        NavigationCategory(symbol: "🏷", name: "Tags", notification: 0),
+//        NavigationCategory(symbol: "📄", name: "Files", notification: 0),
+//        NavigationCategory(symbol: "✉️", name: "E-Mails", notification: 0),
+//        NavigationCategory(symbol: "⚙️", name: "Settings", notification: 0)
     ]
     
     var body: some View {

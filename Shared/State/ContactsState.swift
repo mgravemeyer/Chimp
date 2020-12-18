@@ -11,10 +11,21 @@ class ContactsState: ObservableObject {
     }
     
     @Published private(set) var contacts = Set<Contact>()
-    @Published var addMenuePressed = false
-    @Published var advancedMenuePressed = false
-    @Published var selectedContact = ""
+    @Published private(set) var addMenuePressed = false
+    @Published private(set) var advancedMenuePressed = false
+    @Published private(set) var selectedContact = ""
     
+    func pressAddMenue() {
+        addMenuePressed.toggle()
+    }
+    
+    func pressAdvancedMenu() {
+        advancedMenuePressed.toggle()
+    }
+    
+    func selectContact(contact: UUID) {
+        selectedContact = contact.uuidString
+    }
     
     func fetchContacts() {
         let fetchResult = CoreDataService.shared.fetchContacts()

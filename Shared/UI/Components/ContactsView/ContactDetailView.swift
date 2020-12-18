@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContactDetailView: View {
     
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var contactsState: ContactsState
     var contact: Contact
     
@@ -13,7 +14,7 @@ struct ContactDetailView: View {
                     Text(contact.lastname).font(.system(size: 30)).fontWeight(.bold)
                     Spacer()
                     Button("Add Contact") {
-                        contactsState.addMenuePressed.toggle()
+                        contactsState.pressAddMenue()
                     }
                 }.padding(.bottom, 20)
                     ContactsDetailContactRow(selectedContact: contact).padding(.bottom, 12)
@@ -21,8 +22,16 @@ struct ContactDetailView: View {
                     ContactsDetailTagRow(selectedContact: contact).padding(.bottom, 12)
                 Spacer()
             }.zIndex(1)
-            Rectangle().foregroundColor(Color.white).zIndex(0)
+            Rectangle().foregroundColor(colorScheme == .dark ? Color.chimpDarkBackground : Color.chimpLightBackground).zIndex(0)
         }.padding(.bottom, 20).padding(.trailing, 20).padding(.top, 40)
+    }
+}
+
+struct ContactDetailView_Previews : PreviewProvider {
+    static var previews: some View {
+        CoreDataService.shared.changeToDevelopmentMode()
+        return ContactDetailView(contact: Contact(firstname: "longFirstNameTest", lastname: "longLastNameTest", email: "longEmailTest@web.de", telephone: "123456789", birthday: "12.12.2001", company: "Chimp"))
+            .environmentObject(ContactsState())
     }
 }
 

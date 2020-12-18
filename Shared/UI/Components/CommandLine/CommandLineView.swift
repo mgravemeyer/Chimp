@@ -22,7 +22,7 @@ struct CommandLineView: View {
                         Spacer()
                         // TODO: make view over window toolbar items, close but should overlay the toolbar items
                         Button("Close") {
-                            contactsState.advancedMenuePressed.toggle()
+                            contactsState.pressAdvancedMenu()
                         }.padding(.trailing, 20).padding(.top, 30)
                     }
                     Spacer()

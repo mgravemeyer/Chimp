@@ -68,9 +68,9 @@ struct ChimpPrimaryButton_Previews : PreviewProvider {
     @State static var isPressed = false
     static var previews: some View {
         return VStack {
-            ChimpPrimaryButton(buttonSize: .buttonLg, buttonColor: .chimpPrimary, isPressed: $isNotPressed, buttonText: "some text too long")
-            ChimpPrimaryButton(buttonSize: .buttonLg, buttonColor: .chimpSecondary, isPressed: $isNotPressed, buttonText: "some text")
-            ChimpPrimaryButton(buttonSize: .buttonLg, buttonColor: .chimpPrimary, isPressed: $isPressed, buttonText: "some text")
+            ChimpPrimaryButton(buttonSize: .buttonLg, buttonColor: .chimpPrimary, isPressed: $isNotPressed, buttonText: "text that is  too long")
+            ChimpPrimaryButton(buttonSize: .buttonLg, buttonColor: .chimpSecondary, isPressed: $isNotPressed, buttonText: "text")
+            ChimpPrimaryButton(buttonSize: .buttonLg, buttonColor: .chimpPrimary, isPressed: $isPressed, buttonText: "text")
         }
     }
 }

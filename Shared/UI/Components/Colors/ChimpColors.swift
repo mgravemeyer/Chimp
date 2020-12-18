@@ -14,5 +14,16 @@ extension Color {
     public static var chimpSecondary: Color {
         return Color.white
     }
-    
+    public static var chimpDarkText: Color {
+        return Color.white
+    }
+    public static var chimpLightText: Color {
+        return Color.black
+    }
+    public static var chimpDarkBackground: Color {
+        return Color.black
+    }
+    public static var chimpLightBackground: Color {
+        return Color.white
+    }
 }

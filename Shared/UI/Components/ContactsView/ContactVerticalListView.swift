@@ -76,7 +76,7 @@ struct ContactVerticalListItem: View {
                 self.hoverRow = hover
             }
         }.frame(width: 180, height: 37).padding(.bottom, -15).onTapGesture {
-            contactsState.selectedContact  = contact.id.uuidString
+            contactsState.selectContact(contact: contact.id)
         }
     }
 }
