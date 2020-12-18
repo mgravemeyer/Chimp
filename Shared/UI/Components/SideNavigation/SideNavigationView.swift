@@ -49,7 +49,7 @@ struct SideNavigationView: View {
                 } label: {
                     Text("Log out")
                         .fontWeight(.semibold)
-                        .frame(minWidth: 230)
+                        .frame(minWidth: 160)
                         .foregroundColor(Color.black)
                 }
             }.padding(20).padding(.top, 20)
