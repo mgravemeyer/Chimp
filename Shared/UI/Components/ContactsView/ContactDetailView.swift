@@ -44,7 +44,7 @@ struct ContactsDetailContactRow: View {
                 NSWorkspace.shared.open(URL(string: "mailto:\(selectedContact.email)")!)
             }, label: {
                 HStack {
-                    Image(systemName: "envelope").foregroundColor(Color.blue)
+                    Image(systemName: "envelope").foregroundColor(Color.chimpPrimary)
                     Text(selectedContact.email).foregroundColor(Color.chimpLightText).padding(.leading, -5)
                 }
             })
@@ -52,7 +52,7 @@ struct ContactsDetailContactRow: View {
                 NSWorkspace.shared.open(URL(string: "tel://\(selectedContact.telephone)")!)
             }, label: {
                 HStack {
-                    Image(systemName: "phone").foregroundColor(Color.blue)
+                    Image(systemName: "phone").foregroundColor(Color.chimpPrimary)
                     Text(selectedContact.telephone).foregroundColor(Color.chimpLightText).padding(.leading, -5)
                 }
             })
