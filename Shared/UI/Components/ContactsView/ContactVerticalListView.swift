@@ -75,7 +75,7 @@ struct ContactVerticalListItem: View {
             RoundedRectangle(cornerRadius: 10).foregroundColor(selected || hoverRow ? lightGray : Color.white).onHover { (hover) in
                 self.hoverRow = hover
             }
-        }.frame(width: 180, height: 37).padding(.bottom, -15).onTapGesture {
+        }.frame(width: 180, height: 35).padding(.bottom, -13).onTapGesture {
             contactsState.selectContact(contact: contact.id)
         }
     }
