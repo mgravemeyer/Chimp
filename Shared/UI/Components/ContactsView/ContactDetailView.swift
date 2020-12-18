@@ -17,8 +17,9 @@ struct ContactDetailView: View {
                         contactsState.pressAddMenue()
                     }
                 }.padding(.bottom, 20)
-                    ContactsDetailContactRow(selectedContact: contact).padding(.bottom, 12)
-                    ContactsDetailInformation(selectedContact: contact).padding(.bottom, 12)
+                ContactsDetailContactRow(selectedContact: contact)
+                    .buttonStyle(PlainButtonStyle())
+                    .padding(.bottom, 10)
                     ContactsDetailTagRow(selectedContact: contact).padding(.bottom, 12)
                 Spacer()
             }.zIndex(1)
@@ -39,12 +40,22 @@ struct ContactsDetailContactRow: View {
     var selectedContact: Contact
     var body: some View {
         HStack {
-            Button("✉️ \(selectedContact.email)") {
+            Button(action: {
                 NSWorkspace.shared.open(URL(string: "mailto:\(selectedContact.email)")!)
-            }
-            Button("📞 \(selectedContact.telephone)") {
+            }, label: {
+                HStack {
+                    Image(systemName: "envelope").foregroundColor(Color.blue)
+                    Text(selectedContact.email).foregroundColor(Color.chimpLightText).padding(.leading, -5)
+                }
+            })
+            Button(action: {
                 NSWorkspace.shared.open(URL(string: "tel://\(selectedContact.telephone)")!)
-            }
+            }, label: {
+                HStack {
+                    Image(systemName: "phone").foregroundColor(Color.blue)
+                    Text(selectedContact.telephone).foregroundColor(Color.chimpLightText).padding(.leading, -5)
+                }
+            })
         }
     }
 }
