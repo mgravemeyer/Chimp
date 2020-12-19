@@ -9,6 +9,6 @@ struct TagView: View {
             .frame(width: 100, height: 20)
             .foregroundColor(Color.white)
             .background(Color.orange)
-            .cornerRadius(10)
+            .cornerRadius(5)
     }
 }
