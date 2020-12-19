@@ -10,8 +10,8 @@ struct ContactDetailView: View {
         ZStack() {
             VStack(alignment: .leading) {
                 HStack {
-                    Text(contact.firstname).font(.system(size: 30)).fontWeight(.light)
-                    Text(contact.lastname).font(.system(size: 30)).fontWeight(.bold)
+                    Text(contact.firstname).font(.system(size: 30)).fontWeight(.light).lineLimit(1)
+                    Text(contact.lastname).font(.system(size: 30)).fontWeight(.bold).lineLimit(1)
                     Spacer()
                     Button("Add Contact") {
                         contactsState.pressAddMenue()

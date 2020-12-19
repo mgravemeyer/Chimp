@@ -68,8 +68,8 @@ struct ContactVerticalListItem: View {
     var body: some View {
         ZStack(alignment: .leading) {
             HStack {
-                    Text("\(contact.firstname)").padding(.trailing, -5).padding(.leading, 10)
-                    Text("\(contact.lastname)").fontWeight(.bold)
+                Text("\(contact.firstname)").lineLimit(1).padding(.trailing, -5).padding(.leading, 10)
+                    Text("\(contact.lastname)").fontWeight(.bold).lineLimit(1)
                 Spacer()
             }.zIndex(1)
             RoundedRectangle(cornerRadius: 10).foregroundColor(selected || hoverRow ? lightGray : Color.white).onHover { (hover) in
