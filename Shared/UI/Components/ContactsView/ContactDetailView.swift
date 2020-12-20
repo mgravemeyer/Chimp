@@ -23,7 +23,10 @@ struct ContactDetailView: View {
                     ContactsDetailTagRow(selectedContact: contact).padding(.bottom, 12)
                 HStack {
                     Spacer()
-                    ContactsDetailRadioSection()
+                    VStack {
+                        ContactsDetailRadioSection()
+                        ContactsDetailRadioList()
+                    }
                     Spacer()
                 }
                 Spacer()
@@ -38,6 +41,27 @@ struct ContactDetailView_Previews : PreviewProvider {
         CoreDataService.shared.changeToDevelopmentMode()
         return ContactDetailView(contact: Contact(firstname: "longFirstNameTest", lastname: "longLastNameTest", email: "longEmailTest@web.de", telephone: "123456789", birthday: "12.12.2001", company: "Chimp"))
             .environmentObject(ContactsState())
+    }
+}
+
+struct ContactsDetailRadioList: View {
+    var body: some View {
+        ScrollView {
+            ForEach(0 ..< 15) { i in
+                    HStack {
+                        HStack {
+                            Image(systemName: "calendar")
+                            Text("21.11.2020")
+                        }
+                        Spacer()
+                        HStack {
+                            Image(systemName: "phone")
+                            Text("25 min")
+                        }
+                    }
+                    Divider()
+            }
+        }
     }
 }
 
@@ -113,16 +137,16 @@ struct ContactsDetailRadioSection: View {
                 
             }, label: {
                 ZStack {
-                    Text("Notes").zIndex(1).foregroundColor(Color.white)
-                    RoundedCorners(tl: 10, tr: 0, bl: 10, br: 0).foregroundColor(Color.gray)
+                    Text("Notes").zIndex(1).foregroundColor(Color.gray)
+                    RoundedCorners(tl: 10, tr: 0, bl: 10, br: 0).foregroundColor(Color.brokenWhite)
                 }
             }).buttonStyle(PlainButtonStyle()).frame(height: 25).offset(x: 10)
             Button(action: {
                 
             }, label: {
                 ZStack {
-                    Text("E-Mails").zIndex(1).foregroundColor(Color.white)
-                    RoundedCorners(tl: 0, tr: 0, bl: 0, br: 0).foregroundColor(Color.gray)
+                    Text("E-Mails").zIndex(1).foregroundColor(Color.gray)
+                    RoundedCorners(tl: 0, tr: 0, bl: 0, br: 0).foregroundColor(Color.brokenWhite)
                 }
             }).buttonStyle(PlainButtonStyle()).frame(height: 25)
             Button(action: {
