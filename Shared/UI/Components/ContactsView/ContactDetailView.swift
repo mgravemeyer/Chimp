@@ -4,6 +4,7 @@ struct ContactDetailView: View {
     
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var contactsState: ContactsState
+    @State var selection = "Calls"
     var contact: Contact
     
         var body: some View {
@@ -24,8 +25,8 @@ struct ContactDetailView: View {
                 HStack {
                     Spacer()
                     VStack {
-                        ContactsDetailRadioSection()
-                        ContactsDetailRadioList()
+                        ContactsDetailRadioSection(selection: $selection)
+                        ContactsDetailRadioList(selection: $selection)
                     }
                     Spacer()
                 }
@@ -45,6 +46,19 @@ struct ContactDetailView_Previews : PreviewProvider {
 }
 
 struct ContactsDetailRadioList: View {
+    @Binding var selection: String
+    var body: some View {
+        if selection == "Calls" {
+            ContactsDetailRadioListCalls()
+        } else if selection == "E-Mails" {
+            ContactsDetailRadioListEMails()
+        } else if selection == "Notes" {
+            ContactsDetailRadioListNotes()
+        }
+    }
+}
+
+struct ContactsDetailRadioListCalls: View {
     var body: some View {
         ScrollView {
             ForEach(0 ..< 15) { i in
@@ -61,6 +75,35 @@ struct ContactsDetailRadioList: View {
                     }
                     Divider()
             }
+        }
+    }
+}
+
+struct ContactsDetailRadioListEMails: View {
+    var body: some View {
+        ScrollView {
+            ForEach(0 ..< 15) { i in
+                    HStack {
+                        HStack {
+                            Image(systemName: "envelope")
+                            Text("m.gravemeyer@icloud.com")
+                        }
+                        Spacer()
+                        HStack {
+                            Text("some text")
+                        }
+                    }
+                    Divider()
+            }
+        }
+    }
+}
+
+struct ContactsDetailRadioListNotes: View {
+    @State var text = "Placeholder Multiline Text \nSome Text\nSome more Text"
+    var body: some View {
+        ScrollView {
+            TextEditor(text: $text)
         }
     }
 }
@@ -129,32 +172,33 @@ struct RoundedCorners: Shape {
 }
 
 struct ContactsDetailRadioSection: View {
-    @State var selection = "Notes"
+    @Binding var selection: String
     var corner = CGFloat(10)
     var body: some View {
         HStack {
             Button(action: {
-                
+                selection = "Notes"
             }, label: {
                 ZStack {
-                    Text("Notes").zIndex(1).foregroundColor(Color.gray)
-                    RoundedCorners(tl: 10, tr: 0, bl: 10, br: 0).foregroundColor(Color.brokenWhite)
+                    Text("Notes").zIndex(1).foregroundColor(selection == "Notes" ? Color.white : Color.gray)
+                    RoundedCorners(tl: 10, tr: 0, bl: 10, br: 0)
+                        .foregroundColor(selection == "Notes" ? Color.gray : Color.brokenWhite)
                 }
             }).buttonStyle(PlainButtonStyle()).frame(height: 25).offset(x: 10)
             Button(action: {
-                
+                selection = "E-Mails"
             }, label: {
                 ZStack {
-                    Text("E-Mails").zIndex(1).foregroundColor(Color.gray)
-                    RoundedCorners(tl: 0, tr: 0, bl: 0, br: 0).foregroundColor(Color.brokenWhite)
+                    Text("E-Mails").zIndex(1).foregroundColor(selection == "E-Mails" ? Color.white : Color.gray)
+                    RoundedCorners(tl: 0, tr: 0, bl: 0, br: 0).foregroundColor(selection == "E-Mails" ? Color.gray : Color.brokenWhite)
                 }
             }).buttonStyle(PlainButtonStyle()).frame(height: 25)
             Button(action: {
-                
+                selection = "Calls"
             }, label: {
                 ZStack {
-                    Text("Calls").zIndex(1).foregroundColor(Color.white)
-                    RoundedCorners(tl: 0, tr: 10, bl: 0, br: 10).foregroundColor(Color.gray)
+                    Text("Calls").zIndex(1).foregroundColor(selection == "Calls" ? Color.white : Color.gray)
+                    RoundedCorners(tl: 0, tr: 10, bl: 0, br: 10).foregroundColor(selection == "Calls" ? Color.gray : Color.brokenWhite)
                 }
             }).buttonStyle(PlainButtonStyle()).frame(height: 25).offset(x: -10)
         }.frame(width: 200)
