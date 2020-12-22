@@ -111,23 +111,43 @@ struct ContactsDetailRadioListNotes: View {
 struct ContactsDetailContactRow: View {
     var selectedContact: Contact
     var body: some View {
-        HStack {
-            Button(action: {
-                NSWorkspace.shared.open(URL(string: "mailto:\(selectedContact.email)")!)
-            }, label: {
-                HStack {
-                    Image(systemName: "envelope").foregroundColor(Color.chimpPrimary)
-                    Text(selectedContact.email).foregroundColor(Color.chimpLightText).padding(.leading, -5)
-                }
-            })
-            Button(action: {
-                NSWorkspace.shared.open(URL(string: "tel://\(selectedContact.telephone)")!)
-            }, label: {
-                HStack {
-                    Image(systemName: "phone").foregroundColor(Color.chimpPrimary)
-                    Text(selectedContact.telephone).foregroundColor(Color.chimpLightText).padding(.leading, -5)
-                }
-            })
+        VStack(alignment: .leading) {
+            HStack {
+                Button(action: {
+                    NSWorkspace.shared.open(URL(string: "mailto:\(selectedContact.email)")!)
+                }, label: {
+                    HStack {
+                        Image(systemName: "envelope").foregroundColor(Color.chimpPrimary)
+                        Text(selectedContact.email).foregroundColor(Color.chimpLightText).padding(.leading, -5)
+                    }
+                })
+                Button(action: {
+                    NSWorkspace.shared.open(URL(string: "tel://\(selectedContact.telephone)")!)
+                }, label: {
+                    HStack {
+                        Image(systemName: "phone").foregroundColor(Color.chimpPrimary)
+                        Text(selectedContact.telephone).foregroundColor(Color.chimpLightText).padding(.leading, -5)
+                    }
+                })
+            }
+            HStack {
+                Button(action: {
+                    NSWorkspace.shared.open(URL(string: "mailto:\(selectedContact.email)")!)
+                }, label: {
+                    HStack {
+                        Image("birthday_cake").resizable().frame(width: 18, height: 18).foregroundColor(Color.chimpPrimary)
+                        Text(selectedContact.birthday).foregroundColor(Color.chimpLightText).padding(.leading, -5)
+                    }
+                })
+                Button(action: {
+                    NSWorkspace.shared.open(URL(string: "tel://\(selectedContact.company)")!)
+                }, label: {
+                    HStack {
+                        Image("company").resizable().renderingMode(.template).frame(width: 18, height: 18).foregroundColor(Color.chimpPrimary)
+                        Text(selectedContact.telephone).foregroundColor(Color.chimpLightText).padding(.leading, -5)
+                    }
+                })
+            }.padding(.top, 5)
         }
     }
 }
