@@ -15,7 +15,7 @@ struct ProjectListView: View {
                 }
                 ScrollView(.vertical, showsIndicators: false) {
                     ForEach(projectsState.projects, id: \.self) { project in
-                        ProjectListItem(project: project)
+                        ProjectListItem(project: project).padding(.bottom, 8)
                     }
                 }
             }.zIndex(1)
