@@ -3,7 +3,7 @@ import SwiftUI
 struct ProjectListView: View {
     
     @Environment(\.colorScheme) var colorScheme
-    @EnvironmentObject var contactsState: ContactsState
+    @EnvironmentObject var projectsState: ProjectsState
     
     var body: some View {
         ZStack {
@@ -14,8 +14,8 @@ struct ProjectListView: View {
                     Spacer()
                 }
                 ScrollView(.vertical, showsIndicators: false) {
-                    ForEach(contactsState.getContactCategories(), id: \.self) { categorie in
-                        ContactVerticalListView(categorie: categorie)
+                    ForEach(projectsState.projects, id: \.self) { project in
+                        ProjectListItem(project: project)
                     }
                 }
             }.zIndex(1)
