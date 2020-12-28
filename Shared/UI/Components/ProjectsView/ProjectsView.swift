@@ -11,3 +11,14 @@ struct ProjectsView: View {
         }
     }
 }
+
+#if DEBUG
+struct ProjectsView_Previews : PreviewProvider {
+    static var previews: some View {
+        CoreDataService.shared.changeToDevelopmentMode()
+        return ProjectsView()
+        .environmentObject(AuthState())
+        .environmentObject(ContactsState())
+    }
+}
+#endif
