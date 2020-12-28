@@ -70,7 +70,7 @@
 		E33B4DBA257DF56B000FCE79 /* CoreDataContactsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B4DB8257DF56A000FCE79 /* CoreDataContactsServices.swift */; };
 		E33B4DC2257DFDB1000FCE79 /* CoreDataErrros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B4DC1257DFDB1000FCE79 /* CoreDataErrros.swift */; };
 		E33B4DC3257DFDB1000FCE79 /* CoreDataErrros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B4DC1257DFDB1000FCE79 /* CoreDataErrros.swift */; };
-		E35206AA2599D373006D50E8 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35206A92599D373006D50E8 /* ProjectsView.swift */; };
+		E35206B92599D47C006D50E8 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35206B82599D47C006D50E8 /* ProjectsView.swift */; };
 		E360BAEE256528CE0019C0A6 /* ContactsStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360BAED256528CE0019C0A6 /* ContactsStateTests.swift */; };
 		E36BCF0C257DBF6100EB0263 /* AppWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BCF0B257DBF6100EB0263 /* AppWrapper.swift */; };
 		E36BCF0D257DBF6100EB0263 /* AppWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BCF0B257DBF6100EB0263 /* AppWrapper.swift */; };
@@ -144,7 +144,7 @@
 		E32F01F2257C1D220069DB4D /* SideNavigationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNavigationRow.swift; sourceTree = "<group>"; };
 		E33B4DB8257DF56A000FCE79 /* CoreDataContactsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContactsServices.swift; sourceTree = "<group>"; };
 		E33B4DC1257DFDB1000FCE79 /* CoreDataErrros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataErrros.swift; sourceTree = "<group>"; };
-		E35206A92599D373006D50E8 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		E35206B82599D47C006D50E8 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		E360BAED256528CE0019C0A6 /* ContactsStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsStateTests.swift; sourceTree = "<group>"; };
 		E36BCF0B257DBF6100EB0263 /* AppWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWrapper.swift; sourceTree = "<group>"; };
 		E39A248E2566739C003CCE4A /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
@@ -296,10 +296,10 @@
 			path = ChimpUI;
 			sourceTree = "<group>";
 		};
-		E35206A82599D145006D50E8 /* ProjectsView */ = {
+		E35206B72599D46D006D50E8 /* ProjectsView */ = {
 			isa = PBXGroup;
 			children = (
-				E35206A92599D373006D50E8 /* ProjectsView.swift */,
+				E35206B82599D47C006D50E8 /* ProjectsView.swift */,
 			);
 			path = ProjectsView;
 			sourceTree = "<group>";
@@ -310,7 +310,7 @@
 				5000EA29254454750023A545 /* LoadingView.swift */,
 				E3467619257BB13100EDD6FD /* ChimpUI */,
 				E30045BF257FA9780041467B /* SideNavigation */,
-				E35206A82599D145006D50E8 /* ProjectsView */,
+				E35206B72599D46D006D50E8 /* ProjectsView */,
 				2E6A3D55255EB98E00E5CE5D /* ContactsView */,
 				E313862C257FA49900F81B2C /* CommandLine */,
 				E3FEAECA257E5A7600EE1A3D /* Colors */,
@@ -582,7 +582,7 @@
 				5000EA2A254454750023A545 /* LoadingView.swift in Sources */,
 				2E6A3D38255EB3AF00E5CE5D /* NavigationCategory.swift in Sources */,
 				E39AC44F2501003200980BF6 /* AuthState.swift in Sources */,
-				E35206AA2599D373006D50E8 /* ProjectsView.swift in Sources */,
+				E35206B92599D47C006D50E8 /* ProjectsView.swift in Sources */,
 				E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */,
 				50327F2A2568093200B583F4 /* ChimpPrimaryButton.swift in Sources */,
 				2EA83C59255B609C004A9852 /* CommandLineView.swift in Sources */,
