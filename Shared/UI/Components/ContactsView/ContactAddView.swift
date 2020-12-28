@@ -22,67 +22,72 @@ struct ContactAddView: View {
         
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
-                VStack {
-                    HStack {
-                        Spacer()
-                        Button("Close") {
-                            contactsState.pressAddMenue()
-                        }.padding(.trailing, 20).padding(.top, 30)
-                        Button {
-                            for (contactD) in contactsDetail{
-                                CoreDataService.shared.viewContext.delete(contactD)
-                                let savedResult = CoreDataService.shared.save()
-                                if savedResult != nil {
-                                    print("Error appeared while saving a new contact")
-                                }
-                            }
-                        } label: {
-                            Text("delete cdata ")
-                                .fontWeight(.semibold)
-                                .frame(minWidth: 230)
-                                .foregroundColor(Color.blue)
-                        }
-                    }
-                    Spacer()
+            Group {
+                HStack {
+                    VStack {
+                        RoundedRectangle(cornerRadius: 100).frame(width: 50, height: 50).padding(.bottom, 260)
+                    }.frame(width: geometry.size.width/2, height: geometry.size.height)
                     VStack {
                         HStack {
-                            Text("Add").font(.system(size: 30)).fontWeight(.bold).zIndex(1)
-                            Text("Contact").font(.system(size: 30)).fontWeight(.light).zIndex(1)
-                        }
-                        HStack {
-                            ChimpTextField(placeholder: "First Name", value: self.$firstName)
-                            ChimpTextField(placeholder: "Last Name", value: self.$lastName)
-                        }
-                        
-                        ChimpTextField(placeholder: "E-Mail", value: self.$email)
-                        ChimpTextField(placeholder: "Telephone", value: self.$telephone)
-                        
-                        ChimpDatePicker(birthDate: self.$birthDate)
-                       
-                        ZStack(alignment: .center) {
-                            HStack {
-                                    Image(systemName: "square.and.arrow.down")
-                                    Text("Save").fontWeight(.bold)
-                            }.zIndex(1)
-                            RoundedRectangle(cornerRadius: 20).foregroundColor(selected || hoverRow ? gray : lightGray).onHover { (hover) in
-                                self.hoverRow = hover
+                            Spacer()
+                            Button("Close") {
+                                contactsState.pressAddMenue()
+                            }.padding(.trailing, 20).padding(.top, 30)
+                            Button {
+                                for (contactD) in contactsDetail{
+                                    CoreDataService.shared.viewContext.delete(contactD)
+                                    let savedResult = CoreDataService.shared.save()
+                                    if savedResult != nil {
+                                        print("Error appeared while saving a new contact")
+                                    }
+                                }
+                            } label: {
+                                Text("delete cdata ")
+                                    .fontWeight(.semibold)
+                                    .frame(minWidth: 230)
+                                    .foregroundColor(Color.blue)
                             }
-                        }.onTapGesture {
-                            // TODO: save new contact function to the DB
-                            self.contactsState.createContact(contact: Contact(
-                                                                firstname: self.firstName,
-                                                                lastname: self.lastName,
-                                                                email: self.email,
-                                                                telephone: self.telephone,
-                                                                birthday: String(Int(self.birthDate.timeIntervalSince1970*1000)), // d.o.b in epoch in string format
-                                                                company: "")
-                            )
-                            contactsState.pressAddMenue()
                         }
-                    }.frame(maxWidth: 320, maxHeight: 320)
-                    Spacer()
-                }.padding(.bottom, 50).zIndex(1).frame(width: geometry.size.width, height: geometry.size.height).background(Color.white).opacity(0.97)
+                        Spacer()
+                        VStack {
+                            HStack {
+                                Text("Add").font(.system(size: 30)).fontWeight(.bold).zIndex(1)
+                                Text("Contact").font(.system(size: 30)).fontWeight(.light).zIndex(1)
+                            }
+                            HStack {
+                                ChimpTextField(placeholder: "First Name", value: self.$firstName)
+                                ChimpTextField(placeholder: "Last Name", value: self.$lastName)
+                            }
+                            
+                            ChimpTextField(placeholder: "E-Mail", value: self.$email)
+                            ChimpTextField(placeholder: "Telephone", value: self.$telephone)
+                            
+                            ChimpDatePicker(birthDate: self.$birthDate)
+                           
+                            ZStack(alignment: .center) {
+                                HStack {
+                                        Image(systemName: "square.and.arrow.down")
+                                        Text("Save").fontWeight(.bold)
+                                }.zIndex(1)
+                                RoundedRectangle(cornerRadius: 20).foregroundColor(selected || hoverRow ? gray : lightGray).onHover { (hover) in
+                                    self.hoverRow = hover
+                                }
+                            }.onTapGesture {
+                                // TODO: save new contact function to the DB
+                                self.contactsState.createContact(contact: Contact(
+                                                                    firstname: self.firstName,
+                                                                    lastname: self.lastName,
+                                                                    email: self.email,
+                                                                    telephone: self.telephone,
+                                                                    birthday: String(Int(self.birthDate.timeIntervalSince1970*1000)), // d.o.b in epoch in string format
+                                                                    company: "")
+                                )
+                                contactsState.pressAddMenue()
+                            }
+                        }.frame(maxWidth: 320, maxHeight: 320)
+                        Spacer()
+                    }.padding(.bottom, 50).zIndex(1).frame(width: geometry.size.width/2, height: geometry.size.height)
+                }.background(Color.white).opacity(0.97)
             }
         }
     }

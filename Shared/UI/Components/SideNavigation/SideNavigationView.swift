@@ -8,7 +8,7 @@ struct SideNavigationView: View {
     @FetchRequest(sortDescriptors: [])
     private var authDetail: FetchedResults<AuthDetail>
     
-    @State var selectedMenue = ""
+    @Binding var selection: String
     
     let categories = [
 //        NavigationCategory(symbol: "☀️", name: "Today", notification: 32),
@@ -35,10 +35,10 @@ struct SideNavigationView: View {
 //                Text("Overview").font(.headline).foregroundColor(Color(red: 177/255, green: 177/255, blue: 182/255)).fontWeight(.semibold).padding(.top, 10)
                 VStack {
                     ForEach(categories, id: \.self) { categorie in
-                        if categorie.id.uuidString == selectedMenue {
-                            SideNavigationRow(selected: self.$selectedMenue, selectedBool: true, category: categorie)
+                        if categorie.id.uuidString == selection {
+                            SideNavigationRow(selected: self.$selection, selectedBool: true, category: categorie)
                         } else {
-                            SideNavigationRow(selected: self.$selectedMenue, selectedBool: false, category: categorie)
+                            SideNavigationRow(selected: self.$selection, selectedBool: false, category: categorie)
                         }
                     }
                 }.padding(.top, 20)
@@ -57,11 +57,12 @@ struct SideNavigationView: View {
     }
 }
 
-struct SideNavigationView_Previews : PreviewProvider {
-    static var previews: some View {
-        CoreDataService.shared.changeToDevelopmentMode()
-        return VStack {
-            SideNavigationView()
-        }.environmentObject(ContactsState())
-    }
-}
+//struct SideNavigationView_Previews : PreviewProvider {
+//    @State var selection: "Contacts"
+//    static var previews: some View {
+//        CoreDataService.shared.changeToDevelopmentMode()
+//        return VStack {
+//            SideNavigationView(selection: selection)
+//        }.environmentObject(ContactsState())
+//    }
+//}

@@ -6,13 +6,19 @@ struct AppView: View {
     @EnvironmentObject var authState: AuthState
     @EnvironmentObject var contactsState: ContactsState
     
+    @State var selection = "Contacts"
+    
     var body: some View {
         ZStack {
             colorScheme == .dark ? Color.chimpDarkBackground : Color.chimpLightBackground
             HStack {
-                SideNavigationView().environmentObject(authState)
+                SideNavigationView(selection: $selection).environmentObject(authState)
                 VStack {
-                    ContactsView()
+                    if selection == "Contacts" {
+                        ContactsView()
+                    } else if selection == "Projects" {
+                        ProjectsView()
+                    }
                 }
             }
         }.frame(minWidth: 900, minHeight: 500)

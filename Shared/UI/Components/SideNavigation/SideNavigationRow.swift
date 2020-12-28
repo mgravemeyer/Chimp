@@ -29,7 +29,7 @@ struct SideNavigationRow: View {
             }
         }
         .onTapGesture {
-            self.selected = category.id.uuidString
+            self.selected = category.name
         }.frame(width: 180, height: 37)
     }
 }
