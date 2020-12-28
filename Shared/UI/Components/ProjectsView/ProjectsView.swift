@@ -18,9 +18,14 @@ struct ProjectsView_Previews : PreviewProvider {
         CoreDataService.shared.changeToDevelopmentMode()
         return ProjectsView()
         .environmentObject(AuthState())
-        .environmentObject(ContactsState())
-        .environmentObject(ProjectsState())
-        
+        .environmentObject({ () -> ProjectsState in
+            let projectsState = ProjectsState()
+            projectsState.addProject(name: "First Project", progress: 0)
+            projectsState.addProject(name: "Second Project", progress: 30)
+            projectsState.addProject(name: "Third Project", progress: 100)
+            projectsState.addProject(name: "Third Project", progress: 120)
+            return projectsState
+        }())
         .environmentObject({ () -> ContactsState in
             let contactsState = ContactsState()
                 contactsState.createContact(contact: Contact(firstname: "longFirstNameTest", lastname: "longLastNameTest", email: "longEmailTest@web.de", telephone: "123456789", birthday: "12.12.2001", company: "Chimp"))
