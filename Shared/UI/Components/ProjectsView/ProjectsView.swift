@@ -7,6 +7,7 @@ struct ProjectsView: View {
     var body: some View {
         HStack {
             ProjectListView()
+            ProjectDetailView()
         }
     }
 }
