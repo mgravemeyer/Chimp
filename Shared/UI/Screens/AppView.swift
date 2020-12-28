@@ -4,7 +4,6 @@ struct AppView: View {
     
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var authState: AuthState
-    @EnvironmentObject var contactsState: ContactsState
     
     @State var selection = "Contacts"
     
