@@ -70,7 +70,10 @@
 		E33B4DBA257DF56B000FCE79 /* CoreDataContactsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B4DB8257DF56A000FCE79 /* CoreDataContactsServices.swift */; };
 		E33B4DC2257DFDB1000FCE79 /* CoreDataErrros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B4DC1257DFDB1000FCE79 /* CoreDataErrros.swift */; };
 		E33B4DC3257DFDB1000FCE79 /* CoreDataErrros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33B4DC1257DFDB1000FCE79 /* CoreDataErrros.swift */; };
-		E35206B92599D47C006D50E8 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35206B82599D47C006D50E8 /* ProjectsView.swift */; };
+		E35206EC2599D5DF006D50E8 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35206EB2599D5DF006D50E8 /* ProjectsView.swift */; };
+		E35206ED2599D5DF006D50E8 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35206EB2599D5DF006D50E8 /* ProjectsView.swift */; };
+		E35206F22599D945006D50E8 /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35206F12599D945006D50E8 /* ProjectListView.swift */; };
+		E35206F32599D945006D50E8 /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35206F12599D945006D50E8 /* ProjectListView.swift */; };
 		E360BAEE256528CE0019C0A6 /* ContactsStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360BAED256528CE0019C0A6 /* ContactsStateTests.swift */; };
 		E36BCF0C257DBF6100EB0263 /* AppWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BCF0B257DBF6100EB0263 /* AppWrapper.swift */; };
 		E36BCF0D257DBF6100EB0263 /* AppWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BCF0B257DBF6100EB0263 /* AppWrapper.swift */; };
@@ -144,7 +147,8 @@
 		E32F01F2257C1D220069DB4D /* SideNavigationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNavigationRow.swift; sourceTree = "<group>"; };
 		E33B4DB8257DF56A000FCE79 /* CoreDataContactsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContactsServices.swift; sourceTree = "<group>"; };
 		E33B4DC1257DFDB1000FCE79 /* CoreDataErrros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataErrros.swift; sourceTree = "<group>"; };
-		E35206B82599D47C006D50E8 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		E35206EB2599D5DF006D50E8 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		E35206F12599D945006D50E8 /* ProjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListView.swift; sourceTree = "<group>"; };
 		E360BAED256528CE0019C0A6 /* ContactsStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsStateTests.swift; sourceTree = "<group>"; };
 		E36BCF0B257DBF6100EB0263 /* AppWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWrapper.swift; sourceTree = "<group>"; };
 		E39A248E2566739C003CCE4A /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
@@ -299,7 +303,8 @@
 		E35206B72599D46D006D50E8 /* ProjectsView */ = {
 			isa = PBXGroup;
 			children = (
-				E35206B82599D47C006D50E8 /* ProjectsView.swift */,
+				E35206EB2599D5DF006D50E8 /* ProjectsView.swift */,
+				E35206F12599D945006D50E8 /* ProjectListView.swift */,
 			);
 			path = ProjectsView;
 			sourceTree = "<group>";
@@ -582,7 +587,7 @@
 				5000EA2A254454750023A545 /* LoadingView.swift in Sources */,
 				2E6A3D38255EB3AF00E5CE5D /* NavigationCategory.swift in Sources */,
 				E39AC44F2501003200980BF6 /* AuthState.swift in Sources */,
-				E35206B92599D47C006D50E8 /* ProjectsView.swift in Sources */,
+				E35206EC2599D5DF006D50E8 /* ProjectsView.swift in Sources */,
 				E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */,
 				50327F2A2568093200B583F4 /* ChimpPrimaryButton.swift in Sources */,
 				2EA83C59255B609C004A9852 /* CommandLineView.swift in Sources */,
@@ -597,6 +602,7 @@
 				504C5D9725459959003BDFA1 /* RequestMaker.swift in Sources */,
 				E3EFD99724FA5CF8002E336F /* Profile.swift in Sources */,
 				5090A53E253CBCFC00A211EE /* AuthService.swift in Sources */,
+				E35206F22599D945006D50E8 /* ProjectListView.swift in Sources */,
 				E3FDF8CB25024977002B7C5F /* ContactListItem.swift in Sources */,
 				5044E96725431EC50041E01B /* ChimpDatePicker.swift in Sources */,
 				509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */,
@@ -632,6 +638,7 @@
 				500E2FE1253F7161005B347D /* AuthErrors.swift in Sources */,
 				509B6F4E2540B68E002D165F /* ContactService.swift in Sources */,
 				2E6A3D40255EB8D600E5CE5D /* ContactAddView.swift in Sources */,
+				E35206ED2599D5DF006D50E8 /* ProjectsView.swift in Sources */,
 				E3D6EF3C24F7D5A700F7A95A /* AppView.swift in Sources */,
 				2E6A3D32255E91F400E5CE5D /* SideNavigationView.swift in Sources */,
 				509B6F642540B6C4002D165F /* ContactOptions.swift in Sources */,
@@ -646,6 +653,7 @@
 				E3D7A5FA24F4FFC200D3EB62 /* LoginView.swift in Sources */,
 				509B6F592540B6A4002D165F /* ContactRequestMaker.swift in Sources */,
 				E33B4DBA257DF56B000FCE79 /* CoreDataContactsServices.swift in Sources */,
+				E35206F32599D945006D50E8 /* ProjectListView.swift in Sources */,
 				2E6A3D39255EB3AF00E5CE5D /* NavigationCategory.swift in Sources */,
 				504C5D9825459959003BDFA1 /* RequestMaker.swift in Sources */,
 				2E6A3DA2255EC0C800E5CE5D /* ContactVerticalListView.swift in Sources */,
