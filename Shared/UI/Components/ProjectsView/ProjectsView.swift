@@ -2,12 +2,16 @@ import SwiftUI
 
 struct ProjectsView: View {
     
-    @EnvironmentObject var contactsState: ContactsState
+    @EnvironmentObject var projectsState: ProjectsState
     
     var body: some View {
         HStack {
             ProjectListView()
-            ProjectDetailView()
+            if projectsState.selectedProject == "" {
+                EmptyProjectDetail()
+            } else {
+                ProjectDetailView(project: projectsState.getSelectedProject())
+            }
         }
     }
 }
