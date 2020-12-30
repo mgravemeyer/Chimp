@@ -3,6 +3,7 @@ import SwiftUI
 struct AppWrapper: View {
     
     @EnvironmentObject var authState: AuthState
+    @EnvironmentObject var projectsState: ProjectsState
     @EnvironmentObject var contactsState: ContactsState
     
     var body: some View{
@@ -17,6 +18,11 @@ struct AppWrapper: View {
                 ZStack {
                     AppView()
                         .zIndex(0)
+                    if projectsState.addMenuePressed {
+                        ProjectAddView()
+                            .zIndex(1)
+                            .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
+                    }
                     if contactsState.addMenuePressed {
                         ContactAddView()
                             .zIndex(1)
