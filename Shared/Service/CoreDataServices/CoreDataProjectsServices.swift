@@ -3,7 +3,7 @@ import CoreData
 import SwiftUI
 
 extension CoreDataService {
-    func fetchProject() -> (CoreDataErrors?, [Project]) {
+    func fetchProjects() -> (CoreDataErrors?, [Project]) {
         let projectsCD = fetch("ProjectDetail")
         //to:do unwrap values safely, not force unwrap
         if projectsCD.0 == nil {

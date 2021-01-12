@@ -4,6 +4,10 @@ import SwiftUI
 
 class ProjectsState: ObservableObject {
     
+    init() {
+        fetchProjects()
+    }
+    
     @Published var projects = [Project]()
     @Published var addMenuePressed = false
     @Published var selectedProject = ""
@@ -14,6 +18,14 @@ class ProjectsState: ObservableObject {
     
     func selectProject(project: UUID) {
         selectedProject = project.uuidString
+    }
+    
+    func fetchProjects() {
+        let fetchResult = CoreDataService.shared.fetchProjects()
+        if fetchResult.0 == nil {
+            self.projects.append(contentsOf: fetchResult.1)
+        }
+        /* to:do error handling */
     }
     
     func getSelectedProject() -> Project {
