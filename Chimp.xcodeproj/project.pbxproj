@@ -91,6 +91,8 @@
 		E39D37BA259CA3F600DC797B /* ProjectAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D37B9259CA3F600DC797B /* ProjectAddView.swift */; };
 		E39D37C2259CD15100DC797B /* ProjectEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D37C1259CD15100DC797B /* ProjectEmpty.swift */; };
 		E3AC5E092564432F00709D04 /* Chimp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */; };
+		E3B2E82625AD3B4000C82CD5 /* CoreDataProjectsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2E82525AD3B4000C82CD5 /* CoreDataProjectsServices.swift */; };
+		E3B2E82725AD3B4000C82CD5 /* CoreDataProjectsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2E82525AD3B4000C82CD5 /* CoreDataProjectsServices.swift */; };
 		E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3A24F7D5A700F7A95A /* AppView.swift */; };
 		E3D6EF3C24F7D5A700F7A95A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3A24F7D5A700F7A95A /* AppView.swift */; };
 		E3D7A5F524F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */; };
@@ -171,6 +173,7 @@
 		E39D37B1259CA01F00DC797B /* NSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextField.swift; sourceTree = "<group>"; };
 		E39D37B9259CA3F600DC797B /* ProjectAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAddView.swift; sourceTree = "<group>"; };
 		E39D37C1259CD15100DC797B /* ProjectEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEmpty.swift; sourceTree = "<group>"; };
+		E3B2E82525AD3B4000C82CD5 /* CoreDataProjectsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProjectsServices.swift; sourceTree = "<group>"; };
 		E3D6EF3A24F7D5A700F7A95A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		E3D7A5CA24F4FFC000D3EB62 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpApp.swift; sourceTree = "<group>"; };
@@ -402,6 +405,7 @@
 				504AD45625442C0A001BCEEB /* CoreDataManager.swift */,
 				E33B4DB8257DF56A000FCE79 /* CoreDataContactsServices.swift */,
 				E33B4DC1257DFDB1000FCE79 /* CoreDataErrros.swift */,
+				E3B2E82525AD3B4000C82CD5 /* CoreDataProjectsServices.swift */,
 			);
 			path = CoreDataServices;
 			sourceTree = "<group>";
@@ -638,6 +642,7 @@
 				5090A52A253CB8F500A211EE /* Auth.swift in Sources */,
 				504C5D9725459959003BDFA1 /* RequestMaker.swift in Sources */,
 				E3EFD99724FA5CF8002E336F /* Profile.swift in Sources */,
+				E3B2E82625AD3B4000C82CD5 /* CoreDataProjectsServices.swift in Sources */,
 				5090A53E253CBCFC00A211EE /* AuthService.swift in Sources */,
 				E35206F22599D945006D50E8 /* ProjectListView.swift in Sources */,
 				E3FDF8CB25024977002B7C5F /* ContactListItem.swift in Sources */,
@@ -666,6 +671,7 @@
 				5044E96825431EC50041E01B /* ChimpDatePicker.swift in Sources */,
 				2EEA70E0255E7F98000C5E75 /* ChimpTextFieldView.swift in Sources */,
 				2E6A3D97255EBB8800E5CE5D /* ContactDetailView.swift in Sources */,
+				E3B2E82725AD3B4000C82CD5 /* CoreDataProjectsServices.swift in Sources */,
 				E32F01D0257C14540069DB4D /* ContactTagView.swift in Sources */,
 				50327F2B2568093200B583F4 /* ChimpPrimaryButton.swift in Sources */,
 				5090A53F253CBCFC00A211EE /* AuthService.swift in Sources */,
