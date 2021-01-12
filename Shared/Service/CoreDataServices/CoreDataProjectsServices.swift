@@ -25,10 +25,10 @@ extension CoreDataService {
     }
     
     func saveProject(projectData: Project) -> CoreDataErrors? {
-        let newProjectDetail = ContactDetail(context: CoreDataService.shared.viewContext)
+        let newProjectDetail = ProjectDetail(context: CoreDataService.shared.viewContext)
         //to:do for loop adding values
-        newProjectDetail.setValue(projectData.progress, forKey: "progress")
-        newProjectDetail.setValue(projectData.clients, forKey: "clients")
+        newProjectDetail.setValue(Int16(projectData.progress), forKey: "progress")
+        newProjectDetail.setValue("", forKey: "clients")
         newProjectDetail.setValue(projectData.end, forKey: "end")
         newProjectDetail.setValue(projectData.name, forKey: "name")
         newProjectDetail.setValue(projectData.notes, forKey: "notes")

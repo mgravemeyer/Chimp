@@ -12,10 +12,6 @@ class ProjectsState: ObservableObject {
     @Published var addMenuePressed = false
     @Published var selectedProject = ""
     
-    func addProject(project: Project) {
-        projects.append(project)
-    }
-    
     func selectProject(project: UUID) {
         selectedProject = project.uuidString
     }
@@ -24,6 +20,15 @@ class ProjectsState: ObservableObject {
         let fetchResult = CoreDataService.shared.fetchProjects()
         if fetchResult.0 == nil {
             self.projects.append(contentsOf: fetchResult.1)
+        }
+        /* to:do error handling */
+    }
+    
+    func createProject(project: Project) {
+        let saveResult = CoreDataService.shared.saveProject(projectData: project)
+        if saveResult == nil {
+            /* to:do save contact via api */
+            projects.append(project)
         }
         /* to:do error handling */
     }
