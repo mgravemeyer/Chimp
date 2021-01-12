@@ -3,7 +3,7 @@ import SwiftUI
 struct ProjectListItem: View {
     
     let lightGray = Color(red: 240/255, green: 240/255, blue: 240/255)
-    
+    @EnvironmentObject var projectsState: ProjectsState
     var project: Project
     var body: some View {
         ZStack {
@@ -25,6 +25,8 @@ struct ProjectListItem: View {
                 }
             }.zIndex(1).padding(.horizontal, 10)
             RoundedRectangle(cornerRadius: 10).foregroundColor(lightGray)
-        }.frame(height: 60)
+        }.frame(height: 60).onTapGesture {
+            projectsState.selectProject(project: project.id)
+        }
     }
 }

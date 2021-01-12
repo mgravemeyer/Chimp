@@ -8,11 +8,11 @@ class ProjectsState: ObservableObject {
     @Published var addMenuePressed = false
     @Published var selectedProject = ""
     
-    func addProject(name: String, progress: Int) {
-        projects.append(Project(name: name, progress: progress))
+    func addProject(project: Project) {
+        projects.append(project)
     }
     
-    func selectContact(project: UUID) {
+    func selectProject(project: UUID) {
         selectedProject = project.uuidString
     }
     
@@ -21,7 +21,8 @@ class ProjectsState: ObservableObject {
             return project
         } else {
             /* to:do throw error message to frontend */
-            return Project(name: "error", progress: 000)
+            return Project(name: "Error", start: "Error", end: "Error", clients: [], progress: 0, notes: "Error")
         }
     }
 }
+

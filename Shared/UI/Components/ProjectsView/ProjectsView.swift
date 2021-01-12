@@ -24,10 +24,9 @@ struct ProjectsView_Previews : PreviewProvider {
         .environmentObject(AuthState())
         .environmentObject({ () -> ProjectsState in
             let projectsState = ProjectsState()
-            projectsState.addProject(name: "First Project", progress: 0)
-            projectsState.addProject(name: "Second Project", progress: 30)
-            projectsState.addProject(name: "Third Project", progress: 100)
-            projectsState.addProject(name: "Third Project", progress: 120)
+            projectsState.addProject(project: Project(name: "First Project", start: "20.10.2020", end: "25.10.2020", clients: [], progress: 10, notes: "Some Notes"))
+            projectsState.addProject(project: Project(name: "Second Project", start: "20.10.2020", end: "25.10.2020", clients: [], progress: 40, notes: "Some Notes"))
+            projectsState.addProject(project: Project(name: "First Project", start: "20.10.2020", end: "25.10.2020", clients: [], progress: 100, notes: "Third Notes"))
             return projectsState
         }())
         .environmentObject({ () -> ContactsState in

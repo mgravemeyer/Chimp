@@ -13,7 +13,7 @@ struct ProjectDetailView: View {
                 HStack {
                     Text(project.name).font(.system(size: 30)).fontWeight(.light).lineLimit(1)
                     Spacer()
-                    Button("Add Contact") {
+                    Button("Add Project") {
                         projectsState.addMenuePressed.toggle()
                     }
                 }.padding(.bottom, 20)
