@@ -41,6 +41,8 @@ class AuthState: ObservableObject {
         }
     }
     
+   
+    
     func authUser(email: String, password: String, option: AuthOptions) {
         authService.authUser(email: email, password: password, option: option) {[unowned self] (result) in
             switch result {

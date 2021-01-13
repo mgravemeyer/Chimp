@@ -59,6 +59,8 @@
 		509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F6D2540BEDC002D165F /* ContactErrors.swift */; };
 		509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
 		509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
+		B5CDC42B25AF9AB900F2D503 /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDC42A25AF9AB900F2D503 /* AuthHelper.swift */; };
+		B5CDC42C25AF9AB900F2D503 /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDC42A25AF9AB900F2D503 /* AuthHelper.swift */; };
 		E31970DF259A452300E61794 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31970DE259A452300E61794 /* Project.swift */; };
 		E31970E0259A452300E61794 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31970DE259A452300E61794 /* Project.swift */; };
 		E31970E5259A46B900E61794 /* ProjectListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31970E4259A46B900E61794 /* ProjectListItem.swift */; };
@@ -154,6 +156,7 @@
 		509B6F622540B6C4002D165F /* ContactOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptions.swift; sourceTree = "<group>"; };
 		509B6F6D2540BEDC002D165F /* ContactErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactErrors.swift; sourceTree = "<group>"; };
 		509B6F762540C0A9002D165F /* AccessTokenErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenErrors.swift; sourceTree = "<group>"; };
+		B5CDC42A25AF9AB900F2D503 /* AuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHelper.swift; sourceTree = "<group>"; };
 		E31970DE259A452300E61794 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		E31970E4259A46B900E61794 /* ProjectListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListItem.swift; sourceTree = "<group>"; };
 		E32CC70E257D30F70040E43B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -273,6 +276,14 @@
 			path = "Access Token";
 			sourceTree = "<group>";
 		};
+		B5CDC42925AF9A9200F2D503 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDC42A25AF9AB900F2D503 /* AuthHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		E30045BF257FA9780041467B /* SideNavigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +363,7 @@
 		E393AD052503FF920071D4E3 /* State */ = {
 			isa = PBXGroup;
 			children = (
+				B5CDC42925AF9A9200F2D503 /* Helpers */,
 				E35207032599DAFE006D50E8 /* ProjectsState.swift */,
 				E3E60A9724FFD8FF0065B141 /* ContactsState.swift */,
 				E39AC44E2501003200980BF6 /* AuthState.swift */,
@@ -606,6 +618,7 @@
 				504AD45725442C0A001BCEEB /* CoreDataManager.swift in Sources */,
 				509B6F582540B6A4002D165F /* ContactRequest.swift in Sources */,
 				E33B4DB9257DF56A000FCE79 /* CoreDataContactsServices.swift in Sources */,
+				B5CDC42B25AF9AB900F2D503 /* AuthHelper.swift in Sources */,
 				2E6A3DA1255EC0C800E5CE5D /* ContactVerticalListView.swift in Sources */,
 				E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */,
 				E31970DF259A452300E61794 /* Project.swift in Sources */,
@@ -695,6 +708,7 @@
 				E39AC4502501003200980BF6 /* AuthState.swift in Sources */,
 				E3E60AA224FFF4430065B141 /* Profile.swift in Sources */,
 				E3D7A5F824F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
+				B5CDC42C25AF9AB900F2D503 /* AuthHelper.swift in Sources */,
 				2E6A3D58255EB9BD00E5CE5D /* ContactsDetailsWindow.swift in Sources */,
 				E32F01F4257C1D220069DB4D /* SideNavigationRow.swift in Sources */,
 				E39D37B2259CA01F00DC797B /* NSTextField.swift in Sources */,

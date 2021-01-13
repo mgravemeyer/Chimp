@@ -2,9 +2,10 @@ import Foundation
 
 class ContactRequest{
     static let instance = ContactRequest()
-    private var _REST_API_HOST_ = "http://127.0.0.1:5000/api"
+    private let _REST_API_HOST_ = "http://167.99.136.248:5000/api"
     private var _CONTACT_ = "contact"
     private let requestMaker = RequestMaker.instance
+    private let authHelper = AuthHelper.instance
     
     var ADD_OR_UPDATE_CONTACT_ENDPOINT: String {
         return "\(_REST_API_HOST_)/\(_CONTACT_)/"
@@ -12,11 +13,14 @@ class ContactRequest{
     
     func createAddContactRequest(contact: Contact)->URLRequest{
         let url = URL(string: ADD_OR_UPDATE_CONTACT_ENDPOINT)
-   
+        let token: String = authHelper.getTokenFromCD()
+
         
         guard  let jsonData = try? JSONEncoder().encode(Contact(id: contact.id, firstname: contact.firstname, lastname: contact.lastname, email: contact.email, phone: contact.email, dob: contact.dob, note: contact.note, company_uids: contact.company_uids, tag_uids: contact.tag_uids, project_uids: contact.project_uids)) else { fatalError("Error unwrapping JSON data")}
-
-        return requestMaker.makeJSONRequest(method: "POST", url: url, jsonData: jsonData, isPrivate: true, token: "")
+        print(token)
+        print(contact.dob)
+        return requestMaker.makeJSONRequest(method: "POST", url: url, jsonData: jsonData, isPrivate: true, token: token)
+      
     }
     
 //    func addOrUpdate(first_name: String, last_name: String, phone: String, email: String, dob: Int, note: String, company_uids: [String],tags: [String], option: ContactOptions, requestBuilt:  @escaping(_ status: Bool, _ request: URLRequest)-> ()){
