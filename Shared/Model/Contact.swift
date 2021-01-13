@@ -1,7 +1,7 @@
 import Foundation
 
-struct Contact: Identifiable, Hashable, Equatable {
-    let id = UUID()
+struct Contact: Identifiable, Hashable, Equatable, Codable {
+    let id: String
     private(set) var firstname: String
     private(set) var lastname: String
     private(set) var email: String
@@ -15,6 +15,7 @@ struct Contact: Identifiable, Hashable, Equatable {
 }
 
 struct Contact_S_RequestModel:Codable{
+    let id: String // don't forget to update Contact's CoreData Model to include an "id" attribute
     let first_name: String?
     let last_name: String?
     let phone: String?
@@ -22,7 +23,8 @@ struct Contact_S_RequestModel:Codable{
     let dob: Int? // will be saved on DB as Int (epoch).
     let note: String?
     let company_uids: [String]?
-    let tags: [String]?
+    let tag_uids: [String]?
+    let project_uids: [String]?
 }
 
 struct Contact_S_ResponseModel:Codable{

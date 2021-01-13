@@ -51,8 +51,8 @@
 		509B6EEC253F8253002D165F /* AuthOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6EEA253F8253002D165F /* AuthOptions.swift */; };
 		509B6F4D2540B68E002D165F /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F4C2540B68E002D165F /* ContactService.swift */; };
 		509B6F4E2540B68E002D165F /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F4C2540B68E002D165F /* ContactService.swift */; };
-		509B6F582540B6A4002D165F /* ContactRequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F572540B6A4002D165F /* ContactRequestMaker.swift */; };
-		509B6F592540B6A4002D165F /* ContactRequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F572540B6A4002D165F /* ContactRequestMaker.swift */; };
+		509B6F582540B6A4002D165F /* ContactRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F572540B6A4002D165F /* ContactRequest.swift */; };
+		509B6F592540B6A4002D165F /* ContactRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F572540B6A4002D165F /* ContactRequest.swift */; };
 		509B6F632540B6C4002D165F /* ContactOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F622540B6C4002D165F /* ContactOptions.swift */; };
 		509B6F642540B6C4002D165F /* ContactOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F622540B6C4002D165F /* ContactOptions.swift */; };
 		509B6F6E2540BEDC002D165F /* ContactErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F6D2540BEDC002D165F /* ContactErrors.swift */; };
@@ -150,7 +150,7 @@
 		5090A548253CD0E900A211EE /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		509B6EEA253F8253002D165F /* AuthOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOptions.swift; sourceTree = "<group>"; };
 		509B6F4C2540B68E002D165F /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
-		509B6F572540B6A4002D165F /* ContactRequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRequestMaker.swift; sourceTree = "<group>"; };
+		509B6F572540B6A4002D165F /* ContactRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRequest.swift; sourceTree = "<group>"; };
 		509B6F622540B6C4002D165F /* ContactOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptions.swift; sourceTree = "<group>"; };
 		509B6F6D2540BEDC002D165F /* ContactErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactErrors.swift; sourceTree = "<group>"; };
 		509B6F762540C0A9002D165F /* AccessTokenErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenErrors.swift; sourceTree = "<group>"; };
@@ -258,7 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				509B6F4C2540B68E002D165F /* ContactService.swift */,
-				509B6F572540B6A4002D165F /* ContactRequestMaker.swift */,
+				509B6F572540B6A4002D165F /* ContactRequest.swift */,
 				509B6F622540B6C4002D165F /* ContactOptions.swift */,
 				509B6F6D2540BEDC002D165F /* ContactErrors.swift */,
 			);
@@ -604,7 +604,7 @@
 				E3D7A5F524F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
 				E35207042599DAFE006D50E8 /* ProjectsState.swift in Sources */,
 				504AD45725442C0A001BCEEB /* CoreDataManager.swift in Sources */,
-				509B6F582540B6A4002D165F /* ContactRequestMaker.swift in Sources */,
+				509B6F582540B6A4002D165F /* ContactRequest.swift in Sources */,
 				E33B4DB9257DF56A000FCE79 /* CoreDataContactsServices.swift in Sources */,
 				2E6A3DA1255EC0C800E5CE5D /* ContactVerticalListView.swift in Sources */,
 				E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */,
@@ -701,7 +701,7 @@
 				504AD45825442C0A001BCEEB /* CoreDataManager.swift in Sources */,
 				E3E60A9924FFD8FF0065B141 /* ContactsState.swift in Sources */,
 				E3D7A5FA24F4FFC200D3EB62 /* LoginView.swift in Sources */,
-				509B6F592540B6A4002D165F /* ContactRequestMaker.swift in Sources */,
+				509B6F592540B6A4002D165F /* ContactRequest.swift in Sources */,
 				E33B4DBA257DF56B000FCE79 /* CoreDataContactsServices.swift in Sources */,
 				E35206F32599D945006D50E8 /* ProjectListView.swift in Sources */,
 				2E6A3D39255EB3AF00E5CE5D /* NavigationCategory.swift in Sources */,
@@ -853,7 +853,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -875,7 +875,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -901,7 +901,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -926,7 +926,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -948,7 +948,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				INFOPLIST_FILE = UnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -970,7 +970,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				INFOPLIST_FILE = UnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

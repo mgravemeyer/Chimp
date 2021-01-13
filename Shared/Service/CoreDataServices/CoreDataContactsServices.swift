@@ -21,7 +21,7 @@ extension CoreDataService {
                 }
                 let dob_date = Date(timeIntervalSince1970: TimeInterval(dob))
                 let dob_str = dob_date.toString(dateFormat: "dd.MM.YYYY")
-                let contact = Contact(firstname: firstName, lastname: lastName, email: email, telephone: phone, birthday: dob_str, company: "")
+                let contact = Contact(id: UUID().uuidString, firstname: firstName, lastname: lastName, email: email, telephone: phone, birthday: dob_str, company: "")
                 contactsFetched.append(contact)
             }
             return (nil, contactsFetched)

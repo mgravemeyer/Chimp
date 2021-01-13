@@ -40,7 +40,7 @@ struct ContactDetailView: View {
 struct ContactDetailView_Previews : PreviewProvider {
     static var previews: some View {
         CoreDataService.shared.changeToDevelopmentMode()
-        return ContactDetailView(contact: Contact(firstname: "longFirstNameTest", lastname: "longLastNameTest", email: "longEmailTest@web.de", telephone: "123456789", birthday: "12.12.2001", company: "Chimp"))
+        return ContactDetailView(contact: Contact(id: UUID().uuidString, firstname: "longFirstNameTest", lastname: "longLastNameTest", email: "longEmailTest@web.de", telephone: "123456789", birthday: "12.12.2001", company: "Chimp"))
             .environmentObject(ContactsState())
     }
 }

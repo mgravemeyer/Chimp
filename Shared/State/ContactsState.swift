@@ -5,7 +5,8 @@ import SwiftUI
 
 
 class ContactsState: ObservableObject {
-    
+    private let contactService = ContactService.instance
+
     init() {
         fetchContacts()
     }
@@ -23,8 +24,8 @@ class ContactsState: ObservableObject {
         advancedMenuePressed.toggle()
     }
     
-    func selectContact(contact: UUID) {
-        selectedContact = contact.uuidString
+    func selectContact(contact: String) {
+        selectedContact = contact
     }
     
     func fetchContacts() {
@@ -40,6 +41,7 @@ class ContactsState: ObservableObject {
         if saveResult == nil {
             /* to:do save contact via api */
             contacts.insert(contact)
+
         }
         /* to:do error handling */
     }
@@ -56,11 +58,11 @@ class ContactsState: ObservableObject {
     }
     
     func getSelectedContact() -> Contact {
-        if let contact = contacts.first(where: {$0.id.uuidString == self.selectedContact}) {
+        if let contact = contacts.first(where: {$0.id == self.selectedContact}) {
             return contact
         } else {
             /* to:do throw error message to frontend */
-            return Contact(firstname: "error", lastname: "error", email: "error", telephone: "error", birthday: "error", company: "error")
+            return Contact(id: "error", firstname: "error", lastname: "error", email: "error", telephone: "error", birthday: "error", company: "error")
         }
     }
     
