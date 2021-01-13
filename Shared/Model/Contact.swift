@@ -6,11 +6,11 @@ struct Contact: Identifiable, Hashable, Equatable, Codable {
     private(set) var lastname: String
     private(set) var email: String
     private(set) var phone: String
-    var dob: String // Display as string
-    var note: String // Display as string
-    var company_uids: [String]
-    var tag_uids: [String]
-    var project_uids: [String]
+    private(set) var dob: String // Display as string
+    private(set) var note: String // Display as string
+    private(set) var company_uids: [String]
+    private(set) var tag_uids: [String]
+    private(set) var project_uids: [String]
 //    private(set) var company: String
     func getGroup() -> Character {
         return lastname.first!
