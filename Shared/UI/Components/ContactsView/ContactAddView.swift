@@ -73,14 +73,16 @@ struct ContactAddView: View {
                                     self.hoverRow = hover
                                 }
                             }.onTapGesture {
-                                print("WWWW")
                                 self.contactsState.createContact(contact: Contact(
                                                                     id: UUID().uuidString, firstname: self.firstName,
                                                                     lastname: self.lastName,
                                                                     email: self.email,
-                                                                    telephone: self.telephone,
-                                                                    birthday: String(Int(self.birthDate.timeIntervalSince1970*1000)), // d.o.b in epoch in string format
-                                                                    company: ""))
+                                                                    phone: self.telephone,
+                                                                    dob: String(Int(self.birthDate.timeIntervalSince1970*1000)), // d.o.b in epoch in string format
+                                                                    note: "",
+                                    company_uids: [], tag_uids: [],
+                                    project_uids: []
+                                    ))
                                 
                                 contactsState.pressAddMenue()
                             }

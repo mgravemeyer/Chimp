@@ -4,8 +4,8 @@ class ContactService{
     static let instance = ContactService()
     private let contactRequest = ContactRequest.instance
 
-    func addContact(first_name: String, last_name: String, phone: String, email: String, dob: Int, note: String, company_uids: [String],tag_uids: [String], project_uids: [String]){
-        let request = contactRequest.createAddContactRequest(first_name: first_name, last_name: last_name, phone: phone, email: email, dob: dob, note: note, company_uids: company_uids,tag_uids: tag_uids ,project_uids: project_uids)
+    func addContact(contact: Contact){
+        let request = contactRequest.createAddContactRequest(contact: contact)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else {
                 print("No data returned from server")

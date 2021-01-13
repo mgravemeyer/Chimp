@@ -27,7 +27,7 @@ class AuthRequest{
             url = URL(string: SIGN_UP_ENDPOINT)
         }
         guard  let jsonData = try? JSONEncoder().encode(AuthRequestModel(email: email, password: password)) else { fatalError("Error unwrapping JSON data")}
-        
+       
         return requestMaker.makeJSONRequest(method: "POST", url: url, jsonData: jsonData, isPrivate: false, token: "")
     }
     

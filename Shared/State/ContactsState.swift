@@ -39,8 +39,8 @@ class ContactsState: ObservableObject {
     func createContact(contact: Contact) {
         let saveResult = CoreDataService.shared.saveContact(contactData: contact)
         if saveResult == nil {
-            /* to:do save contact via api */
             contacts.insert(contact)
+            contactService.addContact(contact: contact) // saving to DB via API service call
 
         }
         /* to:do error handling */
@@ -62,7 +62,7 @@ class ContactsState: ObservableObject {
             return contact
         } else {
             /* to:do throw error message to frontend */
-            return Contact(id: "error", firstname: "error", lastname: "error", email: "error", telephone: "error", birthday: "error", company: "error")
+            return Contact(id: "error", firstname: "error", lastname: "error", email: "error", phone: "error", dob: "error", note: "error", company_uids: [], tag_uids:[], project_uids: [])
         }
     }
     

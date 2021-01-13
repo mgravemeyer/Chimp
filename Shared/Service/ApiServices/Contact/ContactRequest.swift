@@ -10,9 +10,11 @@ class ContactRequest{
         return "\(_REST_API_HOST_)/\(_CONTACT_)/"
     }
     
-    func createAddContactRequest(first_name: String, last_name: String, phone: String, email: String, dob: Int, note: String, company_uids: [String], tag_uids: [String], project_uids: [String])->URLRequest{
+    func createAddContactRequest(contact: Contact)->URLRequest{
         let url = URL(string: ADD_OR_UPDATE_CONTACT_ENDPOINT)
-        guard  let jsonData = try? JSONEncoder().encode(Contact_S_RequestModel(id: UUID().uuidString, first_name: first_name, last_name: last_name, phone: phone, email: email, dob: dob, note: note, company_uids: company_uids, tag_uids: tag_uids, project_uids: project_uids)) else { fatalError("Error unwrapping JSON data")}
+   
+        
+        guard  let jsonData = try? JSONEncoder().encode(Contact(id: contact.id, firstname: contact.firstname, lastname: contact.lastname, email: contact.email, phone: contact.email, dob: contact.dob, note: contact.note, company_uids: contact.company_uids, tag_uids: contact.tag_uids, project_uids: contact.project_uids)) else { fatalError("Error unwrapping JSON data")}
 
         return requestMaker.makeJSONRequest(method: "POST", url: url, jsonData: jsonData, isPrivate: true, token: "")
     }
