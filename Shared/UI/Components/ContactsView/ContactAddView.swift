@@ -4,7 +4,8 @@ struct ContactAddView: View {
     
     @EnvironmentObject var contactsState: ContactsState
     @EnvironmentObject var authState: AuthState
-    
+    @Environment(\.managedObjectContext) private var viewContext
+
     @FetchRequest(sortDescriptors: [])
     private var contactsDetail: FetchedResults<ContactDetail>
     

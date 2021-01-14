@@ -4,7 +4,7 @@ class ContactService{
     static let instance = ContactService()
     private let contactRequest = ContactRequest.instance
 
-    func addContact(contact: Contact){
+    func addContact(contact: Contact, completed: @escaping(Result<String, ContactErrors>)->()){
         let request = contactRequest.createAddContactRequest(contact: contact)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else {
@@ -18,21 +18,21 @@ class ContactService{
                 return
             }
             
-            print(httpResponse)
-
-            
             if(httpResponse.statusCode == 200){
+                completed(.success("Contact successfully added to DB"))
             }else{
 
-                if let zz = result.msg{
-                    print(zz)
-                }else{
-                  print(httpResponse)
+                if let errMsg = result.msg{
+                    print(errMsg)
+                    if errMsg == "token_expired"{
+                        completed(.failure(.tokenExpired))
+                    }
                 }
             }
             if let error = error {
                 //unsure, but this may happen only if there's a bug in this (Swift) code (?)
                 print("Error: \(error)")
+                completed(.failure(.generalErrorContact))
                 return
             }
         }

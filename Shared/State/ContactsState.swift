@@ -6,6 +6,7 @@ import SwiftUI
 
 class ContactsState: ObservableObject {
     private let contactService = ContactService.instance
+    private let authState = AuthState.instance
 
     init() {
         fetchContacts()
@@ -40,8 +41,19 @@ class ContactsState: ObservableObject {
         let saveResult = CoreDataService.shared.saveContact(contactData: contact)
         if saveResult == nil {
             contacts.insert(contact)
-            contactService.addContact(contact: contact) // saving to DB via API service call
 
+            contactService.addContact(contact: contact) { [unowned self] (result) in // saving to DB via API service call
+                switch result{
+                case .success(let x):
+                    print(x)
+                case .failure(let err):
+                    print(err.localizedDescription)
+                    if(err.localizedDescription == "TokenExpired"){
+                        authState.setNewAccessToken()
+                    }
+                    
+                }
+            }
         }
         /* to:do error handling */
     }

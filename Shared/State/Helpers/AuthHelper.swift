@@ -21,6 +21,14 @@ class AuthHelper{
         }
         return token
     }
+    func getUIDFromCD() -> String {
+        let authStateFetched = CoreDataService.shared.fetch("AuthDetail").1
+        var user_uid = String()
+        for result in authStateFetched as [NSManagedObject] {
+            user_uid = result.value(forKey: "user_uid") as! String
+        }
+        return user_uid
+    }
 
     
 }

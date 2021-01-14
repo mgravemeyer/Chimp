@@ -7,14 +7,16 @@ class AuthState: ObservableObject {
         //TO:DO: creating fetch request auth state from core data
         //checkAuth(authDetail: T##FetchedResults<AuthDetail>)
     }
-    
+    static let instance = AuthState()
+
     @Published var loggedIn = false
     @Published var token = ""
     @Published var user_uid = ""
     @Published var authLoading = true
-    
+
     private let authService = AuthService.instance
-    
+    private let authHelper = AuthHelper.instance
+
     func checkAuth() {
         let authStateFetched = CoreDataService.shared.fetch("AuthDetail").1
         if !authStateFetched.isEmpty || authStateFetched != [] {
@@ -98,6 +100,13 @@ class AuthState: ObservableObject {
                     self.loggedIn = false
                 }
             }
+    }
+    
+    func setNewAccessToken() {
+        let newToken = authService.newAccessToken(user_uid: authHelper.getUIDFromCD())
+        DispatchQueue.main.async {
+            self.token = newToken
+        }
     }
     
 }

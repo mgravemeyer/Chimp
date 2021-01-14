@@ -3,7 +3,7 @@ import SwiftUI
 struct ContactsView: View {
     
     @EnvironmentObject var contactsState: ContactsState
-    
+
     let url = Bundle.main.url(forResource: "Images/grapes", withExtension: "png")
     
     var body: some View {
