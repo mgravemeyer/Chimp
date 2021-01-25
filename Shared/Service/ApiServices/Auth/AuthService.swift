@@ -105,10 +105,6 @@ class AuthService{
                 return
             }
             
-            print(httpResponse)
-
-            
-            
             if(httpResponse.statusCode == 200){
                 if let token = result.token{
                     newToken(token) // new token

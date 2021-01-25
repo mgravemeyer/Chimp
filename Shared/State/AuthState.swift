@@ -104,15 +104,20 @@ class AuthState: ObservableObject {
     
     func setNewAccessToken(saved: @escaping(_ saved: Bool)->()){
         authService.newAccessToken(user_uid: authHelper.getUIDFromCD()) { (newToken) in
-            let coreDataErr = CoreDataService.shared.updateAuthDetailToken(entity: "AuthDetail", token: newToken)
-            if coreDataErr == nil {
-                DispatchQueue.main.async {
-                    self.token = newToken
+            if(newToken != ""){ // if new token is successfully retrieved from API (there's a token, not empty str)
+                let coreDataErr = CoreDataService.shared.updateAuthDetailToken(entity: "AuthDetail", token: newToken)
+                if coreDataErr == nil {
+                    DispatchQueue.main.async {
+                        self.token = newToken
+                    }
+                    saved(true)
+                }else{
+                    saved(false)
                 }
-                saved(true)
             }else{
                 saved(false)
             }
+           
         }
      
 
