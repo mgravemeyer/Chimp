@@ -102,11 +102,20 @@ class AuthState: ObservableObject {
             }
     }
     
-    func setNewAccessToken() {
-        let newToken = authService.newAccessToken(user_uid: authHelper.getUIDFromCD())
-        DispatchQueue.main.async {
-            self.token = newToken
+    func setNewAccessToken(saved: @escaping(_ saved: Bool)->()){
+        authService.newAccessToken(user_uid: authHelper.getUIDFromCD()) { (newToken) in
+            let coreDataErr = CoreDataService.shared.updateAuthDetailToken(entity: "AuthDetail", token: newToken)
+            if coreDataErr == nil {
+                DispatchQueue.main.async {
+                    self.token = newToken
+                }
+                saved(true)
+            }else{
+                saved(false)
+            }
         }
+     
+
     }
     
 }

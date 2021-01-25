@@ -11,6 +11,7 @@ struct RequestMaker{
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         if isPrivate{
+            print("THIS IS THE OLD TOKEN: \(token)")
             request.addValue(token, forHTTPHeaderField: "x-auth-token")
         }
         return request

@@ -47,7 +47,6 @@ class AuthRequest{
     func createAccessTokenRequest(user_uid: String)->URLRequest{
         let url = URL(string: NEW_ACCESS_TOKEN_ENDPOINT)
         let token: String = authHelper.getTokenFromCD()
-
         
         guard  let jsonData = try? JSONEncoder().encode(NewAccessTokenRequestModel(user_uid: user_uid)) else { fatalError("Error unwrapping JSON data")}
         return requestMaker.makeJSONRequest(method: "POST", url: url, jsonData: jsonData, isPrivate: true, token: token)

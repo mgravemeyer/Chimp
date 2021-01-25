@@ -14,6 +14,7 @@ class ContactRequest{
     func createAddContactRequest(contact: Contact)->URLRequest{
         let url = URL(string: ADD_OR_UPDATE_CONTACT_ENDPOINT)
         let token: String = authHelper.getTokenFromCD()
+        print("Using the new token: \(token)")
 
         
         guard  let jsonData = try? JSONEncoder().encode(Contact(id: contact.id, firstname: contact.firstname, lastname: contact.lastname, email: contact.email, phone: contact.email, dob: contact.dob, note: contact.note, company_uids: contact.company_uids, tag_uids: contact.tag_uids, project_uids: contact.project_uids)) else { fatalError("Error unwrapping JSON data")}

@@ -42,7 +42,7 @@ class CoreDataService {
             return .saveError
         }
     }
-    
+   
     func changeToDevelopmentMode() {
         viewContext = NSManagedObjectContext.contextForTests()
     }

@@ -41,21 +41,32 @@ class ContactsState: ObservableObject {
         let saveResult = CoreDataService.shared.saveContact(contactData: contact)
         if saveResult == nil {
             contacts.insert(contact)
-
-            contactService.addContact(contact: contact) { [unowned self] (result) in // saving to DB via API service call
-                switch result{
-                case .success(let x):
-                    print(x)
-                case .failure(let err):
-                    print(err.localizedDescription)
-                    if(err.localizedDescription == "TokenExpired"){
-                        authState.setNewAccessToken()
-                    }
-                    
-                }
-            }
+            addContactToBackend(contact: contact)
+            
         }
         /* to:do error handling */
+    }
+    
+    func addContactToBackend(contact: Contact){
+        // this is refactored to a new func
+        // instead of in the createContact() func (above)
+        // is so that it's easier to call it recursively
+        
+        contactService.addContact(contact: contact) { [unowned self] (result) in // saving to DB via API service call
+            switch result{
+            case .success(let x):
+                print(x)
+            case .failure(let err):
+                print(err.localizedDescription)
+                if(err.localizedDescription == "TokenExpired"){
+                    authState.setNewAccessToken { (saved) in
+                       // re-hit endpoint here
+                    }
+                }
+                
+            }
+        }
+        
     }
   
     func getContactCategories() -> [String] {

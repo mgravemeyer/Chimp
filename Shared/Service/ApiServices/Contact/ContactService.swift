@@ -21,11 +21,11 @@ class ContactService{
             if(httpResponse.statusCode == 200){
                 completed(.success("Contact successfully added to DB"))
             }else{
-
                 if let errMsg = result.msg{
-                    print(errMsg)
                     if errMsg == "token_expired"{
                         completed(.failure(.tokenExpired))
+                    }else{
+                        print("Not expired, but: \(errMsg)")
                     }
                 }
             }
