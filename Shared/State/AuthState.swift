@@ -7,14 +7,16 @@ class AuthState: ObservableObject {
         //TO:DO: creating fetch request auth state from core data
         //checkAuth(authDetail: T##FetchedResults<AuthDetail>)
     }
-    
+    static let instance = AuthState()
+
     @Published var loggedIn = false
     @Published var token = ""
     @Published var user_uid = ""
     @Published var authLoading = true
-    
+
     private let authService = AuthService.instance
-    
+    private let authHelper = AuthHelper.instance
+
     func checkAuth() {
         let authStateFetched = CoreDataService.shared.fetch("AuthDetail").1
         if !authStateFetched.isEmpty || authStateFetched != [] {
@@ -40,6 +42,8 @@ class AuthState: ObservableObject {
             self.authLoading = false
         }
     }
+    
+   
     
     func authUser(email: String, password: String, option: AuthOptions) {
         authService.authUser(email: email, password: password, option: option) {[unowned self] (result) in
@@ -96,6 +100,28 @@ class AuthState: ObservableObject {
                     self.loggedIn = false
                 }
             }
+    }
+    
+    func setNewAccessToken(success: @escaping(_ success: Bool)->()){
+        authService.newAccessToken(user_uid: authHelper.getUIDFromCD()) { (newToken) in
+            if(newToken != ""){ // if new token is successfully retrieved from API (there's a token, not empty str)
+                let coreDataErr = CoreDataService.shared.updateAuthDetailToken(entity: "AuthDetail", token: newToken)
+                if coreDataErr == nil {
+                    DispatchQueue.main.async {
+                        self.token = newToken
+                    }
+                    success(true)
+                }else{
+                    success(false)
+                    //to:do implement a proper error handling
+                }
+            }else{
+                success(false)
+            }
+           
+        }
+     
+
     }
     
 }

@@ -5,7 +5,9 @@ import SwiftUI
 
 
 class ContactsState: ObservableObject {
-    
+    private let contactService = ContactService.instance
+    private let authState = AuthState.instance
+
     init() {
         fetchContacts()
     }
@@ -23,8 +25,8 @@ class ContactsState: ObservableObject {
         advancedMenuePressed.toggle()
     }
     
-    func selectContact(contact: UUID) {
-        selectedContact = contact.uuidString
+    func selectContact(contact: String) {
+        selectedContact = contact
     }
     
     func fetchContacts() {
@@ -38,10 +40,35 @@ class ContactsState: ObservableObject {
     func createContact(contact: Contact) {
         let saveResult = CoreDataService.shared.saveContact(contactData: contact)
         if saveResult == nil {
-            /* to:do save contact via api */
             contacts.insert(contact)
+            addContactToBackend(contact: contact)
+            
         }
         /* to:do error handling */
+    }
+    
+    func addContactToBackend(contact: Contact){
+        // this is refactored to a new func
+        // instead of in the createContact() func (above)
+        // is so that it's easier to call it recursively
+        
+        contactService.addContact(contact: contact) { [unowned self] (result) in // saving to DB via API service call
+            switch result{
+            case .success(let x):
+                print(x)
+            case .failure(let err):
+                print(err.localizedDescription)
+                if(err.localizedDescription == "TokenExpired"){
+                    authState.setNewAccessToken { (success) in
+                        if(success){
+                            addContactToBackend(contact: contact) // re-hits the add contact endpt here
+                        }
+                    }
+                }
+                
+            }
+        }
+        
     }
   
     func getContactCategories() -> [String] {
@@ -56,11 +83,11 @@ class ContactsState: ObservableObject {
     }
     
     func getSelectedContact() -> Contact {
-        if let contact = contacts.first(where: {$0.id.uuidString == self.selectedContact}) {
+        if let contact = contacts.first(where: {$0.id == self.selectedContact}) {
             return contact
         } else {
             /* to:do throw error message to frontend */
-            return Contact(firstname: "error", lastname: "error", email: "error", telephone: "error", birthday: "error", company: "error")
+            return Contact(id: "error", firstname: "error", lastname: "error", email: "error", phone: "error", dob: "error", note: "error", company_uids: [], tag_uids:[], project_uids: [])
         }
     }
     

@@ -51,14 +51,24 @@
 		509B6EEC253F8253002D165F /* AuthOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6EEA253F8253002D165F /* AuthOptions.swift */; };
 		509B6F4D2540B68E002D165F /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F4C2540B68E002D165F /* ContactService.swift */; };
 		509B6F4E2540B68E002D165F /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F4C2540B68E002D165F /* ContactService.swift */; };
-		509B6F582540B6A4002D165F /* ContactRequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F572540B6A4002D165F /* ContactRequestMaker.swift */; };
-		509B6F592540B6A4002D165F /* ContactRequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F572540B6A4002D165F /* ContactRequestMaker.swift */; };
+		509B6F582540B6A4002D165F /* ContactRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F572540B6A4002D165F /* ContactRequest.swift */; };
+		509B6F592540B6A4002D165F /* ContactRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F572540B6A4002D165F /* ContactRequest.swift */; };
 		509B6F632540B6C4002D165F /* ContactOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F622540B6C4002D165F /* ContactOptions.swift */; };
 		509B6F642540B6C4002D165F /* ContactOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F622540B6C4002D165F /* ContactOptions.swift */; };
 		509B6F6E2540BEDC002D165F /* ContactErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F6D2540BEDC002D165F /* ContactErrors.swift */; };
 		509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F6D2540BEDC002D165F /* ContactErrors.swift */; };
 		509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
 		509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
+		B5974BD225AFB14A00D80401 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5974BD125AFB14A00D80401 /* AccessToken.swift */; };
+		B5974BD325AFB14A00D80401 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5974BD125AFB14A00D80401 /* AccessToken.swift */; };
+		B5974BD825AFB5F400D80401 /* AccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5974BD725AFB5F400D80401 /* AccessTokenRequest.swift */; };
+		B5974BD925AFB5F400D80401 /* AccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5974BD725AFB5F400D80401 /* AccessTokenRequest.swift */; };
+		B5974BDE25AFB76F00D80401 /* AccessTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5974BDD25AFB76F00D80401 /* AccessTokenService.swift */; };
+		B5974BDF25AFB76F00D80401 /* AccessTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5974BDD25AFB76F00D80401 /* AccessTokenService.swift */; };
+		B5CDC42B25AF9AB900F2D503 /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDC42A25AF9AB900F2D503 /* AuthHelper.swift */; };
+		B5CDC42C25AF9AB900F2D503 /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDC42A25AF9AB900F2D503 /* AuthHelper.swift */; };
+		B5FCFA7B25BEB186007F1927 /* CoreDataAuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FCFA7A25BEB186007F1927 /* CoreDataAuthServices.swift */; };
+		B5FCFA7C25BEB186007F1927 /* CoreDataAuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FCFA7A25BEB186007F1927 /* CoreDataAuthServices.swift */; };
 		E31970DF259A452300E61794 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31970DE259A452300E61794 /* Project.swift */; };
 		E31970E0259A452300E61794 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31970DE259A452300E61794 /* Project.swift */; };
 		E31970E5259A46B900E61794 /* ProjectListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31970E4259A46B900E61794 /* ProjectListItem.swift */; };
@@ -150,10 +160,15 @@
 		5090A548253CD0E900A211EE /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		509B6EEA253F8253002D165F /* AuthOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOptions.swift; sourceTree = "<group>"; };
 		509B6F4C2540B68E002D165F /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
-		509B6F572540B6A4002D165F /* ContactRequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRequestMaker.swift; sourceTree = "<group>"; };
+		509B6F572540B6A4002D165F /* ContactRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRequest.swift; sourceTree = "<group>"; };
 		509B6F622540B6C4002D165F /* ContactOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptions.swift; sourceTree = "<group>"; };
 		509B6F6D2540BEDC002D165F /* ContactErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactErrors.swift; sourceTree = "<group>"; };
 		509B6F762540C0A9002D165F /* AccessTokenErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenErrors.swift; sourceTree = "<group>"; };
+		B5974BD125AFB14A00D80401 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		B5974BD725AFB5F400D80401 /* AccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenRequest.swift; sourceTree = "<group>"; };
+		B5974BDD25AFB76F00D80401 /* AccessTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenService.swift; sourceTree = "<group>"; };
+		B5CDC42A25AF9AB900F2D503 /* AuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHelper.swift; sourceTree = "<group>"; };
+		B5FCFA7A25BEB186007F1927 /* CoreDataAuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAuthServices.swift; sourceTree = "<group>"; };
 		E31970DE259A452300E61794 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		E31970E4259A46B900E61794 /* ProjectListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListItem.swift; sourceTree = "<group>"; };
 		E32CC70E257D30F70040E43B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -258,7 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				509B6F4C2540B68E002D165F /* ContactService.swift */,
-				509B6F572540B6A4002D165F /* ContactRequestMaker.swift */,
+				509B6F572540B6A4002D165F /* ContactRequest.swift */,
 				509B6F622540B6C4002D165F /* ContactOptions.swift */,
 				509B6F6D2540BEDC002D165F /* ContactErrors.swift */,
 			);
@@ -269,8 +284,18 @@
 			isa = PBXGroup;
 			children = (
 				509B6F762540C0A9002D165F /* AccessTokenErrors.swift */,
+				B5974BD725AFB5F400D80401 /* AccessTokenRequest.swift */,
+				B5974BDD25AFB76F00D80401 /* AccessTokenService.swift */,
 			);
 			path = "Access Token";
+			sourceTree = "<group>";
+		};
+		B5CDC42925AF9A9200F2D503 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDC42A25AF9AB900F2D503 /* AuthHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		E30045BF257FA9780041467B /* SideNavigation */ = {
@@ -352,6 +377,7 @@
 		E393AD052503FF920071D4E3 /* State */ = {
 			isa = PBXGroup;
 			children = (
+				B5CDC42925AF9A9200F2D503 /* Helpers */,
 				E35207032599DAFE006D50E8 /* ProjectsState.swift */,
 				E3E60A9724FFD8FF0065B141 /* ContactsState.swift */,
 				E39AC44E2501003200980BF6 /* AuthState.swift */,
@@ -376,6 +402,7 @@
 				E3E60A9A24FFD9780065B141 /* Contact.swift */,
 				2E6A3D37255EB3AF00E5CE5D /* NavigationCategory.swift */,
 				E31970DE259A452300E61794 /* Project.swift */,
+				B5974BD125AFB14A00D80401 /* AccessToken.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -406,6 +433,7 @@
 				E33B4DB8257DF56A000FCE79 /* CoreDataContactsServices.swift */,
 				E33B4DC1257DFDB1000FCE79 /* CoreDataErrros.swift */,
 				E3B2E82525AD3B4000C82CD5 /* CoreDataProjectsServices.swift */,
+				B5FCFA7A25BEB186007F1927 /* CoreDataAuthServices.swift */,
 			);
 			path = CoreDataServices;
 			sourceTree = "<group>";
@@ -604,13 +632,15 @@
 				E3D7A5F524F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
 				E35207042599DAFE006D50E8 /* ProjectsState.swift in Sources */,
 				504AD45725442C0A001BCEEB /* CoreDataManager.swift in Sources */,
-				509B6F582540B6A4002D165F /* ContactRequestMaker.swift in Sources */,
+				509B6F582540B6A4002D165F /* ContactRequest.swift in Sources */,
 				E33B4DB9257DF56A000FCE79 /* CoreDataContactsServices.swift in Sources */,
+				B5CDC42B25AF9AB900F2D503 /* AuthHelper.swift in Sources */,
 				2E6A3DA1255EC0C800E5CE5D /* ContactVerticalListView.swift in Sources */,
 				E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */,
 				E31970DF259A452300E61794 /* Project.swift in Sources */,
 				E352070D2599DD6D006D50E8 /* ProjectDetailView.swift in Sources */,
 				5090A549253CD0E900A211EE /* AuthRequest.swift in Sources */,
+				B5974BD225AFB14A00D80401 /* AccessToken.swift in Sources */,
 				E32F01E1257C19D70069DB4D /* CommandLineRowView.swift in Sources */,
 				E3E60A9B24FFD9780065B141 /* Contact.swift in Sources */,
 				2EEA70DF255E7F98000C5E75 /* ChimpTextFieldView.swift in Sources */,
@@ -625,6 +655,7 @@
 				2E6A3D3F255EB8D600E5CE5D /* ContactAddView.swift in Sources */,
 				509B6F4D2540B68E002D165F /* ContactService.swift in Sources */,
 				509B6F6E2540BEDC002D165F /* ContactErrors.swift in Sources */,
+				B5FCFA7B25BEB186007F1927 /* CoreDataAuthServices.swift in Sources */,
 				5000EA2A254454750023A545 /* LoadingView.swift in Sources */,
 				2E6A3D38255EB3AF00E5CE5D /* NavigationCategory.swift in Sources */,
 				E39AC44F2501003200980BF6 /* AuthState.swift in Sources */,
@@ -632,12 +663,14 @@
 				E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */,
 				50327F2A2568093200B583F4 /* ChimpPrimaryButton.swift in Sources */,
 				2EA83C59255B609C004A9852 /* CommandLineView.swift in Sources */,
+				B5974BDE25AFB76F00D80401 /* AccessTokenService.swift in Sources */,
 				2E6A3D57255EB9BD00E5CE5D /* ContactsDetailsWindow.swift in Sources */,
 				E36BCF0C257DBF6100EB0263 /* AppWrapper.swift in Sources */,
 				E32F01F3257C1D220069DB4D /* SideNavigationRow.swift in Sources */,
 				E3D7A5F724F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
 				E33B4DC2257DFDB1000FCE79 /* CoreDataErrros.swift in Sources */,
 				E3D7A5F924F4FFC200D3EB62 /* LoginView.swift in Sources */,
+				B5974BD825AFB5F400D80401 /* AccessTokenRequest.swift in Sources */,
 				509B6F632540B6C4002D165F /* ContactOptions.swift in Sources */,
 				5090A52A253CB8F500A211EE /* Auth.swift in Sources */,
 				504C5D9725459959003BDFA1 /* RequestMaker.swift in Sources */,
@@ -674,6 +707,7 @@
 				E3B2E82725AD3B4000C82CD5 /* CoreDataProjectsServices.swift in Sources */,
 				E32F01D0257C14540069DB4D /* ContactTagView.swift in Sources */,
 				50327F2B2568093200B583F4 /* ChimpPrimaryButton.swift in Sources */,
+				B5FCFA7C25BEB186007F1927 /* CoreDataAuthServices.swift in Sources */,
 				5090A53F253CBCFC00A211EE /* AuthService.swift in Sources */,
 				E3E60AA324FFF4430065B141 /* Contact.swift in Sources */,
 				E31970E6259A46B900E61794 /* ProjectListItem.swift in Sources */,
@@ -690,19 +724,23 @@
 				E3D6EF3C24F7D5A700F7A95A /* AppView.swift in Sources */,
 				2E6A3D32255E91F400E5CE5D /* SideNavigationView.swift in Sources */,
 				E39D37BA259CA3F600DC797B /* ProjectAddView.swift in Sources */,
+				B5974BD925AFB5F400D80401 /* AccessTokenRequest.swift in Sources */,
 				509B6F642540B6C4002D165F /* ContactOptions.swift in Sources */,
 				2E6A3D85255EBB2900E5CE5D /* ContactsView.swift in Sources */,
 				E39AC4502501003200980BF6 /* AuthState.swift in Sources */,
 				E3E60AA224FFF4430065B141 /* Profile.swift in Sources */,
 				E3D7A5F824F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
+				B5974BDF25AFB76F00D80401 /* AccessTokenService.swift in Sources */,
+				B5CDC42C25AF9AB900F2D503 /* AuthHelper.swift in Sources */,
 				2E6A3D58255EB9BD00E5CE5D /* ContactsDetailsWindow.swift in Sources */,
 				E32F01F4257C1D220069DB4D /* SideNavigationRow.swift in Sources */,
 				E39D37B2259CA01F00DC797B /* NSTextField.swift in Sources */,
 				504AD45825442C0A001BCEEB /* CoreDataManager.swift in Sources */,
 				E3E60A9924FFD8FF0065B141 /* ContactsState.swift in Sources */,
 				E3D7A5FA24F4FFC200D3EB62 /* LoginView.swift in Sources */,
-				509B6F592540B6A4002D165F /* ContactRequestMaker.swift in Sources */,
+				509B6F592540B6A4002D165F /* ContactRequest.swift in Sources */,
 				E33B4DBA257DF56B000FCE79 /* CoreDataContactsServices.swift in Sources */,
+				B5974BD325AFB14A00D80401 /* AccessToken.swift in Sources */,
 				E35206F32599D945006D50E8 /* ProjectListView.swift in Sources */,
 				2E6A3D39255EB3AF00E5CE5D /* NavigationCategory.swift in Sources */,
 				504C5D9825459959003BDFA1 /* RequestMaker.swift in Sources */,
@@ -853,7 +891,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -875,7 +913,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -901,7 +939,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -926,7 +964,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -948,7 +986,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				INFOPLIST_FILE = UnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -970,7 +1008,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				INFOPLIST_FILE = UnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

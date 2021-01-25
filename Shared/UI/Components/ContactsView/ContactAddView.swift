@@ -4,7 +4,8 @@ struct ContactAddView: View {
     
     @EnvironmentObject var contactsState: ContactsState
     @EnvironmentObject var authState: AuthState
-    
+    @Environment(\.managedObjectContext) private var viewContext
+
     @FetchRequest(sortDescriptors: [])
     private var contactsDetail: FetchedResults<ContactDetail>
     
@@ -73,15 +74,17 @@ struct ContactAddView: View {
                                     self.hoverRow = hover
                                 }
                             }.onTapGesture {
-                                // TODO: save new contact function to the DB
                                 self.contactsState.createContact(contact: Contact(
-                                                                    firstname: self.firstName,
+                                                                    id: UUID().uuidString, firstname: self.firstName,
                                                                     lastname: self.lastName,
                                                                     email: self.email,
-                                                                    telephone: self.telephone,
-                                                                    birthday: String(Int(self.birthDate.timeIntervalSince1970*1000)), // d.o.b in epoch in string format
-                                                                    company: "")
-                                )
+                                                                    phone: self.telephone,
+                                                                    dob: String(Int(self.birthDate.timeIntervalSince1970*1000)), // d.o.b in epoch in string format
+                                                                    note: "",
+                                    company_uids: [], tag_uids: [],
+                                    project_uids: []
+                                    ))
+                                
                                 contactsState.pressAddMenue()
                             }
                         }.frame(maxWidth: 320, maxHeight: 320)

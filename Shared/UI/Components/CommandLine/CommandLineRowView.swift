@@ -25,7 +25,8 @@ struct CommandLineRowView: View {
 
 #if DEBUG
 struct CommandLineRowView_Previews : PreviewProvider {
-    static var contact = Contact(firstname: "longTestUserFirstName", lastname: "longTestUserLastName", email: "longTestUserEmail@web.de", telephone: "123456789012", birthday: "33.33.3333", company: "longCompanyName")
+    
+    static var contact = Contact(id: UUID().uuidString, firstname: "longFirstNameTest", lastname: "longLastNameTest", email: "longEmailTest@web.de", phone: "123456789", dob: "12.12.2001", note: "", company_uids: [], tag_uids: [], project_uids: [])
     static var isHovered = false
     static var previews: some View {
         CommandLineRowView(contact: contact, isHovered: isHovered)

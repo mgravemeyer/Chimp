@@ -88,6 +88,45 @@ class AuthService{
         task.resume()
     }
     
+    func newAccessToken(user_uid: String, newToken: @escaping(_ newToken: String)->()){
+        let request = authRequest.createAccessTokenRequest(user_uid: user_uid)
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else {
+                print("No data returned from server")
+                return
+            }
+            guard let result = try? JSONDecoder().decode(NewAccessTokenResponseModel.self,from: data) else{
+                print("no result")
+                return
+            }
+
+            guard let httpResponse = response as? HTTPURLResponse else{
+                print("no response")
+                return
+            }
+            
+            if(httpResponse.statusCode == 200){
+                if let token = result.token{
+                    newToken(token) // new token
+                }
+                
+            }else{
+
+                if let errMsg = result.msg{
+                   print(errMsg)
+                }
+                newToken("") // no token because error
+
+            }
+            if let error = error {
+                //unsure, but this may happen only if there's a bug in this (Swift) code (?)
+                print("Error: \(error)")
+                return
+            }
+        }
+        task.resume()
+
+    }
 
 }
 

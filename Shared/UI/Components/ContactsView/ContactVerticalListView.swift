@@ -11,7 +11,7 @@ struct ContactVerticalListView: View {
             VStack(alignment: .leading) {
                 ForEach(Array(contactsState.contacts), id: \.self) { contact in
                     if String(contact.lastname.first!) == categorie {
-                        if contact.id.uuidString == contactsState.selectedContact {
+                        if contact.id == contactsState.selectedContact {
                             ContactVerticalListItem(contact: contact, selected: true).padding(.bottom, 8)
                                 .contextMenu {
                                     Button(action: {
@@ -77,6 +77,7 @@ struct ContactVerticalListItem: View {
             }
         }.frame(width: 180, height: 35).padding(.bottom, -13).onTapGesture {
             contactsState.selectContact(contact: contact.id)
-        }
+        
     }
+}
 }
