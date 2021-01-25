@@ -59,8 +59,10 @@ class ContactsState: ObservableObject {
             case .failure(let err):
                 print(err.localizedDescription)
                 if(err.localizedDescription == "TokenExpired"){
-                    authState.setNewAccessToken { (saved) in
-                       // re-hit endpoint here
+                    authState.setNewAccessToken { (success) in
+                        if(success){
+                            addContactToBackend(contact: contact) // re-hits the add contact endpt here
+                        }
                     }
                 }
                 
