@@ -14,7 +14,7 @@ struct AppView: View {
                 SideNavigationView(selection: $selection).environmentObject(authState)
                 VStack {
                     if selection == "Contacts" {
-                        ContactsView()
+                        ContactsCompaniesView()
                     } else if selection == "Projects" {
                         ProjectsView()
                     }

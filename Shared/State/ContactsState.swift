@@ -16,6 +16,8 @@ class ContactsState: ObservableObject {
     @Published private(set) var addMenuePressed = false
     @Published private(set) var advancedMenuePressed = false
     @Published private(set) var selectedContact = ""
+    @Published var selectedMenue = ""
+    @Published var search = ""
     
     func pressAddMenue() {
         addMenuePressed.toggle()

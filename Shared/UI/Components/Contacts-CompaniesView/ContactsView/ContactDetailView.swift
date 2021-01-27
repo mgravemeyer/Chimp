@@ -8,31 +8,34 @@ struct ContactDetailView: View {
     var contact: Contact
     
         var body: some View {
-        ZStack() {
-            VStack(alignment: .leading) {
-                HStack {
-                    Text(contact.firstname).font(.system(size: 30)).fontWeight(.light).lineLimit(1)
-                    Text(contact.lastname).font(.system(size: 30)).fontWeight(.bold).lineLimit(1)
-                    Spacer()
-                    Button("Add Contact") {
-                        contactsState.pressAddMenue()
+        VStack {
+            DetailToolbar()
+            ZStack() {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(contact.firstname).font(.system(size: 30)).fontWeight(.light).lineLimit(1)
+                        Text(contact.lastname).font(.system(size: 30)).fontWeight(.bold).lineLimit(1)
+                        Spacer()
+                        Button("Add Contact") {
+                            contactsState.pressAddMenue()
+                        }
+                    }.padding(.bottom, 20)
+                    ContactsDetailContactRow(selectedContact: contact)
+                        .buttonStyle(PlainButtonStyle())
+                        .padding(.bottom, 10)
+                        ContactsDetailTagRow(selectedContact: contact).padding(.bottom, 12)
+                    HStack {
+                        Spacer()
+                        VStack {
+                            ContactsDetailRadioSection(selection: $selection)
+                            ContactsDetailRadioList(selection: $selection)
+                        }
+                        Spacer()
                     }
-                }.padding(.bottom, 20)
-                ContactsDetailContactRow(selectedContact: contact)
-                    .buttonStyle(PlainButtonStyle())
-                    .padding(.bottom, 10)
-                    ContactsDetailTagRow(selectedContact: contact).padding(.bottom, 12)
-                HStack {
                     Spacer()
-                    VStack {
-                        ContactsDetailRadioSection(selection: $selection)
-                        ContactsDetailRadioList(selection: $selection)
-                    }
-                    Spacer()
-                }
-                Spacer()
-            }.zIndex(1)
-            Rectangle().foregroundColor(colorScheme == .dark ? Color.chimpDarkBackground : Color.chimpLightBackground).zIndex(0)
+                }.zIndex(1)
+                Rectangle().foregroundColor(colorScheme == .dark ? Color.chimpDarkBackground : Color.chimpLightBackground).zIndex(0)
+            }
         }.padding(.bottom, 20).padding(.trailing, 20).padding(.top, 40)
     }
 }
