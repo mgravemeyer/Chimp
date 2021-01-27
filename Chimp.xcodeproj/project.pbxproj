@@ -104,6 +104,8 @@
 		E3B2E82625AD3B4000C82CD5 /* CoreDataProjectsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2E82525AD3B4000C82CD5 /* CoreDataProjectsServices.swift */; };
 		E3B2E82725AD3B4000C82CD5 /* CoreDataProjectsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B2E82525AD3B4000C82CD5 /* CoreDataProjectsServices.swift */; };
 		E3BF8A9425C14AA700A6A5DE /* CompaniesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF8A9325C14AA700A6A5DE /* CompaniesListView.swift */; };
+		E3BF8A9925C14D1500A6A5DE /* CompaniesVerticalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF8A9825C14D1500A6A5DE /* CompaniesVerticalListView.swift */; };
+		E3BF8A9A25C14D1500A6A5DE /* CompaniesVerticalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF8A9825C14D1500A6A5DE /* CompaniesVerticalListView.swift */; };
 		E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3A24F7D5A700F7A95A /* AppView.swift */; };
 		E3D6EF3C24F7D5A700F7A95A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3A24F7D5A700F7A95A /* AppView.swift */; };
 		E3D7A5F524F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */; };
@@ -191,6 +193,7 @@
 		E39D37C1259CD15100DC797B /* ProjectEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEmpty.swift; sourceTree = "<group>"; };
 		E3B2E82525AD3B4000C82CD5 /* CoreDataProjectsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProjectsServices.swift; sourceTree = "<group>"; };
 		E3BF8A9325C14AA700A6A5DE /* CompaniesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesListView.swift; sourceTree = "<group>"; };
+		E3BF8A9825C14D1500A6A5DE /* CompaniesVerticalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesVerticalListView.swift; sourceTree = "<group>"; };
 		E3D6EF3A24F7D5A700F7A95A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		E3D7A5CA24F4FFC000D3EB62 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpApp.swift; sourceTree = "<group>"; };
@@ -445,6 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				E3BF8A9325C14AA700A6A5DE /* CompaniesListView.swift */,
+				E3BF8A9825C14D1500A6A5DE /* CompaniesVerticalListView.swift */,
 			);
 			path = Companies;
 			sourceTree = "<group>";
@@ -674,6 +678,7 @@
 				E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */,
 				50327F2A2568093200B583F4 /* ChimpPrimaryButton.swift in Sources */,
 				2EA83C59255B609C004A9852 /* CommandLineView.swift in Sources */,
+				E3BF8A9925C14D1500A6A5DE /* CompaniesVerticalListView.swift in Sources */,
 				B5974BDE25AFB76F00D80401 /* AccessTokenService.swift in Sources */,
 				2E6A3D57255EB9BD00E5CE5D /* ContactsDetailsWindow.swift in Sources */,
 				E36BCF0C257DBF6100EB0263 /* AppWrapper.swift in Sources */,
@@ -704,6 +709,7 @@
 			files = (
 				2E6A3D90255EBB5000E5CE5D /* ContactEmpty.swift in Sources */,
 				E35207052599DAFE006D50E8 /* ProjectsState.swift in Sources */,
+				E3BF8A9A25C14D1500A6A5DE /* CompaniesVerticalListView.swift in Sources */,
 				E3D7A5F624F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */,
 				2EA83C5E255B609F004A9852 /* CommandLineView.swift in Sources */,
 				50327F332568176200B583F4 /* ChimpColors.swift in Sources */,
