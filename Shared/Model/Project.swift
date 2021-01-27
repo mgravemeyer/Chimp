@@ -10,6 +10,7 @@ struct Project: Identifiable, Hashable, Equatable, Codable {
     var notes: String
     var status: String
     var tag_uids: [String]
+    var due: String
     
     enum CodingKeys: String, CodingKey{ // sent to the API
         
@@ -22,6 +23,7 @@ struct Project: Identifiable, Hashable, Equatable, Codable {
         case notes = "project_note"
         case status = "project_status"
         case tag_uids
+        case due = "project_due"
 
     }
 }
