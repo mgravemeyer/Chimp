@@ -59,6 +59,14 @@
 		509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F6D2540BEDC002D165F /* ContactErrors.swift */; };
 		509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
 		509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
+		B532676C25C1348A00FB129B /* ProjectErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B532676B25C1348A00FB129B /* ProjectErrors.swift */; };
+		B532676D25C1348A00FB129B /* ProjectErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B532676B25C1348A00FB129B /* ProjectErrors.swift */; };
+		B532677525C134A500FB129B /* ProjectOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B532677425C134A500FB129B /* ProjectOptions.swift */; };
+		B532677625C134A500FB129B /* ProjectOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B532677425C134A500FB129B /* ProjectOptions.swift */; };
+		B532677B25C134C700FB129B /* ProjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B532677A25C134C700FB129B /* ProjectRequest.swift */; };
+		B532677C25C134C700FB129B /* ProjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B532677A25C134C700FB129B /* ProjectRequest.swift */; };
+		B532678125C1357E00FB129B /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B532678025C1357E00FB129B /* ProjectService.swift */; };
+		B532678225C1357E00FB129B /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B532678025C1357E00FB129B /* ProjectService.swift */; };
 		B5974BD225AFB14A00D80401 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5974BD125AFB14A00D80401 /* AccessToken.swift */; };
 		B5974BD325AFB14A00D80401 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5974BD125AFB14A00D80401 /* AccessToken.swift */; };
 		B5974BD825AFB5F400D80401 /* AccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5974BD725AFB5F400D80401 /* AccessTokenRequest.swift */; };
@@ -178,6 +186,10 @@
 		509B6F622540B6C4002D165F /* ContactOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptions.swift; sourceTree = "<group>"; };
 		509B6F6D2540BEDC002D165F /* ContactErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactErrors.swift; sourceTree = "<group>"; };
 		509B6F762540C0A9002D165F /* AccessTokenErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenErrors.swift; sourceTree = "<group>"; };
+		B532676B25C1348A00FB129B /* ProjectErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectErrors.swift; sourceTree = "<group>"; };
+		B532677425C134A500FB129B /* ProjectOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOptions.swift; sourceTree = "<group>"; };
+		B532677A25C134C700FB129B /* ProjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRequest.swift; sourceTree = "<group>"; };
+		B532678025C1357E00FB129B /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
 		B5974BD125AFB14A00D80401 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		B5974BD725AFB5F400D80401 /* AccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenRequest.swift; sourceTree = "<group>"; };
 		B5974BDD25AFB76F00D80401 /* AccessTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenService.swift; sourceTree = "<group>"; };
@@ -311,6 +323,17 @@
 			path = "Access Token";
 			sourceTree = "<group>";
 		};
+		B532676A25C1346B00FB129B /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				B532676B25C1348A00FB129B /* ProjectErrors.swift */,
+				B532677425C134A500FB129B /* ProjectOptions.swift */,
+				B532677A25C134C700FB129B /* ProjectRequest.swift */,
+				B532678025C1357E00FB129B /* ProjectService.swift */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
 		B5CDC42925AF9A9200F2D503 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +465,7 @@
 		E3AF5016257BF1DF00417440 /* ApiServices */ = {
 			isa = PBXGroup;
 			children = (
+				B532676A25C1346B00FB129B /* Project */,
 				504C5D9625459959003BDFA1 /* RequestMaker.swift */,
 				509B6F752540C09A002D165F /* Access Token */,
 				509B6F2C2540AE90002D165F /* Contact */,
@@ -694,6 +718,7 @@
 				E3E60A9824FFD8FF0065B141 /* ContactsState.swift in Sources */,
 				E31970DF259A452300E61794 /* Project.swift in Sources */,
 				E352070D2599DD6D006D50E8 /* ProjectDetailView.swift in Sources */,
+				B532677525C134A500FB129B /* ProjectOptions.swift in Sources */,
 				5090A549253CD0E900A211EE /* AuthRequest.swift in Sources */,
 				B5974BD225AFB14A00D80401 /* AccessToken.swift in Sources */,
 				E32F01E1257C19D70069DB4D /* CommandLineRowView.swift in Sources */,
@@ -707,8 +732,10 @@
 				509B6EEB253F8253002D165F /* AuthOptions.swift in Sources */,
 				E3BF8AA525C14DA900A6A5DE /* Company.swift in Sources */,
 				E31970E5259A46B900E61794 /* ProjectListItem.swift in Sources */,
+				B532677B25C134C700FB129B /* ProjectRequest.swift in Sources */,
 				E3FEAECF257E5B7500EE1A3D /* ContactListView.swift in Sources */,
 				50327F322568176200B583F4 /* ChimpColors.swift in Sources */,
+				B532678125C1357E00FB129B /* ProjectService.swift in Sources */,
 				2E6A3D3F255EB8D600E5CE5D /* ContactAddView.swift in Sources */,
 				509B6F4D2540B68E002D165F /* ContactService.swift in Sources */,
 				509B6F6E2540BEDC002D165F /* ContactErrors.swift in Sources */,
@@ -742,6 +769,7 @@
 				509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */,
 				500E2FDC253F6A7A005B347D /* AuthErrors.swift in Sources */,
 				E32F01CF257C14540069DB4D /* ContactTagView.swift in Sources */,
+				B532676C25C1348A00FB129B /* ProjectErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,6 +800,7 @@
 				B5FCFA7C25BEB186007F1927 /* CoreDataAuthServices.swift in Sources */,
 				5090A53F253CBCFC00A211EE /* AuthService.swift in Sources */,
 				E3E60AA324FFF4430065B141 /* Contact.swift in Sources */,
+				B532677625C134A500FB129B /* ProjectOptions.swift in Sources */,
 				E31970E6259A46B900E61794 /* ProjectListItem.swift in Sources */,
 				E3BF8AA625C14DA900A6A5DE /* Company.swift in Sources */,
 				E3FEAED0257E5B7500EE1A3D /* ContactListView.swift in Sources */,
@@ -798,6 +827,8 @@
 				E3D7A5F824F4FFC200D3EB62 /* ChimpApp.swift in Sources */,
 				B5974BDF25AFB76F00D80401 /* AccessTokenService.swift in Sources */,
 				B5CDC42C25AF9AB900F2D503 /* AuthHelper.swift in Sources */,
+				B532677C25C134C700FB129B /* ProjectRequest.swift in Sources */,
+				B532676D25C1348A00FB129B /* ProjectErrors.swift in Sources */,
 				2E6A3D58255EB9BD00E5CE5D /* ContactsDetailsWindow.swift in Sources */,
 				E32F01F4257C1D220069DB4D /* SideNavigationRow.swift in Sources */,
 				E39D37B2259CA01F00DC797B /* NSTextField.swift in Sources */,
@@ -808,6 +839,7 @@
 				E33B4DBA257DF56B000FCE79 /* CoreDataContactsServices.swift in Sources */,
 				B5974BD325AFB14A00D80401 /* AccessToken.swift in Sources */,
 				E35206F32599D945006D50E8 /* ProjectListView.swift in Sources */,
+				B532678225C1357E00FB129B /* ProjectService.swift in Sources */,
 				2E6A3D39255EB3AF00E5CE5D /* NavigationCategory.swift in Sources */,
 				504C5D9825459959003BDFA1 /* RequestMaker.swift in Sources */,
 				2E6A3DA2255EC0C800E5CE5D /* ContactVerticalListView.swift in Sources */,

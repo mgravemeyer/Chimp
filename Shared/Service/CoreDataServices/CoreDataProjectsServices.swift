@@ -15,7 +15,7 @@ extension CoreDataService {
                 let name = result.value(forKey: "name") as! String
                 let start = result.value(forKey: "start") as! String
                 let notes = result.value(forKey: "notes") as! String
-                let project = Project(name: name, start: start, end: end, clients: [], progress: progress, notes: notes)
+                let project = Project(id: UUID().uuidString, name: name, start: start, end: end, clients: [], progress: progress, notes: notes,status: "Some Status", tag_uids: [], due: "0")
                 projectsFetched.append(project)
             }
             return (nil, projectsFetched)

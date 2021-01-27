@@ -54,7 +54,7 @@ class ContactsState: ObservableObject {
         // instead of in the createContact() func (above)
         // is so that it's easier to call it recursively
         
-        contactService.addContact(contact: contact) { [unowned self] (result) in // saving to DB via API service call
+        contactService.addContact(contact: contact) { [unowned self] (result) in // saving to DB
             switch result{
             case .success(let x):
                 print(x)

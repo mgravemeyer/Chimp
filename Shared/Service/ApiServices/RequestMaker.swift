@@ -6,7 +6,7 @@ struct RequestMaker{
     func makeJSONRequest(method: String, url: URL?, jsonData:Data, isPrivate: Bool, token: String)->URLRequest {
         guard let requestURL = url else { fatalError("Unexpected error when unwrapping request URL value")}
         var request = URLRequest(url: requestURL)
-        request.httpMethod = "POST"
+        request.httpMethod = method
         request.httpBody = jsonData
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
