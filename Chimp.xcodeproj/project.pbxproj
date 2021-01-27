@@ -106,6 +106,8 @@
 		E3BF8A9425C14AA700A6A5DE /* CompaniesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF8A9325C14AA700A6A5DE /* CompaniesListView.swift */; };
 		E3BF8A9925C14D1500A6A5DE /* CompaniesVerticalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF8A9825C14D1500A6A5DE /* CompaniesVerticalListView.swift */; };
 		E3BF8A9A25C14D1500A6A5DE /* CompaniesVerticalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF8A9825C14D1500A6A5DE /* CompaniesVerticalListView.swift */; };
+		E3BF8A9F25C14D7400A6A5DE /* CompaniesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF8A9E25C14D7400A6A5DE /* CompaniesState.swift */; };
+		E3BF8AA025C14D7400A6A5DE /* CompaniesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF8A9E25C14D7400A6A5DE /* CompaniesState.swift */; };
 		E3D6EF3B24F7D5A700F7A95A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3A24F7D5A700F7A95A /* AppView.swift */; };
 		E3D6EF3C24F7D5A700F7A95A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6EF3A24F7D5A700F7A95A /* AppView.swift */; };
 		E3D7A5F524F4FFC200D3EB62 /* Chimp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3D7A5C924F4FFC000D3EB62 /* Chimp.xcdatamodeld */; };
@@ -194,6 +196,7 @@
 		E3B2E82525AD3B4000C82CD5 /* CoreDataProjectsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProjectsServices.swift; sourceTree = "<group>"; };
 		E3BF8A9325C14AA700A6A5DE /* CompaniesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesListView.swift; sourceTree = "<group>"; };
 		E3BF8A9825C14D1500A6A5DE /* CompaniesVerticalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesVerticalListView.swift; sourceTree = "<group>"; };
+		E3BF8A9E25C14D7400A6A5DE /* CompaniesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesState.swift; sourceTree = "<group>"; };
 		E3D6EF3A24F7D5A700F7A95A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		E3D7A5CA24F4FFC000D3EB62 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E3D7A5CB24F4FFC000D3EB62 /* ChimpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpApp.swift; sourceTree = "<group>"; };
@@ -387,6 +390,7 @@
 				E35207032599DAFE006D50E8 /* ProjectsState.swift */,
 				E3E60A9724FFD8FF0065B141 /* ContactsState.swift */,
 				E39AC44E2501003200980BF6 /* AuthState.swift */,
+				E3BF8A9E25C14D7400A6A5DE /* CompaniesState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -663,6 +667,7 @@
 				2E6A3D96255EBB8800E5CE5D /* ContactDetailView.swift in Sources */,
 				2E6A3D8F255EBB5000E5CE5D /* ContactEmpty.swift in Sources */,
 				2E6A3D31255E91F400E5CE5D /* SideNavigationView.swift in Sources */,
+				E3BF8A9F25C14D7400A6A5DE /* CompaniesState.swift in Sources */,
 				509B6EEB253F8253002D165F /* AuthOptions.swift in Sources */,
 				E31970E5259A46B900E61794 /* ProjectListItem.swift in Sources */,
 				E3FEAECF257E5B7500EE1A3D /* ContactListView.swift in Sources */,
@@ -707,6 +712,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3BF8AA025C14D7400A6A5DE /* CompaniesState.swift in Sources */,
 				2E6A3D90255EBB5000E5CE5D /* ContactEmpty.swift in Sources */,
 				E35207052599DAFE006D50E8 /* ProjectsState.swift in Sources */,
 				E3BF8A9A25C14D1500A6A5DE /* CompaniesVerticalListView.swift in Sources */,
