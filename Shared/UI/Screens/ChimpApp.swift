@@ -3,10 +3,16 @@ import SwiftUI
 @main
 struct ChimpApp: App {
     
+    init() {
+        NetworkMonitor.instance.startMonitoring()
+    }
+    
     @StateObject var authState = AuthState()
     @StateObject var projectsState = ProjectsState()
     @StateObject var contactsState = ContactsState()
     @StateObject var companiesState = CompaniesState()
+    
+    
     
     var body: some Scene {
             WindowGroup {

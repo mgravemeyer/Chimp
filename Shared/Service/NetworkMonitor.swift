@@ -9,7 +9,7 @@ enum ConnectionType{
 }
 
 class NetworkMonitor {
-    static let shared = NetworkMonitor()
+    static let instance = NetworkMonitor()
     
     private let queue = DispatchQueue.global()
     private let monitor: NWPathMonitor
