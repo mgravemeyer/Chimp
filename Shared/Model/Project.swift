@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Project: Identifiable, Hashable, Equatable {
-    var id = UUID()
+    let id: String
     var name: String
     var start: String
     var end: String

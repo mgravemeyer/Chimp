@@ -12,8 +12,8 @@ class ProjectsState: ObservableObject {
     @Published var addMenuePressed = false
     @Published var selectedProject = ""
     
-    func selectProject(project: UUID) {
-        selectedProject = project.uuidString
+    func selectProject(project: String) {
+        selectedProject = project
     }
     
     func fetchProjects() {
@@ -34,11 +34,11 @@ class ProjectsState: ObservableObject {
     }
     
     func getSelectedProject() -> Project {
-        if let project = projects.first(where: {$0.id.uuidString == self.selectedProject}) {
+        if let project = projects.first(where: {$0.id == self.selectedProject}) {
             return project
         } else {
             /* to:do throw error message to frontend */
-            return Project(name: "Error", start: "Error", end: "Error", clients: [], progress: 0, notes: "Error")
+            return Project(id: UUID().uuidString,name: "Error", start: "Error", end: "Error", clients: [], progress: 0, notes: "Error")
         }
     }
 }
