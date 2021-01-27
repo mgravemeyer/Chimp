@@ -38,7 +38,7 @@ class ProjectsState: ObservableObject {
             return project
         } else {
             /* to:do throw error message to frontend */
-            return Project(id: UUID().uuidString,name: "Error", start: "Error", end: "Error", clients: [], progress: 0, notes: "Error")
+            return Project(id: UUID().uuidString,name: "Error", start: "Error", end: "Error", clients: [], progress: 0, notes: "Error", status: "Some Status", tag_uids: [])
         }
     }
 }

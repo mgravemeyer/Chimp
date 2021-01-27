@@ -24,9 +24,10 @@ struct ProjectsView_Previews : PreviewProvider {
         .environmentObject(AuthState())
         .environmentObject({ () -> ProjectsState in
             let projectsState = ProjectsState()
-            projectsState.createProject(project: Project(id: UUID().uuidString,name: "First Project", start: "20.10.2020", end: "25.10.2020", clients: [], progress: 10, notes: "Some Notes"))
-            projectsState.createProject(project: Project(id: UUID().uuidString, name: "Second Project", start: "20.10.2020", end: "25.10.2020", clients: [], progress: 40, notes: "Some Notes"))
-            projectsState.createProject(project: Project(id: UUID().uuidString, name: "First Project", start: "20.10.2020", end: "25.10.2020", clients: [], progress: 100, notes: "Third Notes"))
+           
+            projectsState.createProject(project: Project(id: UUID().uuidString,name: "First Project", start: "20.10.2020", end: "25.10.2020", clients: [], progress: 10, notes: "Some Notes", status: "Some Status", tag_uids: []))
+            projectsState.createProject(project: Project(id: UUID().uuidString, name: "Second Project", start: "20.10.2020", end: "25.10.2020", clients: [], progress: 40, notes: "Some Notes",status: "Some Status", tag_uids: [] ))
+            projectsState.createProject(project: Project(id: UUID().uuidString, name: "First Project", start: "20.10.2020", end: "25.10.2020", clients: [], progress: 100, notes: "Third Notes", status: "Some Status", tag_uids: []))
             return projectsState
         }())
         .environmentObject({ () -> ContactsState in
