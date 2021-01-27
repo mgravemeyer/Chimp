@@ -45,7 +45,7 @@ struct ProjectAddView: View {
                                 }
                             }.onTapGesture {
                                 // TODO: save new contact function to the DB
-                                self.projectsState.createProject(project: Project(name: self.name, start: "10.10.2010", end: "11.10.2010", clients: [], progress: 0, notes: "Notes"))
+                                self.projectsState.createProject(project: Project(id: UUID().uuidString,name: self.name, start: "10.10.2010", end: "11.10.2010", clients: [], progress: 0, notes: "Notes", status: "Some Status", tag_uids: [], due: "0"))
                                 projectsState.addMenuePressed.toggle()
                             }
                         }.frame(maxWidth: 320, maxHeight: 320)

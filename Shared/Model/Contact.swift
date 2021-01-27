@@ -33,7 +33,7 @@ struct Contact: Identifiable, Hashable, Equatable, Codable {
     
 }
 
-struct Contact_S_ResponseModel:Codable{
+struct Contact_ResponseModel:Codable{
     let msg: String?
     let contact_uid: String?
 }
