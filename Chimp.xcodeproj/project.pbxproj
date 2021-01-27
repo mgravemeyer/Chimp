@@ -377,7 +377,7 @@
 				E3467619257BB13100EDD6FD /* ChimpUI */,
 				E30045BF257FA9780041467B /* SideNavigation */,
 				E35206B72599D46D006D50E8 /* ProjectsView */,
-				E3BF8AB325C14E4A00A6A5DE /* Contacts-Companies */,
+				E3BF8AB325C14E4A00A6A5DE /* Contacts-CompaniesView */,
 				E313862C257FA49900F81B2C /* CommandLine */,
 				E3FEAECA257E5A7600EE1A3D /* Colors */,
 				E39D37B0259C9FEC00DC797B /* Extensions */,
@@ -460,13 +460,13 @@
 			path = CompaniesView;
 			sourceTree = "<group>";
 		};
-		E3BF8AB325C14E4A00A6A5DE /* Contacts-Companies */ = {
+		E3BF8AB325C14E4A00A6A5DE /* Contacts-CompaniesView */ = {
 			isa = PBXGroup;
 			children = (
 				E3BF8A9225C14A5700A6A5DE /* CompaniesView */,
 				2E6A3D55255EB98E00E5CE5D /* ContactsView */,
 			);
-			path = "Contacts-Companies";
+			path = "Contacts-CompaniesView";
 			sourceTree = "<group>";
 		};
 		E3D7A5C324F4FFC000D3EB62 = {
