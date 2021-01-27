@@ -59,6 +59,8 @@
 		509B6F6F2540BEDC002D165F /* ContactErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F6D2540BEDC002D165F /* ContactErrors.swift */; };
 		509B6F772540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
 		509B6F782540C0A9002D165F /* AccessTokenErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B6F762540C0A9002D165F /* AccessTokenErrors.swift */; };
+		B5248ED725C17B0E00109386 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5248ED625C17B0E00109386 /* NetworkMonitor.swift */; };
+		B5248ED825C17B0E00109386 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5248ED625C17B0E00109386 /* NetworkMonitor.swift */; };
 		B532676C25C1348A00FB129B /* ProjectErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B532676B25C1348A00FB129B /* ProjectErrors.swift */; };
 		B532676D25C1348A00FB129B /* ProjectErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B532676B25C1348A00FB129B /* ProjectErrors.swift */; };
 		B532677525C134A500FB129B /* ProjectOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B532677425C134A500FB129B /* ProjectOptions.swift */; };
@@ -186,6 +188,7 @@
 		509B6F622540B6C4002D165F /* ContactOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptions.swift; sourceTree = "<group>"; };
 		509B6F6D2540BEDC002D165F /* ContactErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactErrors.swift; sourceTree = "<group>"; };
 		509B6F762540C0A9002D165F /* AccessTokenErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenErrors.swift; sourceTree = "<group>"; };
+		B5248ED625C17B0E00109386 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		B532676B25C1348A00FB129B /* ProjectErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectErrors.swift; sourceTree = "<group>"; };
 		B532677425C134A500FB129B /* ProjectOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOptions.swift; sourceTree = "<group>"; };
 		B532677A25C134C700FB129B /* ProjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRequest.swift; sourceTree = "<group>"; };
@@ -298,6 +301,7 @@
 			children = (
 				E3AF5017257BF1EE00417440 /* CoreDataServices */,
 				E3AF5016257BF1DF00417440 /* ApiServices */,
+				B5248ED625C17B0E00109386 /* NetworkMonitor.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -760,6 +764,7 @@
 				5090A52A253CB8F500A211EE /* Auth.swift in Sources */,
 				504C5D9725459959003BDFA1 /* RequestMaker.swift in Sources */,
 				E3EFD99724FA5CF8002E336F /* Profile.swift in Sources */,
+				B5248ED725C17B0E00109386 /* NetworkMonitor.swift in Sources */,
 				E3B2E82625AD3B4000C82CD5 /* CoreDataProjectsServices.swift in Sources */,
 				5090A53E253CBCFC00A211EE /* AuthService.swift in Sources */,
 				E35206F22599D945006D50E8 /* ProjectListView.swift in Sources */,
@@ -799,6 +804,7 @@
 				50327F2B2568093200B583F4 /* ChimpPrimaryButton.swift in Sources */,
 				B5FCFA7C25BEB186007F1927 /* CoreDataAuthServices.swift in Sources */,
 				5090A53F253CBCFC00A211EE /* AuthService.swift in Sources */,
+				B5248ED825C17B0E00109386 /* NetworkMonitor.swift in Sources */,
 				E3E60AA324FFF4430065B141 /* Contact.swift in Sources */,
 				B532677625C134A500FB129B /* ProjectOptions.swift in Sources */,
 				E31970E6259A46B900E61794 /* ProjectListItem.swift in Sources */,
@@ -989,7 +995,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1011,7 +1017,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1037,7 +1043,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -1062,7 +1068,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V2JY6WCGLS;
+				DEVELOPMENT_TEAM = Q33X652UWU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
