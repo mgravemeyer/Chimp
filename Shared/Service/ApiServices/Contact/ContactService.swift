@@ -11,7 +11,7 @@ class ContactService{
                 print("No data returned from server")
                 return
             }
-            guard let result = try? JSONDecoder().decode(Contact_S_ResponseModel.self,from: data) else{
+            guard let result = try? JSONDecoder().decode(Contact_ResponseModel.self,from: data) else{
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse else{
