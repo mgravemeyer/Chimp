@@ -1,5 +1,6 @@
 import SwiftUI
 
+
 struct LoginView: View {
     
     @EnvironmentObject var authState: AuthState
@@ -9,6 +10,8 @@ struct LoginView: View {
     
     @State var error = String()
     @State var chimpButtonPressed = false
+    
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     
     var body: some View {
         HStack {
@@ -21,6 +24,7 @@ struct LoginView: View {
                         .fontWeight(.bold)
                         .font(.largeTitle)
                         .padding(.bottom, 8)
+                        
                     HStack{
                         Text("All your tasks, projects and contacts")
                             .font(.system(size: 14.0)).fontWeight(.light)
@@ -47,9 +51,25 @@ struct LoginView: View {
                     }.frame(width: 260)
                 }.frame(width: 350)
             }.frame(width: 500, height: 600).padding(.bottom, 70)
-        }.frame(width: 1000, height: 600).background(Color.white)
+        }.frame(width: 1000, height: 600).background(Color.backgroundColor(for: self.colorScheme))
     }
 }
+
+extension Color {
+
+    static let lightBackgroundColor = Color(white: 1.0)
+
+    static let darkBackgroundColor = Color(white: 0.0)
+
+    static func backgroundColor(for colorScheme: ColorScheme) -> Color {
+        if colorScheme == .dark {
+            return darkBackgroundColor
+        } else {
+            return lightBackgroundColor
+        }
+    }
+}
+
 
 #if DEBUG
 struct LoginView_Previews : PreviewProvider {
